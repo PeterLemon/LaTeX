@@ -22,6 +22,6 @@ All the code compiles into a single document (DOCUMENTNAME.pdf) file.<br />
 (You will be prompted to automatically download & install libs if MiKTeX is fresh, just let it install what it needs to compile)<br />
 <br />
 Howto Run:<br />
-MiKTeX has an inbuilt PDF viewer that displays compiled results, but you can view the PDF files using any viewer.<br />
+MiKTeX has an in-built PDF viewer that displays compiled results, but you can view the PDF files using any viewer.<br />
 I use the Sumatra PDF reader to view documents, which I highly recommend.<br />
 http://www.sumatrapdfreader.org/download-free-pdf-viewer.html

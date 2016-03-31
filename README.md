@@ -19,7 +19,7 @@ All the code compiles into a single document (DOCUMENTNAME.pdf) file.<br />
 2. File/Open DOCUMENTNAME.tex (Make sure you have copied "/images" directory & Fonts)<br />
 3. Change the box next to the "Play Button" from "pdfLaTeX+MakeIndex+BibTeX" to "XeLaTeX+MakeIndex+BibTeX"<br />
 4. Press the "Play Button" to compile the PDF document.<br />
-(You will be prompted to automatically download & install a few libs if MiKTeX is fresh, just let it install what it needs to compile)<br />
+(You will be prompted to automatically download & install libs if MiKTeX is fresh, just let it install what it needs to compile)<br />
 <br />
 Howto Run:<br />
 MiKTeX has an inbuilt PDF viewer that displays compiled results, but you can view the PDF files using any viewer.<br />

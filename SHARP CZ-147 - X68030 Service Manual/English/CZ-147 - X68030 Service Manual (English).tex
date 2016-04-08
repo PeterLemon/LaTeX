@@ -1,0 +1,913 @@
+\documentclass[twoside,a4paper,12pt]{article}
+
+\usepackage{fontspec}
+%\setmainfont[BoldFont={EPSON 太丸ゴシック体Ｂ}, ItalicFont={EPSON 太明朝体Ｂ}, UprightFont={EPSON 太角ゴシック体Ｂ}]{EPSON 丸ゴシック体Ｍ}
+\setmainfont[BoldFont={fonts/epmgobld.ttf}, ItalicFont={fonts/epminbld.ttf}, UprightFont={fonts/epkgobld.ttf}]{epmarugo.ttf}
+
+\usepackage{color}
+\definecolor{fontblack}{RGB}{0, 0, 0}
+\definecolor{fontpurple}{RGB}{186, 91, 121}
+\definecolor{fontwhite}{RGB}{255, 255, 255}
+
+\graphicspath{{images/}}
+
+\usepackage[a4paper, total={210mm, 265mm}]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancypagestyle{plain}{}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\fboxsep}{0.5mm}
+\setlength{\fboxrule}{0.5mm}
+
+\fancyhead[LE,RO]{
+\large \colorbox{fontblack}{\color{fontblack}\textbf{\phantom{\ \ CZ-300C-B \ }}}\\[-2mm]
+\large \colorbox{fontblack}{\color{fontwhite}\textbf{\ \ CZ-300C-B \ }}\\[-2mm]
+\large \colorbox{fontblack}{\color{fontwhite}\textbf{\ \ CZ-310C-B \ }}}
+
+\usepackage[table]{xcolor}
+
+\usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=krom]{hyperref}
+\usepackage{tocloft}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{20mm}{*0}{4mm}
+\titlespacing{\subsection}{20mm}{*0}{*0}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\usepackage[normalem]{ulem}
+\renewcommand{\ULthickness}{0.5mm}
+
+\begin{document}
+
+\begin{table}[h!]
+
+\begin{tabular}{p{195mm}}
+\setlength{\unitlength}{10mm}
+\begin{picture}(0,4)
+\put(2,3){\includegraphics{SharpLogo}}
+\color{fontpurple}
+\put(2,1){\fontsize{51}{0}\selectfont\textbf{Service Manual}}
+\put(1.5,-7){\includegraphics[width=75mm, height=56mm]{X68030}}
+\end{picture}
+\end{tabular}
+
+\arrayrulecolor[RGB]{186, 91, 121}
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\abovetopsep}{0mm}
+\setlength{\belowrulesep}{0mm}
+\setlength{\aboverulesep}{0mm}
+\setlength{\belowbottomsep}{0mm}
+\setlength{\tabcolsep}{6mm}
+\begin{tabular}{p{95mm}|p{95mm}}
+\toprule[3.4mm]
+\\[-4mm]
+& \textbf{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ No.CZ-147}\\
+& \fontsize{18}{0}\selectfont\textbf{X68030}\\
+& \fontsize{18}{0}\selectfont\textbf{Personal Computer}\\
+\\
+& \fontsize{28}{0}\selectfont\textup{CZ-300C-B}\\
+& \fontsize{28}{0}\selectfont\textup{CZ-310C-B}\\[2mm]
+& \textbf{Standard Price:CZ-300C-B 388,000Yen(Ex.Tax)}\\
+& \textbf{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CZ-310C-B 478,000Yen(Ex.Tax)}\\[2mm]
+& \textbf{Distribution:Sharp System Services Co., Ltd.}\\[2mm]
+& \fontsize{14}{0}\selectfont\textbf{Issued In April 1993}\\
+\midrule[0.5mm]
+\end{tabular}
+\\[-0.5mm]
+\setlength{\tabcolsep}{4mm}
+\setlength{\cftbeforetoctitleskip}{0mm}
+\setlength{\cftaftertoctitleskip}{0mm}
+\setlength{\columnsep}{-8mm}
+\begin{tabular}{p{180mm}|p{15mm}}
+\renewcommand\contentsname{\fcolorbox{fontblack}{fontwhite}{\color{fontblack}\large \ Contents }}
+\renewcommand{\cftdot}{\tiny －}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftbeforesecskip}{-0.5mm}
+\renewcommand{\cftbeforesubsecskip}{-0.5mm}
+\renewcommand{\cftdotsep}{0.5}
+\makeatletter
+\renewcommand{\@pnumwidth}{2mm}
+\makeatother
+\parindent 0mm\leftskip 15mm\relax \rightskip -2.5mm \topskip 30mm
+\cftsetindents{section}{15mm}{8mm}
+\cftsetindents{subsection}{15mm}{9mm}
+\footnotesize
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Page
+\begin{multicols}{2}
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+\tableofcontents
+\end{multicols}
+& \\[-135mm] \cline{2-2}
+& \\[1mm] \cline{2-2}
+& \\[1mm] \cline{2-2}
+& \\[112mm]
+& \\ \bottomrule[3.4mm]
+\end{tabular}
+
+\end{table}
+
+\cfoot{\begin{tabular}{p{195mm}}
+\setlength{\unitlength}{10mm}
+\begin{picture}(0,0)
+\color{fontpurple}
+\put(0.8,1){\footnotesize\textbf{●Rapid, Prosperity Of The Shop To Build A Reliable Service}}
+\put(0.8,0.4){\footnotesize\textbf{●Warranty Connecting The Shops \& Customers}}
+\put(2.55,-0.2){\footnotesize\textbf{Is The Bond Of Trust……Let's Always Issue}}
+\put(13.5,0.4){\includegraphics{SharpCorporation}}
+\put(13.5,0.1){\scriptsize\textbf{Electronics Division \& Product Reliability}}
+\end{picture}
+\end{tabular}}
+
+\newpage
+
+\cfoot{\ \\[-15mm]
+- \thepage \ -}
+
+\phantomsection
+\section*{1.Hardware Configuration}
+\addcontentsline{toc}{section}{1. Hardware Configuration}
+
+\phantomsection
+\subsection*{1-1.Special Features}
+\addcontentsline{toc}{subsection}{1-1. Special Features}
+
+\renewcommand{\labelitemi}{・}
+\setlength{\parindent}{20mm}
+\setlength{\parskip}{0mm}
+\small
+\itshape
+1)CPU Peripheral
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+32-bit MPU adopting a MC68EC030 (25MHz).
+\item
+The address space of 16MBytes can be directly addressed.
+\end{itemize}
+
+Note) \ MC68EC030 has an accessible address space of 4GBytes, address bus is 32-bit, but the 
+
+\ \ \ \ \ \ upper 8 bits of the address bus in this unit does not decode. Therefore, you can only
+
+\ \ \ \ \ \ address the first 16MBytes. However, given the future expansion, software manner is
+
+\ \ \ \ \ \ to set an address of the upper 8 bits of a register to "00", please use as "00xxxxxx".
+
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+FPU adopted is MC68882 (25MHz). It is possible to control directly by using the
+
+MC68EC030 MPU built-in interface.
+\item
+Memory-mapped I/O system. (Main memory 4MBytes as standard)
+\item
+DMAC is HD63450(12.5MHz), MFP adopted is MC68901.
+\item
+Uses a large number of custom IC's.
+\end{itemize}
+
+2)Text VRAM, using the bitmap method to display graphics in VRAM.
+
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+Actual screen of 1024×1024 pixels. (Also supports 512×512 pixels for graphic screen)
+\item
+Display screen can be selected from 768×512, 512×512, 256×256.
+\item
+Screen display mode, supports high resolution (31.5kHz), low resolution (15.98kHz).
+\end{itemize}
+
+3)Graphic screen, each pixel can be any color designated from 65536 colors. (512×512 mode)
+
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+In 768×512 graphics mode, any 16 colors can be chosen from 65536 colors for each pixel.
+\end{itemize}
+
+4)There is smooth scrolling in pixel units.
+
+5)Equipped with its own sprite IC.
+
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+16×16 pixels / per sprite, 128 can be defined. (Up to 256)
+\item
+Can display up to 32 simultaneous sprites on one horizontal line.
+\item
+Can display up to 128 simultaneous sprites on a single screen.
+\end{itemize}
+
+6)Features a palette to change colors instantaneously.
+
+7)Text, graphics, features per-sprite priority.
+
+8)Semi-transparent colors can be specified, and special priority is possible.
+
+9)Low resolution over scan superimpose function. (Also pseudo high resolution using the
+
+\ \ \ interlace method supported)
+
+10)CGROM contains the standard implementation of ANK characters, JIS 1st \& 2nd level Kanji.
+
+11)FM sound, voice synthesis is featured.
+
+12)Magneto-optical disks, SCSI interface built-in corresponding to next-gen media such as CDROM,
+
+\ \ \ also equipped with various analog I/F's such as RGB, RS-232C, printer, joystick, \& mouse.
+
+13)Adopts an ergonomic keyboard with an extendable spiral lead.
+
+14)3.5″Floppy Disk Drive (2HD/2DD combined type) to 2 groups. Also comes equipped with a mouse.
+
+15)How to initialize the SRAM
+
+\ \ \ Is equipped with a function to easily initialize the SRAM.. This allows you to initialize
+
+\ \ \ SRAM without starting the OS. For situations such as if a virus program is uploaded to SRAM,
+
+\ \ \ it will be eliminated easily. To initialize, reset while pressing the CLR key, you will see
+
+\ \ \ a message indicating the initialization of the SRAM on the screen, press key Y if you want
+
+\ \ \ to initialize, or key N if you do not want to. The SRAM will return to the initial state.
+
+16)Built-in 2.5″80MByte SCSI hard disk drive (CZ-300C option availability built-in)
+
+\newpage
+
+\normalsize\uline{Main Changes Associated with the 32-bit Architecture}
+
+\renewcommand{\labelitemi}{\scriptsize●}
+\small
+\begin{itemize}[leftmargin=25mm, itemsep=-1mm, topsep=1mm]
+\item
+Changed MPU from the conventional 16-bit MC68HC000 to the 32-bit MC68EC030, at the same
+
+time operating clock frequency was also up from 16MHz to 25MHz. Thus, it has become even
+
+more able to provide a comfortable operating environment at high speed.
+\item
+We have adopted the MC68882 (25MHz) for the FPU. As well as the peripheral I/O devices which
+
+are conventional, interaction with the MPU and the FPU internal registers can be carried
+
+out in software using the program, directly control the FPU using a built-in interface
+
+MC68EC030 MPU on this unit. For this reason, good refresh-speed processing is available.
+\item
+We developed a 2-gate array, extending functionality, replaced with conventional products.
+
+Memory Controller \ \ iX1748CE(ASA)→iX2136CE(YUKI)
+
+System Controller \ \ iX1749CE(DOSA)→iX2137CE(SAKI)
+\item
+We changed the 8-bit 4M mask ROM2 pieces to ROM2 or 16-bit 8M mask.
+
+\ \ \ \ \ \ \ iX1775CE(EVEN) \ \ \ \ \ \ \ \ \ → iX2138CE(EVEN)
+
+\ \ \ \ \ \ \ iX1776CE(ODD) \ \ \ \ \ \ \ \ \ \ → iX2139CE(ODD)
+\end{itemize}
+
+\uline{Other Major Changes (Comparison: CZ-500C)}
+
+\begin{itemize}[leftmargin=25mm, itemsep=-1mm, topsep=1mm]
+\item
+ROM switching IC socket for 2 and TV control connector for 1 was abolished.\\
+\end{itemize}
+
+\ \fcolorbox{fontblack}{fontwhite}{\color{fontblack}Services Corresponding to the Method of the Circuit Board Assembly \ \ \ \ }\\[-3mm]
+
+\scriptsize \ Electronic control circuit, is composed of the following printed circuit board assembly products, please do each repair
+
+ \ by the method in the following table.\\[-2mm]
+
+\small
+
+\setlength{\arrayrulewidth}{0.5mm}
+\arrayrulecolor[RGB]{0,0,0}
+\setlength{\tabcolsep}{2mm}
+\begin{tabular}{|p{55mm}|p{40mm}|p{62mm}|}
+\hline
+& & \\[-2mm]
+\ \ \ \ \ \ \ \ Part Name & \ Distribution Code & \ \ \ \ \ \ \ Service How To Respond\\
+\hline
+& & \\[-4mm]
+Main Board Unit & 007 684 0358 & \ Single item parts repair, exchange correspondence in the base\\
+I/O Board Unit & 007 684 0361 & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+Rear Board Unit & 007 684 0360 & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+Front Board Unit & 007 684 0359 & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\[4mm]
+\hline
+\end{tabular}
+
+\newpage
+
+\phantomsection
+\subsection*{1-2.Specifications}
+\addcontentsline{toc}{subsection}{1-2. Specifications}
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{13mm}|p{25mm}|p{22mm}|p{73mm}|p{30mm}|}
+\hline
+& & & &\\[-2mm]
+Item & \ \ \ \ Class & \ Name・Type & \ \ \ \ \ \ \ \ \ Details & \ \ \ \ Notes\\
+\hline
+& & & &\\[-3mm]
+\ CPU & MPU & \ MC68EC030 & 32-bit MPU (25MHz) &\\
+& Sub CPU & \ MSM80C51 & Keyboard Scan &\\
+& (Keyboard) & & &\\
+\hline
+\multicolumn{2}{|l|}{} & & &\\[-4mm]
+\multicolumn{2}{|l|}{FPU} & \ MC68882 & Floating-Point Coprocessor (25MHz) & Optional\\
+\hline
+\multirow{17}{13mm}{Periph. LSI} & & & &\\[-3mm]
+& DMAC & \ HD63450 & 4-Channel DMAC (12.5MHz) &\\
+\cline{2-5}
+& & & &\\[-3mm]
+& MFP & \ MC68901 & Multi-Function Peripheral &\\
+& & & Receives KEY Data, Various Interrupts &\\
+\cline{2-5}
+& & & &\\[-3mm]
+& CRTC & \ IX1093CEZZ & Text, Graphics, Control for the CRTC &\\
+& & \ (VICON) & Dual-Port DRAM Control &\\
+& & & Scrolling Feature &\\[3mm]
+\cline{2-5}
+& & & &\\[-1mm]
+& Sprite & \ iX0906CEZZ & Sprite Function &\\
+& Controller & \ (CYNTHIA) & &\\
+& FDC & \ μPD72065B & Built-In 3.5″2HD/2DD FDD \& Expansion &\\
+& & & Controls the FDD &\\
+& Video & \ iX1095CEZZ & Palette Priority Function &\\
+& Controller & \ (VIPS) & Special Mode Function &\\
+& SCSI & & &\\
+& Controller & \ MB89352 & SCSI Control &\\
+& SCC & \ Z8530 & Serial Communication Controller &\\
+& & & Serial 2-Channel (RS-232C, Mouse) &\\
+& & & &\\
+& RTC & \ RF5C15 & Real-Time Clock &\\
+& FM Sound & \ YM2151 & 8 Possible Channels of FM Sound &\\
+& Voice Synth & \ MSM6258 & Adaptive Differential PCM &\\
+& PPI & \ MSM82C55 & Joystick 2 Ports, &\\
+& & & Voice Synthesis Switching Control &\\
+& I/O & \ iX1804CEZZ & Floppy Disk, Peripheral IC Decoder &\\
+& & & (PEDEC) &\\
+& Other & \ iX2136CEZZ & Memory Controller (YUKI) &\\
+& & \ iX2137CEZZ & System Controller (SAKI) &\\
+& & \ iX1094CEZZ & Video Data Selector (CATHY) &\\
+& & \ iX1856CEZZ & Video Clock Controller (OSCIANII) &\\
+& & & &\\
+& & & &\\
+\hline
+\end{tabular}\\
+
+※Please note parts of the specification \& appearance are subject to change without prior notice.
+
+\newpage
+
+<Hardware>
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{17mm}|p{13mm}|p{23mm}|p{80mm}|p{30mm}|}
+\hline
+& & & &\\[-2mm]
+Item & Class & Name・Type & Details & \ \ \ Notes\\[1mm]
+\hline
+& & & \multicolumn{2}{l|}{}\\[-3mm]
+& ROM & CG ROM & \multicolumn{2}{l|}{1MByte (JIS 1st Level, 2nd Level Kanji)}\\
+& & (IPL ROM & \multicolumn{2}{l|}{\ Half-Width:8×16,12×24 Pixel, 1/4 Square:8×8,12×12}\\
+& & Integrated) & \multicolumn{2}{l|}{\ Full-Width:16×16 Pixel,24×24 Pixel}\\
+& & & \multicolumn{2}{l|}{(IPL,BIOS)}\\
+\cline{2-5}
+& & & &\\[-3mm]
+& RAM & Main Memory & 4MBytes (Standard) & 12MBytes Max\\
+& & & 4MBytes (Can be Added to Integrated Slots) & Expandable\\
+\cline{3-5}
+& & & &\\[-3mm]
+& & Text & Bitmap System & Dual Port\\
+Memory & & VRAM & 512KBytes & DRAM Adopted\\
+& & & 1024×1024 Pixels 4 Planes &\\
+& & & &\\
+& & & &\\
+\cline{3-5}
+& & & &\\[-3mm]
+& & Graphics & Bitmap System & Dual Port\\
+& & VRAM & 512KBytes 1024×1024 Pixels 4 Planes & DRAM Adopted\\
+& & & (512×512 Pixels 16 Planes) &\\
+\cline{3-5}
+& & & \multicolumn{2}{l|}{}\\[-3mm]
+& & Sprite & \multicolumn{2}{l|}{32KBytes}\\
+& & VRAM & \multicolumn{2}{l|}{}\\
+\cline{3-5}
+& & & \multicolumn{2}{l|}{}\\[-3mm]
+& & SRAM & \multicolumn{2}{l|}{16KBytes}\\
+\hline
+& \multicolumn{4}{l|}{}\\[-3mm]
+& \multicolumn{2}{l}{Disk} & \multicolumn{2}{l|}{3.5″Size Floppy Disk 2HD Type \& 2DD Type Combined}\\
+& \multicolumn{2}{l}{} & \multicolumn{2}{l|}{Drive 2 Groups Built-In}\\
+& \multicolumn{4}{l|}{}\\
+& \multicolumn{4}{l|}{}\\
+\cline{2-5}
+& \multicolumn{4}{l|}{}\\[-3mm]
+& \multicolumn{4}{l|}{Floppy Disk Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ For Floppy Disk Drive Expansion}\\[2mm]
+& \multicolumn{4}{l|}{SCSI Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ For SCSI Specification Equipment Expansion}\\[2mm]
+& \multicolumn{4}{l|}{Keyboard Connector \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Dedicated Keyboard}\\
+Built-In & \multicolumn{4}{l|}{CRT Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Analog RGB Output}\\
+I/F・ & \multicolumn{4}{l|}{RS-232C Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 Channel RS-232C}\\
+Connector & \multicolumn{4}{l|}{Mouse Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attaches the Mouse}\\
+& \multicolumn{4}{l|}{Printer Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Centronics Standard Compliant}\\
+& \multicolumn{4}{l|}{Joystick Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Atari, Inc. Compliant (2 Ports)}\\
+& \multicolumn{4}{l|}{Audio Input \& Output Connectors \ \ \ \ Line Input \& Output, Headphone Output}\\
+& \multicolumn{4}{l|}{Image Input Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ Option for Color Image Unit (Planned)}\\
+& \multicolumn{4}{l|}{}\\
+& \multicolumn{4}{l|}{}\\
+\hline
+\multicolumn{3}{|l|}{} & \multicolumn{2}{l|}{}\\[-3mm]
+\multicolumn{3}{|l|}{Expansion I/O Slot} & \multicolumn{2}{l|}{2 Slots}\\
+\hline
+& \multicolumn{4}{l|}{}\\[-3mm]
+Rating & \multicolumn{4}{l|}{}\\
+Voltage & \multicolumn{4}{l|}{AC100V}\\
+Frequency & \multicolumn{4}{l|}{50/60Hz}\\
+Power Use & \multicolumn{4}{l|}{CZ-300C-B…28W/CZ-310C-B…30W}\\
+& \multicolumn{4}{l|}{}\\
+& \multicolumn{4}{l|}{}\\
+\hline
+\end{tabular}
+
+\newpage
+
+<Features>
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{13mm}|p{23mm}|p{4mm}|p{20mm}|p{65mm}|p{36mm}|}
+\hline
+& & \multicolumn{2}{l|}{} & &\\[-2mm]
+Item & \ Class & \multicolumn{2}{l|}{Name・Type} & \ Details & \ Notes\\[1mm]
+\hline
+& & \multicolumn{2}{l|}{} & &\\[-1mm]
+\ \ D & \ Real Screen & \multicolumn{2}{l|}{Text Screen} & 1024×1024 Pixels 4 Planes & Bitmap System\\
+\cline{3-6}
+& & \multicolumn{2}{l|}{} & &\\[-4mm]
+\ \ i & \ Size & \multicolumn{2}{l|}{Graphics} & 1024×1024 Pixels 4 Planes & Bitmap System\\
+\ \ s & & \multicolumn{2}{l|}{Screen} & (512×512 Pixels 16 Planes) &\\
+\cline{2-6}
+& & \multicolumn{2}{l|}{} & &\\[-4mm]
+\ \ p & & \multicolumn{2}{l|}{} & High-Res Mode 768×512 Pixels &\\
+\ \ l & & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×512 &\\
+\ \ a & & \multicolumn{2}{l|}{} & &\\
+\ \ y & Text Screen & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256×256 (2 Read) &\\
+& & \multicolumn{2}{l|}{} & Low-Res Mode & Real Display Screen\\
+\ \ C & & \multicolumn{2}{l|}{} & (Overscan) 256×240 & \ Area is Cropped to\\
+\ \ a & & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×480 & a Smaller Size\\
+\ \ p & & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Interlaced) &\\
+\ \ a & & \multicolumn{2}{l|}{} & &\\
+\ \ b & & \multicolumn{2}{l|}{} & &\\
+\cline{2-6}
+& & & & &\\[-4mm]
+\ \ i & & & & High-Res Mode 768×512 Pixels & For Each Pixel Any\\
+\ \ l & & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×512 & \ 16 Colors Chosen\\
+\ \ i & & & 1024×1024 & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×256 (2 Read) & from 65536 Colors\\
+\ \ t & & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256×256 (2 Read) &\\
+\ \ y & Image Screen & G & & &\\[2mm]
+& \ Mode & r & & Low-Res Mode 512×240・ &\\[2mm]
+& \ High-Res & a & & (Overscan) 256×240 &\\[2mm]
+& \ 31.5kHz & p & & & \ 512×512\\[2mm]
+& \ Low-Res & h & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Interlaced) &\\
+\cline{5-6}
+& & & & &\\[-4mm]
+& \ 15.98kHz & i & & High-Res Mode 512×512 Pixels & \ For Each Pixel Any\\
+& & c & & & \ 16 Colors Chosen\\
+& & s & & & \ from 65536 Colors\\
+& & & & & \ (256 Colors can be\\
+& & S & & & \ Chosen from 65536\\
+& & c & & & \ Using Both Planes\\
+& & r & & & \ Per Pixel(2-Plane)\\
+& & e & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256×256 (2 Read) &\\
+& & e & & &\\
+& & n & \ \ 512×512 & &\\
+& & & & & \ For Each Pixel Any\\
+& & & & & \ 16 Colors Chosen\\
+& & & & & \ from 65536 Colors\\
+& & & & & \ Possible (4-Plane)\\
+& & & & Low-Res Mode 512×240	& Real Display Screen\\
+& & & & (Overscan) 256×240 & \ Area is Cropped to\\
+& & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×480 & \ a Smaller Size\\
+& & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Interlaced) &\\
+& & & & &\\
+& & & & &\\
+& & & & &\\
+& & & & &\\
+\hline
+\end{tabular}
+
+\newpage
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{44mm}|p{123mm}|}
+\hline
+&\\[-2mm]
+\ \ \ \ \ \ Item & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Details\\[4mm]
+\hline
+&\\[-3mm]
+Smooth Scroll Functions & Text screen can cylindrical scroll in pixel units, graphic screen\\
+& can spherical scroll in pixel units.\\
+\hline
+&\\[-3mm]
+Special Screen Control & Image input function to graphics VRAM, text raster copy function,\\
+& graphics fast clear, text bit mask function\\
+\hline
+&\\[-3mm]
+Priority Functions & ・Text, graphics, can have specific priorities between sprites.\\
+& ・2-planes graphics screen 512×512 pixel mode, or the priority\\
+& between each graphics screen using 4-planes can be specified.\\
+&\\
+&\\
+&\\
+\hline
+&\\[-3mm]
+Palette Function & Is instantly switchable to any color.\\
+&\\
+\hline
+&\\[-3mm]
+Semi-Transparency & Semi-Transparent color table possible.\\
+&\\
+\hline
+&\\[-3mm]
+Special Priority & ・Can function the priority of any part of the graphics screen\\
+& in the display screen area.\\
+\hline
+&\\[-3mm]
+Superimpose Function & ・Low resolution overscan which can be superimposed. (Also\\
+& supports pseudo high resolution using the interlace method)\\
+\hline
+\end{tabular}\\[1mm]
+
+\begin{tabular}{|p{17mm}|p{20mm}|p{27mm}|p{100mm}|}
+\hline
+& & &\\
+\ \ \ Item & \ Class & \ Name・Type & \ \ \ \ \ \ \ \ \ \ \ \ Details\\[1mm]
+\hline
+& & &\\[-3mm]
+\ \ \ \ S & & &\\[3mm]
+\ \ \ \ p & \ Sprite & \ Pattern Table & \ Size \ \ \ \ \ \ \ \ \ \ \ \ 16×16 Pixels/Pattern\\[3mm]
+\ \ \ \ r & & & \ Number \ \ \ \ \ \ \ \ \ \ 128 Patterns (BG0,1 Not Used\\[3mm]
+\ \ \ \ i & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Maximum of 256 Patterns)\\[3mm]
+\ \ \ \ t & & & \ Color \ \ \ \ \ \ \ \ \ \ \ Per Pattern 16 Colors/65536 Colors\\[3mm]
+\ \ \ \ e & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Pixel Units)\\[3mm]
+\ \ \ \ s & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The Entire Screen 256/65536 Colors\\
+& & &\\
+& & &\\
+\cline{3-4}
+& & &\\[-2mm]
+& & \ Display & Coordinate System 1024×1024 Pixels\\[3mm]
+& & & \ Screen Image \ \ \ \ \ Horizontal 512 Pixels or 256 Pixels\\[3mm]
+& & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vertical 512 Lines or 256 Lines\\[3mm]
+& & & \ Display Limit \ \ \ 128 Sprites/Screen\\[3mm]
+& & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 32 Sprites/Line\\
+\hline
+\end{tabular}
+
+\newpage
+
+\phantomsection
+\subsection*{1-3.Block Diagram}
+\addcontentsline{toc}{subsection}{1-3. Block Diagram}
+
+\newpage
+
+\phantomsection
+\subsection*{1-4.System Configuration}
+\addcontentsline{toc}{subsection}{1-4. System Configuration}
+
+\newpage
+
+\phantomsection
+\section*{2.Part Names}
+\addcontentsline{toc}{section}{2. Part Names}
+
+\phantomsection
+\subsection*{2-1.Computer Body Front}
+\addcontentsline{toc}{subsection}{2-1. Computer Body Front}
+
+\newpage
+
+\phantomsection
+\subsection*{2-2.Computer Body Rear}
+\addcontentsline{toc}{subsection}{2-2. Computer Body Rear}
+
+\newpage
+
+\phantomsection
+\section*{3.Computer Hardware}
+\addcontentsline{toc}{section}{3. Computer Hardware}
+
+\phantomsection
+\subsection*{3-1.Memory Map}
+\addcontentsline{toc}{subsection}{3-1. Memory Map}
+
+\newpage
+
+\phantomsection
+\subsection*{3-2.I/O Port Address List}
+\addcontentsline{toc}{subsection}{3-2. I/O Port Address List}
+
+\newpage
+
+\phantomsection
+\subsection*{3-3.Engineering Rear Set}
+\addcontentsline{toc}{subsection}{3-3. Engineering Rear Set}
+
+\newpage
+
+\phantomsection
+\subsection*{3-4.System Port}
+\addcontentsline{toc}{subsection}{3-4. System Port}
+
+\newpage
+
+\phantomsection
+\subsection*{3-5.Interrupts}
+\addcontentsline{toc}{subsection}{3-5. Interrupts}
+
+\newpage
+
+\phantomsection
+\subsection*{3-6.IPL}
+\addcontentsline{toc}{subsection}{3-6. IPL}
+
+\newpage
+
+\phantomsection
+\section*{4.Screen Configuration \& Control}
+\addcontentsline{toc}{section}{4. Screen Configuration \& Control}
+
+\phantomsection
+\subsection*{4-1.Screen Configuration}
+\addcontentsline{toc}{subsection}{4-1. Screen Configuration}
+
+\newpage
+
+\phantomsection
+\subsection*{4-2.Control of Text \& Graphics Display (CRTC)}
+\addcontentsline{toc}{subsection}{4-2. Control of Text \& Graphics Display (CRTC)}
+
+\newpage
+
+\phantomsection
+\subsection*{4-3.Sprites}
+\addcontentsline{toc}{subsection}{4-3. Sprites}
+
+\newpage
+
+\phantomsection
+\subsection*{4-4.Video Controller}
+\addcontentsline{toc}{subsection}{4-4. Video Controller}
+
+\newpage
+
+\phantomsection
+\subsection*{4-5.Superimpose \& Overscan}
+\addcontentsline{toc}{subsection}{4-5. Superimpose \& Overscan}
+
+\newpage
+
+\phantomsection
+\section*{5.Additional Switches}
+\addcontentsline{toc}{section}{5. Additional Switches}
+
+\newpage
+
+\phantomsection
+\section*{6.Keyboard \& Mouse}
+\addcontentsline{toc}{section}{6. Keyboard \& Mouse}
+
+\newpage
+
+\phantomsection
+\section*{7.Sound Functions}
+\addcontentsline{toc}{section}{7. Sound Functions}
+
+\newpage
+
+\phantomsection
+\subsection*{7-1.FM Tone Generator}
+\addcontentsline{toc}{subsection}{7-1. FM Tone Generator}
+
+\newpage
+
+\phantomsection
+\subsection*{7-2.Voice Synthesis}
+\addcontentsline{toc}{subsection}{7-2. Voice Synthesis}
+
+\newpage
+
+\phantomsection
+\section*{8.Peripheral LSI}
+\addcontentsline{toc}{section}{8. Peripheral LSI}
+
+\newpage
+
+\phantomsection
+\subsection*{8-1.DMAC}
+\addcontentsline{toc}{subsection}{8-1. DMAC}
+
+\newpage
+
+\phantomsection
+\subsection*{8-2.Floating-point Arithmetic Coprocessor}
+\addcontentsline{toc}{subsection}{8-2. Floating-point Arithmetic Coprocessor}
+
+\newpage
+
+\phantomsection
+\subsection*{8-3.Additional Main Memory}
+\addcontentsline{toc}{subsection}{8-3. Additional Main Memory}
+
+\newpage
+
+\phantomsection
+\subsection*{8-4.MFP}
+\addcontentsline{toc}{subsection}{8-4. MFP}
+
+\newpage
+
+\phantomsection
+\subsection*{8-5.SCC}
+\addcontentsline{toc}{subsection}{8-5. SCC}
+
+\newpage
+
+\phantomsection
+\subsection*{8-6.RTC}
+\addcontentsline{toc}{subsection}{8-6. RTC}
+
+\newpage
+
+\phantomsection
+\section*{9.Peripheral I/O}
+\addcontentsline{toc}{section}{9. Peripheral I/O}
+
+\newpage
+
+\phantomsection
+\subsection*{9-1.Disk}
+\addcontentsline{toc}{subsection}{9-1. Disk}
+
+\newpage
+
+\phantomsection
+\subsection*{9-2.Printer}
+\addcontentsline{toc}{subsection}{9-2. Printer}
+
+\newpage
+
+\phantomsection
+\subsection*{9-3.Joystick}
+\addcontentsline{toc}{subsection}{9-3. Joystick}
+
+\newpage
+
+\phantomsection
+\subsection*{9-4.Expansion I/O Slot}
+\addcontentsline{toc}{subsection}{9-4. Expansion I/O Slot}
+
+\newpage
+
+\phantomsection
+\subsection*{9-5.Various Connectors}
+\addcontentsline{toc}{subsection}{9-5. Various Connectors}
+
+\newpage
+
+\phantomsection
+\section*{10.Main Circuit Board}
+\addcontentsline{toc}{section}{10. Main Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{11.Main Basic Wiring Diagram (1)}
+\addcontentsline{toc}{section}{11. Main Basic Wiring Diagram (1)}
+
+\newpage
+
+\phantomsection
+\section*{12.Main Basic Wiring Diagram (2)}
+\addcontentsline{toc}{section}{12. Main Basic Wiring Diagram (2)}
+
+\newpage
+
+\phantomsection
+\section*{13.Main Basic Wiring Diagram (3)}
+\addcontentsline{toc}{section}{13. Main Basic Wiring Diagram (3)}
+
+\newpage
+
+\phantomsection
+\section*{14.Main Basic Wiring Diagram (4)}
+\addcontentsline{toc}{section}{14. Main Basic Wiring Diagram (4)}
+
+\newpage
+
+\phantomsection
+\section*{15.Main Basic Wiring Diagram (5)}
+\addcontentsline{toc}{section}{15. Main Basic Wiring Diagram (5)}
+
+\newpage
+
+\phantomsection
+\section*{16.Main Basic Wiring Diagram (6)}
+\addcontentsline{toc}{section}{16. Main Basic Wiring Diagram (6)}
+
+\newpage
+
+\phantomsection
+\section*{17.Main Basic Wiring Diagram (7)}
+\addcontentsline{toc}{section}{17. Main Basic Wiring Diagram (7)}
+
+\newpage
+
+\phantomsection
+\section*{18.Main Basic Wiring Diagram (8)}
+\addcontentsline{toc}{section}{18. Main Basic Wiring Diagram (8)}
+
+\newpage
+
+\phantomsection
+\section*{19.I/O, FD Connector, SCSI Connector, LED Basic Wiring Diagram}
+\addcontentsline{toc}{section}{19. I/O, FD Connector, SCSI Connector, LED Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{20.I/O, FD Connector, Front Circuit Board}
+\addcontentsline{toc}{section}{20. I/O, FD Connector, Front Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{21.Power Supply Unit Basic Wiring Diagram}
+\addcontentsline{toc}{section}{21. Power Supply Unit Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{22.Power Supply Circuit Board}
+\addcontentsline{toc}{section}{22. Power Supply Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{23.Keyboard Section Basic Wiring Diagram}
+\addcontentsline{toc}{section}{23. Keyboard Section Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{24.Keyboard Circuit Board}
+\addcontentsline{toc}{section}{24. Keyboard Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{25.IC Terminal Signal (1)}
+\addcontentsline{toc}{section}{25. IC Terminal Signal (1)}
+
+\newpage
+
+\phantomsection
+\subsection*{IC Terminal Signal (2)}
+\addcontentsline{toc}{subsection}{ \ \ \ \ IC Terminal Signal (2)}
+
+\newpage
+
+\phantomsection
+\subsection*{IC Terminal Signal (3)}
+\addcontentsline{toc}{subsection}{ \ \ \ \ IC Terminal Signal (3)}
+
+\newpage
+
+\phantomsection
+\subsection*{IC Terminal Signal (4)}
+\addcontentsline{toc}{subsection}{ \ \ \ \ IC Terminal Signal (4)}
+
+\newpage
+
+\phantomsection
+\section*{26.Set Way of Packing}
+\addcontentsline{toc}{section}{26. Set Way of Packing}
+
+\newpage
+
+\phantomsection
+\section*{27.Removing The Main Parts (Disassembly)}
+\addcontentsline{toc}{section}{27. Removing The Main Parts (Disassembly)}
+
+\end{document}

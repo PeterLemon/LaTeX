@@ -1,0 +1,1506 @@
+﻿\documentclass[twoside,a4paper,12pt]{article}
+
+\usepackage{fontspec}
+\setmainfont[BoldFont={fonts/epmgobld.ttf}, ItalicFont={fonts/epminbld.ttf}, UprightFont={fonts/epkgobld.ttf}]{epmarugo.ttf}
+
+\usepackage{color}
+\definecolor{fontblack}{RGB}{0, 0, 0}
+\definecolor{fontpurple}{RGB}{186, 91, 121}
+\definecolor{fontwhite}{RGB}{255, 255, 255}
+
+\graphicspath{{images/}}
+
+\usepackage[a4paper, total={210mm, 265mm}]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancypagestyle{plain}{}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\fboxsep}{0.5mm}
+\setlength{\fboxrule}{0.5mm}
+
+\fancyhead[LE,RO]{
+\large \colorbox{fontblack}{\color{fontblack}\textbf{\phantom{\ \ CZ-634C-TN \ }}}\\[-2mm]
+\large \colorbox{fontblack}{\color{fontwhite}\textbf{\ \ CZ-634C-TN \ }}\\[-2mm]
+\large \colorbox{fontblack}{\color{fontwhite}\textbf{\ \ CZ-644C-TN \ }}}
+
+\usepackage[table]{xcolor}
+
+\usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=krom]{hyperref}
+\usepackage{tocloft}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{20mm}{*0}{4mm}
+\titlespacing{\subsection}{20mm}{*0}{*0}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\usepackage[normalem]{ulem}
+\renewcommand{\ULthickness}{0.5mm}
+
+\usepackage{rotating}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.markings,positioning,calc}
+
+\tikzstyle{vecArrow} = [thick, decoration={markings,mark=at position 1 with {\arrow[thin]{open triangle 90}}},
+   double distance=1.4pt, shorten >= 4pt,
+   preaction = {decorate},
+   postaction = {draw,line width=1.4pt, white,shorten >= 3pt}]
+\tikzstyle{vecLine} = [thick,double distance=1.4pt,shorten >= 0.5pt]
+\tikzstyle{innerWhite} = [semithick, white,line width=1.7pt, shorten >= 3pt]
+
+\begin{document}
+
+\begin{table}[h!]
+
+\begin{tabular}{p{195mm}}
+\setlength{\unitlength}{10mm}
+\begin{picture}(0,4)
+\put(2,3){\includegraphics{SharpLogo}}
+\color{fontpurple}
+\put(2,1){\fontsize{51}{0}\selectfont\textbf{Service Manual}}
+\put(1.5,-6.2){\includegraphics[width=75mm, height=44mm]{X68000}}
+\end{picture}
+\end{tabular}
+
+\arrayrulecolor[RGB]{186, 91, 121}
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\abovetopsep}{0mm}
+\setlength{\belowrulesep}{0mm}
+\setlength{\aboverulesep}{0mm}
+\setlength{\belowbottomsep}{0mm}
+\setlength{\tabcolsep}{6mm}
+\begin{tabular}{p{95mm}|p{95mm}}
+\toprule[3.4mm]
+\\[-4mm]
+& \textbf{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ No.CZ-134 \ ★}\\
+& \fontsize{18}{0}\selectfont\textbf{X68000}\\
+& \fontsize{18}{0}\selectfont\textbf{Personal Computer}\\
+\\
+& \fontsize{28}{0}\selectfont\textup{CZ-634C-TN}\\
+& \fontsize{28}{0}\selectfont\textup{CZ-644C-TN}\\[5mm]
+& \fontsize{11}{0}\selectfont\textbf{Distribution:SHARP Engineering Co., Ltd. SS,SB.}\\[11mm]
+& \fontsize{14}{0}\selectfont\textbf{Issued In April 1991}\\
+\midrule[0.5mm]
+\end{tabular}
+\\[-0.5mm]
+\setlength{\tabcolsep}{4mm}
+\setlength{\cftbeforetoctitleskip}{0mm}
+\setlength{\cftaftertoctitleskip}{0mm}
+\setlength{\columnsep}{-8mm}
+\begin{tabular}{p{180mm}|p{15mm}}
+\renewcommand\contentsname{\fcolorbox{fontblack}{fontwhite}{\color{fontblack}\large  \ Contents }}
+\renewcommand{\cftdot}{\tiny －}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftbeforesecskip}{-0.5mm}
+\renewcommand{\cftbeforesubsecskip}{-0.5mm}
+\renewcommand{\cftdotsep}{0.5}
+\makeatletter
+\renewcommand{\@pnumwidth}{2mm}
+\makeatother
+\parindent 0mm\leftskip 15mm\relax \rightskip -2.5mm \topskip 25mm
+\cftsetindents{section}{15mm}{8mm}
+\cftsetindents{subsection}{15mm}{9mm}
+\footnotesize
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Page
+\begin{multicols}{2}
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
+\tableofcontents
+\end{multicols}
+& \\[-135mm] \cline{2-2}
+& \\[1mm] \cline{2-2}
+& \\[1mm] \cline{2-2}
+& \\[112mm]
+& \\ \bottomrule[3.4mm]
+\end{tabular}
+
+\end{table}
+
+\cfoot{\begin{tabular}{p{195mm}}
+\setlength{\unitlength}{10mm}
+\begin{picture}(0,0)
+\color{fontpurple}
+\put(0.8,1){\footnotesize\textbf{●Rapid, Prosperity Of The Shop To Build A Reliable Service}}
+\put(0.8,0.4){\footnotesize\textbf{●Warranty Connecting The Shops \& Customers}}
+\put(2.55,-0.2){\footnotesize\textbf{Is The Bond Of Trust……Let's Always Issue.}}
+\put(13.5,0.4){\includegraphics{SharpCorporation}}
+\put(13.5,0.1){\scriptsize\textbf{Electronics Division \& Product Reliability}}
+\end{picture}
+\end{tabular}}
+
+\newpage
+
+\cfoot{\ \\[-15mm]
+- \thepage \ -}
+
+\phantomsection
+\section*{1.Hardware Configuration}
+\addcontentsline{toc}{section}{1. Hardware Configuration}
+
+\phantomsection
+\subsection*{1-1.Special Features}
+\addcontentsline{toc}{subsection}{1-1. Special Features}
+
+\renewcommand{\labelitemi}{・}
+\setlength{\parindent}{20mm}
+\setlength{\parskip}{0mm}
+\small
+\itshape
+1)CPU Peripheral
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+16-bit MPU adopting a 68000 (16.67MHz).
+\item
+The address space of 16MBytes (8MWord) can be directly addressed.
+\item
+Memory-mapped I/O system. (Main memory 2MBytes as standard)
+\item
+DMAC is 63450, MFP adopted is 68901.
+\item
+Uses a large number of custom IC's.
+\end{itemize}
+
+2)Text VRAM, using the bitmap method to display graphics in VRAM.
+
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+Actual screen of 1024×1024 pixels. (Also supports 512×512 pixels for graphic screen)
+\item
+Display screen can be selected from 768×512, 512×512, 256×256.
+\item
+Screen display mode, supports high resolution (31.5kHz), low resolution (15.98kHz).
+\end{itemize}
+
+3)Graphic screen, each pixel can be any color designated from 65536 colors. (512×512 mode)
+
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+In 768×512 graphics mode, any 16 colors can be chosen from 65536 colors for each pixel.
+\end{itemize}
+
+4)There is smooth scrolling in pixel units.
+
+5)Equipped with its own sprite IC.
+
+\begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
+\item
+16×16 pixels / per sprite, 128 can be defined. (Up to 256)
+\item
+Can display up to 32 simultaneous sprites on one horizontal line.
+\item
+Can display up to 128 simultaneous sprites on a single screen.
+\end{itemize}
+
+6)Features a palette to change colors instantaneously.
+
+7)Text, graphics, features per-sprite priority.
+
+8)Semi-transparent colors can be specified, and special priority is possible.
+
+9)Low resolution over scan superimpose function. (Also pseudo high resolution using the
+
+\ \ \ interlace method supported)
+
+10)CGROM contains the standard implementation of ANK characters, JIS 1st \& 2nd level Kanji.
+
+11)FM sound, voice synthesis is featured.
+
+12)Magneto-optical disks, SCSI interface built-in corresponding to next-gen media such as CDROM,
+
+\ \ \ also equipped with various analog I/F's such as RGB, RS-232C, printer, joystick, \& mouse.
+
+13)Adopts an ergonomic keyboard with an extendable spiral lead.
+
+14)Equipped with a 5″floppy disk drive (2HD) to 2 groups. Draggable mouse is included.
+
+15)3.5″・80MByte hard disk (CZ-634C option availability built-in.)
+
+16)How to initialize the SRAM
+
+\ \ \ For safety we added a function to easily initialize the SRAM. This allows you to initialize
+
+\ \ \ SRAM without starting the OS. For situations such as if a virus program is uploaded to SRAM,
+
+\ \ \ it will be eliminated easily. To initialize, reset while pressing the CLR key, you will see
+
+\ \ \ a message indicating the initialization of the SRAM on the screen, press key Y if you want
+
+\ \ \ to initialize, or key N if you do not want to. The SRAM will return to the initial state.
+
+※Please note parts of the specification \& appearance are subject to change without prior notice.
+
+\newpage
+
+\normalsize\uline{Main Changes from the CZ-623C}
+
+\renewcommand{\labelitemi}{\scriptsize●}
+\small
+\begin{itemize}[leftmargin=25mm, itemsep=-1mm, topsep=1mm]
+\item
+Gate Array \ iX1197CE(OHM-2) .... \ Changed to iX1748CE(ASA)
+
+\ \ \ \ \ \ \ \ \ \ \ \ iX1099CE(MESSIAH) .. \ Changed to iX1749CE(DOSA)
+\item
+Main Memory Expansion Connector added
+\item
+MPU \ HD68HC000PS10 \ ............ \ Changed to MC68HC000B16
+\item
+FPU \ IC Socket added
+\item
+MPU \ Clock has 2 Modes which can be set from 10MHz 16.67MHz/10MHz.
+\item
+4M Mask ROM iX1614CE(EVEN) \ .... \ Changed to iX1775CEに
+
+\ \ \ \ \ \ \ \ \ \ \ \ iX1615CE(ODD) ...... \ Changed to iX1776CEに
+\item
+BIOS ROM Switching IC Socket can be collected on attached 2MB RAM Expansion Board (CZ-6BE2A).
+\item
+SCSI can not be connected to other SCSI specification equipment. (CZ620H etc. No connection)
+\item
+For overcurrent protection, power supply terminal of SCSI connectors contains a 1A fuse.
+\end{itemize}
+
+Please do not use any fuse other than those specified.\\\\
+
+\ \fcolorbox{fontblack}{fontwhite}{\color{fontblack}Services Corresponding to the Method of the Circuit Board Assembly \ \ \ \ }\\[-3mm]
+
+\scriptsize \ Electronic control circuit, is composed of the following printed circuit board assembly products, please do each repair
+
+ \ by the method in the following table.\\[-2mm]
+
+\small
+
+\setlength{\arrayrulewidth}{0.5mm}
+\arrayrulecolor[RGB]{0,0,0}
+\setlength{\tabcolsep}{2mm}
+\begin{tabular}{|p{55mm}|p{40mm}|p{62mm}|}
+\hline
+& & \\[-2mm]
+\ \ \ \ \ \ \ \ Part Name & \ Distribution Code & \ \ \ \ \ \ \ Service How To Respond\\
+\hline
+& & \\[-4mm]
+Main Board Unit & & \ Single item parts repair, exchange correspondence about the board\\
+FD Connector Board Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+Control Board Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+I/O Board Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+Power・LED Board Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+FD・LED Board Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+Eject Board Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+Analog Board Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+Keyboard Unit & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 〃\\
+SCSI Control Board Unit & & \ (CZ-644C) \ \ \ \ \ 〃\\
+SCSI Control Board Unit & & \ (CZ-634C) \ \ \ \ \ 〃\\[4mm]
+\hline
+\end{tabular}
+
+\newpage
+
+\phantomsection
+\subsection*{1-2.Specifications}
+\addcontentsline{toc}{subsection}{1-2. Specifications}
+
+<Hardware>
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{13mm}|p{25mm}|p{22mm}|p{73mm}|p{30mm}|}
+\hline
+& & & &\\[-2mm]
+Item & \ \ \ \ Class & \ Name・Type & \ \ \ \ \ \ \ \ \ Details & \ \ \ \ Notes\\
+\hline
+& & & &\\[-3mm]
+\ CPU & MPU & \ MC68HC000 & 16-bit MPU (16.67MHz) &\\
+& Sub CPU & \ MSM80C51 & Keyboard Scan &\\
+& (Keyboard) & & &\\
+\hline
+\multirow{19}{13mm}{Periph. LSI} & & & &\\[-3mm]
+& DMAC & \ HD63450 & 4-Channel DMAC &\\
+\cline{2-5}
+& & & &\\[-3mm]
+& FPU & \ MC68881 & Floating-Point Coprocessor (16.67MHz) & Optional\\
+\cline{2-5}
+& & & &\\[-3mm]
+& MFP & \ MC68901 & Multi-Function Peripheral &\\
+& & & Receives KEY Data, Various Interrupts &\\
+\cline{2-5}
+& & & &\\[-3mm]
+& CRTC & \ IX1093CEZZ & Text, Graphics, Control for the CRTC &\\
+& & \ (VICON) & Dual-Port DRAM Control &\\
+& & & Scrolling Feature &\\[3mm]
+\cline{2-5}
+& & & &\\[-1mm]
+& Sprite & \ iX0906CEZZ & Sprite Function &\\
+& Controller & \ (CYNTHIA) & &\\
+& FDC & \ μPD72065 & Built-In 5″2HD/2DD Controls the FDD &\\
+& Video & \ iX1095CEZZ & Palette Priority Function &\\
+& Controller & \ (VIPS) & Special Mode Function &\\
+& SCSI & & &\\
+& Controller & \ MB89352 & SCSI Control &\\
+& SCC & \ Z8530 & Serial Communication Controller &\\
+& & & Serial 2-Channel (RS-232C, Mouse) &\\
+& & & &\\
+& RTC & \ RP5C15 & Real-Time Clock &\\
+& FM Sound & \ YM2151 & 8 Possible Channels of FM Sound &\\
+& Voice Synth & \ MSM6258 & Adaptive Differential PCM &\\
+& PPI & \ μPD8255 & Joystick 2 Ports, &\\
+& & & Voice Synthesis Switching Control &\\
+& I/O & \ iX1604CEZZ & Floppy Disk, Peripheral IC Decoder &\\
+& Other & \ iX1748CEZZ & Memory Controller (ASA) &\\
+& & \ iX1749CEZZ & System Controller (DOSA) &\\
+& & \ iX1094CEZZ & Video Data Selector &\\
+& & \ iX1096CEZZ & Video Clock Controller &\\
+\hline
+\end{tabular}
+
+\newpage
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{17mm}|p{13mm}|p{23mm}|p{80mm}|p{30mm}|}
+\hline
+& & & &\\[-2mm]
+Item & Class & Name・Type & Details & \ \ \ Notes\\[1mm]
+\hline
+& & & \multicolumn{2}{l|}{}\\[-3mm]
+& ROM & CG ROM & \multicolumn{2}{l|}{1MByte (JIS 1st Level, 2nd Level Kanji)}\\
+& & (IPL ROM & \multicolumn{2}{l|}{\ 8×16,12×24 …Half-Width 8×8,12×12…1/4 Square}\\
+& & Integrated) & \multicolumn{2}{l|}{\ 16×16 Pixel,24×24 Pixel…Full-Width}\\
+& & & \multicolumn{2}{l|}{(IPL,BIOS)}\\
+\cline{2-5}
+& & & &\\[-3mm]
+& RAM & Main Memory & 2MBytes (Standard) & 12MBytes Max\\
+& & & 6MBytes (Can be Added to Integrated Slots) &\\
+& & & 2MBytes Units &\\
+\cline{3-5}
+& & & &\\[-3mm]
+& & Text & Bitmap System &\\
+Memory & & VRAM & &\\
+& & & \ 1024×1024 Pixels \ 4 Planes &\\
+& & & \ 512KBytes & Dual Port\\
+& & & & DRAM Adopted\\
+\cline{3-5}
+& & & &\\[-3mm]
+& & Graphics & Bitmap System & Dual Port\\
+& & V・RAM & 512KBytes 1024×1024 Pixels 4 Planes & DRAM Adopted\\
+& & & (512×512 Pixels \ 16 Planes) &\\
+\cline{3-5}
+& & & \multicolumn{2}{l|}{}\\[-3mm]
+& & Sprite & \multicolumn{2}{l|}{32KBytes}\\
+& & V・RAM & \multicolumn{2}{l|}{}\\
+\cline{3-5}
+& & & \multicolumn{2}{l|}{}\\[-3mm]
+& & S・RAM & \multicolumn{2}{l|}{16KBytes}\\
+\hline
+& \multicolumn{4}{l|}{}\\[-3mm]
+& \multicolumn{4}{l|}{Disk Built-In 5″Floppy Disk Double-Sided High Density (2HD) 2 Groups}\\
+& \multicolumn{4}{l|}{}\\
+& \multicolumn{4}{l|}{\ \ \ \ \ \ \ \ Built-In 3.5″ Hard Disk 80MBytes (CZ-634C is Optional)}\\
+\cline{2-5}
+& \multicolumn{4}{l|}{}\\[-3mm]
+& \multicolumn{4}{l|}{Floppy Disk \ For Floppy Disk Drive Expansion}\\[2mm]
+& \multicolumn{4}{l|}{Interface}\\[2mm]
+& \multicolumn{4}{l|}{SCSI}\\[2mm]
+& \multicolumn{4}{l|}{}\\
+& \multicolumn{4}{l|}{Keyboard Connector \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Dedicated Keyboard}\\
+Built-In & \multicolumn{4}{l|}{CRT Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Analog RGB Output}\\
+I/F・ & \multicolumn{4}{l|}{TV Control Connector \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Dedicated Display of TV Control}\\
+Connector & \multicolumn{4}{l|}{RS-232C Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 Channel RS-232C}\\
+& \multicolumn{4}{l|}{Mouse Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Attaches the Track Mouse}\\
+& \multicolumn{4}{l|}{Printer Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Centronics Standard Compliant}\\
+& \multicolumn{4}{l|}{Joystick Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Atari, Inc. Compliant (2 Ports)}\\
+& \multicolumn{4}{l|}{Audio Input \& Output Connectors \ \ \ \ Line Input \& Output, Headphone Output}\\
+& \multicolumn{4}{l|}{Image Input Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ Option for Color Image Unit}\\
+\hline
+\multicolumn{3}{|l|}{} & \multicolumn{2}{l|}{}\\[-3mm]
+\multicolumn{3}{|l|}{Other \ Connector} & \multicolumn{2}{l|}{EXPWON,VHT}\\
+\multicolumn{3}{|l|}{Expansion I/O Slot} & \multicolumn{2}{l|}{2 Slots}\\
+\hline
+& \multicolumn{4}{l|}{}\\[-3mm]
+Rating & \multicolumn{4}{l|}{}\\
+Voltage & \multicolumn{4}{l|}{AC100V}\\
+Frequency & \multicolumn{4}{l|}{50/60Hz}\\
+Power Use & \multicolumn{4}{l|}{CZ-644C……46W, \ \ \ \ CZ-634C……41W}\\[2mm]
+\hline
+\end{tabular}
+
+\newpage
+
+<Features>
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{13mm}|p{23mm}|p{4mm}|p{20mm}|p{65mm}|p{36mm}|}
+\hline
+& & \multicolumn{2}{l|}{} & &\\[-2mm]
+Item & \ Class & \multicolumn{2}{l|}{Name・Type} & \ Details & \ Notes\\[1mm]
+\hline
+& & \multicolumn{2}{l|}{} & &\\[-1mm]
+\ \ D & \ Real Screen & \multicolumn{2}{l|}{Text Screen} & 1024×1024 Pixels 4 Planes & Bitmap System\\
+\cline{3-6}
+& & \multicolumn{2}{l|}{} & &\\[-4mm]
+\ \ i & \ Size & \multicolumn{2}{l|}{Graphics} & 1024×1024 Pixels 4 Planes & Bitmap System\\
+\ \ s & & \multicolumn{2}{l|}{Screen} & (512×512 Pixels 16 Planes) &\\
+\cline{2-6}
+& & \multicolumn{2}{l|}{} & &\\[-4mm]
+\ \ p & & \multicolumn{2}{l|}{} & High-Res Mode 768×512 Pixels &\\
+\ \ l & & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×512 &\\
+\ \ a & & \multicolumn{2}{l|}{} & &\\
+\ \ y & Text Screen & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256×256 (2 Read) &\\
+& & \multicolumn{2}{l|}{} & Low-Res Mode & Real Display Screen\\
+\ \ C & & \multicolumn{2}{l|}{} & (Overscan) 256×256 & \ Area is Cropped to\\
+\ \ a & & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×512 & a Smaller Size\\
+\ \ p & & \multicolumn{2}{l|}{} & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Interlaced) &\\
+\ \ a & & \multicolumn{2}{l|}{} & &\\
+\ \ b & & \multicolumn{2}{l|}{} & &\\
+\cline{2-6}
+& & & & &\\[-4mm]
+\ \ i & & & & High-Res Mode 768×512 Pixels & For Each Pixel Any\\
+\ \ l & & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×512 & \ 16 Colors Chosen\\
+\ \ i & & & 1024×1024 & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×256 (2 Read) & from 65536 Colors\\
+\ \ t & & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256×256 (2 Read) &\\
+\ \ y & Image Screen & G & & &\\[2mm]
+& \ Mode & r & & Low-Res Mode 512×256 &\\[2mm]
+& \ High-Res & a & & (Overscan) 256×256 &\\[2mm]
+& \ 31.5kHz & p & & & \ 512×512\\[2mm]
+& \ Low-Res & h & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Interlaced) &\\
+\cline{5-6}
+& & & & &\\[-4mm]
+& \ 15.98kHz & i & & High-Res Mode 512×512 Pixels & \ For Each Pixel Any\\
+& & c & & & \ 16 Colors Chosen\\
+& & s & & & \ from 65536 Colors\\
+& & & & & \ (256 Colors can be\\
+& & S & & & \ Chosen from 65536\\
+& & c & & & \ Using Both Planes\\
+& & r & & & \ Per Pixel(2-Plane)\\
+& & e & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256×256 (2 Read) &\\
+& & e & & &\\
+& & n & \ \ 512×512 & &\\
+& & & & & \ For Each Pixel Any\\
+& & & & & \ 16 Colors Chosen\\
+& & & & & \ from 65536 Colors\\
+& & & & & \ Possible (4-Plane)\\
+& & & & Low-Res Mode 512×256	& Real Display Screen\\
+& & & & (Overscan) 256×256 & \ Area is Cropped to\\
+& & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 512×512 & \ a Smaller Size\\
+& & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Interlaced) &\\
+& & & & &\\
+& & & & &\\
+& & & & &\\
+& & & & &\\
+\hline
+\end{tabular}
+
+\newpage
+
+\setlength{\tabcolsep}{0.5mm}
+\begin{tabular}{|p{44mm}|p{123mm}|}
+\hline
+&\\[-2mm]
+\ \ \ \ \ \ Item & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Details\\[4mm]
+\hline
+&\\[-3mm]
+Smooth Scroll Functions & Text screen can cylindrical scroll in pixel units, graphic screen\\
+& can spherical scroll in pixel units.\\
+\hline
+&\\[-3mm]
+Special Screen Control & Image input function to graphics VRAM, text raster copy function,\\
+& graphics fast clear, text bit mask function\\
+\hline
+&\\[-3mm]
+Priority Functions & ・Text, graphics, can have specific priorities between sprites.\\
+& ・2-planes graphics screen 512×512 pixel mode, or the priority\\
+& between each graphics screen using 4-planes can be specified.\\
+&\\
+&\\
+&\\
+\hline
+&\\[-3mm]
+Palette Function & Is instantly switchable to any color.\\
+&\\
+\hline
+&\\[-3mm]
+Semi-Transparency & Semi-Transparent color table possible.\\
+&\\
+\hline
+&\\[-3mm]
+Special Priority & ・Can function the priority of any part of the graphics screen\\
+& in the display screen area.\\
+\hline
+&\\[-3mm]
+Superimpose Function & ・Low resolution overscan which can be superimposed. (Also\\
+& supports pseudo high resolution using the interlace method)\\
+\hline
+\end{tabular}\\[1mm]
+
+\begin{tabular}{|p{17mm}|p{20mm}|p{27mm}|p{100mm}|}
+\hline
+& & &\\
+\ \ \ Item & \ Class & \ Name・Type & \ \ \ \ \ \ \ \ \ \ \ \ Details\\[1mm]
+\hline
+& & &\\[-3mm]
+\ \ \ \ S & & &\\[3mm]
+\ \ \ \ p & \ Sprite & \ Pattern Table & \ Size \ \ \ \ \ \ \ \ \ \ \ \ 16×16 Pixels/Pattern\\[3mm]
+\ \ \ \ r & & & \ Number \ \ \ \ \ \ \ \ \ \ 128 Patterns (BG0,1 Not Used\\[3mm]
+\ \ \ \ i & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Maximum of 256 Patterns)\\[3mm]
+\ \ \ \ t & & & \ Color \ \ \ \ \ \ \ \ \ \ \ Per Pattern 16 Colors/65536 Colors\\[3mm]
+\ \ \ \ e & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (Pixel Units)\\[3mm]
+\ \ \ \ s & & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ The Entire Screen 256/65536 Colors\\
+& & &\\
+& & &\\
+\cline{3-4}
+& & &\\[-2mm]
+& & \ Display & Coordinate System 1024×1024 Pixels\\[3mm]
+& & & \ Screen Image \ \ \ \ \ Horizontal 512 Pixels or 256 Pixels\\[3mm]
+& & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Vertical 512 Lines or 256 Lines\\[3mm]
+& & & \ Display Limit \ \ \ 128 Sprites/Screen\\[3mm]
+& & & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 32 Sprites/Line\\
+\hline
+\end{tabular}
+
+\newpage
+
+\phantomsection
+\subsection*{1-3.Block Diagram}
+\addcontentsline{toc}{subsection}{1-3. Block Diagram}
+
+\begin{sideways}
+
+\begin{tikzpicture}[very thick]
+\fontsize{4.5}{6}
+\upshape
+
+\draw (0,0) rectangle (25,17);
+
+\node[draw=none,fill=none,align=center] (3DText) at (23,16.1) {3D};
+\node[draw,rectangle,minimum width=6mm,minimum height=10mm] (3D) at (22.5,16.1) {};
+\node[draw=none,fill=none] (3DControl) at (20.85,15.891) {3D Control};
+
+\node[draw=none,fill=none,align=center] (ImageInputText) at (23.55,13.75) {Image Input};
+\node[draw,draw,rectangle,minimum width=8mm,minimum height=10mm] (ImageInput) at (22.6,13.8) {};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=4mm,align=center] (Latch) at (21.4,12.3) {Latch};
+\node[draw=none,fill=none,align=left] (LatchImageInputControl) at (19.65,12.3) {Image Input\\Control};
+
+\node[draw,rectangle,minimum width=10mm,minimum height=29mm,align=left] (Expansion) at (23.9,9.1) {Expansion\\\\I/O\\\\Slot\\\\2 Ports\\[2mm]};
+\node[draw=none,fill=none,align=center] (CPUMHz) at (22.3,10.368) {$\mathbf{10MHz}$\\$\overline{\mathbf{10MHz}}$\\20MHz};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=12mm,align=center] (RTC) at (23.8,4.7) {\\RTC\\\\32.768\\KHz};
+\node[inner sep=0,minimum width=0,minimum height=0] (RTCInvisibleA) at (23.85,3.9) {};
+\node[inner sep=0,minimum width=0,minimum height=0] (RTCInvisibleB) at (23.75,3.9) {};
+\node[draw,rectangle,minimum width=0.8mm,minimum height=1.5mm,align=center,inner sep=0] (RTCBattery) at (23.8,3.9) {};
+
+\node[draw,rectangle,minimum width=6mm,minimum height=4mm,align=center,inner sep=0] (AMP) at (23.3,2.8) {AMP};
+\node[draw=none,fill=none] (SP) at (23.492,1.8) {SP};
+\node[draw=none,fill=none] (HP) at (23.105,1.8) {HP};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=12mm,align=center] (OPM) at (22.8,4.7) {\\OPM\\\\YM2151\\};
+
+\node[draw,fill=black,inner sep=0.2mm,circle] (LINEConnection) at (22.4,2.8) {};
+\node[draw=none,fill=none] (LINE) at (22.4,1.8) {LINE};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=12mm,align=center] (ADPCM) at (21.8,4.7) {\\ADPCM\\\\MSM-~~\\~~6258};
+\node[draw=none,fill=none] (MIC) at (22.011,1.4) {MIC};
+
+\node[draw,rectangle,minimum width=6mm,minimum height=8mm,align=center] (PCM) at (21.5,2.8) {PCM-\\[0.6mm]~PAN};
+
+\node[draw,rectangle,minimum width=12mm,minimum height=12mm,align=center] (PPI) at (20.6,4.7) {\\PPI\\\\\\};
+\node[draw,rectangle,minimum width=4mm,minimum height=4mm,align=center] (PPIC) at (21,4.3) {C};
+\node[draw,rectangle,minimum width=4mm,minimum height=4mm,align=center] (PPIB) at (20.6,4.3) {B};
+\node[draw,rectangle,minimum width=4mm,minimum height=4mm,align=center] (PPIA) at (20.2,4.3) {A};
+
+\node[draw,rectangle,minimum width=3mm,minimum height=3mm,align=center] (Joystick2) at (20.6,1.8) {2};
+\node[draw,rectangle,minimum width=3mm,minimum height=3mm,align=center] (Joystick1) at (20.2,1.8) {1};
+\node[draw=none,fill=none] (Joystick) at (20.4,1.5) {Joystick};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=12mm,align=center] (SCSIController) at (19.4,4.7) {\\SCSI\\\\Cont-~~\\~~roller};
+\node[draw,rectangle,minimum width=8mm,minimum height=4mm] (SCSI) at (19.6,0.9) {};
+\node[draw=none,fill=none] (SCSIText) at (19.6,0.55) {SCSI};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=8mm,align=center] (SCSIHD) at (18.6,2.35) {SCSI\\[0.6mm]HD~~~};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=12mm,align=center] (IOController) at (18,4.7) {\\I/$\bar{\mathbf{O}}$\\\\Cont-~~\\~~roller};
+\node[draw,fill=black,inner sep=0.2mm,circle] (IOControllerConnection) at (18.7,4.7) {};
+\node[inner sep=0,minimum width=0,minimum height=0] (SCCInvisible) at (18.7,5.7) {};
+\node[draw=none,fill=none] (SCC5MHz) at (18.5,5.85) {5MHz};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=12mm,align=center] (FDC) at (17,4.7) {FDC};
+\node[draw=none,fill=none] (IO10MHz) at (18.25,3.6) {10MHz};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=4mm,align=center] (FDCDR) at (17,2.55) {D/R};
+\draw[vecArrow] ($(FDCDR.north west)!0.75!(FDCDR.north east)$) to ($(FDC.south east)!0.25!(FDC.south west)$);
+
+\node[draw,rectangle,minimum width=6mm,minimum height=4mm,align=center,fill=white] (VFO) at (17.25,3.25) {VFO};
+\node[draw=none,fill=none] (VFO16MHz) at (18.5,3.25) {16MHz};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=4mm] (FloppyDisk) at (17,1.3) {};
+\node[draw=none,fill=none] (FloppyDiskText) at (16.65,0.95) {RS232C Floppy Disk};
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (IOControllerTurn) at (17.79,1.95) {};
+
+\node[draw,rectangle,minimum width=12mm,minimum height=12mm,align=center] (SCC) at (15.8,4.7) {SCC\\\\};
+\node[draw,rectangle,minimum width=6mm,minimum height=4mm,align=center] (SCCB) at (16.1,4.3) {B};
+\node[draw,rectangle,minimum width=6mm,minimum height=4mm,align=center] (SCCA) at (15.5,4.3) {A};
+
+\node[draw,rectangle,minimum width=5.5mm,minimum height=4mm,align=center] (SCCDRB) at (16.125,2.55) {D/R};
+\node[draw,rectangle,minimum width=5.5mm,minimum height=4mm,align=center] (SCCDRA) at (15.475,2.55) {D/R};
+
+\node[draw,rectangle,minimum width=5.5mm,minimum height=4mm] (RS232CB) at (16.125,1.3) {};
+\node[draw,rectangle,minimum width=5.5mm,minimum height=4mm] (RS232CA) at (15.475,1.3) {};
+
+\node[draw,rectangle,minimum width=12mm,minimum height=12mm,align=center] (MFP) at (14.4,4.7) {MFP};
+\node[draw,rectangle,minimum width=8mm,minimum height=4mm,align=center] (MFPDR) at (14.6,2.55) {D/R};
+\node[draw,rectangle,minimum width=8mm,minimum height=4mm] (Keyboard) at (14.6,1.3) {};
+\node[draw=none,fill=none] (KeyboardText) at (14.6,0.95) {Keyboard};
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (KeyboardTurn) at (15.5,1.95) {};
+
+\node[draw,rectangle,minimum width=22mm,minimum height=16mm,align=center] (SystemController) at (12.3,4.5) {System\\\\Controller};
+\node[draw=none,fill=none] (SystemController10MHz) at (10.5,5.1) {10MHz};
+\node[draw=none,fill=none] (SystemControllerMPUCLK) at (10.45,4.7) {MPUCLK};
+\node[draw=none,fill=none,align=center] (SystemControllerImageInputControl) at (13.2,1.52) {I\\[-0.8mm]m\\[-0.8mm]a\\[-0.8mm]g\\[-0.8mm]e\\I\\[-0.8mm]n\\[-0.8mm]p\\[-0.8mm]u\\[-0.8mm]t\\C\\[-0.8mm]o\\[-0.8mm]n\\[-0.8mm]t\\[-0.8mm]r\\[-0.8mm]o\\[-0.8mm]l};
+\node[draw=none,fill=none,align=center] (SystemController3DControl) at (12.85,1.52) {3\\[-0.8mm]D\\C\\[-0.8mm]o\\[-0.8mm]n\\[-0.8mm]t\\[-0.8mm]r\\[-0.8mm]o\\[-0.8mm]l\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\};
+\node[draw=none,fill=none,align=center] (SystemControllerDAControl) at (12.5,1.52) {D\\[-0.8mm]/\\[-0.8mm]A\\C\\[-0.8mm]o\\[-0.8mm]n\\[-0.8mm]t\\[-0.8mm]r\\[-0.8mm]o\\[-0.8mm]l\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\[-0.8mm]\\};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=18mm,align=center] (ImageInputCircuit) at (18.4,14.4) {I\\[-0.8mm]m\\[-0.8mm]a\\[-0.8mm]g\\[-0.8mm]e\\I\\[-0.8mm]n\\[-0.8mm]p\\[-0.8mm]u\\[-0.8mm]t\\Circuit};
+\node[draw=none,fill=none] (ImageInputCircuitText) at (19.5,13.75) {Image};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=8mm,align=center] (DA) at (19.2,11.2) {D/A};
+\node[draw=none,fill=none] (DACRT) at (20.6,11.2) {CRT};
+\node[draw=none,fill=none] (DAControl) at (19.24,9.7) {D/A Control};
+
+\node[draw,rectangle,minimum width=12mm,minimum height=8mm,align=center] (ClockCircuit) at (20.2,8.2) {Clock Circuit\\16MHz};
+\node[draw=none,fill=none,align=center] (ClockCircuit16MHz) at (18.5,8.41) {16MHz};
+\node[draw=none,fill=none,align=center] (MFP4MHz) at (18.45,8.1) {4MHz};
+\node[draw,fill=black,inner sep=0.2mm,circle] (ClockCircuitConnection) at (19.2,8) {};
+\node[inner sep=0,minimum width=0,minimum height=0] (ADPCMInvisible) at (19.2,7.6) {};
+\node[draw,fill=black,inner sep=0.2mm,circle] (ADPCMConnection) at (21.475,5.8) {};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=14mm,align=center] (VideoController) at (17.3,11.1) {Video\\\\Controller};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=10mm,align=left] (TEXTVRAM) at (14.6,15.2) {TEXT\\VRAM\\512Kbytes};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=10mm,align=left] (GRAPHICVRAM) at (14.6,13.8) {GRAPHIC\\VRAM\\512Kbytes};
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (VideoControllerTurn) at (16.94,13.904) {};
+
+\node[draw,rectangle,minimum width=17mm,minimum height=8mm,align=left] (ClockCircuit38MHz) at (14.6,12.5) {Clock Circuit\\38.863632MHz\\69.5519MHz};
+\node[inner sep=0,minimum width=0,minimum height=0] (VideoControllerInvisible) at (16,12.5) {};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=10mm,align=left] (SDSA) at (14.6,10.9) {SD Sprite\\\\SA Controller};
+
+\node[draw,rectangle,minimum width=10mm,minimum height=10mm,align=left] (SPRITEVRAM) at (12.6,10.9) {SPRITE\\VRAM\\32Kbytes};
+
+\node[draw,rectangle,minimum width=16mm,minimum height=18mm,align=center] (CRTC) at (11.5,14.6) {CRTC};
+\node[draw=none,fill=none,rectangle,minimum width=4mm,minimum height=4mm] (CRTCTVA) at (12.1,15.3) {TVA};
+\node[draw=none,fill=none,rectangle,minimum width=3mm,minimum height=4mm] (CRTCVD) at (12.15,15) {VD};
+\node[draw=none,fill=none,rectangle,minimum width=4mm,minimum height=4mm] (CRTCGVA) at (12.1,13.9) {GVA};
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (CRTCVDTurn) at (13.1,15) {};
+\node[draw=none,fill=none] (ImageInputEnable) at (16.3,14.65) {Image Input Enable};
+
+\node[inner sep=0,minimum width=0,minimum height=0] (CRTCInvisible) at (9.7,14.6) {};
+\node[draw=none,fill=none] (CRTCMPUCLK) at (9.9,14.75) {MPUCLK};
+\node[draw,fill=black,inner sep=0.2mm,circle] (CRTCConnection) at (7.8,10.34) {};
+
+\node[draw,rectangle,minimum width=8mm,minimum height=4mm,align=center] (Buffer) at (11.8,7.6) {Buffer};
+
+\node[draw,rectangle,minimum width=18mm,minimum height=18mm,align=center] (MemoryController) at (9.6,6.7) {\\Memory\\[3mm]Controller\\};
+\node[draw=none,fill=none,rectangle,minimum width=6mm,minimum height=4mm] (MemoryControllerIOC) at (10.2,7) {I$\bar{\mathbf{O}}$C};
+\node[draw=none,fill=none,rectangle,minimum width=4mm,minimum height=3mm] (MemoryControllerPD) at (9.7,5.95) {PD};
+
+\node[draw=none,fill=none,align=left] (BufferControl) at (10.9,7.8) {~Buffer\\Control};
+
+\node[draw,rectangle,minimum width=12mm,minimum height=4mm] (Printer) at (9.9,2.3) {};
+\node[draw=none,fill=none] (PrinterText) at (9.9,1.9) {Printer};
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (PrinterTurn) at (10.1,4) {};
+\node[draw=none,fill=none,align=left] (PrinterControl) at (10.4,4.3) {Printer\\~~Control};
+
+\node[draw=none,fill=none] (RESETSW) at (6.1,1.2) {(RESET SW)};
+\node[draw=none,fill=none] (NMISW) at (6.1,0.8) {~~(NMI SW)};
+
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MemoryControllerIOCTurn) at (22.5,7) {};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=10mm,align=left] (ClockCircuit40MHz) at (8.35,12.8) {Clock Circuit\\40MHz\\33.33MHz};
+\node[draw=none,fill=none] (CLOCKSPEEDSW) at (8.55,14.75) {$\left(\mathbf{CLOCK~~}\atop\mathbf{SPEED~SW}\right)$};
+\node[draw=none,fill=none,align=left] (ClockCircuit10MHz) at (8.638,11.4) {$\mathbf{10MHz,}\overline{\mathbf{10MHz}}$\\20MHz};
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (ClockCircuit40MHzTurn) at (10.29,12.8) {};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=8mm,align=center] (MainMemory) at (7.5,4.9) {Main Memory\\2Mbytes};
+\node[draw=none,minimum width=14mm,minimum height=8mm,align=center] (ExpansionMemory1) at (7.5,4.1) {Expanded Memory①\\2Mbytes};
+\node[draw,rectangle,inner sep=0,dashed,dash pattern=on 3pt off 1pt,minimum width=14mm,minimum height=8mm,align=center] (ExpansionMemory2) at (7.5,3.3) {Expanded Memory②\\2Mbytes};
+\node[draw=none,minimum width=14mm,minimum height=8mm,align=center] (ExpansionMemory3) at (7.5,2.5) {Expanded Memory③\\2Mbytes};
+\draw (8.2,5.3) rectangle (6.8,2.1);
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MainMemoryTurn) at (7.8,6.01) {};
+
+\node[draw,rectangle,minimum width=16mm,minimum height=14mm,align=center] (DMAC) at (5.8,13) {DMAC\\\\HD63450};
+\node[draw=none,fill=none,align=center] (DMAC10MHz) at (7.1,12.95) {10MHz};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=10mm,align=left] (CGBIOS) at (5.7,4.8) {CG.BIOS\\ROM\\1Mbytes};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=14mm,align=center] (FPU) at (3.8,13) {FPU\\[1mm]MC68881\\[1mm](Optional)};
+\node[inner sep=0,minimum width=0,minimum height=0] (ClockCircuit40MHzInvisible) at (8.05,14.1) {};
+\node[draw=none,fill=none,align=center] (FPU16MHz) at (5,14.25) {16.67MHz};
+
+\node[draw,rectangle,minimum width=14mm,minimum height=10mm,align=center] (SRAM) at (3.6,4.8) {SRAM\\\\16Kbytes};
+
+\node[draw,rectangle,minimum width=10mm,minimum height=38mm,align=left] (MPU) at (1.2,8.8) {\\[10mm]MPU\\\\\\\\\\\\MC68HC\\~~~~000};
+\node[draw=none,fill=none,rectangle,minimum width=4mm,minimum height=4mm] (MPUD) at (1.5,9.21) {D};
+\node[draw=none,fill=none,rectangle,minimum width=4mm,minimum height=4mm] (MPUA) at (1.5,8.81) {A};
+\node[draw=none,fill=none,rectangle,minimum width=4mm,minimum height=4mm] (MPUC) at (1.5,8.41) {C};
+
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MPUCTurn) at (11.8,8.41) {};
+\node[draw,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MPUDTurn) at (21.4,9.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (FPUInvisible) at (3.295,9.21) {};
+
+\node[draw=none,fill=none,align=left] (MPUCLKMPU) at (2.5,10.33) {MPUCLK\\[1mm](16/10MHz)};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (DMACInvisible) at (5.395,9.21) {};
+
+\node[draw=none,fill=none] (DataBus) at (4.75,9.35) {Data Bus};
+\node[draw=none,fill=none] (AddressBus) at (4.75,8.95) {Address Bus};
+\node[draw=none,fill=none] (ControlBus) at (4.75,8.55) {Control Bus};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MainMemoryInvisible) at (7.025,9.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MemoryControllerDInvisible) at (9.104,9.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MemoryControllerCInvisible) at (9.9,8.41) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (CRTCDInvisible) at (10.94,9.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MemoryControllerIOCInvisible) at (11.8,7) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (SDSAInvisible) at (14.34,9.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (VideoControllerDInvisible) at (16.94,9.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=0,minimum height=0] (SystemControllerInvisible) at (12.5,6.21) {};
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (SystemControllerDInvisible) at (12.5,9.21) {};
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=0,minimum height=0] (SystemControllerAInvisible) at (12.85,6.6) {};
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (SystemControllerCInvisible) at (13.2,8.41) {};
+
+\node[draw=none,fill=none] (IOControlBus) at (14.05,7.15) {I/$\bar{\mathbf{O}}$ Control Bus};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (MFPInvisible) at (13.946,6.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (SCCAInvisible) at (15.345,6.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (FDCInvisible) at (16.789,6.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (IOControllerInvisible) at (17.79,6.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (SCSIControllerInvisible) at (19.188,6.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (PPIInvisible) at (20.29,6.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (ADPCMAInvisible) at (21.698,6.21) {};
+
+\node[draw=none,fill=none,rectangle,inner sep=0,minimum width=1.7pt,minimum height=1.7pt] (OPMInvisible) at (22.698,6.21) {};
+
+
+\draw[very thick,->] (3DControl) to ($(3D.south west)!0.3!(3D.north west)$);
+
+\draw[very thick,->] (LatchImageInputControl) to (Latch);
+\draw[vecArrow] (Latch) |- ($(ImageInput.south west)!0.3!(ImageInput.north west)$);
+
+\draw[very thick,->] (CPUMHz) to ($(Expansion.south west)!0.93!(Expansion.north west)$);
+
+\draw[thin,-|] ($(RTC.south east)!0.25!(RTC.south west)$) |- (RTCInvisibleA);
+\draw[thin,-|] ($(RTC.south east)!0.75!(RTC.south west)$) |- (RTCInvisibleB);
+\draw[thin,-] to (RTCInvisibleA) to (RTCBattery);
+\draw[thin,-] to (RTCInvisibleB) to (RTCBattery);
+
+\draw[very thick,->] ($(AMP.south east)!0.2!(AMP.south west)$) to (SP);
+\draw[very thick,->] ($(AMP.south east)!0.8!(AMP.south west)$) to (HP);
+
+\draw[very thick,->] (MIC) to ($(ADPCM.south east)!0.25!(ADPCM.south west)$);
+
+\draw[vecArrow] ($(ADPCM.south east)!0.705!(ADPCM.south west)$) to ($(PCM.north west)!0.7!(PCM.north east)$);
+\draw[very thick,->] (PCM) to (AMP);
+\draw[very thick,->] (LINEConnection) to (LINE);
+\draw[vecArrow] ($(OPM.south east)!0.75!(OPM.south west)$) to ($(AMP.west)!0.335!(PCM.east)$);
+
+\draw[vecArrow] (PPIC) |- (PCM);
+\draw[vecArrow] ($(PPIB)!0.5!(Joystick2)$) to (Joystick2);
+\draw[vecArrow] ($(PPIB)!0.5!(Joystick2)$) to (PPIB);
+\draw[innerWhite] ($(PPIB)!0.5!(Joystick2)$) to (Joystick2);
+\draw[innerWhite] ($(PPIB)!0.5!(Joystick2)$) to (PPIB);
+\draw[vecArrow] ($(PPIA)!0.5!(Joystick1)$) to (Joystick1);
+\draw[vecArrow] ($(PPIA)!0.5!(Joystick1)$) to (PPIA);
+\draw[innerWhite] ($(PPIA)!0.5!(Joystick1)$) to (Joystick1);
+\draw[innerWhite] ($(PPIA)!0.5!(Joystick1)$) to (PPIA);
+
+\draw[vecArrow] ($(SCSIController.south east)!0.264!(SCSIController.south west)$) to (SCSI);
+
+\draw[vecArrow] ($(SCSIHD.east)!0.5!($(SCSI)!0.456!($(SCSIController.south east)!0.4!(SCSIController.south west)$)$)$) to ($(SCSI)!0.456!($(SCSIController.south east)!0.4!(SCSIController.south west)$)$);
+\draw[vecArrow] ($(SCSIHD.east)!0.5!($(SCSI)!0.456!($(SCSIController.south east)!0.4!(SCSIController.south west)$)$)$) to (SCSIHD.east);
+\draw[innerWhite] ($(SCSIHD.east)!0.5!($(SCSI)!0.456!($(SCSIController.south east)!0.4!(SCSIController.south west)$)$)$) to ($(SCSI)!0.456!($(SCSIController.south east)!0.4!(SCSIController.south west)$)$);
+\draw[innerWhite] ($(SCSIHD.east)!0.5!($(SCSI)!0.456!($(SCSIController.south east)!0.4!(SCSIController.south west)$)$)$) to (SCSIHD.east);
+
+\draw[very thick,->] ($(IO10MHz.north west)!0.43!(IO10MHz.north east)$) to ($(IOController.south east)!0.25!(IOController.south west)$);
+
+\draw[very thick,->] (VFO16MHz) to (VFO);
+
+\draw[very thick,->] (IOController) to (SCSIController);
+
+\draw[vecArrow] ($($(FDCDR.north west)!0.25!(FDCDR.north east)$)!0.5!($(FDC.south east)!0.75!(FDC.south west)$)$) to ($(FDC.south east)!0.75!(FDC.south west)$);
+\draw[vecArrow] ($($(FDCDR.north west)!0.25!(FDCDR.north east)$)!0.5!($(FDC.south east)!0.75!(FDC.south west)$)$) to ($(FDCDR.north west)!0.25!(FDCDR.north east)$);
+\draw[innerWhite] ($($(FDCDR.north west)!0.25!(FDCDR.north east)$)!0.5!($(FDC.south east)!0.75!(FDC.south west)$)$) to ($(FDC.south east)!0.75!(FDC.south west)$);
+\draw[innerWhite] ($($(FDCDR.north west)!0.25!(FDCDR.north east)$)!0.5!($(FDC.south east)!0.75!(FDC.south west)$)$) to ($(FDCDR.north west)!0.25!(FDCDR.north east)$);
+
+\draw[vecArrow] ($(IOControllerTurn.east)!0.3!(IOControllerTurn.west)$) -| ($(FloppyDisk.north west)!0.75!(FloppyDisk.north east)$);
+\draw[vecLine] ($(IOController.south east)!0.75!(IOController.south west)$) to (IOControllerTurn.south);
+\draw[innerWhite] ($(IOControllerTurn.east)!0.3!(IOControllerTurn.west)$) -| ($(FloppyDisk.north west)!0.75!(FloppyDisk.north east)$);
+
+\draw[vecArrow] ($($(FloppyDisk.north west)!0.25!(FloppyDisk.north east)$)!0.5!($(FDCDR.south east)!0.75!(FDCDR.south west)$)$) to ($(FDCDR.south east)!0.75!(FDCDR.south west)$);
+\draw[vecArrow] ($($(FloppyDisk.north west)!0.25!(FloppyDisk.north east)$)!0.5!($(FDCDR.south east)!0.75!(FDCDR.south west)$)$) to ($(FloppyDisk.north west)!0.25!(FloppyDisk.north east)$);
+\draw[innerWhite] ($($(FloppyDisk.north west)!0.25!(FloppyDisk.north east)$)!0.5!($(FDCDR.south east)!0.75!(FDCDR.south west)$)$) to ($(FDCDR.south east)!0.75!(FDCDR.south west)$);
+\draw[innerWhite] ($($(FloppyDisk.north west)!0.25!(FloppyDisk.north east)$)!0.5!($(FDCDR.south east)!0.75!(FDCDR.south west)$)$) to ($(FloppyDisk.north west)!0.25!(FloppyDisk.north east)$);
+
+\draw[vecArrow] ($($(SCCDRB.north west)!0.457!(SCCDRB.north east)$)!0.5!(SCCB.south)$) to (SCCB);
+\draw[vecArrow] ($($(SCCDRB.north west)!0.457!(SCCDRB.north east)$)!0.5!(SCCB.south)$) to ($(SCCDRB.north west)!0.457!(SCCDRB.north east)$);
+\draw[innerWhite] ($($(SCCDRB.north west)!0.457!(SCCDRB.north east)$)!0.5!(SCCB.south)$) to (SCCB);
+\draw[innerWhite] ($($(SCCDRB.north west)!0.457!(SCCDRB.north east)$)!0.5!(SCCB.south)$) to ($(SCCDRB.north west)!0.457!(SCCDRB.north east)$);
+
+\draw[vecArrow] ($($(SCCDRA.north west)!0.542!(SCCDRA.north east)$)!0.5!(SCCA.south)$) to (SCCA);
+\draw[vecArrow] ($($(SCCDRA.north west)!0.542!(SCCDRA.north east)$)!0.5!(SCCA.south)$) to ($(SCCDRA.north west)!0.542!(SCCDRA.north east)$);
+\draw[innerWhite] ($($(SCCDRA.north west)!0.542!(SCCDRA.north east)$)!0.5!(SCCA.south)$) to (SCCA);
+\draw[innerWhite] ($($(SCCDRA.north west)!0.542!(SCCDRA.north east)$)!0.5!(SCCA.south)$) to ($(SCCDRA.north west)!0.542!(SCCDRA.north east)$);
+
+\draw[vecArrow] ($($(SCCDRB.south east)!0.543!(SCCDRB.south west)$)!0.5!($(RS232CB.north west)!0.457!(RS232CB.north east)$)$) to ($(RS232CB.north west)!0.457!(RS232CB.north east)$);
+\draw[vecArrow] ($($(SCCDRB.south east)!0.543!(SCCDRB.south west)$)!0.5!($(RS232CB.north west)!0.457!(RS232CB.north east)$)$) to ($(SCCDRB.south east)!0.543!(SCCDRB.south west)$);
+\draw[innerWhite] ($($(SCCDRB.south east)!0.543!(SCCDRB.south west)$)!0.5!($(RS232CB.north west)!0.457!(RS232CB.north east)$)$) to ($(RS232CB.north west)!0.457!(RS232CB.north east)$);
+\draw[innerWhite] ($($(SCCDRB.south east)!0.543!(SCCDRB.south west)$)!0.5!($(RS232CB.north west)!0.457!(RS232CB.north east)$)$) to ($(SCCDRB.south east)!0.543!(SCCDRB.south west)$);
+
+\draw[vecArrow] ($(RS232CA.north west)!0.543!(RS232CA.north east)$) to ($($(SCCDRA.south east)!0.457!(SCCDRA.south west)$)!0.5!($(RS232CA.north west)!0.543!(RS232CA.north east)$)$);
+
+\draw[very thick,-] (IOControllerConnection) to (SCCInvisible.north);
+\draw[very thick,->] (SCCInvisible.east) -| ($(SCC.north west)!0.875!(SCC.north east)$);
+
+\draw[vecArrow] (MFPDR) to ($(MFP.south east)!0.34!(MFP.south west)$);
+
+\draw[vecArrow] ($(MFPDR)!0.5!(Keyboard)$) to (Keyboard);
+\draw[vecArrow] ($(MFPDR)!0.5!(Keyboard)$) to (MFPDR);
+\draw[innerWhite] ($(MFPDR)!0.5!(Keyboard)$) to (Keyboard);
+\draw[innerWhite] ($(MFPDR)!0.5!(Keyboard)$) to (MFPDR);
+
+\draw[vecArrow] ($(KeyboardTurn.east)!0.3!(KeyboardTurn.west)$) -| ($(Keyboard.north west)!0.75!(Keyboard.north east)$);
+\draw[vecArrow] ($(KeyboardTurn.south)!0.3!(KeyboardTurn.north)$) to ($(SCCDRA.south east)!0.457!(SCCDRA.south west)$);
+\draw[innerWhite] ($(KeyboardTurn.east)!0.3!(KeyboardTurn.west)$) -| ($(Keyboard.north west)!0.75!(Keyboard.north east)$);
+
+\draw[very thick,->] (SystemController10MHz) to ($(SystemController.south west)!0.865!(SystemController.north west)$);
+\draw[very thick,->] (SystemControllerMPUCLK) to ($(SystemController.south west)!0.625!(SystemController.north west)$);
+
+\draw[very thick,->] ($(SystemController.south east)!0.1!(SystemController.south west)$) to (SystemControllerImageInputControl);
+\draw[very thick,->] ($(SystemController.south east)!0.255!(SystemController.south west)$) to (SystemController3DControl);
+\draw[very thick,->] ($(SystemController.south east)!0.41!(SystemController.south west)$) to (SystemControllerDAControl);
+
+\draw[vecArrow] ($(ImageInput.south west)!0.6!(ImageInput.north west)$) to ($(ImageInputCircuit.north east)!0.769!(ImageInputCircuit.south east)$);
+\draw[very thick,->] ($(CRTC.south east)!0.45!(CRTC.north east)$) to ($(ImageInputCircuit.south west)!0.558!(ImageInputCircuit.north west)$);
+
+\draw[very thick,->] (DA) to (DACRT);
+\draw[very thick,->] ($(DAControl.north west)!0.463!(DAControl.north east)$) to (DA);
+
+\draw[very thick,->] ($(ClockCircuit.south west)!0.75!(ClockCircuit.north west)$) to (ClockCircuit16MHz);
+\draw[very thick,->] ($(ClockCircuit.south west)!0.25!(ClockCircuit.north west)$) -| ($(MFP.north west)!0.875!(MFP.north east)$);
+\draw[very thick,-] (ClockCircuitConnection) to (ADPCMInvisible.south);
+\draw[very thick,->] (ADPCMInvisible) -| ($(ADPCM.north west)!0.125!(ADPCM.north east)$);
+\draw[very thick,->] (ADPCMConnection) -| ($(OPM.north west)!0.125!(OPM.north east)$);
+
+\draw[vecArrow] ($(VideoController.north east)!0.431!(VideoController.south east)$) to (DA);
+
+\draw[vecArrow] (TEXTVRAM) -| ($(VideoController.north west)!0.55!(VideoController.north east)$);
+
+\draw[vecArrow] ($(ImageInputCircuit.south west)!0.231!(ImageInputCircuit.north west)$) to (VideoControllerTurn);
+
+\draw[vecArrow] ($(VideoControllerTurn.east)!0.25!(VideoControllerTurn.west)$) to ($(GRAPHICVRAM.north east)!0.4!(GRAPHICVRAM.south east)$);
+\draw[vecArrow] ($(VideoControllerTurn.north)!0.25!(VideoControllerTurn.south)$) to ($(VideoController.north west)!0.25!(VideoController.north east)$);
+\draw[innerWhite] ($(VideoControllerTurn.east)!0.25!(VideoControllerTurn.west)$) to ($(GRAPHICVRAM.north east)!0.4!(GRAPHICVRAM.south east)$);
+
+\draw[very thick,-] (ClockCircuit38MHz) to (VideoControllerInvisible.east);
+\draw[very thick,->] (VideoControllerInvisible) |- ($(VideoController.south west)!0.7!(VideoController.north west)$);
+
+\draw[very thick,->] (ClockCircuit38MHz) to (SDSA);
+\draw[vecArrow] (SDSA) to ($(VideoController.south west)!0.362!(VideoController.north west)$);
+
+\draw[vecArrow] ($(SDSA.south west)!0.3!(SDSA.north west)$) to ($(SPRITEVRAM.north east)!0.7!(SPRITEVRAM.south east)$);
+
+\draw[vecArrow] ($($(SDSA.south west)!0.7!(SDSA.north west)$)!0.5!($(SPRITEVRAM.north east)!0.3!(SPRITEVRAM.south east)$)$) to ($(SPRITEVRAM.north east)!0.3!(SPRITEVRAM.south east)$);
+\draw[vecArrow] ($($(SDSA.south west)!0.7!(SDSA.north west)$)!0.5!($(SPRITEVRAM.north east)!0.3!(SPRITEVRAM.south east)$)$) to ($(SDSA.south west)!0.7!(SDSA.north west)$);
+\draw[innerWhite] ($($(SDSA.south west)!0.7!(SDSA.north west)$)!0.5!($(SPRITEVRAM.north east)!0.3!(SPRITEVRAM.south east)$)$) to ($(SPRITEVRAM.north east)!0.3!(SPRITEVRAM.south east)$);
+\draw[innerWhite] ($($(SDSA.south west)!0.7!(SDSA.north west)$)!0.5!($(SPRITEVRAM.north east)!0.3!(SPRITEVRAM.south east)$)$) to ($(SDSA.south west)!0.7!(SDSA.north west)$);
+
+\draw[very thick,->] ($(CRTC.north west)!0.7!(CRTC.north east)$) |- ($(3D.south west)!0.75!(3D.north west)$);
+\draw[very thick,->] (ClockCircuit38MHz) -| (CRTCGVA);
+
+\draw[vecArrow] (CRTCTVA) to ($(TEXTVRAM.south west)!0.595!(TEXTVRAM.north west)$);
+\draw[vecArrow] (CRTCGVA) to ($(GRAPHICVRAM.south west)!0.596!(GRAPHICVRAM.north west)$);
+
+\draw[vecArrow] ($(CRTCVDTurn.east)!0.25!(CRTCVDTurn.west)$) to (CRTCVD);
+\draw[vecArrow] ($(CRTCVDTurn.west)!0.25!(CRTCVDTurn.east)$) to ($(TEXTVRAM.south west)!0.31!(TEXTVRAM.north west)$);
+\draw[vecArrow] ($(CRTCVDTurn.north)!0.25!(CRTCVDTurn.south)$) |- ($(GRAPHICVRAM.south west)!0.875!(GRAPHICVRAM.north west)$);
+\draw[innerWhite] ($(CRTCVDTurn.east)!0.25!(CRTCVDTurn.west)$) to (CRTCVD);
+\draw[innerWhite] ($(CRTCVDTurn.west)!0.25!(CRTCVDTurn.east)$) to ($(TEXTVRAM.south west)!0.31!(TEXTVRAM.north west)$);
+
+\draw[very thick,->] (CRTCInvisible) to (CRTC);
+\draw[very thick,->] (CRTCInvisible.north) |- ($(MPU.north east)!0.1!(MPU.south east)$);
+
+\draw[very thick,->] ($(MemoryController.north east)!0.072!(MemoryController.south east)$) to ($(Buffer.south west)!0.25!(Buffer.north west)$);
+
+\draw[vecArrow] (MemoryControllerPD) to ($(Printer.north east)!0.66!(Printer.north west)$);
+
+\draw[vecArrow] ($(PrinterTurn.west)!0.25!(PrinterTurn.east)$) to ($(SystemController.south west)!0.196!(SystemController.north west)$);
+\draw[vecArrow] ($(PrinterTurn.north)!0.25!(PrinterTurn.south)$) to ($(Printer.north west)!0.663!(Printer.north east)$);
+\draw[innerWhite] ($(PrinterTurn.west)!0.25!(PrinterTurn.east)$) to ($(SystemController.south west)!0.196!(SystemController.north west)$);
+
+\draw[very thick,->] (RESETSW) -| ($(MemoryController.south east)!0.78!(MemoryController.south west)$);
+\draw[very thick,->] (NMISW) -| ($(SystemController.south east)!0.82!(SystemController.south west)$);
+
+\draw[vecArrow] ($(SystemControllerCInvisible)!0.5!($(SystemController.north west)!0.901!(SystemController.north east)$)$) to ($(SystemController.north west)!0.901!(SystemController.north east)$);
+\draw[vecArrow] ($(SystemControllerCInvisible)!0.5!($(SystemController.north west)!0.901!(SystemController.north east)$)$) to (SystemControllerCInvisible);
+\draw[innerWhite] ($(SystemControllerCInvisible)!0.5!($(SystemController.north west)!0.901!(SystemController.north east)$)$) to ($(SystemController.north west)!0.901!(SystemController.north east)$);
+\draw[innerWhite] ($(SystemControllerCInvisible)!0.5!($(SystemController.north west)!0.901!(SystemController.north east)$)$) to (SystemControllerCInvisible);
+
+\draw[vecArrow] (MemoryControllerIOC) -| ($(MFP.north west)!0.66!(MFP.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(SDSA.south east)!0.125!(SDSA.south west)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(SCC.north west)!0.66!(SCC.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(FDC.north west)!0.75!(FDC.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(IOController.north west)!0.75!(IOController.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(SCSIController.north west)!0.75!(SCSIController.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(PPI.north west)!0.75!(PPI.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(ADPCM.north west)!0.875!(ADPCM.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(OPM.north west)!0.875!(OPM.north east)$);
+\draw[vecArrow] (MemoryControllerIOC) -| ($(RTC.north west)!0.8!(RTC.north east)$);
+\draw[vecArrow] ($(MemoryControllerIOCTurn.south)!0.25!(MemoryControllerIOCTurn.north)$) |- ($(Expansion.south west)!0.26!(Expansion.north west)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(MFP.north west)!0.66!(MFP.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(SDSA.south east)!0.125!(SDSA.south west)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(SCC.north west)!0.66!(SCC.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(FDC.north west)!0.75!(FDC.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(IOController.north west)!0.75!(IOController.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(SCSIController.north west)!0.75!(SCSIController.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(PPI.north west)!0.75!(PPI.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(ADPCM.north west)!0.875!(ADPCM.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(OPM.north west)!0.875!(OPM.north east)$);
+\draw[innerWhite] (MemoryControllerIOC) -| ($(RTC.north west)!0.8!(RTC.north east)$);
+\draw[innerWhite] ($(MemoryControllerIOCTurn.south)!0.25!(MemoryControllerIOCTurn.north)$) |- ($(Expansion.south west)!0.26!(Expansion.north west)$);
+
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(MFP.north west)!0.4!(MFP.north east)$);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(SCC.north west)!0.4!(SCC.north east)$);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (FDC.north);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (IOController.north);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (SCSIController.north);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (PPI.north);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(ADPCM.north west)!0.62!(ADPCM.north east)$);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(OPM.north west)!0.62!(OPM.north east)$);
+\draw[vecArrow] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (RTC.north);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(MFP.north west)!0.4!(MFP.north east)$);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(SCC.north west)!0.4!(SCC.north east)$);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (FDC.north);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (IOController.north);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (SCSIController.north);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (PPI.north);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(ADPCM.north west)!0.62!(ADPCM.north east)$);
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| ($(OPM.north west)!0.62!(OPM.north east)$);
+
+\draw[vecArrow] ($(SystemControllerInvisible.north)!0.5!(SystemControllerInvisible.south)$) -| ($(RTC.north west)!0.2!(RTC.north east)$);
+\draw[vecArrow] ($(SystemControllerInvisible.north)!0.5!(SystemControllerInvisible.south)$) to (SystemControllerDInvisible);
+\draw[vecArrow] ($(SystemControllerInvisible.north)!0.5!(SystemControllerInvisible.south)$) to ($(SystemController.north west)!0.589!(SystemController.north east)$);
+\draw[innerWhite] ($(SystemControllerInvisible.north)!0.5!(SystemControllerInvisible.south)$) -| ($(RTC.north west)!0.2!(RTC.north east)$);
+\draw[innerWhite] ($(SystemControllerInvisible.north)!0.5!(SystemControllerInvisible.south)$) to (SystemControllerDInvisible);
+\draw[innerWhite] ($(SystemControllerInvisible.north)!0.5!(SystemControllerInvisible.south)$) to ($(SystemController.north west)!0.589!(SystemController.north east)$);
+
+\draw[very thick,->] ($(CLOCKSPEEDSW.south east)!0.555!(CLOCKSPEEDSW.south west)$) to ($(ClockCircuit40MHz.north west)!0.6!(ClockCircuit40MHz.north east)$);
+\draw[very thick,->] ($(ClockCircuit40MHz.south east)!0.3!(ClockCircuit40MHz.south west)$) to (ClockCircuit10MHz);
+\draw[very thick,->] ($(ClockCircuit40MHz.south east)!0.875!(ClockCircuit40MHz.south west)$) |- ($(MemoryController.south west)!0.875!(MemoryController.north west)$);
+
+\draw[vecArrow] ($(ClockCircuit40MHzTurn.east)!0.25!(ClockCircuit40MHzTurn.west)$) to (ClockCircuit40MHz);
+\draw[vecArrow] ($(ClockCircuit40MHzTurn.north)!0.25!(ClockCircuit40MHzTurn.south)$) to ($(MemoryController.north west)!0.875!(MemoryController.north east)$);
+\draw[innerWhite] ($(ClockCircuit40MHzTurn.east)!0.25!(ClockCircuit40MHzTurn.west)$) to (ClockCircuit40MHz);
+
+\draw[vecArrow] ($(MainMemoryTurn.west)!0.25!(MainMemoryTurn.east)$) to ($(MemoryController.south west)!0.125!(MemoryController.north west)$);
+\draw[vecArrow] ($(MainMemoryTurn.north)!0.25!(MainMemoryTurn.south)$) to ($(MainMemory.north west)!0.708!(MainMemory.north east)$);
+\draw[innerWhite] ($(MainMemoryTurn.west)!0.25!(MainMemoryTurn.east)$) to ($(MemoryController.south west)!0.125!(MemoryController.north west)$);
+
+\draw[very thick,->] (ClockCircuit40MHz.west) to ($(DMAC.north east)!0.638!(DMAC.south east)$);
+
+\draw[very thick,-] ($(ClockCircuit40MHz.north west)!0.292!(ClockCircuit40MHz.north east)$) to (ClockCircuit40MHzInvisible);
+\draw[very thick,->] (ClockCircuit40MHzInvisible.east) -| ($(FPU.north west)!0.7!(FPU.north east)$);
+
+\draw[vecArrow] ($(DMACInvisible)!0.5!($(DMAC.south east)!0.7465!(DMAC.south west)$)$) to ($(DMAC.south east)!0.7465!(DMAC.south west)$);
+\draw[vecArrow] ($(DMACInvisible)!0.5!($(DMAC.south east)!0.7465!(DMAC.south west)$)$) to (DMACInvisible);
+\draw[innerWhite] ($(DMACInvisible)!0.5!($(DMAC.south east)!0.7465!(DMAC.south west)$)$) to ($(DMAC.south east)!0.7465!(DMAC.south west)$);
+\draw[innerWhite] ($(DMACInvisible)!0.5!($(DMAC.south east)!0.7465!(DMAC.south west)$)$) to (DMACInvisible);
+
+\draw[vecArrow] ($(DMACInvisible)!0.5!($(CGBIOS.north west)!0.2885!(CGBIOS.north east)$)$) to ($(CGBIOS.north west)!0.2885!(CGBIOS.north east)$);
+\draw[vecArrow] ($(DMACInvisible)!0.5!($(CGBIOS.north west)!0.2885!(CGBIOS.north east)$)$) to (DMACInvisible);
+\draw[innerWhite] ($(DMACInvisible)!0.5!($(CGBIOS.north west)!0.2885!(CGBIOS.north east)$)$) to ($(CGBIOS.north west)!0.2885!(CGBIOS.north east)$);
+\draw[innerWhite] ($(DMACInvisible)!0.5!($(CGBIOS.north west)!0.2885!(CGBIOS.north east)$)$) to (DMACInvisible);
+
+\draw[vecArrow] ($(MainMemoryInvisible)!0.5!($(MainMemory.north west)!0.17!(MainMemory.north east)$)$) to ($(MainMemory.north west)!0.17!(MainMemory.north east)$);
+\draw[vecArrow] ($(MainMemoryInvisible)!0.5!($(MainMemory.north west)!0.17!(MainMemory.north east)$)$) to (MainMemoryInvisible);
+\draw[innerWhite] ($(MainMemoryInvisible)!0.5!($(MainMemory.north west)!0.17!(MainMemory.north east)$)$) to ($(MainMemory.north west)!0.17!(MainMemory.north east)$);
+\draw[innerWhite] ($(MainMemoryInvisible)!0.5!($(MainMemory.north west)!0.17!(MainMemory.north east)$)$) to (MainMemoryInvisible);
+
+\draw[vecArrow] ($(MemoryController.south west)!0.65!(MemoryController.north west)$) -| ($(MainMemory.north west)!0.44!(MainMemory.north east)$);
+\draw[vecArrow] ($(MemoryController.south west)!0.65!(MemoryController.north west)$) -| ($(CGBIOS.north west)!0.56!(CGBIOS.north east)$);
+\draw[vecArrow] ($(MemoryController.south west)!0.65!(MemoryController.north west)$) -| ($(SRAM.north west)!0.56!(SRAM.north east)$);
+\draw[innerWhite] ($(MemoryController.south west)!0.65!(MemoryController.north west)$) -| ($(MainMemory.north west)!0.44!(MainMemory.north east)$);
+\draw[innerWhite] ($(MemoryController.south west)!0.65!(MemoryController.north west)$) -| ($(CGBIOS.north west)!0.56!(CGBIOS.north east)$);
+\draw[innerWhite] ($(MemoryController.south west)!0.65!(MemoryController.north west)$) -| ($(SRAM.north west)!0.56!(SRAM.north east)$);
+\draw[vecArrow] ($(MemoryController.south west)!0.47!(MemoryController.north west)$) -| ($(SRAM.north west)!0.85!(SRAM.north east)$);
+\draw[vecArrow] ($(MemoryController.south west)!0.29!(MemoryController.north west)$) -| ($(CGBIOS.north west)!0.85!(CGBIOS.north east)$);
+
+\draw[vecArrow] ($(FPUInvisible)!0.5!($(FPU.south east)!0.85!(FPU.south west)$)$) to ($(FPU.south east)!0.85!(FPU.south west)$);
+\draw[vecArrow] ($(FPUInvisible)!0.5!($(FPU.south east)!0.85!(FPU.south west)$)$) to (FPUInvisible);
+\draw[innerWhite] ($(FPUInvisible)!0.5!($(FPU.south east)!0.85!(FPU.south west)$)$) to ($(FPU.south east)!0.85!(FPU.south west)$);
+\draw[innerWhite] ($(FPUInvisible)!0.5!($(FPU.south east)!0.85!(FPU.south west)$)$) to (FPUInvisible);
+
+\draw[vecArrow] ($(FPUInvisible)!0.5!($(SRAM.north west)!0.2885!(SRAM.north east)$)$) to ($(SRAM.north west)!0.2885!(SRAM.north east)$);
+\draw[vecArrow] ($(FPUInvisible)!0.5!($(SRAM.north west)!0.2885!(SRAM.north east)$)$) to (FPUInvisible);
+\draw[innerWhite] ($(FPUInvisible)!0.5!($(SRAM.north west)!0.2885!(SRAM.north east)$)$) to ($(SRAM.north west)!0.2885!(SRAM.north east)$);
+\draw[innerWhite] ($(FPUInvisible)!0.5!($(SRAM.north west)!0.2885!(SRAM.north east)$)$) to (FPUInvisible);
+
+\draw[vecArrow] ($(MemoryControllerDInvisible)!0.5!($(MemoryController.north west)!0.23!(MemoryController.north east)$)$) to ($(MemoryController.north west)!0.23!(MemoryController.north east)$);
+\draw[vecArrow] ($(MemoryControllerDInvisible)!0.5!($(MemoryController.north west)!0.23!(MemoryController.north east)$)$) to (MemoryControllerDInvisible);
+\draw[innerWhite] ($(MemoryControllerDInvisible)!0.5!($(MemoryController.north west)!0.23!(MemoryController.north east)$)$) to ($(MemoryController.north west)!0.23!(MemoryController.north east)$);
+\draw[innerWhite] ($(MemoryControllerDInvisible)!0.5!($(MemoryController.north west)!0.23!(MemoryController.north east)$)$) to (MemoryControllerDInvisible);
+
+\draw[vecArrow] ($(MemoryControllerCInvisible)!0.5!($(MemoryController.north west)!0.663!(MemoryController.north east)$)$) to ($(MemoryController.north west)!0.663!(MemoryController.north east)$);
+\draw[vecArrow] ($(MemoryControllerCInvisible)!0.5!($(MemoryController.north west)!0.663!(MemoryController.north east)$)$) to (MemoryControllerCInvisible);
+\draw[innerWhite] ($(MemoryControllerCInvisible)!0.5!($(MemoryController.north west)!0.663!(MemoryController.north east)$)$) to ($(MemoryController.north west)!0.663!(MemoryController.north east)$);
+\draw[innerWhite] ($(MemoryControllerCInvisible)!0.5!($(MemoryController.north west)!0.663!(MemoryController.north east)$)$) to (MemoryControllerCInvisible);
+
+\draw[vecArrow] ($(CRTCDInvisible)!0.5!($(CRTC.south east)!0.84!(CRTC.south west)$)$) to ($(CRTC.south east)!0.84!(CRTC.south west)$);
+\draw[vecArrow] ($(CRTCDInvisible)!0.5!($(CRTC.south east)!0.84!(CRTC.south west)$)$) to (CRTCDInvisible);
+\draw[innerWhite] ($(CRTCDInvisible)!0.5!($(CRTC.south east)!0.84!(CRTC.south west)$)$) to ($(CRTC.south east)!0.84!(CRTC.south west)$);
+\draw[innerWhite] ($(CRTCDInvisible)!0.5!($(CRTC.south east)!0.84!(CRTC.south west)$)$) to (CRTCDInvisible);
+
+\draw[vecArrow] ($(MemoryControllerIOCInvisible)!0.5!(Buffer.south)$) to (Buffer.south);
+\draw[vecArrow] ($(MemoryControllerIOCInvisible)!0.5!(Buffer.south)$) to (MemoryControllerIOCInvisible);
+\draw[innerWhite] ($(MemoryControllerIOCInvisible)!0.5!(Buffer.south)$) to (Buffer.south);
+\draw[innerWhite] ($(MemoryControllerIOCInvisible)!0.5!(Buffer.south)$) to (MemoryControllerIOCInvisible);
+
+\draw[vecArrow] ($(MemoryControllerIOCInvisible)!0.5!($(SystemController.north west)!0.277!(SystemController.north east)$)$) to ($(SystemController.north west)!0.277!(SystemController.north east)$);
+\draw[vecArrow] ($(MemoryControllerIOCInvisible)!0.5!($(SystemController.north west)!0.277!(SystemController.north east)$)$) to (MemoryControllerIOCInvisible);
+\draw[innerWhite] ($(MemoryControllerIOCInvisible)!0.5!($(SystemController.north west)!0.277!(SystemController.north east)$)$) to ($(SystemController.north west)!0.277!(SystemController.north east)$);
+\draw[innerWhite] ($(MemoryControllerIOCInvisible)!0.5!($(SystemController.north west)!0.277!(SystemController.north east)$)$) to (MemoryControllerIOCInvisible);
+
+\draw[vecArrow] ($(SDSAInvisible)!0.5!($(SDSA.south east)!0.68!(SDSA.south west)$)$) to ($(SDSA.south east)!0.68!(SDSA.south west)$);
+\draw[vecArrow] ($(SDSAInvisible)!0.5!($(SDSA.south east)!0.68!(SDSA.south west)$)$) to (SDSAInvisible);
+\draw[innerWhite] ($(SDSAInvisible)!0.5!($(SDSA.south east)!0.68!(SDSA.south west)$)$) to ($(SDSA.south east)!0.68!(SDSA.south west)$);
+\draw[innerWhite] ($(SDSAInvisible)!0.5!($(SDSA.south east)!0.68!(SDSA.south west)$)$) to (SDSAInvisible);
+
+\draw[vecArrow] ($(VideoControllerDInvisible)!0.5!($(VideoController.south east)!0.75!(VideoController.south west)$)$) to ($(VideoController.south east)!0.75!(VideoController.south west)$);
+\draw[vecArrow] ($(VideoControllerDInvisible)!0.5!($(VideoController.south east)!0.75!(VideoController.south west)$)$) to (VideoControllerDInvisible);
+\draw[innerWhite] ($(VideoControllerDInvisible)!0.5!($(VideoController.south east)!0.75!(VideoController.south west)$)$) to ($(VideoController.south east)!0.75!(VideoController.south west)$);
+\draw[innerWhite] ($(VideoControllerDInvisible)!0.5!($(VideoController.south east)!0.75!(VideoController.south west)$)$) to (VideoControllerDInvisible);
+
+\draw[vecArrow] (MPUCTurn.east) to (MPUC);
+\draw[vecArrow] (MPUCTurn.north) to (Buffer);
+\draw[vecArrow] (MPUCTurn.south) to ($(CRTC.south east)!0.317!(CRTC.south west)$);
+\draw[vecArrow] (MPUCTurn.west) -| ($(VideoController.south east)!0.15!(VideoController.south west)$);
+\draw[vecArrow] (MPUCTurn.east) -| ($(DMAC.south east)!0.25!(DMAC.south west)$);
+\draw[vecArrow] (MPUCTurn.east) -| ($(FPU.south east)!0.3!(FPU.south west)$);
+\draw[innerWhite] (MPUCTurn.east) to (MPUC);
+\draw[innerWhite] (MPUCTurn.north) to (Buffer);
+\draw[innerWhite] (MPUCTurn.south) to ($(CRTC.south east)!0.317!(CRTC.south west)$);
+\draw[innerWhite] (MPUCTurn.west) -| ($(VideoController.south east)!0.15!(VideoController.south west)$);
+\draw[innerWhite] (MPUCTurn.east) -| ($(DMAC.south east)!0.25!(DMAC.south west)$);
+\draw[innerWhite] (MPUCTurn.east) -| ($(FPU.south east)!0.3!(FPU.south west)$);
+
+\draw[vecArrow] (MPUA) to ($(Expansion.south west)!0.4!(Expansion.north west)$);
+\draw[vecArrow] (MPUA) -| ($(VideoController.south east)!0.45!(VideoController.south west)$);
+\draw[vecArrow] (MPUA) -| ($(SDSA.south east)!0.4!(SDSA.south west)$);
+\draw[vecArrow] (MPUA) -| ($(SystemController.north west)!0.75!(SystemController.north east)$);
+\draw[vecArrow] (MPUA) -| ($(CRTC.south east)!0.58!(CRTC.south west)$);
+\draw[vecArrow] (MPUA) -| ($(MemoryController.north west)!0.45!(MemoryController.north east)$);
+\draw[vecArrow] (MPUA) -| (DMAC);
+\draw[vecArrow] (MPUA) -| ($(FPU.south east)!0.58!(FPU.south west)$);
+\draw[innerWhite] (MPUA) to ($(Expansion.south west)!0.4!(Expansion.north west)$);
+\draw[innerWhite] (MPUA) -| ($(VideoController.south east)!0.45!(VideoController.south west)$);
+\draw[innerWhite] (MPUA) -| ($(SDSA.south east)!0.4!(SDSA.south west)$);
+\draw[innerWhite] (MPUA) -| ($(SystemController.north west)!0.75!(SystemController.north east)$);
+\draw[innerWhite] (MPUA) -| ($(CRTC.south east)!0.58!(CRTC.south west)$);
+\draw[innerWhite] (MPUA) -| ($(MemoryController.north west)!0.45!(MemoryController.north east)$);
+\draw[innerWhite] (MPUA) -| (DMAC);
+\draw[innerWhite] (MPUA) -| ($(FPU.south east)!0.58!(FPU.south west)$);
+
+\draw[vecArrow] ($(MPUDTurn.south)!0.25!(MPUDTurn.north)$) to (Latch);
+\draw[vecArrow] (MPUDTurn.east) to (MPUD);
+\draw[vecArrow] (MPUDTurn.west) to ($(Expansion.south west)!0.538!(Expansion.north west)$);
+\draw[innerWhite] ($(MPUDTurn.south)!0.25!(MPUDTurn.north)$) to (Latch);
+\draw[innerWhite] (MPUDTurn.east) to (MPUD);
+\draw[innerWhite] (MPUDTurn.west) to ($(Expansion.south west)!0.538!(Expansion.north west)$);
+
+\draw[innerWhite] ($(SystemControllerAInvisible.north)!0.5!(SystemControllerAInvisible.south)$) -| (RTC.north);
+
+\draw[vecArrow] ($(MFPInvisible)!0.5!($(MFP.north west)!0.135!(MFP.north east)$)$) to ($(MFP.north west)!0.135!(MFP.north east)$);
+\draw[vecArrow] ($(MFPInvisible)!0.5!($(MFP.north west)!0.135!(MFP.north east)$)$) to (MFPInvisible);
+\draw[innerWhite] ($(MFPInvisible)!0.5!($(MFP.north west)!0.135!(MFP.north east)$)$) to ($(MFP.north west)!0.135!(MFP.north east)$);
+\draw[innerWhite] ($(MFPInvisible)!0.5!($(MFP.north west)!0.135!(MFP.north east)$)$) to (MFPInvisible);
+
+\draw[vecArrow] ($(SCCAInvisible)!0.5!($(SCC.north west)!0.135!(SCC.north east)$)$) to ($(SCC.north west)!0.135!(SCC.north east)$);
+\draw[vecArrow] ($(SCCAInvisible)!0.5!($(SCC.north west)!0.135!(SCC.north east)$)$) to (SCCAInvisible);
+\draw[innerWhite] ($(SCCAInvisible)!0.5!($(SCC.north west)!0.135!(SCC.north east)$)$) to ($(SCC.north west)!0.135!(SCC.north east)$);
+\draw[innerWhite] ($(SCCAInvisible)!0.5!($(SCC.north west)!0.135!(SCC.north east)$)$) to (SCCAInvisible);
+
+\draw[vecArrow] ($(FDCInvisible)!0.5!($(FDC.north west)!0.25!(FDC.north east)$)$) to ($(FDC.north west)!0.25!(FDC.north east)$);
+\draw[vecArrow] ($(FDCInvisible)!0.5!($(FDC.north west)!0.25!(FDC.north east)$)$) to (FDCInvisible);
+\draw[innerWhite] ($(FDCInvisible)!0.5!($(FDC.north west)!0.25!(FDC.north east)$)$) to ($(FDC.north west)!0.25!(FDC.north east)$);
+\draw[innerWhite] ($(FDCInvisible)!0.5!($(FDC.north west)!0.25!(FDC.north east)$)$) to (FDCInvisible);
+
+\draw[vecArrow] ($(IOControllerInvisible)!0.5!($(IOController.north west)!0.25!(IOController.north east)$)$) to ($(IOController.north west)!0.25!(IOController.north east)$);
+\draw[vecArrow] ($(IOControllerInvisible)!0.5!($(IOController.north west)!0.25!(IOController.north east)$)$) to (IOControllerInvisible);
+\draw[innerWhite] ($(IOControllerInvisible)!0.5!($(IOController.north west)!0.25!(IOController.north east)$)$) to ($(IOController.north west)!0.25!(IOController.north east)$);
+\draw[innerWhite] ($(IOControllerInvisible)!0.5!($(IOController.north west)!0.25!(IOController.north east)$)$) to (IOControllerInvisible);
+
+\draw[vecArrow] ($(SCSIControllerInvisible)!0.5!($(SCSIController.north west)!0.25!(SCSIController.north east)$)$) to ($(SCSIController.north west)!0.25!(SCSIController.north east)$);
+\draw[vecArrow] ($(SCSIControllerInvisible)!0.5!($(SCSIController.north west)!0.25!(SCSIController.north east)$)$) to (SCSIControllerInvisible);
+\draw[innerWhite] ($(SCSIControllerInvisible)!0.5!($(SCSIController.north west)!0.25!(SCSIController.north east)$)$) to ($(SCSIController.north west)!0.25!(SCSIController.north east)$);
+\draw[innerWhite] ($(SCSIControllerInvisible)!0.5!($(SCSIController.north west)!0.25!(SCSIController.north east)$)$) to (SCSIControllerInvisible);
+
+\draw[vecArrow] ($(PPIInvisible)!0.5!($(PPI.north west)!0.25!(PPI.north east)$)$) to ($(PPI.north west)!0.25!(PPI.north east)$);
+\draw[vecArrow] ($(PPIInvisible)!0.5!($(PPI.north west)!0.25!(PPI.north east)$)$) to (PPIInvisible);
+\draw[innerWhite] ($(PPIInvisible)!0.5!($(PPI.north west)!0.25!(PPI.north east)$)$) to ($(PPI.north west)!0.25!(PPI.north east)$);
+\draw[innerWhite] ($(PPIInvisible)!0.5!($(PPI.north west)!0.25!(PPI.north east)$)$) to (PPIInvisible);
+
+\draw[vecArrow] ($(ADPCMAInvisible)!0.5!($(ADPCM.north west)!0.38!(ADPCM.north east)$)$) to ($(ADPCM.north west)!0.38!(ADPCM.north east)$);
+\draw[vecArrow] ($(ADPCMAInvisible)!0.5!($(ADPCM.north west)!0.38!(ADPCM.north east)$)$) to (ADPCMAInvisible);
+\draw[innerWhite] ($(ADPCMAInvisible)!0.5!($(ADPCM.north west)!0.38!(ADPCM.north east)$)$) to ($(ADPCM.north west)!0.38!(ADPCM.north east)$);
+\draw[innerWhite] ($(ADPCMAInvisible)!0.5!($(ADPCM.north west)!0.38!(ADPCM.north east)$)$) to (ADPCMAInvisible);
+
+\draw[vecArrow] ($(OPMInvisible)!0.5!($(OPM.north west)!0.38!(OPM.north east)$)$) to ($(OPM.north west)!0.38!(OPM.north east)$);
+\draw[vecArrow] ($(OPMInvisible)!0.5!($(OPM.north west)!0.38!(OPM.north east)$)$) to (OPMInvisible);
+\draw[innerWhite] ($(OPMInvisible)!0.5!($(OPM.north west)!0.38!(OPM.north east)$)$) to ($(OPM.north west)!0.38!(OPM.north east)$);
+\draw[innerWhite] ($(OPMInvisible)!0.5!($(OPM.north west)!0.38!(OPM.north east)$)$) to (OPMInvisible);
+
+\end{tikzpicture}
+
+\end{sideways}
+
+\newpage
+
+\phantomsection
+\subsection*{1-4.System Configuration}
+\addcontentsline{toc}{subsection}{1-4. System Configuration}
+
+\newpage
+
+\phantomsection
+\section*{2.Part Names}
+\addcontentsline{toc}{section}{2. Part Names}
+
+\phantomsection
+\subsection*{2-1.Computer Body Front}
+\addcontentsline{toc}{subsection}{2-1. Computer Body Front}
+
+\newpage
+
+\phantomsection
+\subsection*{2-2.Computer Body Rear}
+\addcontentsline{toc}{subsection}{2-2. Computer Body Rear}
+
+\newpage
+
+\phantomsection
+\section*{3.Computer Hardware}
+\addcontentsline{toc}{section}{3. Computer Hardware}
+
+\phantomsection
+\subsection*{3-1.Memory Map}
+\addcontentsline{toc}{subsection}{3-1. Memory Map}
+
+\newpage
+
+\phantomsection
+\subsection*{3-2.I/O Port Address List}
+\addcontentsline{toc}{subsection}{3-2. I/O Port Address List}
+
+\newpage
+
+\phantomsection
+\subsection*{3-3.Engineering Rear Set}
+\addcontentsline{toc}{subsection}{3-3. Engineering Rear Set}
+
+\newpage
+
+\phantomsection
+\subsection*{3-4.System Port}
+\addcontentsline{toc}{subsection}{3-4. System Port}
+
+\newpage
+
+\phantomsection
+\subsection*{3-5.Interrupts}
+\addcontentsline{toc}{subsection}{3-5. Interrupts}
+
+\newpage
+
+\phantomsection
+\subsection*{3-6.IPL}
+\addcontentsline{toc}{subsection}{3-6. IPL}
+
+\newpage
+
+\phantomsection
+\section*{4.Screen Configuration \& Control}
+\addcontentsline{toc}{section}{4. Screen Configuration \& Control}
+
+\phantomsection
+\subsection*{4-1.Screen Configuration}
+\addcontentsline{toc}{subsection}{4-1. Screen Configuration}
+
+\newpage
+
+\phantomsection
+\subsection*{4-2.Control of Text \& Graphics Display (CRTC)}
+\addcontentsline{toc}{subsection}{4-2. Control of Text \& Graphics Display (CRTC)}
+
+\newpage
+
+\phantomsection
+\subsection*{4-3.Sprites}
+\addcontentsline{toc}{subsection}{4-3. Sprites}
+
+\newpage
+
+\phantomsection
+\subsection*{4-4.Video Controller}
+\addcontentsline{toc}{subsection}{4-4. Video Controller}
+
+\newpage
+
+\phantomsection
+\subsection*{4-5.Superimpose \& Overscan}
+\addcontentsline{toc}{subsection}{4-5. Superimpose \& Overscan}
+
+\newpage
+
+\phantomsection
+\section*{5.Additional Switches}
+\addcontentsline{toc}{section}{5. Additional Switches}
+
+\newpage
+
+\phantomsection
+\section*{6.Keyboard \& Mouse}
+\addcontentsline{toc}{section}{6. Keyboard \& Mouse}
+
+\newpage
+
+\phantomsection
+\section*{7.Sound Functions}
+\addcontentsline{toc}{section}{7. Sound Functions}
+
+\newpage
+
+\phantomsection
+\subsection*{7-1.FM Tone Generator}
+\addcontentsline{toc}{subsection}{7-1. FM Tone Generator}
+
+\newpage
+
+\phantomsection
+\subsection*{7-2.Voice Synthesis}
+\addcontentsline{toc}{subsection}{7-2. Voice Synthesis}
+
+\newpage
+
+\phantomsection
+\section*{8.Peripheral LSI}
+\addcontentsline{toc}{section}{8. Peripheral LSI}
+
+\newpage
+
+\phantomsection
+\subsection*{8-1.DMAC}
+\addcontentsline{toc}{subsection}{8-1. DMAC}
+
+\newpage
+
+\phantomsection
+\subsection*{8-2.Floating-point Arithmetic Coprocessor}
+\addcontentsline{toc}{subsection}{8-2. Floating-point Arithmetic Coprocessor}
+
+\newpage
+
+\phantomsection
+\subsection*{8-3.Additional Main Memory}
+\addcontentsline{toc}{subsection}{8-3. Additional Main Memory}
+
+\newpage
+
+\phantomsection
+\subsection*{8-4.MFP}
+\addcontentsline{toc}{subsection}{8-4. MFP}
+
+\newpage
+
+\phantomsection
+\subsection*{8-5.SCC}
+\addcontentsline{toc}{subsection}{8-5. SCC}
+
+\newpage
+
+\phantomsection
+\subsection*{8-6.RTC}
+\addcontentsline{toc}{subsection}{8-6. RTC}
+
+\newpage
+
+\phantomsection
+\section*{9.Peripheral I/O}
+\addcontentsline{toc}{section}{9. Peripheral I/O}
+
+\newpage
+
+\phantomsection
+\subsection*{9-1.Disk}
+\addcontentsline{toc}{subsection}{9-1. Disk}
+
+\newpage
+
+\phantomsection
+\subsection*{9-2.Printer}
+\addcontentsline{toc}{subsection}{9-2. Printer}
+
+\newpage
+
+\phantomsection
+\subsection*{9-3.Joystick}
+\addcontentsline{toc}{subsection}{9-3. Joystick}
+
+\newpage
+
+\phantomsection
+\subsection*{9-4.Expansion I/O Slot}
+\addcontentsline{toc}{subsection}{9-4. Expansion I/O Slot}
+
+\newpage
+
+\phantomsection
+\subsection*{9-5.Various Connectors}
+\addcontentsline{toc}{subsection}{9-5. Various Connectors}
+
+\newpage
+
+\phantomsection
+\section*{10.Main Circuit Board}
+\addcontentsline{toc}{section}{10. Main Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{11.Main Basic Wiring Diagram (1)}
+\addcontentsline{toc}{section}{11. Main Basic Wiring Diagram (1)}
+
+\newpage
+
+\phantomsection
+\section*{12.Main Basic Wiring Diagram (2)}
+\addcontentsline{toc}{section}{12. Main Basic Wiring Diagram (2)}
+
+\newpage
+
+\phantomsection
+\section*{13.Main Basic Wiring Diagram (3)}
+\addcontentsline{toc}{section}{13. Main Basic Wiring Diagram (3)}
+
+\newpage
+
+\phantomsection
+\section*{14.Main Basic Wiring Diagram (4)}
+\addcontentsline{toc}{section}{14. Main Basic Wiring Diagram (4)}
+
+\newpage
+
+\phantomsection
+\section*{15.Main Basic Wiring Diagram (5)}
+\addcontentsline{toc}{section}{15. Main Basic Wiring Diagram (5)}
+
+\newpage
+
+\phantomsection
+\section*{16.Control Basic Wiring Diagram}
+\addcontentsline{toc}{section}{16. Control Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{17.Control Circuit Board}
+\addcontentsline{toc}{section}{17. Control Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{18.I/O, FD Connector, SCSI Connector, LED Basic Wiring Diagram}
+\addcontentsline{toc}{section}{18. I/O, FD Connector, SCSI Connector, LED Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{19.FD, I/O, SCSI Connector, Power LED, Eject, FD-LED Board}
+\addcontentsline{toc}{section}{19. FD, I/O, SCSI Connector, Power LED, Eject, FD-LED Board}
+
+\newpage
+
+\phantomsection
+\section*{20.Analog Basic Wiring Diagram}
+\addcontentsline{toc}{section}{20. Analog Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{21.Analog Circuit Board}
+\addcontentsline{toc}{section}{21. Analog Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{22.Power Supply Unit Basic Wiring Diagram}
+\addcontentsline{toc}{section}{22. Power Supply Unit Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{23.Power Supply Circuit Board}
+\addcontentsline{toc}{section}{23. Power Supply Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{24.Keyboard Basic Wiring Diagram}
+\addcontentsline{toc}{section}{24. Keyboard Basic Wiring Diagram}
+
+\newpage
+
+\phantomsection
+\section*{25.Keyboard Circuit Board}
+\addcontentsline{toc}{section}{25. Keyboard Circuit Board}
+
+\newpage
+
+\phantomsection
+\section*{26.IC Terminal Signal (1)}
+\addcontentsline{toc}{section}{26. IC Terminal Signal (1)}
+
+\newpage
+
+\phantomsection
+\subsection*{IC Terminal Signal (2)}
+\addcontentsline{toc}{subsection}{ \ \ \ \ IC Terminal Signal (2)}
+
+\newpage
+
+\phantomsection
+\section*{27.Set Way of Packing}
+\addcontentsline{toc}{section}{27. Set Way of Packing}
+
+\newpage
+
+\phantomsection
+\section*{28.Disassembly Of The Printed Circuit Board}
+\addcontentsline{toc}{section}{28. Disassembly of Printed Circuit Board}
+
+\end{document}

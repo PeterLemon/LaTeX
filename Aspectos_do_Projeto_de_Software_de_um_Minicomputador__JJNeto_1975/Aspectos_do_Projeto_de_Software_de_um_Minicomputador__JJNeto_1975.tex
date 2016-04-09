@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper, total={147.8mm, 245mm}, left=34mm]{geometry}
+
+\usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=fsanches]{hyperref}
+
+\usepackage[T1]{fontenc}
+\usepackage[portuguese,brazil]{babel}
+
+\usepackage{soul}
+
+\usepackage[normalem]{ulem}
+\renewcommand{\ULthickness}{0.04em}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0em}{*0}{0em}
+\titlespacing{\subsection}{0em}{*0}{*0}
+\titleformat{\section}{\ttfamily}{\thesection}{1em}{}
+
+\setlength\parindent{5.8em}
+\renewcommand{\baselinestretch}{1.2}
+
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand\headrulewidth{0pt}
+
+\frenchspacing
+
+\begin{document}
+
+\ttfamily
+\sodef\an{}{0.05em}{0.6em}{0em}
+
+\noindent \\
+
+\vspace{2em}
+\hspace{5em} \an{JOÃO JOSÉ NETO}\par
+\hspace{7.2em} \an{``ASPECTOS DO PROJETO DE SOFTWARE DE UM MINICOMPUTADOR''}\par
+
+\vspace{2em}
+\hspace{5em} \an{``Dissertação de Mestrado'' apresentada à Escola Politécnica da Universidade de São Paulo, para obtenção do título de Mestre em Engenharia.}\par
+\hspace{7.2em} \an{Área de Concentração - Engenharia de Eletricidade.}\par
+
+\vspace{19em}
+\hspace{4.45em} \an{Orientador: Prof. Dr. Antonio Marcos de Aguirra Massola}\par
+
+\vspace{7em}
+\hspace{10em} \an{São Paulo}\par
+\hspace{10.3em} \an{-1975-}
+
+\newpage
+
+\noindent \\
+
+\vspace{21em}
+\hspace{6.7em} \an{A meus pais e irmã.}\par
+
+\newpage
+
+\setcounter{page}{1}
+\fancyhead[R]{\ttfamily {I\hskip 0.05em .\hskip 0.05em \thepage}}
+
+\renewcommand\contentsname{\ttfamily \hskip 14.5em \uline{I\hskip 0.05em N\hskip 0.05em D\hskip 0.05em I\hskip 0.05em C\hskip 0.05em E}\\
+\\
+\uline{A\hskip 0.05em s\hskip 0.05em s\hskip 0.05em u\hskip 0.05em n\hskip 0.05em t\hskip 0.05em o} \hskip 26em \uline{P\hskip 0.05em á\hskip 0.05em g\hskip 0.05em i\hskip 0.05em n\hskip 0.05em a}}
+\tableofcontents
+
+\newpage
+
+\setcounter{page}{1}
+\fancyhead[R]{\ttfamily {1\hskip 0.05em .\hskip 0.05em \thepage}}
+
+\phantomsection
+\section*{\uline{R\hskip 0.05em E\hskip 0.05em S\hskip 0.05em U\hskip 0.05em M\hskip 0.05em O}}
+
+\noindent \\
+\par
+\an{O presente trabalho descreve os métodos utilizados no desenvolvimento de alguns dos módulos do ``software'' básico do Patinho Feio, o primeiro minicomputador desenvolvido no Laboratório de Sistemas Digitais do Departamento de Engenharia de Eletricidade da Escola Politécnica da Universidade de São Paulo.}\\
+\par{Para cada módulo apresentado, são discutidos os seus obsetivos, sendo, quando conveniente, apresentados alguns dos problemas enfrentados durante seu desenvolvimento específico ou então problemas mais gerais, referentes ao projeto de programas semelhantes ao mesmo. Sempre que possível, são apresentadas alternativas ao mesmo. Sempre que possível, são apresentadas alternativas de solução dos referidos problemas, descrevendo-se finalmente alguns detalhes de um exemplo de implementação.}\\
+
+\newpage
+
+\end{document}

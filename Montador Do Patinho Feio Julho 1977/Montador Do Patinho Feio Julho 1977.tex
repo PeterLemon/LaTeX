@@ -1,0 +1,158 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper, total={147.8mm, 245mm}, left=34mm]{geometry}
+
+\usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=krom]{hyperref}
+
+\usepackage[T1]{fontenc}
+\usepackage[portuguese,brazil]{babel}
+
+\usepackage{soul}
+
+\usepackage[normalem]{ulem}
+\renewcommand{\ULthickness}{0.04em}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0em}{*0}{0em}
+\titlespacing{\subsection}{0em}{*0}{*0}
+\titleformat{\section}{\ttfamily}{\thesection}{1em}{}
+
+\setlength\parindent{5.8em}
+\renewcommand{\baselinestretch}{1.2}
+
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand\headrulewidth{0pt}
+
+\frenchspacing
+
+\begin{document}
+
+\ttfamily
+\sodef\an{}{0.05em}{0.6em}{0em}
+
+\noindent \\
+
+\vspace{2em}
+\hspace{5em} \an{UNIVERSIDADE DE SÃO PAULO}\par
+\hspace{7.2em} \an{ESCOLA POLITÉCNICA}\par
+\hspace{0.05em} \an{DEPARTAMENTO DE ENGENHARIA DE ELETRICIDADE}\par
+\hspace{2.8em} \an{LABORATÕRIO DE SISTEMAS DIGITAIS}\par
+
+\vspace{19em}
+\hspace{4.45em} \an{MONTADOR DO ``PATINHO FEIO''}\par
+
+\vspace{7em}
+\hspace{8.1em} \an{Antonio Marcos de Aguirra Massola}\par
+\hspace{8.1em} \an{João José Neto}\par
+\hspace{8.1em} \an{Moshe Bain}\par
+
+\vspace{7em}
+\hspace{10em} \an{Julho}\par
+\hspace{10.3em} \an{1977}
+
+\newpage
+
+\noindent \\
+
+\vspace{21em}
+\hspace{6.7em} \an{Em memória de}\par
+\hspace{6.7em} \an{Laís Costa Ortenzi}\par
+
+\newpage
+
+\setcounter{page}{1}
+\fancyhead[R]{\ttfamily {I\hskip 0.05em .\hskip 0.05em \thepage}}
+
+\renewcommand\contentsname{\ttfamily \hskip 14.5em \uline{I\hskip 0.05em N\hskip 0.05em D\hskip 0.05em I\hskip 0.05em C\hskip 0.05em E}\\
+\\
+\uline{A\hskip 0.05em s\hskip 0.05em s\hskip 0.05em u\hskip 0.05em n\hskip 0.05em t\hskip 0.05em o} \hskip 26em \uline{P\hskip 0.05em á\hskip 0.05em g\hskip 0.05em i\hskip 0.05em n\hskip 0.05em a}}
+\tableofcontents
+
+\newpage
+
+\setcounter{page}{1}
+\fancyhead[R]{\ttfamily {1\hskip 0.05em .\hskip 0.05em \thepage}}
+
+\phantomsection
+\section*{\an{1 - }\uline{I\hskip 0.05em N\hskip 0.05em T\hskip 0.05em R\hskip 0.05em O\hskip 0.05em D\hskip 0.05em U\hskip 0.05em Ç\hskip 0.05em Ã\hskip 0.05em O}}
+\addcontentsline{toc}{section}{C\hskip 0.05em A\hskip 0.05em P\hskip 0.05em Í\hskip 0.05em T\hskip 0.05em U\hskip 0.05em L\hskip 0.05em O \hskip 0.05em  \hskip 0.05em 1 \hskip 0.05em  \hskip 0.05em - \hskip 0.05em  \hskip 0.05em I\hskip 0.05em N\hskip 0.05em T\hskip 0.05em R\hskip 0.05em O\hskip 0.05em D\hskip 0.05em U\hskip 0.05em Ç\hskip 0.05em Ã\hskip 0.05em O}
+
+\noindent \\
+\par
+\an{O ante-projeto do minicomputador Patinho Feio nasceu }
+\an{de um curso de pós-graduação dado pelo Professor Glen \hfill George}
+\an{Langdon Jr., em 1972. A seguir, os engenheiros e estagiários do}
+\an{Laboratório de Sistemas Digitais (LSD) da EPUSP terminaram \hfill o}
+\an{projeto e montaram o Patinho Feio que, dessa forma, se \hfill tornou }
+\an{o primeiro computador projetado e construído no Brasil.}\\
+\par
+\an{Os circuitos do Patinho Feio são totalmente \hfill consti-}
+\an{tuídos por circuitos integrados da família TTL (``transistor\,\, \hfill - }
+\an{transistor logic''), apresentando uma memória de núcleos de fe{\uline r} }
+\an{rite, e tendo um ciclo de máquina de dois microsegundos.}\\
+\par
+\an{O Patinho Feio foi destinado a pesquisas no LSD, ta{\uline n}}
+\an{to na área de programação (``software'') como dos circuitos ele- }
+\an{trônicos (``hardware'').}\\
+\par
+\an{Cuidou-se do desenvolvimento de um ``software'' que pe{\uline r}}
+\an{mitisse um uso mais eficiente do minicomputador, já que, \hfill de}
+\an{início só se podia programá-lo em linguagem de máquina, manua{\uline l} }
+\an{mente, através do seu painel. Em particular, foi definida \hfill uma}
+\an{linguagem de montador (``assembly language''), que associa a ca- }
+\an{da instrução de máquina um mnemônico, e um programa \hfill montador}
+\an{(``assembler''), cuja função é traduzir programas escritos \hfill em}
+\an{linguagem de montador para linguagem de máquina, os quais \hfill são}
+\an{os assuntos tratados neste manual.}\\
+\par
+\an{Este manual foi escrito de forma a tratar cada tópi-}
+\an{co de forma mais ou menos extensa, na suposição de que o \hfill lei-}
+\an{tor tenha tido previamente apenas um pequeno contato com \hfill a}
+\an{ área de computação, e pouco ou nenhum conhecimento de \hfill lingu{\uline a}}
+\an{gens de baixo nível, como um montador. Por causa disso,tentou- }
+\an{se fazer com que o manual fosse o mais auto-explicativo e ind{\uline e} }
+\an{pendente possível de outros textos. Naturalmente é \hfill impossível}
+
+\newpage
+
+\noindent \an{que um texto seja completamente independente de outros; por i{\uline s} }
+\an{so, recomenda-se consultar outros textos, tais como manuais de }
+\an{operação do Patinho Feio e de seus equipamentos periféricos(de }
+\an{entrada/saída), textos sobre números binários, etc.}\\
+\par
+\an{Foi feito um bom esforço para apresentar os \hfill concei-}
+\an{tos com clareza e para padronizar as notações, com o \hfill objetivo}
+\an{de tornar o manual realmente útil. Contudo, certamente \hfill muitas}
+\an{falhas subsistem, de forma que são bem recebidas quaisquer su- }
+\an{gestões e críticas de modo a melhorar o manual em futuras edi- }
+\an{ções.}\\
+\\
+\\[-0.5em]
+\uline{O\hskip 0.05em b\hskip 0.05em s\hskip 0.05em e\hskip 0.05em r\hskip 0.05em v\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em õ\hskip 0.05em e\hskip 0.05em s}\hskip 0.05em :
+
+\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.7em, labelsep=-0.2em, itemsep=1em, topsep=1em]
+\item \an{As informações contidas neste manual são as melhores que se}
+\an{pôde obter na época em que o manual foi escrito (setembro de}
+\an{1975). Contudo, devido ao constante desenvolvimento de \ \hfill no-}
+\an{vos projetos de ``hardware'' e ``software'' para o Patinho Feio,}
+\an{alguns detalhes podem ter sofrido alterações até a presente}
+\an{data.}
+\item \an{Os programas e trechos de programa existentes no manual fo-}
+\an{ram aí colocados por estarem sintaticamente corretos, \hfill mas}
+\an{não representam necessariamente exemplos de boa técnica \hfill de}
+\an{programação.}
+\end{enumerate}
+
+\newpage
+
+\setcounter{page}{1}
+\fancyhead[R]{\ttfamily {2\hskip 0.05em .\hskip 0.05em \thepage}}
+
+\phantomsection
+\section*{\an{2 \ \ - }\uline{A\hskip 0.05em R\hskip 0.05em I\hskip 0.05em T\hskip 0.05em M\hskip 0.05em É\hskip 0.05em T\hskip 0.05em I\hskip 0.05em C\hskip 0.05em A \hskip 0.05em \hskip 0.05em B\hskip 0.05em I\hskip 0.05em N\hskip 0.05em Ã\hskip 0.05em R\hskip 0.05em Í\hskip 0.05em A \hskip 0.05em \hskip 0.05em E \hskip 0.05em \hskip 0.05em H\hskip 0.05em E\hskip 0.05em X\hskip 0.05em A\hskip 0.05em D\hskip 0.05em E\hskip 0.05em C\hskip 0.05em I\hskip 0.05em M\hskip 0.05em A\hskip 0.05em L}}
+\addcontentsline{toc}{section}{C\hskip 0.05em A\hskip 0.05em P\hskip 0.05em Í\hskip 0.05em T\hskip 0.05em U\hskip 0.05em L\hskip 0.05em O \hskip 0.05em \hskip 0.05em 2 \hskip 0.05em  \hskip 0.05em - \hskip 0.05em  \hskip 0.05em A\hskip 0.05em R\hskip 0.05em I\hskip 0.05em T\hskip 0.05em M\hskip 0.05em É\hskip 0.05em T\hskip 0.05em I\hskip 0.05em C\hskip 0.05em A \hskip 0.05em  \hskip 0.05em B\hskip 0.05em I\hskip 0.05em N\hskip 0.05em Ã\hskip 0.05em R\hskip 0.05em Í\hskip 0.05em A \hskip 0.05em E \hskip 0.05em  \hskip 0.05em H\hskip 0.05em E\hskip 0.05em X\hskip 0.05em A\hskip 0.05em D\hskip 0.05em E\hskip 0.05em C\hskip 0.05em I\hskip 0.05em M\hskip 0.05em A\hskip 0.05em L}
+
+\end{document}

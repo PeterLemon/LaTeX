@@ -123,8 +123,182 @@
 
 \newpage
 
+\section{INTRODUÇÃO}
+\subsection{Objetivos}
+
+\par
+\an{No presente trabalho expõe-se os métodos utilizados no projeto e construção de algumas das peças do ``software'' básico do Patinho Feio, o primeiro minicomputador desenvolvido no Laboratório de Sistemas Digitais (LSD) do Departamento de Engenharia de Eletricidade da Escola Politécnica da Universidade de São Paulo. Descreve-se as diversas fases do projeto, analisando detalhadamente os principais problemas que cada uma delas apresenta. Esta análise é feita em nível geral, quando se tratar de problemas que devam ser enfrentados independentemente da máquina, ou então em nível particular, em caso contrário. Esta descrição destina-se principalmente à orientação de futuros projetos semelhantes.}\\
+
+\par
+\an{A análise dos problemas dependentes da máquina, bem como a dos detalhes de implementação dos programas descritos, restringe-se ao caso particular dos exemplos implementados, devendo-se levar em conta a configuração do sistema para o qual foram desenvolvidos. Assim, algumas das soluções apresentadas em tais exemplos podem não ser vantajosas em sistemas que não tenhas as mesmas características.}\\
+
+\par
+\an{São apresentadas alternativas para as soluções de alguns dos problemas enfrentados, fazendo-se uma análise comparativa das mesmas. Procurou-se, para isto, ressaltar vantagens e descantagens de cada uma das alternativas mencionadas, terminando-se por optar por uma delas e, sempre que possível, justificando-se a opção adotada na implementação do exemplo, com uma argumentação baseada nas características e limitações do computador utilizado.}\\
+
+\par
+\an{Além disto, é descrito aqui o funcionamento dos programas implementados, especialmente com a finalidade de documentar as linhas de raciocínio e a filosofia de projeto e de implementação adotadas para facilitar futuras alterações de tais programas.}\\
+
+asubsection{Generalidades (ref. 11, 14)}
+
+\par
+\an{Nos próximos Capítulos estão desenvolvidos, dentro das linhas apresentadas em 1.1, os seguintes módulos do ``software'':
+
+- um montador (``assembler''), cuja finalidade é a de dispensar o programador da tarefa de programação em linguagem de máquina, permitindo que os programas sejam escritos em linguagem simbólica mnemônica. Uma das versões implementadas dá, além disto, a possibilidade de modularização dos programas, introduzindo a facilidade de se utilizar programas escritos e traduzidos independentemente sem a necessidade de nova tradução a cada utilização dos programas parciais;
+
+- uma rotina de depuração, cuja finalidade é a de facilitar a pesquisa e correção de erros existentes em programas ainda não depurados;
+
+- um desmontador (``disassembler''), cuja finalidade é a de gerar programas escritos na linguagem do montador, a partir de uma fita binária contendo o programa correspondente em linguagem de máquina;
+
+- uma rotina de edição de arquivos ASCII, cuja finalidade é a de mecanizar a correção, a reprodução, a modificação e a listagem de arquivos ASCII, como por exemplo, programas perfurados, em linguagem simbólica, em fita de papel (``programas fonte'').}\\
+
+\par
+\an{Os quatro programas citados acima foram desenvolvidos para o Patinho Feio estando atualmente à disposição para execução no mesmo.}\\
+
+\par
+\an{Alguns programas de utilidade foram implementados no computador Hewlett-Packard 2116-B, com a finalidade de facilitar e de tornar mais versátil a utilização do ``software'' do Patinho Feio.}\\
+
+\par
+\an{Escolheu-se o computador HP-2116-B principalmente pela sua compatibilidade de entrada e saída com a do Patinho Feio (fita de papel). Os programas desenvolvidos para o HP-2116-B não foram implementados diretamente no Patinho Feio devido a algumas restrições atualmente existentes no mesmo, como por exemplo sua pequena capacidade de memória, a inexistência de memória de massa e a baixa velocidade dos periféricos disponíveis. Entretanto, poderão alguns desses programas vir a ser implamtados no Patinho Feio assim que estiverem disponíveis no mesmo os periféricos necessários. Os programas aqui apresentados são os seguintes:}\\
+
+\par
+\an{- um simulador em nível de registradores, que funciona como um tenterpretador da linguagem de máquina do Patinho Feio e que também permite a utilização dos periféricos rápidos do HP-2116-B em substituição aos disponíveis no Patinho Feio, bem como o acompanhamento do programa em execução por meio de rastramento (``traces''), descarregamentos (``dumps'') de memória, monitoramento dos processos de entrada e saída, etc. Naturalmente a utilização deste simulador-interpretador é às vezes mais conveniente que a do próprio Patinho Feio, como por exemplo, quando o programa for limitado em velocidade pela entrada e saída (caso de rastreamento e de listagens extensas com pouco processamento);}\\
+
+\par
+\an{- um montador (``cross-assembler'') equivalente ao desenvolvido para o Patinho Feio, que incorpora uma opção de geração da tabela de referências cruzadas (``cross-reference symbol table'') e ordenação alfabética da tabela de símbolos, permitindo utilização total dos recursos do sistema operacional DOS (``disc operating system'') do computador HP-2116-B. A tabela de referências cruzadas tem como finalidade facilitar a documentação e mesmo a depuração de programas extensos, gerando, a partir da linguagem simbólica, uma tabela em ordem alfabética, de todos os rótulos (``labels'', isto é, nomes simbólicos dados aos endereços das instruções ou dos dados do programa), ao lado de cada qual são listados o número da linha onde o mesmo foi definido e o conjunto de todas as linhas onde foi referenciado. Indica também os rótulos indefinidos, os não utilizados, e o endereço de memória associado a cada rótulo.}\\
+
+\subsection{Observações}
+\par
+\an{- Os dois computadores do LSD em que se efetuou a elaboração dos programas descritos neste trabalho, foram utilizados - com a seguinte configuração:}\\
+
+\an{PATINHO FEIO:}\\
+
+\an{1 Unidade Central de Processamento, com memória de núcleos de ferrite com 4K palavras de 8 bits (1K = 1024).}\\
+
+\an{1 Leitora Ótica de Fita de Papel HP-2737-A, 300 caracteres por segundo (máximo).}\\
+
+\an{2 Terminais Teletype ASR33 com leitora e perfuradora de fita de papel, entrada por teclado e saída impressa, 10 caracteres por segundo (perfuração opcional).}\\
+
+\an{HEWLETT-PACKARD 2116-B:}\\
+
+\an{1 Unidade Central de Processamento, com memória de núcleos de ferrite com 16K palavras de 16 bits.}\\
+
+\an{1 Unidade de Disco Magnético HP-2770-A, com capacidade de 3 Megabits, organizados em 64 trilhas, de 92 setores cada, tendo cada setor 64 palavras de 17 bits.}\\
+
+\an{1 Impressora HP-2767-A de 80 colunas por linha, 1110 linhas por minuto (máximo).}\\
+
+\an{3 Unidades de Fita Magnética HP-7970-A, velocidade máxima 37.5 ips, densidade 800 bpi.}
+
+\an{1 Console Teletype ASR35, de 100 caracteres por minuto.}\\
+
+\an{1 Leitora Ótica de Fita de Papel HP-2748-B, de 500 caracteres por segundo (máximo).}\\
+
+\an{1 Perfuradora de Fita de Papel HP-2895-B, de 75 caracteres por segundo.}\\
+
+\an{1 Leitora de Cartões de marcas óticas HP-2761-A, de 200 cartões por minuto.}\\
+
+\par
+\an{- Os programas desenvolvidos para o Patinho Feio foram inicialmente projetados para a configuração mínima acima descrita. Entretanto, com a inclusão de novos periféricos, é conveniente que se configure os programas existentes, adaptanto-os aos novos equipamentos disponíveis, o que pode tornar mais rápida e eficiente a execução de tais programas. Assim, todas as vezes que um novo periférico é incorporado ao sistema, faz-se a adaptação dos programas às novas condições, permitindo que sejam utilizados os recursos implantados.}\\
+
+\par
+\an{Atualmente, dispõe-se dos seguintes periféricos adicionais, já incorporados ao sistema pela equipe do LSD:}\\
+
+\an{1 Impressora de linha de 80 colunas HP-2767-A (1110 linhas/minuto).}\\
+
+\an{1 Terminar DECWRITER DEC LA 30S, de 80 colunas, 30 caracteres por segundo (máximo).}\\
+
+\an{1 Perfuradora Rápida de Fita de Papel HP-2735-A, de 115 caracteres por segundo.}\\
+
+\par
+\an{Os programas menos extensos permitem a inclusão de uma ``seção de configuração'', parte do pograma que o adapta para a utilização dos periféricos desejados. Os mais extensos, no entanto, não dispõem de memória livre suficiente que possa alojar a seção de configuração. Para estes programas, a configuração pode ser feita manualmente modificando-se certas posições de memória, ou, então montando-se novamente o programa com as devidas alterações.}\\
+
+\par
+\an{- Em todos os programas aqui descritos, procurou-se orientar o projeto de tal modo que o programa resultante apresentasse o maior número possível de recursos por unidade de área de memória ocupada. É evidente que, na maioria das vêzes, uma tentativa de adicionar mais recursos ao programa sem aumentar a área ocupada pelo mesmo pode trazer problemas no desempenho do programa, tais como queda de velocidade, quebra de estrurura, etc; Em alguns destes casos, como será visto, optou-se por soluções de compromisso, e, em outros, por soluções que dessem ao programa maiores recursos de utilização.}\\
+
+\par
+\an{No presente caso, tem-se os seguintes fatores a considerar:}\\
+
+\an{a) baixa capacidade de memória (4K palavras de 8 bits)}\\
+
+\an{b) baixa velocidade de saída dos dados (teletype: 10 palavras por segundo)}\\
+
+\an{c) deficiência do conjunto de instruções no que se refere a:}\\
+
+\an{   * manipulação de dados com mais de uma palavra (p/ex, dados em precisão dupla).}\\
+\an{   * comparação de dados}\\
+\an{   * extração e inserção de campos dentro de uma palavra (inclusive mascaramentos)}\\
+\an{   * operações aritméticas}\\
+
+\par
+\an{Analisando-se os fatores a) e b), levando-se em conta observações realizadas nos programas aqui descritos, chegou-se às seguintes conclusões:}\\
+
+\an{   * O tempo de processamento é desprezível em relação ao de entrada e saída. Isto permite concluir que mesmo se o programa for algumas vezes mais lento, o tempo total de execução será praticamente o mesmo.}\\
+\an{   * Rotinas otimizadas em relação ao tempo de processamento ocupariam, em certos casos, até cerca de 40\% a mais de memória em relação a rotinas equivalentes otimizadas em relação ao número de palavras ocupadas pela mesma na memória. Levando-se em conta o fator a), percebe-se que, quando a dimensão do programa for comparável à dimensão da memória disponível, pode-se chegar até a uma condição de inviabilidade de implementação do mesmo se se insistir em utilizar rotinas otimizadas em velocidade. Deve-se observar que tais rotinas sejam, em média, poucas vezes mais rápidas, o que já foi dito ser praticamente irrelevante no caso.}\\
+\an{   * Muitas vezes, na tentativa de se reduzir o espaço ocupado na memória para executar uma certa tarefa, pode ser encontrada uma organização eficiente dos dados que permita a utilização de rotinas rápicas com baixo gasto de memória. Para isso, deve ser tirado o máximo proveito de características particulares da arquitetura da máquina.}\\
+
+\par
+\an{- Deve-se levar sempre em conta que este trabalho é dirigido para um computador pequeno e restrito. Assim sendo, algumas das argumentações aqui apresentadas podem não ser válidas para máquinas maiores, e algumas considerações, decisivas neste contexto, podem tornar-se totalmente irrelevantes se no lugar do Patinho Feio for colocado um computador de porte maior.}
+
+\chapter{Capítulo 2.  O MONTADOR}
+
+\section{O MONTADOR}
+
+\par
+\an{Neste capítulo é descrito ...}\\
+
+\subsection{O conjunto de instruções e a linguagem do montador}
+\subsubsection{O conjunto de instruções:}
+\an{O Patinho Feio possui um conjunto de 56 instruções, descritas quanto ao funcionamento nas referências (1) e (4). Estas instruções podem ser divididas, para efeito dos algoritmos de montagem que são utilizados em seis grupos, detalhados no apêndice 1:}\\
+
+\par
+\an{- instruções de referência à memória;}\\
+
+\par
+\an{- instruções de endereçamento imediato;}\\
 
 
+\par
+\an{- instruções de deslocamentos e giros;}\\
+
+\par
+\an{- instruções de entrada e saída;}\\
+
+\par
+\an{- instruções curtas com operando;}\\
+
+\par
+\an{- instruções curtas sem operando;}\\
+
+\par
+\an{Todas as instruções pertencentes a um dado grupo, utilizam a mesma rotina de montagem, como será visto em 2.5.3.}\\
+
+\subsubsection{Programação em linguagem de máquina:}
+\an{Dado um computador com seu conjunto de instruções, a única maneira de fazê-lo funcionar, se não se dispuser de nenhum outro recurso auxiliar como, por exemplo, um montador em outro computador (``Cross-Assembler''), será programá-lo em linguagem de máquina, isto é, construir uma sequência lógica de zeros e uns, tais que, carregados convenientemente na memória do computador, e a seguir executados, perfaça a tarefa prevista.}\\
+
+\par
+\an{[...]}\\
+
+\subsection{A conveniência de um montador}
+
+\subsection{Rotinas auxiliares para a elaboração do montador}
+
+\subsection{Definição das Características Gerais do Montador}
+
+\subsection{Definição das Características Externas do Montador}
+
+\subsubsection{Características do Montador Absoluto}
+\subsubsection{Características do Montador Relocável}
+\subsubsection{A sintaxe da Linguagem de Entrada}
+\subsubsection{Características do Código Objeto gerado pelo Montador Absoluto}
+\subsubsection{Características do Código Objeto Gerado pelo Montador Relocável}
+
+\subsection{Definição das Características Internas do Montador}
+
+\subsubsection{A representação interna dos rótulos}
+\subsubsection{A organização da tabela de símbolos}
+\subsubsection{A manipulação da tabela de símbolos}
+\subsubsection{A organização e a manipulação da tabela dos mnemônicos}
+\subsubsection{A representação interna das Constantes}
+\subsubsection{As pseudos instruções}
 
 
 \end{document}

@@ -1,5 +1,5 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[a4paper, total={147.8mm, 245mm}, left=34mm]{geometry}
+\usepackage[a4paper, total={148.3mm, 245mm}, left=34mm]{geometry}
 
 \usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=krom]{hyperref}
 
@@ -12,11 +12,12 @@
 \renewcommand{\ULthickness}{0.04em}
 
 \usepackage[compact]{titlesec}
-\titlespacing{\section}{0em}{*0}{0em}
-\titlespacing{\subsection}{0em}{*0}{*0}
-\titleformat{\section}{\ttfamily}{\thesection}{1em}{}
+\titlespacing{\section}{-0.1em}{0em}{0em}
+\titlespacing{\subsection}{2.22em}{0em}{1.5em}
+\titleformat{\section}{\ttfamily}{\thesection}{0em}{}
+\titleformat{\subsection}{\ttfamily}{\thesection}{0em}{}
 
-\setlength\parindent{5.8em}
+\setlength\parindent{5.78em}
 \renewcommand{\baselinestretch}{1.2}
 
 \usepackage{enumitem}
@@ -74,7 +75,8 @@
 \newpage
 
 \setcounter{page}{1}
-\fancyhead[R]{\ttfamily {1\hskip 0.05em .\hskip 0.05em \thepage}}
+\setcounter{section}{1}
+\fancyhead[R]{\ttfamily {\thesection \hskip 0.05em .\hskip 0.05em \thepage}}
 
 \phantomsection
 \section*{\an{1 - }\uline{I\hskip 0.05em N\hskip 0.05em T\hskip 0.05em R\hskip 0.05em O\hskip 0.05em D\hskip 0.05em U\hskip 0.05em Ç\hskip 0.05em Ã\hskip 0.05em O}}
@@ -82,77 +84,228 @@
 
 \noindent \\
 \par
-\an{O ante-projeto do minicomputador Patinho Feio nasceu }
-\an{de um curso de pós-graduação dado pelo Professor Glen \hfill George}
-\an{Langdon Jr., em 1972. A seguir, os engenheiros e estagiários do}
-\an{Laboratório de Sistemas Digitais (LSD) da EPUSP terminaram \hfill o}
-\an{projeto e montaram o Patinho Feio que, dessa forma, se \hfill tornou }
-\an{o primeiro computador projetado e construído no Brasil.}\\
+\an{O ante-projeto do minicomputador Patinho Feio nasceu\\
+de um curso de pós-graduação dado pelo Professor Glen \hfill George\\
+Langdon Jr., em 1972. A seguir, os engenheiros e estagiários do\\
+Laboratório de Sistemas Digitais (LSD) da EPUSP terminaram \hfill o\\
+projeto e montaram o Patinho Feio que, dessa forma, se \hfill tornou\\
+o primeiro computador projetado e construído no Brasil.\\
 \par
-\an{Os circuitos do Patinho Feio são totalmente \hfill consti-}
-\an{tuídos por circuitos integrados da família TTL (``transistor\,\, \hfill - }
-\an{transistor logic''), apresentando uma memória de núcleos de fe{\uline r} }
-\an{rite, e tendo um ciclo de máquina de dois microsegundos.}\\
+Os circuitos do Patinho Feio são totalmente \hfill consti-\\
+tuídos por circuitos integrados da família TTL (``transistor\,\, \hfill -\\
+transistor logic''), apresentando uma memória de núcleos de fe{\uline r}\\
+rite, e tendo um ciclo de máquina de dois microsegundos.\\
 \par
-\an{O Patinho Feio foi destinado a pesquisas no LSD, ta{\uline n}}
-\an{to na área de programação (``software'') como dos circuitos ele- }
-\an{trônicos (``hardware'').}\\
+O Patinho Feio foi destinado a pesquisas no LSD, ta{\uline n}\\
+to na área de programação (``software'') como dos circuitos ele-\\
+trônicos (``hardware'').\\
 \par
-\an{Cuidou-se do desenvolvimento de um ``software'' que pe{\uline r}}
-\an{mitisse um uso mais eficiente do minicomputador, já que, \hfill de}
-\an{início só se podia programá-lo em linguagem de máquina, manua{\uline l} }
-\an{mente, através do seu painel. Em particular, foi definida \hfill uma}
-\an{linguagem de montador (``assembly language''), que associa a ca- }
-\an{da instrução de máquina um mnemônico, e um programa \hfill montador}
-\an{(``assembler''), cuja função é traduzir programas escritos \hfill em}
-\an{linguagem de montador para linguagem de máquina, os quais \hfill são}
-\an{os assuntos tratados neste manual.}\\
+Cuidou-se do desenvolvimento de um ``software'' que pe{\uline r}\\
+mitisse um uso mais eficiente do minicomputador, já que, \hfill de\\
+início só se podia programá-lo em linguagem de máquina, manua{\uline l}\\
+mente, através do seu painel. Em particular, foi definida \hfill uma\\
+linguagem de montador (``assembly language''), que associa a ca-\\
+da instrução de máquina um mnemônico, e um programa \hfill montador\\
+(``assembler''), cuja função é traduzir programas escritos \hfill em\\
+linguagem de montador para linguagem de máquina, os quais \hfill são\\
+os assuntos tratados neste manual.\\
 \par
-\an{Este manual foi escrito de forma a tratar cada tópi-}
-\an{co de forma mais ou menos extensa, na suposição de que o \hfill lei-}
-\an{tor tenha tido previamente apenas um pequeno contato com \hfill a}
-\an{ área de computação, e pouco ou nenhum conhecimento de \hfill lingu{\uline a}}
-\an{gens de baixo nível, como um montador. Por causa disso,tentou- }
-\an{se fazer com que o manual fosse o mais auto-explicativo e ind{\uline e} }
-\an{pendente possível de outros textos. Naturalmente é \hfill impossível}
+Este manual foi escrito de forma a tratar cada tópi-\\
+co de forma mais ou menos extensa, na suposição de que o \hfill lei-\\
+tor tenha tido previamente apenas um pequeno contato com \hfill a\\
+área de computação, e pouco ou nenhum conhecimento de \hfill lingu{\uline a}\\
+gens de baixo nível, como um montador. Por causa disso,tentou-\\
+se fazer com que o manual fosse o mais auto-explicativo e ind{\uline e}\\
+pendente possível de outros textos. Naturalmente é \hfill impossível}
 
 \newpage
 
-\noindent \an{que um texto seja completamente independente de outros; por i{\uline s} }
-\an{so, recomenda-se consultar outros textos, tais como manuais de }
-\an{operação do Patinho Feio e de seus equipamentos periféricos(de }
-\an{entrada/saída), textos sobre números binários, etc.}\\
+\noindent \an{que um texto seja completamente independente de outros; por i{\uline s}\\
+so, recomenda-se consultar outros textos, tais como manuais de\\
+operação do Patinho Feio e de seus equipamentos periféricos(de\\
+entrada/saída), textos sobre números binários, etc.\\
 \par
-\an{Foi feito um bom esforço para apresentar os \hfill concei-}
-\an{tos com clareza e para padronizar as notações, com o \hfill objetivo}
-\an{de tornar o manual realmente útil. Contudo, certamente \hfill muitas}
-\an{falhas subsistem, de forma que são bem recebidas quaisquer su- }
-\an{gestões e críticas de modo a melhorar o manual em futuras edi- }
-\an{ções.}\\
+Foi feito um bom esforço para apresentar os \hfill concei-\\
+tos com clareza e para padronizar as notações, com o \hfill objetivo\\
+de tornar o manual realmente útil. Contudo, certamente \hfill muitas\\
+falhas subsistem, de forma que são bem recebidas quaisquer su-\\
+gestões e críticas de modo a melhorar o manual em futuras edi-\\
+ções.}\\
 \\
 \\[-0.5em]
 \uline{O\hskip 0.05em b\hskip 0.05em s\hskip 0.05em e\hskip 0.05em r\hskip 0.05em v\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em õ\hskip 0.05em e\hskip 0.05em s}\hskip 0.05em :
 
-\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.7em, labelsep=-0.2em, itemsep=1em, topsep=1em]
-\item \an{As informações contidas neste manual são as melhores que se}
-\an{pôde obter na época em que o manual foi escrito (setembro de}
-\an{1975). Contudo, devido ao constante desenvolvimento de \ \hfill no-}
-\an{vos projetos de ``hardware'' e ``software'' para o Patinho Feio,}
-\an{alguns detalhes podem ter sofrido alterações até a presente}
-\an{data.}
-\item \an{Os programas e trechos de programa existentes no manual fo-}
-\an{ram aí colocados por estarem sintaticamente corretos, \hfill mas}
-\an{não representam necessariamente exemplos de boa técnica \hfill de}
-\an{programação.}
+\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
+\item \an{As informações contidas neste manual são as melhores que se\\
+pôde obter na época em que o manual foi escrito (setembro de\\
+1975). Contudo, devido ao constante desenvolvimento de \hfill no-\\
+vos projetos de ``hardware'' e ``software'' para o Patinho Feio,\\
+alguns detalhes podem ter sofrido alterações até a presente\\
+data.}
+\item \an{Os programas e trechos de programa existentes no manual fo-\\
+ram aí colocados por estarem sintaticamente corretos, \hfill mas\\
+não representam necessariamente exemplos de boa técnica \hfill de\\
+programação.}
 \end{enumerate}
 
 \newpage
 
 \setcounter{page}{1}
-\fancyhead[R]{\ttfamily {2\hskip 0.05em .\hskip 0.05em \thepage}}
+\setcounter{section}{2}
 
 \phantomsection
-\section*{\an{2 \ \ - }\uline{A\hskip 0.05em R\hskip 0.05em I\hskip 0.05em T\hskip 0.05em M\hskip 0.05em É\hskip 0.05em T\hskip 0.05em I\hskip 0.05em C\hskip 0.05em A \hskip 0.05em \hskip 0.05em B\hskip 0.05em I\hskip 0.05em N\hskip 0.05em Ã\hskip 0.05em R\hskip 0.05em Í\hskip 0.05em A \hskip 0.05em \hskip 0.05em E \hskip 0.05em \hskip 0.05em H\hskip 0.05em E\hskip 0.05em X\hskip 0.05em A\hskip 0.05em D\hskip 0.05em E\hskip 0.05em C\hskip 0.05em I\hskip 0.05em M\hskip 0.05em A\hskip 0.05em L}}
+\section*{\an{2 - }\uline{A\hskip 0.05em R\hskip 0.05em I\hskip 0.05em T\hskip 0.05em M\hskip 0.05em É\hskip 0.05em T\hskip 0.05em I\hskip 0.05em C\hskip 0.05em A \hskip 0.05em \hskip 0.05em B\hskip 0.05em I\hskip 0.05em N\hskip 0.05em Ã\hskip 0.05em R\hskip 0.05em Í\hskip 0.05em A \hskip 0.05em \hskip 0.05em E \hskip 0.05em \hskip 0.05em H\hskip 0.05em E\hskip 0.05em X\hskip 0.05em A\hskip 0.05em D\hskip 0.05em E\hskip 0.05em C\hskip 0.05em I\hskip 0.05em M\hskip 0.05em A\hskip 0.05em L}}
 \addcontentsline{toc}{section}{C\hskip 0.05em A\hskip 0.05em P\hskip 0.05em Í\hskip 0.05em T\hskip 0.05em U\hskip 0.05em L\hskip 0.05em O \hskip 0.05em \hskip 0.05em 2 \hskip 0.05em  \hskip 0.05em - \hskip 0.05em  \hskip 0.05em A\hskip 0.05em R\hskip 0.05em I\hskip 0.05em T\hskip 0.05em M\hskip 0.05em É\hskip 0.05em T\hskip 0.05em I\hskip 0.05em C\hskip 0.05em A \hskip 0.05em  \hskip 0.05em B\hskip 0.05em I\hskip 0.05em N\hskip 0.05em Ã\hskip 0.05em R\hskip 0.05em Í\hskip 0.05em A \hskip 0.05em E \hskip 0.05em  \hskip 0.05em H\hskip 0.05em E\hskip 0.05em X\hskip 0.05em A\hskip 0.05em D\hskip 0.05em E\hskip 0.05em C\hskip 0.05em I\hskip 0.05em M\hskip 0.05em A\hskip 0.05em L}
+
+\hskip -3.3em \an{(Com números inteiros)}\\
+\\
+
+\phantomsection
+\subsection*{\an{1. }\uline{B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em N\hskip 0.05em u\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}}
+\addcontentsline{toc}{subsection}{\hskip 5.68em B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em N\hskip 0.05em u\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}
+
+\an{Utiliza-se, na vida diária, a base decimal de numer{\uline a}\\
+ção para representar os números. Isto significa duas coisas:}
+
+\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
+\item \an{existem dez algarismos com os quais todos os números são r{\uline e}\\
+presentados (pois a base de numeração é dez), a saber: 0, 1,\\
+2, 3, 4, 5, 6, 7, 8, 9.}
+\item \an{emprega-se uma } \uline{n\hskip 0.05em o\hskip 0.05em t\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o \hskip 0.05em \hskip 0.05em p\hskip 0.05em o\hskip 0.05em s\hskip 0.05em i\hskip 0.05em c\hskip 0.05em i\hskip 0.05em o\hskip 0.05em n\hskip 0.05em a\hskip 0.05em l} \an{ onde está subentendido que,\\
+quando um algarismo é deslocado de uma posição para a esque{\uline r}\\
+da, seu valor é multiplicado por dez. Por exemplo:}\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{2 \ \ \ \ \ \ \ 1 \ \ \, \, \, \, 0}\\[-1em]
+\an{295 = 2 x 10} \ \ \, \an{+ 9 x 10} \ \ \, \an{+ 5 x 10}
+\end{enumerate}
+
+\an{Generalizando, quando se escreve o número N = d \ d \ \ ...}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{n \ n-1}\\[-0.5em]
+d \, d \, d \ \an{ (sem sinal), onde os d } \an{ (i= 0, 1, 2,...,n) são os seus}\\[-1em]
+\phantom \ 2 \, 1 \, 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, i\\[-0.5em]
+\an{algarismos (ou dígitos), está-se querendo dizer que: N = d \hfill x}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \\[-1em]
+\phantom \ \, n \ \ \ \ \ \ \ \ \ \ \ \ \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, 2 \ \ \ \ \ \ \ \ \ \, 1 \ \ \ \ \ \ \ \ \ \ 0\\[-1em]
+\an{10} \ \ \, \an{+ d} \ \ \ \, \an{x 10} \ \ \ \, \, \an{+ ....+ d} \ \ \, \an{x 10} \ \ \, \an{+ d} \ \ \, \an{x 10} \ \ \, \an{+ d} \ \ \ \an{x 10} \,\,\,\, .\\[-1em]
+\phantom \ \ \ \ \ \ \, \, \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \, 2 \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ 0\\
+\par
+\an{Nada obriga a que se use apenas a base dez. Na verda-
+de, qualquer base } \uline{b} \an{(inteira) pode ser escolhida para \ represen-
+tar um número. Para tanto, escolhem-se } \uline{b} \an{ símbolos distintos (os\\
+algarismos da base) que representam os números de zero a (b - 1).\\
+Escrevendo-se agora n + 1 algarismos adjacentes d d} \ \ \ \, \an{...d d \ e}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{n n-1 \ \,\, 1 0}\\[-0.5em]
+\an{subentendida a notação posicional descrita acima, tem-se o núm{\uline e}\\
+ro N representado por essa notação:}\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ \, n \ \ \ \ \ \ \ \ \ \ \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ 0\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{N = d} \ \ \, \an{. b} \ \ \, \an{+ d} \ \ \ \ \, \an{b} \ \ \, \, \an{+ ...+ d} \ \ \ \an{b \ + d} \ \ \ \an{b}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \ \ \ \ \ \ \ \ \ \ \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ \ \, 1 \ \ \ \ \, \, 0\\
+\par
+\an{Inversamente, pode-se provar que cada número N tem uma\\
+única representação, numa dada base {\uline b}, que satisfaz as condições\\
+mencionadas acima.\\
+\par
+Exemplo: Escolhendo b = 3, têm-se três algarismos;}
+
+\newpage
+
+\noindent \an{convencionalmente usa-se 0, 1, 2. Então tem-se:}\\
+\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ 0\\[-1em]
+\phantom \ \ \ \ \ \, \, \an{(1202)} \ \ \, \an{= 1 x 3} \ \ \, \an{+ 2 x 3} \ \ \, \an{+ 0 x 3} \ \ \, \an{+ 2 x 3} \ \ \, \an{= (47)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \, 3 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{10}\\
+\par
+\an{Pode-se começar a perceber a importância do que \hfill foi\\
+dito acima quando se considera que os computadores modermos tr{\uline a}\\
+balham sempre, em última análise, com a base dois.}\\
+\\
+
+\phantomsection
+\subsection*{\an{2. }\uline{B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em m\hskip 0.05em a\hskip 0.05em i\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em m\hskip 0.05em p\hskip 0.05em r\hskip 0.05em e\hskip 0.05em g\hskip 0.05em a\hskip 0.05em d\hskip 0.05em a\hskip 0.05em s \hskip 0.05em e\hskip 0.05em m \hskip 0.05em \hskip 0.05em c\hskip 0.05em o\hskip 0.05em m\hskip 0.05em p\hskip 0.05em u\hskip 0.05em t\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}}
+\addcontentsline{toc}{subsection}{\hskip 5.68em B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em m\hskip 0.05em a\hskip 0.05em i\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em m\hskip 0.05em p\hskip 0.05em r\hskip 0.05em e\hskip 0.05em g\hskip 0.05em a\hskip 0.05em d\hskip 0.05em a\hskip 0.05em s \hskip 0.05em e\hskip 0.05em m \hskip 0.05em \hskip 0.05em c\hskip 0.05em o\hskip 0.05em m\hskip 0.05em p\hskip 0.05em u\hskip 0.05em t\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}
+
+\an{Além da base dez, que é de uso geral, empregam-se co- 
+mumente as seguintes bases:}
+
+\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
+\item \an{base dois (binária) - necessita dois algarismos distintos p{\uline a}\\
+ra representar os números zero e um. Por convenção utilizam-
+se os símbolos 0 e 1, Um algarismo binário é também \ chamado\\
+``bit'' (do inglês ``binary digit'').\\
+\\
+A base dois é extremamente importante pois, como já foi cit{\uline a}\\
+do, os computadores só entendem sequências de zeros e uns \ ,\\ 
+que são usadas tanto para representar as instruções dadas \ à\\
+máquina quanto números prop iamente ditos.}
+\item \an{base oito (octal) - utiliza os algarismos de 0 a 7. Não será\\
+aqui tratada com mais detalhes porque não é utilizada no Pa-
+tinho Feio, embora o seja em vários outros computadores.}
+\item \an{base dezesseis (hexadecimal) - os dígitos hexadecimais \ são:\\
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F; usados \ para\\
+representar os números de zero a quinze.}
+\end{enumerate}
+
+\noindent \\[-2.5em]
+ \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \,\, 1 \ \ \ \ \ \ \ \ \ \, 0\\[-1em] 
+\phantom \ \ \ \, \an{Exemplo: (AB)} \ \ \ \, \an{= 10 x 16 \ + 11 x 16} \ \ \, \an{= (171)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, 16 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{10}\\
+
+\an{A correspondência entre os valores binários, decimais\\
+e hexadecimais é apresentada na tabela seguinte (note-se que são\\
+necessários quatro bits para representar todos os dígitos \ hexa\\
+decimais na base dois).}
+
+\newpage
+
+\ \ \ \, \, \uline{D\hskip 0.05em e\hskip 0.05em c\hskip 0.05em i\hskip 0.05em m\hskip 0.05em a\hskip 0.05em l} \ \ \, \uline{H\hskip 0.05em e\hskip 0.05em x\hskip 0.05em a\hskip 0.05em d\hskip 0.05em e\hskip 0.05em c\hskip 0.05em i\hskip 0.05em m\hskip 0.05em a\hskip 0.05em l} \ \ \, \uline{B\hskip 0.05em i\hskip 0.05em n\hskip 0.05em á\hskip 0.05em r\hskip 0.05em i\hskip 0.05em o}
+
+\ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \an{0000}\par
+\ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ \ \ \an{0001}\par
+\ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ \ \ \ \an{0010}\par
+\ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ \ \ \ \ \an{0011}\par
+\ \ \ \ \ \ \ \ \ 4 \ \ \ \ \ \ \ \ \ \ \ 4 \ \ \ \ \ \ \ \ \ \ \ \ \an{0100}\par
+\ \ \ \ \ \ \ \ \ 5 \ \ \ \ \ \ \ \ \ \ \ 5 \ \ \ \ \ \ \ \ \ \ \ \ \an{0101}\par
+\ \ \ \ \ \ \ \ \ 6 \ \ \ \ \ \ \ \ \ \ \ 6 \ \ \ \ \ \ \ \ \ \ \ \ \an{0110}\par
+\ \ \ \ \ \ \ \ \ 7 \ \ \ \ \ \ \ \ \ \ \ 7 \ \ \ \ \ \ \ \ \ \ \ \ \an{0111}\par
+\ \ \ \ \ \ \ \ \ 8 \ \ \ \ \ \ \ \ \ \ \ 8 \ \ \ \ \ \ \ \ \ \ \ \ \an{1000}\par
+\ \ \ \ \ \ \ \ \ 9 \ \ \ \ \ \ \ \ \ \ \ 9 \ \ \ \ \ \ \ \ \ \ \ \ \an{1001}\par
+\ \ \ \ \ \ \ \ 10 \ \ \ \ \ \ \ \ \ \ \ A \ \ \ \ \ \ \ \ \ \ \ \ \an{1010}\par
+\ \ \ \ \ \ \ \ 11 \ \ \ \ \ \ \ \ \ \ \ B \ \ \ \ \ \ \ \ \ \ \ \ \an{1011}\par
+\ \ \ \ \ \ \ \ 12 \ \ \ \ \ \ \ \ \ \ \ C \ \ \ \ \ \ \ \ \ \ \ \ \an{1100}\par
+\ \ \ \ \ \ \ \ 13 \ \ \ \ \ \ \ \ \ \ \ D \ \ \ \ \ \ \ \ \ \ \ \ \an{1101}\par
+\ \ \ \ \ \ \ \ 14 \ \ \ \ \ \ \ \ \ \ \ E \ \ \ \ \ \ \ \ \ \ \ \ \an{1110}\par
+\ \ \ \ \ \ \ \ 15 \ \ \ \ \ \ \ \ \ \ \ F \ \ \ \ \ \ \ \ \ \ \ \ \an{1111}\\
+
+\phantomsection
+\subsection*{\an{3. } \uline{C\hskip 0.05em o\hskip 0.05em n\hskip 0.05em v\hskip 0.05em e\hskip 0.05em r\hskip 0.05em s\hskip 0.05em ã\hskip 0.05em o \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em n\hskip 0.05em ú\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em n\hskip 0.05em t\hskip 0.05em r\hskip 0.05em e \hskip 0.05em \hskip 0.05em a\hskip 0.05em s \hskip 0.05em  \hskip 0.05em b\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em d\hskip 0.05em o\hskip 0.05em i\hskip 0.05em s\hskip 0.05em , \hskip 0.05em d\hskip 0.05em e\hskip 0.05em z \hskip 0.05em e \ \hskip 0.05em \hskip 0.05em d\hskip 0.05em e\hskip 0.05em z\hskip 0.05em e\hskip 0.05em s\hskip 0.05em -}\\
+\phantom \ \ \, \uline{s\hskip 0.05em e\hskip 0.05em i\hskip 0.05em s}}
+\addcontentsline{toc}{subsection}{\hskip 5.68em C\hskip 0.05em o\hskip 0.05em n\hskip 0.05em v\hskip 0.05em e\hskip 0.05em r\hskip 0.05em s\hskip 0.05em ã\hskip 0.05em o \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em n\hskip 0.05em ú\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em n\hskip 0.05em t\hskip 0.05em r\hskip 0.05em e \hskip 0.05em \hskip 0.05em a\hskip 0.05em s \hskip 0.05em  \hskip 0.05em b\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em d\hskip 0.05em o\hskip 0.05em i\hskip 0.05em s\hskip 0.05em ,\hskip 0.05em d\hskip 0.05em e\hskip 0.05em z \hskip 0.05em e\hskip 0.05em \hskip 0.05em d\hskip 0.05em e\hskip 0.05em z\hskip 0.05em e\hskip 0.05em s\hskip 0.05em s\hskip 0.05em e\hskip 0.05em i\hskip 0.05em s}
+
+\an{Conforme já se deve ter percebido, surge frequente -\\
+mente a necessidade de converter números escritos em uma \ base\\
+psta outra. Para isso existem algoritmos gerais, dos quais são\\
+apresentados abaixo alguns casos particulares:}
+
+\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
+\item \an{Conversão para a base dez de números escritos em outra base.}\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\\[-1em]
+\an{Basta escrever o número na forma d} \ \ \, \an{. b} \ \ \, \an{+ ...+ d} \ \ \, \an{e efetuar}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, n \ \ \ \ \ \ \ \ \ \ \ \ \ \, 0\\[-0.5em]
+\an{as operações indicadas.}\\[0.5em]
+\an{Exemplos: 19)} \ \ \, \an{(101111100001)} \ \ \, \an{para a base 10}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{11} \ \ \ \ \ \, \, \an{10} \ \ \ \ \ \ \ \ \ \ \ \, 1\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{= 1.2} \ \ \ \, \an{+ 0.2} \ \ \ \, \an{+ ...+ 0.2} \ \ \, \an{+ 1 =} \ \ \, \an{(3041)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{10}\\[1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{29)} \ \ \, \an{(BE1)} \ \ \, \, \an{para a base 10}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{16}\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{2}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{= 11 x 16} \ \, \, \an{+ 14 x 16 + 1 =} \ \ \, \an{(3041)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \, \an{10}\\[1em]
+\end{enumerate}
+
+\newpage
+
+\noindent \an{Uma forma conveniente cie fazer isso é dada \ nos \hfill diagramas \\
+abaixo:}
 
 \end{document}

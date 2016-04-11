@@ -29,6 +29,8 @@
 
 \frenchspacing
 
+\usepackage{epic}
+
 \begin{document}
 
 \ttfamily
@@ -301,11 +303,109 @@ apresentados abaixo alguns casos particulares:}
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{2}\\[-1em]
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{= 11 x 16} \ \, \, \an{+ 14 x 16 + 1 =} \ \ \, \an{(3041)}\\[-1em]
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \, \an{10}\\[1em]
-\end{enumerate}
 
 \newpage
 
-\noindent \an{Uma forma conveniente cie fazer isso é dada \ nos \hfill diagramas \\
-abaixo:}
+\noindent \an{Uma forma conveniente de fazer isso é dada \ nos \hfill diagramas \\
+abaixo:\\}\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(BE1)} \ \ \, \, \an{para a base 10}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{16}\\
+
+\noindent \ \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \, 1\hskip 0.05em1 \, \, 1\hskip 0.05em4 \ \ \, 1 \ \ \ \, \, }\\[-0.5em]
+\an{base}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \, x\\[-1em]
+\an{original=16} \ \ \ \, \an{11} \ \ \ \ \an{190} \ \ \ \ \an{(3041)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{10}
+
+\begin{picture}(0,0)
+\put(101,46){\vector(0,-1){10}}
+\put(92,30){\vector(-1,0){15}}
+\end{picture}
+
+\noindent \an{Método usado: 11 x 16 + 14 = 190}\\[1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{190 x 16 + 1 = 3041}
+
+\begin{picture}(0,0)
+\put(207,48){\vector(0,-1){15}}
+\end{picture}
+
+\noindent \\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(10110)} \ \, \, \an{para a base 10}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-0.5em]
+
+\noindent \ \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \, 1 \, \, 0 \ \, 1 \, \, 1 \ \, 0 \ \ }\\
+\an{base}\\[-0.5em]
+\an{original= 2} \ \ \, 1 \, \, 2 \ \, 5 \, \, \an{11 (22)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{10}
+
+\begin{picture}(0,0)
+\put(97.5,53){\vector(0,-1){15}}
+\end{picture}
+
+\noindent \\[-2em]
+\an{Método usado: 1\,x\,2 +\,0 = 2} \ \ \ \ \ \ \ \ \ \ \an{5\,x\,2 +\,1\,=\,11}\\
+\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{2\,x\,2 +\,1\,=\,5} \ \ \ \ \ \ \ \ \ \ \an{11\,x\,2\,+\,0 = 22}
+
+\begin{picture}(0,0)
+\put(167,48){\vector(0,-1){15}}
+\put(228.5,33){\vector(0,1){15}}
+\put(293.5,48){\vector(0,-1){15}}
+\end{picture}
+
+\noindent \\[-4em]
+\item \an{Conversão de números escritos na base dez para uma outra b{\uline a}\\
+se. Divide-se} \ \ \,\an{repetidamente o número dado pela base de de{\uline s}\\
+tino até que o quociente seja zero. Os restos obtidos \hfill são\\
+a representação desejada, em ordem invertida. Ver os esque-\\
+mas abaixo:}\\[-2em]
+
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{(3041)} \ \ \ \ \ \ \ \ \ \an{base 16}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{10}\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{resto de 3041 : 16}\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{resto de} \ \ \, \an{190 : 16}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{3041} \ \ \ \, \, \an{1}\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{resto de} \ \ \ \, \an{11 : 16}\\[-0.5em]
+\phantom \ \ \, \an{3041 : 16} \ \ \ \ \ \ \, \, \an{190} \ \ \, \, \an{14}\\[0.5em]
+\phantom \ \ \ \, \an{190 : 16} \ \ \ \ \ \ \ \, \, \an{11} \ \ \ \ \ \an{11} \ \ \ \an{14} \ \ \, \an{1}\\[1em]
+\phantom \ \ \ \, \, \an{11 : 16} \ \ \ \ \ \ \ \ \, \, \an{0} \ \ \ \, \, \an{(BE1)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{16}\\
+
+\begin{picture}(0,0)
+\put(157,28){\line(0,1){110}}
+\put(82,101){\vector(1,0){30}}
+\put(82,78){\vector(1,0){30}}
+\put(82,48){\vector(1,0){30}}
+
+\dashline{4}(180,125)(214,142)
+\put(180,125){\vector(-2,-1){2}}
+
+\dashline{4}(180,103)(214,124)
+\put(180,103){\vector(-2,-1){2}}
+
+\dashline{4}(180,80)(214,108)
+\put(180,80){\vector(-1,-1){2}}
+
+\put(179,120){\vector(1,-1){37}}
+\put(179,98){\vector(1,-1){15}}
+\put(172,72){\vector(1,-3){6}}
+\put(196,72){\vector(-1,-2){9}}
+\put(215,72){\vector(-1,-1){18}}
+\end{picture}
+
+\newpage
+
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+
 
 \end{document}

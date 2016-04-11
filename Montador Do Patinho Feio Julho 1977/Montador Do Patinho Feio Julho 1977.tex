@@ -27,9 +27,9 @@
 \fancyhf{}
 \renewcommand\headrulewidth{0pt}
 
-\frenchspacing
-
 \usepackage{epic}
+
+\frenchspacing
 
 \begin{document}
 
@@ -307,9 +307,9 @@ apresentados abaixo alguns casos particulares:}
 \newpage
 
 \noindent \an{Uma forma conveniente de fazer isso é dada \ nos \hfill diagramas \\
-abaixo:\\}\\[-0.5em]
+abaixo:\\}\\[-1em]
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(BE1)} \ \ \, \, \an{para a base 10}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{16}\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{16}\\[-0.5em]
 
 \noindent \ \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \, 1\hskip 0.05em1 \, \, 1\hskip 0.05em4 \ \ \, 1 \ \ \ \, \, }\\[-0.5em]
 \an{base}\\[-1em]
@@ -320,18 +320,17 @@ abaixo:\\}\\[-0.5em]
 \begin{picture}(0,0)
 \put(101,46){\vector(0,-1){10}}
 \put(92,30){\vector(-1,0){15}}
-\end{picture}
+\end{picture}\\[-2em]
 
 \noindent \an{Método usado: 11 x 16 + 14 = 190}\\[1em]
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{190 x 16 + 1 = 3041}
 
 \begin{picture}(0,0)
 \put(207,48){\vector(0,-1){15}}
-\end{picture}
+\end{picture}\\[-3em]
 
-\noindent \\[-1em]
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(10110)} \ \, \, \an{para a base 10}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-1em]
 
 \noindent \ \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \, 1 \, \, 0 \ \, 1 \, \, 1 \ \, 0 \ \ }\\
 \an{base}\\[-0.5em]
@@ -340,9 +339,8 @@ abaixo:\\}\\[-0.5em]
 
 \begin{picture}(0,0)
 \put(97.5,53){\vector(0,-1){15}}
-\end{picture}
+\end{picture}\\[-2.5em]
 
-\noindent \\[-2em]
 \an{Método usado: 1\,x\,2 +\,0 = 2} \ \ \ \ \ \ \ \ \ \ \an{5\,x\,2 +\,1\,=\,11}\\
 \\[-0.5em]
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{2\,x\,2 +\,1\,=\,5} \ \ \ \ \ \ \ \ \ \ \an{11\,x\,2\,+\,0 = 22}
@@ -351,14 +349,13 @@ abaixo:\\}\\[-0.5em]
 \put(167,48){\vector(0,-1){15}}
 \put(228.5,33){\vector(0,1){15}}
 \put(293.5,48){\vector(0,-1){15}}
-\end{picture}
+\end{picture}\\[-2.5em]
 
-\noindent \\[-4em]
 \item \an{Conversão de números escritos na base dez para uma outra b{\uline a}\\
 se. Divide-se} \ \ \,\an{repetidamente o número dado pela base de de{\uline s}\\
 tino até que o quociente seja zero. Os restos obtidos \hfill são\\
 a representação desejada, em ordem invertida. Ver os esque-\\
-mas abaixo:}\\[-2em]
+mas abaixo:}\\[-2.5em]
 
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{(3041)} \ \ \ \ \ \ \ \ \ \an{base 16}\\[-1em]
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{10}\\
@@ -395,11 +392,62 @@ mas abaixo:}\\[-2em]
 
 \newpage
 
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(3041)} \ \ \ \ \ \ \ \ \an{base 2}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{10}\\[-0.5em]
 
+\hskip 2.7em \ \an{3041} \ \ \, 1\\[-1.7em]
+\par
+\hskip 2.7em \ \an{1524} \ \ \, 0\\[-1.7em]
+\par
+\hskip 3.25em \ \an{760} \ \ \, 0\\[-1.7em]
+\par
+\hskip 3.25em \ \an{380} \ \ \, 0\\[-1.7em]
+\par
+\hskip 3.25em \ \an{190} \ \ \, 0\\[-1.7em]
+\par
+\hskip 3.8em \ \an{95} \ \ \, 1\\[-1.7em]
+\par
+\hskip 3.8em \ \an{47} \ \ \, 1\\[-1.7em]
+\par
+\hskip 3.8em \ \an{23} \ \ \, 1\\[-1.7em]
+\par
+\hskip 3.8em \ \an{11} \ \ \, 1\\[-1.7em]
+\par
+\hskip 4.35em \ \an{5} \ \ \, 1\\[-1.7em]
+\par
+\hskip 4.35em \ \an{2} \ \ \, 0\\[-1.7em]
+\par
+\hskip 4.35em \ \an{1} \ \ \, \an{(1 0 1 1 1 1 1 0 0 0 0 1)}\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, 2\\[-2.2em]
+\par
+\hskip 4.35em \ \an{0}
 
+\begin{picture}(0,0)
+\put(72,8){\line(0,1){260}}
+\put(89,241){\vector(3,-4){141}}
+\put(89,222){\vector(3,-4){127}}
+\put(89,204){\vector(3,-4){113}}
+\put(89,186){\vector(3,-4){100}}
+\put(89,169){\vector(3,-4){87}}
+\put(89,151){\vector(3,-4){74}}
+\put(89,132){\vector(3,-4){60}}
+\put(89,113){\vector(3,-4){46}}
+\put(89,94){\vector(3,-4){32}}
+\put(89,75){\vector(3,-4){18}}
+\put(87,60){\vector(3,-4){8}}
+\end{picture}\\[-2em]
 
+\item \an{Conversão entre as bases dois e dezesseis.}
 
+\begin{enumerate}[label=c\hskip 0.05em-\hskip 0.05em \arabic*\hskip 0.05em ), align=left, leftmargin=2.8em, labelsep=0.4em, itemsep=1em, topsep=0em]
+\item \an{Da base dois para a base dezesseis. Basta agrupar \hfill os\\
+dígitos binários de quatro em quatro (a partir da \hfill di-\\
+reita) e substituí-los pelo respectivo dígito hexadec{\uline i}\\
+mal, conforme a tabela apresentada mais atrás (item 2.\\
+c).}\\[-1em]
 
+\an{Exemplo:}
+\end{enumerate}
 
 \end{enumerate}
 

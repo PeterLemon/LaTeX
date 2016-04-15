@@ -1,23 +1,21 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[a4paper, total={148.3mm, 245mm}, left=34mm]{geometry}
+\usepackage[a4paper, total={134.5mm, 245mm}, left=34mm]{geometry}
 
 \usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=krom]{hyperref}
 
 \usepackage[T1]{fontenc}
 \usepackage[portuguese,brazil]{babel}
 
-\usepackage{soul}
-
 \usepackage[normalem]{ulem}
 \renewcommand{\ULthickness}{0.04em}
 
 \usepackage[compact]{titlesec}
-\titlespacing{\section}{-0.1em}{0em}{0em}
-\titlespacing{\subsection}{2.22em}{0em}{1.5em}
+\titlespacing{\section}{0em}{0em}{0em}
+\titlespacing{\subsection}{2em}{0em}{1.5em}
 \titleformat{\section}{\ttfamily}{\thesection}{0em}{}
 \titleformat{\subsection}{\ttfamily}{\thesection}{0em}{}
 
-\setlength\parindent{5.78em}
+\setlength\parindent{5.27em}
 \renewcommand{\baselinestretch}{1.2}
 
 \usepackage{enumitem}
@@ -34,44 +32,43 @@
 \begin{document}
 
 \ttfamily
-\sodef\an{}{0.05em}{0.6em}{0em}
 
 \noindent \\
 
 \vspace{2em}
-\hspace{5em} \an{UNIVERSIDADE DE SÃO PAULO}\par
-\hspace{7.2em} \an{ESCOLA POLITÉCNICA}\par
-\hspace{0.05em} \an{DEPARTAMENTO DE ENGENHARIA DE ELETRICIDADE}\par
-\hspace{2.8em} \an{LABORATÕRIO DE SISTEMAS DIGITAIS}\par
+\hspace{5em} UNIVERSIDADE DE SÃO PAULO\par
+\hspace{7em} ESCOLA POLITÉCNICA\par
+\hspace{0.5em} DEPARTAMENTO DE ENGENHARIA DE ELETRICIDADE\par
+\hspace{3em} LABORATÕRIO DE SISTEMAS DIGITAIS\par
 
 \vspace{19em}
-\hspace{4.45em} \an{MONTADOR DO ``PATINHO FEIO''}\par
+\hspace{4.5em} MONTADOR DO ``PATINHO FEIO''\par
 
 \vspace{7em}
-\hspace{8.1em} \an{Antonio Marcos de Aguirra Massola}\par
-\hspace{8.1em} \an{João José Neto}\par
-\hspace{8.1em} \an{Moshe Bain}\par
+\hspace{7.5em} Antonio Marcos de Aguirra Massola\par
+\hspace{7.5em} João José Neto\par
+\hspace{7.5em} Moshe Bain\par
 
 \vspace{7em}
-\hspace{10em} \an{Julho}\par
-\hspace{10.3em} \an{1977}
+\hspace{9.5em} Julho\par
+\hspace{9.75em} 1977
 
 \newpage
 
 \noindent \\
 
 \vspace{21em}
-\hspace{6.7em} \an{Em memória de}\par
-\hspace{6.7em} \an{Laís Costa Ortenzi}\par
+\hspace{6.5em} Em memória de\par
+\hspace{6.5em} Laís Costa Ortenzi\par
 
 \newpage
 
 \setcounter{page}{1}
-\fancyhead[R]{\ttfamily {I\hskip 0.05em .\hskip 0.05em \thepage}}
+\fancyhead[R]{\ttfamily {I.\thepage}}
 
-\renewcommand\contentsname{\ttfamily \hskip 14.5em \uline{I\hskip 0.05em N\hskip 0.05em D\hskip 0.05em I\hskip 0.05em C\hskip 0.05em E}\\
+\renewcommand\contentsname{\ttfamily \hskip 13em \uline{INDICE}\\
 \\
-\uline{A\hskip 0.05em s\hskip 0.05em s\hskip 0.05em u\hskip 0.05em n\hskip 0.05em t\hskip 0.05em o} \hskip 26em \uline{P\hskip 0.05em á\hskip 0.05em g\hskip 0.05em i\hskip 0.05em n\hskip 0.05em a}}
+\uline{Assunto} \hskip 22.5em \uline{Página}}
 \tableofcontents
 
 \newpage
@@ -81,12 +78,12 @@
 \fancyhead[R]{\ttfamily {\thesection \hskip 0.05em .\hskip 0.05em \thepage}}
 
 \phantomsection
-\section*{\an{1 - }\uline{I\hskip 0.05em N\hskip 0.05em T\hskip 0.05em R\hskip 0.05em O\hskip 0.05em D\hskip 0.05em U\hskip 0.05em Ç\hskip 0.05em Ã\hskip 0.05em O}}
-\addcontentsline{toc}{section}{C\hskip 0.05em A\hskip 0.05em P\hskip 0.05em Í\hskip 0.05em T\hskip 0.05em U\hskip 0.05em L\hskip 0.05em O \hskip 0.05em  \hskip 0.05em 1 \hskip 0.05em  \hskip 0.05em - \hskip 0.05em  \hskip 0.05em I\hskip 0.05em N\hskip 0.05em T\hskip 0.05em R\hskip 0.05em O\hskip 0.05em D\hskip 0.05em U\hskip 0.05em Ç\hskip 0.05em Ã\hskip 0.05em O}
+\section*{1 - \uline{INTRODUÇÃO}}
+\addcontentsline{toc}{section}{CAPÍTULO 1 - INTRODUÇÃO}
 
 \noindent \\
 \par
-\an{O ante-projeto do minicomputador Patinho Feio nasceu\\
+O ante-projeto do minicomputador Patinho Feio nasceu\\
 de um curso de pós-graduação dado pelo Professor Glen \hfill George\\
 Langdon Jr., em 1972. A seguir, os engenheiros e estagiários do\\
 Laboratório de Sistemas Digitais (LSD) da EPUSP terminaram \hfill o\\
@@ -94,17 +91,17 @@ projeto e montaram o Patinho Feio que, dessa forma, se \hfill tornou\\
 o primeiro computador projetado e construído no Brasil.\\
 \par
 Os circuitos do Patinho Feio são totalmente \hfill consti-\\
-tuídos por circuitos integrados da família TTL (``transistor\,\, \hfill -\\
-transistor logic''), apresentando uma memória de núcleos de fe{\uline r}\\
+tuídos por circuitos integrados da família TTL (``transistor \hfill -\\
+transistor logic''), apresentando uma memória de núcleos de fe\uline r\\
 rite, e tendo um ciclo de máquina de dois microsegundos.\\
 \par
-O Patinho Feio foi destinado a pesquisas no LSD, ta{\uline n}\\
+O Patinho Feio foi destinado a pesquisas no LSD, ta\uline n\\
 to na área de programação (``software'') como dos circuitos ele-\\
 trônicos (``hardware'').\\
 \par
-Cuidou-se do desenvolvimento de um ``software'' que pe{\uline r}\\
+Cuidou-se do desenvolvimento de um ``software'' que pe\uline r\\
 mitisse um uso mais eficiente do minicomputador, já que, \hfill de\\
-início só se podia programá-lo em linguagem de máquina, manua{\uline l}\\
+início só se podia programá-lo em linguagem de máquina, manua\uline l\\
 mente, através do seu painel. Em particular, foi definida \hfill uma\\
 linguagem de montador (``assembly language''), que associa a ca-\\
 da instrução de máquina um mnemônico, e um programa \hfill montador\\
@@ -115,14 +112,14 @@ os assuntos tratados neste manual.\\
 Este manual foi escrito de forma a tratar cada tópi-\\
 co de forma mais ou menos extensa, na suposição de que o \hfill lei-\\
 tor tenha tido previamente apenas um pequeno contato com \hfill a\\
-área de computação, e pouco ou nenhum conhecimento de \hfill lingu{\uline a}\\
+área de computação, e pouco ou nenhum conhecimento de \hfill lingu\uline a\\
 gens de baixo nível, como um montador. Por causa disso,tentou-\\
-se fazer com que o manual fosse o mais auto-explicativo e ind{\uline e}\\
-pendente possível de outros textos. Naturalmente é \hfill impossível}
+se fazer com que o manual fosse o mais auto-explicativo e ind\uline e\\
+pendente possível de outros textos. Naturalmente é \hfill impossível
 
 \newpage
 
-\noindent \an{que um texto seja completamente independente de outros; por i{\uline s}\\
+\noindent que um texto seja completamente independente de outros; por i\uline s\\
 so, recomenda-se consultar outros textos, tais como manuais de\\
 operação do Patinho Feio e de seus equipamentos periféricos(de\\
 entrada/saída), textos sobre números binários, etc.\\
@@ -132,22 +129,22 @@ tos com clareza e para padronizar as notações, com o \hfill objetivo\\
 de tornar o manual realmente útil. Contudo, certamente \hfill muitas\\
 falhas subsistem, de forma que são bem recebidas quaisquer su-\\
 gestões e críticas de modo a melhorar o manual em futuras edi-\\
-ções.}\\
+ções.\\
 \\
 \\[-0.5em]
-\uline{O\hskip 0.05em b\hskip 0.05em s\hskip 0.05em e\hskip 0.05em r\hskip 0.05em v\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em õ\hskip 0.05em e\hskip 0.05em s}\hskip 0.05em :
+\uline{Observações}:
 
-\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
-\item \an{As informações contidas neste manual são as melhores que se\\
+\begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1em]
+\item As informações contidas neste manual são as melhores que se\\
 pôde obter na época em que o manual foi escrito (setembro de\\
 1975). Contudo, devido ao constante desenvolvimento de \hfill no-\\
 vos projetos de ``hardware'' e ``software'' para o Patinho Feio,\\
 alguns detalhes podem ter sofrido alterações até a presente\\
-data.}
-\item \an{Os programas e trechos de programa existentes no manual fo-\\
+data.
+\item Os programas e trechos de programa existentes no manual fo-\\
 ram aí colocados por estarem sintaticamente corretos, \hfill mas\\
 não representam necessariamente exemplos de boa técnica \hfill de\\
-programação.}
+programação.
 \end{enumerate}
 
 \newpage
@@ -156,374 +153,374 @@ programação.}
 \setcounter{section}{2}
 
 \phantomsection
-\section*{\an{2 - }\uline{A\hskip 0.05em R\hskip 0.05em I\hskip 0.05em T\hskip 0.05em M\hskip 0.05em É\hskip 0.05em T\hskip 0.05em I\hskip 0.05em C\hskip 0.05em A \hskip 0.05em \hskip 0.05em B\hskip 0.05em I\hskip 0.05em N\hskip 0.05em Ã\hskip 0.05em R\hskip 0.05em Í\hskip 0.05em A \hskip 0.05em \hskip 0.05em E \hskip 0.05em \hskip 0.05em H\hskip 0.05em E\hskip 0.05em X\hskip 0.05em A\hskip 0.05em D\hskip 0.05em E\hskip 0.05em C\hskip 0.05em I\hskip 0.05em M\hskip 0.05em A\hskip 0.05em L}}
-\addcontentsline{toc}{section}{C\hskip 0.05em A\hskip 0.05em P\hskip 0.05em Í\hskip 0.05em T\hskip 0.05em U\hskip 0.05em L\hskip 0.05em O \hskip 0.05em \hskip 0.05em 2 \hskip 0.05em  \hskip 0.05em - \hskip 0.05em  \hskip 0.05em A\hskip 0.05em R\hskip 0.05em I\hskip 0.05em T\hskip 0.05em M\hskip 0.05em É\hskip 0.05em T\hskip 0.05em I\hskip 0.05em C\hskip 0.05em A \hskip 0.05em  \hskip 0.05em B\hskip 0.05em I\hskip 0.05em N\hskip 0.05em Ã\hskip 0.05em R\hskip 0.05em Í\hskip 0.05em A \hskip 0.05em E \hskip 0.05em  \hskip 0.05em H\hskip 0.05em E\hskip 0.05em X\hskip 0.05em A\hskip 0.05em D\hskip 0.05em E\hskip 0.05em C\hskip 0.05em I\hskip 0.05em M\hskip 0.05em A\hskip 0.05em L}
+\section*{2 - \uline{ARITMÉTICA BINÃRÍA E HEXADECIMAL}}
+\addcontentsline{toc}{section}{CAPÍTULO 2 - ARITMÉTICA BINÃRÍA E HEXADECIMAL}
 
-\hskip -3.3em \an{(Com números inteiros)}\\
-\\
+\hskip -3em (Com números inteiros)\\
+\\[-0.5em]
 
 \phantomsection
-\subsection*{\an{1. }\uline{B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em N\hskip 0.05em u\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}}
-\addcontentsline{toc}{subsection}{\hskip 5.68em B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em N\hskip 0.05em u\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}
+\subsection*{1. \uline{Bases de Numeração}}
+\addcontentsline{toc}{subsection}{\hskip 5em Bases de Numeração}
 
-\an{Utiliza-se, na vida diária, a base decimal de numer{\uline a}\\
-ção para representar os números. Isto significa duas coisas:}
+Utiliza-se, na vida diária, a base decimal de numer\uline a\\
+ção para representar os números. Isto significa duas coisas:
 
-\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
-\item \an{existem dez algarismos com os quais todos os números são r{\uline e}\\
+\begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1.5em]
+\item existem dez algarismos com os quais todos os números são r\uline e\\
 presentados (pois a base de numeração é dez), a saber: 0, 1,\\
-2, 3, 4, 5, 6, 7, 8, 9.}
-\item \an{emprega-se uma } \uline{n\hskip 0.05em o\hskip 0.05em t\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o \hskip 0.05em \hskip 0.05em p\hskip 0.05em o\hskip 0.05em s\hskip 0.05em i\hskip 0.05em c\hskip 0.05em i\hskip 0.05em o\hskip 0.05em n\hskip 0.05em a\hskip 0.05em l} \an{ onde está subentendido que,\\
-quando um algarismo é deslocado de uma posição para a esque{\uline r}\\
-da, seu valor é multiplicado por dez. Por exemplo:}\\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{2 \ \ \ \ \ \ \ 1 \ \ \, \, \, \, 0}\\[-1em]
-\an{295 = 2 x 10} \ \ \, \an{+ 9 x 10} \ \ \, \an{+ 5 x 10}
+2, 3, 4, 5, 6, 7, 8, 9.
+\item emprega-se uma \uline{notação posicional} onde está subentendido que,\\
+quando um algarismo é deslocado de uma posição para a esque\uline r\\
+da, seu valor é multiplicado por dez. Por exemplo:\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ 0\\[-1em]
+295 = 2 x 10 \ + 9 x 10 \ + 5 x 10\\[-1.5em]
 \end{enumerate}
 
-\an{Generalizando, quando se escreve o número N = d \ d \ \ ...}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{n \ n-1}\\[-0.5em]
-d \, d \, d \ \an{ (sem sinal), onde os d } \an{ (i= 0, 1, 2,...,n) são os seus}\\[-1em]
-\phantom \ 2 \, 1 \, 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, i\\[-0.5em]
-\an{algarismos (ou dígitos), está-se querendo dizer que: N = d \hfill x}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \\[-1em]
-\phantom \ \, n \ \ \ \ \ \ \ \ \ \ \ \ \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, 2 \ \ \ \ \ \ \ \ \ \, 1 \ \ \ \ \ \ \ \ \ \ 0\\[-1em]
-\an{10} \ \ \, \an{+ d} \ \ \ \, \an{x 10} \ \ \ \, \, \an{+ ....+ d} \ \ \, \an{x 10} \ \ \, \an{+ d} \ \ \, \an{x 10} \ \ \, \an{+ d} \ \ \ \an{x 10} \,\,\,\, .\\[-1em]
-\phantom \ \ \ \ \ \ \, \, \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \, 2 \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ 0\\
+Generalizando, quando se escreve o número N = d \ d \ \ ...\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \ n-1\\[-0.5em]
+d \ d \ d \ (sem sinal), onde os d \ (i= 0, 1, 2,...,n) são os seus\\[-1em]
+\phantom \ 2 \ 1 \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\\[-0.5em]
+algarismos (ou dígitos), está-se querendo dizer que: N = d \hfill x\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \\[-1em]
+\phantom \ \ n \ \ \ \ \ \ \ \ \ \ n-1 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ 0\\[-1em]
+10 \ + d \ \ x 10 \ \ \ + ....+ d \ x 10 \ + d \ x 10 \ + d \ x 10 \ .\\[-1em]
+\phantom \ \ \ \ \ \ \ n-1 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ 0\\
 \par
-\an{Nada obriga a que se use apenas a base dez. Na verda-
-de, qualquer base } \uline{b} \an{(inteira) pode ser escolhida para \ represen-
-tar um número. Para tanto, escolhem-se } \uline{b} \an{ símbolos distintos (os\\
+Nada obriga a que se use apenas a base dez. Na verda-\\
+de, qualquer base \uline b(inteira) pode ser escolhida para \ represen-\\
+tar um número. Para tanto, escolhem-se \uline b símbolos distintos (os\\
 algarismos da base) que representam os números de zero a (b - 1).\\
-Escrevendo-se agora n + 1 algarismos adjacentes d d} \ \ \ \, \an{...d d \ e}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{n n-1 \ \,\, 1 0}\\[-0.5em]
-\an{subentendida a notação posicional descrita acima, tem-se o núm{\uline e}\\
-ro N representado por essa notação:}\par
-\ \ \ \ \ \ \ \ \ \ \ \ \ \, n \ \ \ \ \ \ \ \ \ \ \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ 0\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{N = d} \ \ \, \an{. b} \ \ \, \an{+ d} \ \ \ \ \, \an{b} \ \ \, \, \an{+ ...+ d} \ \ \ \an{b \ + d} \ \ \ \an{b}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \ \ \ \ \ \ \ \ \ \ \an{n-1} \ \ \ \ \ \ \ \ \ \ \ \ \ \, 1 \ \ \ \ \, \, 0\\
+Escrevendo-se agora n + 1 algarismos adjacentes d d \ \ ...d d \ e\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n n-1 \ \ \ 1 0\\[-0.5em]
+subentendida a notação posicional descrita acima, tem-se o núm\uline e\\
+ro N representado por essa notação:\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ n \ \ \ \ \ \ \ \ n-1 \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ 0\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ N = d \ . b \ + d \ \ \ b \ \ + ...+ d \ b \ + d \ b\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \ \ \ \ \ \ \ \ n-1 \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ 0\\[-0.5em]
 \par
-\an{Inversamente, pode-se provar que cada número N tem uma\\
-única representação, numa dada base {\uline b}, que satisfaz as condições\\
+Inversamente, pode-se provar que cada número N tem uma\\
+única representação, numa dada base \uline b, que satisfaz as condições\\
 mencionadas acima.\\
 \par
-Exemplo: Escolhendo b = 3, têm-se três algarismos;}
+Exemplo: Escolhendo b = 3, têm-se três algarismos;
 
 \newpage
 
-\noindent \an{convencionalmente usa-se 0, 1, 2. Então tem-se:}\\
+\noindent convencionalmente usa-se 0, 1, 2. Então tem-se:\\
 \\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ 0\\[-1em]
-\phantom \ \ \ \ \ \, \, \an{(1202)} \ \ \, \an{= 1 x 3} \ \ \, \an{+ 2 x 3} \ \ \, \an{+ 0 x 3} \ \ \, \an{+ 2 x 3} \ \ \, \an{= (47)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \, 3 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{10}\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ 0\\[-1em]
+\phantom \ \ \ \ \ \ (1202) \ = 1 x 3 \ + 2 x 3 \ + 0 x 3 \ + 2 x 3 \ = (47)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
 \par
-\an{Pode-se começar a perceber a importância do que \hfill foi\\
-dito acima quando se considera que os computadores modermos tr{\uline a}\\
-balham sempre, em última análise, com a base dois.}\\
-\\
+Pode-se começar a perceber a importância do que \hfill foi\\
+dito acima quando se considera que os computadores modermos tr\uline a\\
+balham sempre, em última análise, com a base dois.\\
+\\[0.5em]
 
 \phantomsection
-\subsection*{\an{2. }\uline{B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em m\hskip 0.05em a\hskip 0.05em i\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em m\hskip 0.05em p\hskip 0.05em r\hskip 0.05em e\hskip 0.05em g\hskip 0.05em a\hskip 0.05em d\hskip 0.05em a\hskip 0.05em s \hskip 0.05em e\hskip 0.05em m \hskip 0.05em \hskip 0.05em c\hskip 0.05em o\hskip 0.05em m\hskip 0.05em p\hskip 0.05em u\hskip 0.05em t\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}}
-\addcontentsline{toc}{subsection}{\hskip 5.68em B\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em \hskip 0.05em m\hskip 0.05em a\hskip 0.05em i\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em m\hskip 0.05em p\hskip 0.05em r\hskip 0.05em e\hskip 0.05em g\hskip 0.05em a\hskip 0.05em d\hskip 0.05em a\hskip 0.05em s \hskip 0.05em e\hskip 0.05em m \hskip 0.05em \hskip 0.05em c\hskip 0.05em o\hskip 0.05em m\hskip 0.05em p\hskip 0.05em u\hskip 0.05em t\hskip 0.05em a\hskip 0.05em ç\hskip 0.05em ã\hskip 0.05em o}
+\subsection*{2. \uline{Bases mais empregadas em computação}}
+\addcontentsline{toc}{subsection}{\hskip 5em Bases mais empregadas em computação}
 
-\an{Além da base dez, que é de uso geral, empregam-se co- 
-mumente as seguintes bases:}
+Além da base dez, que é de uso geral, empregam-se co-\\
+mumente as seguintes bases:
 
-\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
-\item \an{base dois (binária) - necessita dois algarismos distintos p{\uline a}\\
-ra representar os números zero e um. Por convenção utilizam-
+\begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1.5em]
+\item base dois (binária) - necessita dois algarismos distintos p\uline a\\
+ra representar os números zero e um. Por convenção utilizam-\\
 se os símbolos 0 e 1, Um algarismo binário é também \ chamado\\
 ``bit'' (do inglês ``binary digit'').\\
 \\
-A base dois é extremamente importante pois, como já foi cit{\uline a}\\
+A base dois é extremamente importante pois, como já foi cit\uline a\\
 do, os computadores só entendem sequências de zeros e uns \ ,\\ 
 que são usadas tanto para representar as instruções dadas \ à\\
-máquina quanto números prop iamente ditos.}
-\item \an{base oito (octal) - utiliza os algarismos de 0 a 7. Não será\\
+máquina quanto números prop iamente ditos.
+\item base oito (octal) - utiliza os algarismos de 0 a 7. Não será\\
 aqui tratada com mais detalhes porque não é utilizada no Pa-
-tinho Feio, embora o seja em vários outros computadores.}
-\item \an{base dezesseis (hexadecimal) - os dígitos hexadecimais \ são:\\
+tinho Feio, embora o seja em vários outros computadores.
+\item base dezesseis (hexadecimal) - os dígitos hexadecimais \ são:\\
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F; usados \ para\\
-representar os números de zero a quinze.}
+representar os números de zero a quinze.
 \end{enumerate}
 
-\noindent \\[-2.5em]
- \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \,\, 1 \ \ \ \ \ \ \ \ \ \, 0\\[-1em] 
-\phantom \ \ \ \, \an{Exemplo: (AB)} \ \ \ \, \an{= 10 x 16 \ + 11 x 16} \ \ \, \an{= (171)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, 16 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{10}\\
-
-\an{A correspondência entre os valores binários, decimais\\
+\noindent \\[-3em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ 0\\[-1em] 
+\phantom \ \ \ Exemplo: (AB) \ \ = 10 x 16 \ + 11 x 16 \ = (171)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\par
+A correspondência entre os valores binários, decimais\\
 e hexadecimais é apresentada na tabela seguinte (note-se que são\\
-necessários quatro bits para representar todos os dígitos \ hexa\\
-decimais na base dois).}
+necessários quatro bits para representar todos os dígitos \ hex\uline a\\
+decimais na base dois).
 
 \newpage
 
-\ \ \ \, \, \uline{D\hskip 0.05em e\hskip 0.05em c\hskip 0.05em i\hskip 0.05em m\hskip 0.05em a\hskip 0.05em l} \ \ \, \uline{H\hskip 0.05em e\hskip 0.05em x\hskip 0.05em a\hskip 0.05em d\hskip 0.05em e\hskip 0.05em c\hskip 0.05em i\hskip 0.05em m\hskip 0.05em a\hskip 0.05em l} \ \ \, \uline{B\hskip 0.05em i\hskip 0.05em n\hskip 0.05em á\hskip 0.05em r\hskip 0.05em i\hskip 0.05em o}
+\ \ \ \uline{Decimal} \ \ \ \uline{Hexadecimal} \ \ \ \uline{Binário}\\[-1em]
 
-\ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ \ \ \an{0000}\par
-\ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ \ \ \an{0001}\par
-\ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ \ \ \ \an{0010}\par
-\ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ \ \ \ \ \an{0011}\par
-\ \ \ \ \ \ \ \ \ 4 \ \ \ \ \ \ \ \ \ \ \ 4 \ \ \ \ \ \ \ \ \ \ \ \ \an{0100}\par
-\ \ \ \ \ \ \ \ \ 5 \ \ \ \ \ \ \ \ \ \ \ 5 \ \ \ \ \ \ \ \ \ \ \ \ \an{0101}\par
-\ \ \ \ \ \ \ \ \ 6 \ \ \ \ \ \ \ \ \ \ \ 6 \ \ \ \ \ \ \ \ \ \ \ \ \an{0110}\par
-\ \ \ \ \ \ \ \ \ 7 \ \ \ \ \ \ \ \ \ \ \ 7 \ \ \ \ \ \ \ \ \ \ \ \ \an{0111}\par
-\ \ \ \ \ \ \ \ \ 8 \ \ \ \ \ \ \ \ \ \ \ 8 \ \ \ \ \ \ \ \ \ \ \ \ \an{1000}\par
-\ \ \ \ \ \ \ \ \ 9 \ \ \ \ \ \ \ \ \ \ \ 9 \ \ \ \ \ \ \ \ \ \ \ \ \an{1001}\par
-\ \ \ \ \ \ \ \ 10 \ \ \ \ \ \ \ \ \ \ \ A \ \ \ \ \ \ \ \ \ \ \ \ \an{1010}\par
-\ \ \ \ \ \ \ \ 11 \ \ \ \ \ \ \ \ \ \ \ B \ \ \ \ \ \ \ \ \ \ \ \ \an{1011}\par
-\ \ \ \ \ \ \ \ 12 \ \ \ \ \ \ \ \ \ \ \ C \ \ \ \ \ \ \ \ \ \ \ \ \an{1100}\par
-\ \ \ \ \ \ \ \ 13 \ \ \ \ \ \ \ \ \ \ \ D \ \ \ \ \ \ \ \ \ \ \ \ \an{1101}\par
-\ \ \ \ \ \ \ \ 14 \ \ \ \ \ \ \ \ \ \ \ E \ \ \ \ \ \ \ \ \ \ \ \ \an{1110}\par
-\ \ \ \ \ \ \ \ 15 \ \ \ \ \ \ \ \ \ \ \ F \ \ \ \ \ \ \ \ \ \ \ \ \an{1111}\\
+\ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ \ 0000\par
+\ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ 0001\par
+\ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ \ 2 \ \ \ \ \ \ \ \ \ \ 0010\par
+\ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ \ \ 3 \ \ \ \ \ \ \ \ \ \ 0011\par
+\ \ \ \ \ \ 4 \ \ \ \ \ \ \ \ \ \ 4 \ \ \ \ \ \ \ \ \ \ 0100\par
+\ \ \ \ \ \ 5 \ \ \ \ \ \ \ \ \ \ 5 \ \ \ \ \ \ \ \ \ \ 0101\par
+\ \ \ \ \ \ 6 \ \ \ \ \ \ \ \ \ \ 6 \ \ \ \ \ \ \ \ \ \ 0110\par
+\ \ \ \ \ \ 7 \ \ \ \ \ \ \ \ \ \ 7 \ \ \ \ \ \ \ \ \ \ 0111\par
+\ \ \ \ \ \ 8 \ \ \ \ \ \ \ \ \ \ 8 \ \ \ \ \ \ \ \ \ \ 1000\par
+\ \ \ \ \ \ 9 \ \ \ \ \ \ \ \ \ \ 9 \ \ \ \ \ \ \ \ \ \ 1001\par
+\ \ \ \ \ 10 \ \ \ \ \ \ \ \ \ \ A \ \ \ \ \ \ \ \ \ \ 1010\par
+\ \ \ \ \ 11 \ \ \ \ \ \ \ \ \ \ B \ \ \ \ \ \ \ \ \ \ 1011\par
+\ \ \ \ \ 12 \ \ \ \ \ \ \ \ \ \ C \ \ \ \ \ \ \ \ \ \ 1100\par
+\ \ \ \ \ 13 \ \ \ \ \ \ \ \ \ \ D \ \ \ \ \ \ \ \ \ \ 1101\par
+\ \ \ \ \ 14 \ \ \ \ \ \ \ \ \ \ E \ \ \ \ \ \ \ \ \ \ 1110\par
+\ \ \ \ \ 15 \ \ \ \ \ \ \ \ \ \ F \ \ \ \ \ \ \ \ \ \ 1111\\
 
 \phantomsection
-\subsection*{\an{3. } \uline{C\hskip 0.05em o\hskip 0.05em n\hskip 0.05em v\hskip 0.05em e\hskip 0.05em r\hskip 0.05em s\hskip 0.05em ã\hskip 0.05em o \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em n\hskip 0.05em ú\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em n\hskip 0.05em t\hskip 0.05em r\hskip 0.05em e \hskip 0.05em \hskip 0.05em a\hskip 0.05em s \hskip 0.05em  \hskip 0.05em b\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em d\hskip 0.05em o\hskip 0.05em i\hskip 0.05em s\hskip 0.05em , \hskip 0.05em d\hskip 0.05em e\hskip 0.05em z \hskip 0.05em e \ \hskip 0.05em \hskip 0.05em d\hskip 0.05em e\hskip 0.05em z\hskip 0.05em e\hskip 0.05em s\hskip 0.05em -}\\
-\phantom \ \ \, \uline{s\hskip 0.05em e\hskip 0.05em i\hskip 0.05em s}}
-\addcontentsline{toc}{subsection}{\hskip 5.68em C\hskip 0.05em o\hskip 0.05em n\hskip 0.05em v\hskip 0.05em e\hskip 0.05em r\hskip 0.05em s\hskip 0.05em ã\hskip 0.05em o \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em n\hskip 0.05em ú\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em e\hskip 0.05em n\hskip 0.05em t\hskip 0.05em r\hskip 0.05em e \hskip 0.05em \hskip 0.05em a\hskip 0.05em s \hskip 0.05em  \hskip 0.05em b\hskip 0.05em a\hskip 0.05em s\hskip 0.05em e\hskip 0.05em s \hskip 0.05em d\hskip 0.05em o\hskip 0.05em i\hskip 0.05em s\hskip 0.05em ,\hskip 0.05em d\hskip 0.05em e\hskip 0.05em z \hskip 0.05em e\hskip 0.05em \hskip 0.05em d\hskip 0.05em e\hskip 0.05em z\hskip 0.05em e\hskip 0.05em s\hskip 0.05em s\hskip 0.05em e\hskip 0.05em i\hskip 0.05em s}
+\subsection*{3. \uline{Conversão de números entre as bases dois, dez e \ \ dezes-}\\
+\phantom \ \ \ \uline{seis}}
+\addcontentsline{toc}{subsection}{\hskip 5em Conversão entre as bases dois, dez \ e\\ dezes seis}
 
-\an{Conforme já se deve ter percebido, surge frequente -\\
+Conforme já se deve ter percebido, surge frequente -\\
 mente a necessidade de converter números escritos em uma \ base\\
 psta outra. Para isso existem algoritmos gerais, dos quais são\\
-apresentados abaixo alguns casos particulares:}
+apresentados abaixo alguns casos particulares:
 
-\begin{enumerate}[label=\alph*\hskip 0.05em ), align=left, leftmargin=1.65em, labelsep=-0.25em, itemsep=1em, topsep=1em]
-\item \an{Conversão para a base dez de números escritos em outra base.}\\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\\[-1em]
-\an{Basta escrever o número na forma d} \ \ \, \an{. b} \ \ \, \an{+ ...+ d} \ \ \, \an{e efetuar}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, n \ \ \ \ \ \ \ \ \ \ \ \ \ \, 0\\[-0.5em]
-\an{as operações indicadas.}\\[0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \d{o}\\[-1.2em]
-\an{Exemplos: 1 )} \ \ \, \an{(101111100001)} \ \ \, \an{para a base 10}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{11} \ \ \ \ \ \, \, \an{10} \ \ \ \ \ \ \ \ \ \ \ \, 1\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{= 1.2} \ \ \ \, \an{+ 0.2} \ \ \ \, \an{+ ...+ 0.2} \ \ \, \an{+ 1 =} \ \ \, \an{(3041)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{10}\\[1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \d{o}\\[-1.2em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{2 )} \ \ \, \an{(BE1)} \ \ \, \, \an{para a base 10}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{16}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{2}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{= 11 x 16} \ \, \, \an{+ 14 x 16 + 1 =} \ \ \, \an{(3041)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \, \an{10}\\[1em]
+\begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1.5em]
+\item Conversão para a base dez de números escritos em outra base.\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n\\[-1em]
+Basta escrever o número na forma d \ . b \ + ...+ d \ e efetuar\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n \ \ \ \ \ \ \ \ \ \ \ \ \ 0\\[-0.5em]
+as operações indicadas.\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \d{o}\\[-1.2em]
+Exemplos: 1 ) \ (101111100001) \ para a base 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 11 \ \ \ \ \ 10 \ \ \ \ \ \ \ \ \ \ 1\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = 1.2 \ \ + 0.2 \ \ + ...+ 0.2 \ + 1 = \ (3041)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \d{o}\\[-1.2em]
+\phantom \ \ \ \ \ \ \ \ \ \ 2 ) \ (BE1) \ \ para a base 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ = 11 x 16 \ + 14 x 16 + 1 = \ (3041)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[1em]
 
 \newpage
 
-\noindent \an{Uma forma conveniente de fazer isso é dada \ nos \hfill diagramas \\
-abaixo:\\}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(BE1)} \ \ \, \, \an{para a base 10}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{16}\\[-0.5em]
+\noindent Uma forma conveniente de fazer isso é dada \ nos \ diagramas \\
+abaixo:\\\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ (BE1) \ \ para a base 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\\[-0.5em]
 
-\noindent \ \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \, 1\hskip 0.05em1 \, \, 1\hskip 0.05em4 \ \ \, 1 \ \ \ \, \, }\\[-0.5em]
-\an{base}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \, x\\[-1em]
-\an{original=16} \ \ \ \, \an{11} \ \ \ \ \an{190} \ \ \ \ \an{(3041)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{10}
+\noindent \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \ 11 \ \ 14 \ \ \ 1 \ \ \ \ \ }\\[-0.5em]
+base\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ x\\[-1em]
+original=16 \ \ 11 \ \ 190 \ (3041)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10
 
 \begin{picture}(0,0)
-\put(101,46){\vector(0,-1){10}}
-\put(92,30){\vector(-1,0){15}}
+\put(92.5,46){\vector(0,-1){10}}
+\put(84.5,30){\vector(-1,0){15}}
 \end{picture}\\[-2em]
 
-\noindent \an{Método usado: 11 x 16 + 14 = 190}\\[1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{190 x 16 + 1 = 3041}
+\noindent Método usado: 11 x 16 + 14 = 190\\[1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 190 x 16 + 1 = 3041
 
 \begin{picture}(0,0)
-\put(207,48){\vector(0,-1){15}}
+\put(188,48){\vector(0,-1){15}}
 \end{picture}\\[-3em]
 
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(10110)} \ \, \, \an{para a base 10}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (10110) \ para a base 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-1em]
 
-\noindent \ \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \, 1 \, \, 0 \ \, 1 \, \, 1 \ \, 0 \ \ }\\
-\an{base}\\[-0.5em]
-\an{original= 2} \ \ \, 1 \, \, 2 \ \, 5 \, \, \an{11 (22)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{10}
+\noindent \ \ \ \ \ \ \ \ \uline{\ \ \ \ \ \ 1 \ \ 0 \ \ 1 \ \ 1 \ \ 0 \ \ }\\
+base\\[-0.5em]
+original= 2 \ \ 1 \ \ 2 \ \ 5 \ 11 (22)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10
 
 \begin{picture}(0,0)
-\put(97.5,53){\vector(0,-1){15}}
+\put(89.25,53){\vector(0,-1){15}}
 \end{picture}\\[-2.5em]
 
-\an{Método usado: 1\,x\,2 +\,0 = 2} \ \ \ \ \ \ \ \ \ \ \an{5\,x\,2 +\,1\,=\,11}\\
+Método usado: 1\hskip 0.25em x\hskip 0.25em 2\hskip 0.25em +\hskip 0.25em 0 = 2 \ \ \ \ \ \ \ 5\hskip 0.25em x\hskip 0.25em 2\hskip 0.25em +\hskip 0.25em 1\hskip 0.25em =\hskip 0.25em 11\\
 \\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{2\,x\,2 +\,1\,=\,5} \ \ \ \ \ \ \ \ \ \ \an{11\,x\,2\,+\,0 = 22}
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\hskip 0.25em x\hskip 0.25em 2\hskip 0.25em +\hskip 0.25em 1\hskip 0.25em =\hskip 0.25em 5 \ \ \ \ \ \ \ 11\hskip 0.25em x\hskip 0.25em 2\hskip 0.25em +\hskip 0.25em 0 = 22
 
 \begin{picture}(0,0)
-\put(167,48){\vector(0,-1){15}}
-\put(228.5,33){\vector(0,1){15}}
-\put(293.5,48){\vector(0,-1){15}}
+\put(151,48){\vector(0,-1){15}}
+\put(206.5,33){\vector(0,1){15}}
+\put(265.5,48){\vector(0,-1){15}}
 \end{picture}\\[-2.5em]
 
-\item \an{Conversão de números escritos na base dez para uma outra b{\uline a}\\
-se. Divide-se} \ \ \,\an{repetidamente o número dado pela base de de{\uline s}\\
+\item Conversão de números escritos na base dez para uma outra b\uline a\\
+se. Divide-se \ repetidamente o número dado pela base de de\uline s\\
 tino até que o quociente seja zero. Os restos obtidos \hfill são\\
 a representação desejada, em ordem invertida. Ver os esque-\\
-mas abaixo:}\\[-2.5em]
+mas abaixo:\\[-2.5em]
 
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{(3041)} \ \ \ \ \ \ \ \ \ \an{base 16}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{10}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{resto de 3041 : 16}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{resto de} \ \ \, \an{190 : 16}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{3041} \ \ \ \, \, \an{1}\\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{resto de} \ \ \ \, \an{11 : 16}\\[-0.5em]
-\phantom \ \ \, \an{3041 : 16} \ \ \ \ \ \ \, \, \an{190} \ \ \, \, \an{14}\\[0.5em]
-\phantom \ \ \ \, \an{190 : 16} \ \ \ \ \ \ \ \, \, \an{11} \ \ \ \ \ \an{11} \ \ \ \an{14} \ \ \, \an{1}\\[1em]
-\phantom \ \ \ \, \, \an{11 : 16} \ \ \ \ \ \ \ \ \, \, \an{0} \ \ \ \, \, \an{(BE1)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{16}\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ (3041) \ \ \ \ \ \ base 16\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resto de 3041 : 16\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resto de \ 190 : 16\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3041 \ \ \ 1\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resto de \ \ 11 : 16\\[-0.5em]
+\phantom \ \ 3041 : 16 \ \ \ \ \ \ 190 \ \ 14\\[0.5em]
+\phantom \ \ \ 190 : 16 \ \ \ \ \ \ \ 11 \ \ 11 \ 14 \ 1\\[1em]
+\phantom \ \ \ \ 11 : 16 \ \ \ \ \ \ \ \ 0 \ \ \ (BE1)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\\
 
 \begin{picture}(0,0)
-\put(157,28){\line(0,1){110}}
-\put(82,101){\vector(1,0){30}}
-\put(82,78){\vector(1,0){30}}
-\put(82,48){\vector(1,0){30}}
+\put(143,28){\line(0,1){110}}
+\put(75,101){\vector(1,0){30}}
+\put(75,78){\vector(1,0){30}}
+\put(75,48){\vector(1,0){30}}
 
-\dashline{4}(180,125)(214,142)
-\put(180,125){\vector(-2,-1){2}}
+\dashline{4}(163,125)(194,142)
+\put(163,125){\vector(-2,-1){2}}
 
-\dashline{4}(180,103)(214,124)
-\put(180,103){\vector(-2,-1){2}}
+\dashline{4}(163,103)(194,124)
+\put(163,103){\vector(-2,-1){2}}
 
-\dashline{4}(180,80)(214,108)
-\put(180,80){\vector(-1,-1){2}}
+\dashline{4}(163,80)(194,108)
+\put(163,80){\vector(-1,-1){2}}
 
-\put(179,120){\vector(1,-1){37}}
-\put(179,98){\vector(1,-1){15}}
-\put(172,72){\vector(1,-3){6}}
-\put(196,72){\vector(-1,-2){9}}
-\put(215,72){\vector(-1,-1){18}}
+\put(162,120){\vector(1,-1){35}}
+\put(162,98){\vector(1,-1){13}}
+\put(155,72){\vector(1,-3){6}}
+\put(179,72){\vector(-1,-2){9}}
+\put(196,72){\vector(-1,-1){18}}
 \end{picture}
 
 \newpage
 
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(3041)} \ \ \ \ \ \ \ \ \an{base 2}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{10}\\[-0.5em]
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ (3041) \ \ \ \ \ base 2\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
 
-\hskip 2.7em \ \an{3041} \ \ \, 1\\[-1.7em]
+\ \ \ \ \ 3041 \ \ 1\\[-1.8em]
 \par
-\hskip 2.7em \ \an{1524} \ \ \, 0\\[-1.7em]
+\ \ \ \ \ 1524 \ \ 0\\[-1.8em]
 \par
-\hskip 3.25em \ \an{760} \ \ \, 0\\[-1.7em]
+\ \ \ \ \ \ 760 \ \ 0\\[-1.8em]
 \par
-\hskip 3.25em \ \an{380} \ \ \, 0\\[-1.7em]
+\ \ \ \ \ \ 380 \ \ 0\\[-1.8em]
 \par
-\hskip 3.25em \ \an{190} \ \ \, 0\\[-1.7em]
+\ \ \ \ \ \ 190 \ \ 0\\[-1.8em]
 \par
-\hskip 3.8em \ \an{95} \ \ \, 1\\[-1.7em]
+\ \ \ \ \ \ \ 95 \ \ 1\\[-1.8em]
 \par
-\hskip 3.8em \ \an{47} \ \ \, 1\\[-1.7em]
+\ \ \ \ \ \ \ 47 \ \ 1\\[-1.8em]
 \par
-\hskip 3.8em \ \an{23} \ \ \, 1\\[-1.7em]
+\ \ \ \ \ \ \ 23 \ \ 1\\[-1.8em]
 \par
-\hskip 3.8em \ \an{11} \ \ \, 1\\[-1.7em]
+\ \ \ \ \ \ \ 11 \ \ 1\\[-1.8em]
 \par
-\hskip 4.35em \ \an{5} \ \ \, 1\\[-1.7em]
+\ \ \ \ \ \ \ \ 5 \ \ 1\\[-1.8em]
 \par
-\hskip 4.35em \ \an{2} \ \ \, 0\\[-1.7em]
+\ \ \ \ \ \ \ \ 2 \ \ 0\\[-1.8em]
 \par
-\hskip 4.35em \ \an{1} \ \ \, \an{(1 0 1 1 1 1 1 0 0 0 0 1)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, 2\\[-2.2em]
+\ \ \ \ \ \ \ \ 1 \ (1 0 1 1 1 1 1 0 0 0 0 1)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-2.2em]
 \par
-\hskip 4.35em \ \an{0}
+\ \ \ \ \ \ \ \ 0
 
 \begin{picture}(0,0)
-\put(72,8){\line(0,1){260}}
-\put(89,241){\vector(3,-4){141}}
-\put(89,222){\vector(3,-4){127}}
-\put(89,204){\vector(3,-4){113}}
-\put(89,186){\vector(3,-4){100}}
-\put(89,169){\vector(3,-4){87}}
-\put(89,151){\vector(3,-4){74}}
-\put(89,132){\vector(3,-4){60}}
-\put(89,113){\vector(3,-4){46}}
-\put(89,94){\vector(3,-4){32}}
-\put(89,75){\vector(3,-4){18}}
-\put(87,60){\vector(3,-4){8}}
+\put(66,8){\line(0,1){250}}
+\put(80,228){\vector(3,-4){133}}
+\put(80,210){\vector(3,-4){120}}
+\put(80,193){\vector(3,-4){107}}
+\put(80,175){\vector(3,-4){93}}
+\put(80,158){\vector(3,-4){80}}
+\put(80,141){\vector(3,-4){68}}
+\put(80,124){\vector(3,-4){55}}
+\put(80,107){\vector(3,-4){42}}
+\put(80,91){\vector(3,-4){30}}
+\put(80,74){\vector(3,-4){17}}
+\put(80,59){\vector(3,-4){8}}
 \end{picture}\\[-2em]
 
-\item \an{Conversão entre as bases dois e dezesseis.}
+\item Conversão entre as bases dois e dezesseis.
 
-\begin{enumerate}[label=c\hskip 0.05em-\hskip 0.05em \arabic*\hskip 0.05em ), align=left, leftmargin=2.8em, labelsep=0.4em, itemsep=1em, topsep=0em]
-\item \an{Da base dois para a base dezesseis. Basta agrupar \hfill os\\
+\begin{enumerate}[label=c-\arabic*), align=left, leftmargin=2.5em, labelsep=-0.1em, itemsep=1em, topsep=0em]
+\item Da base dois para a base dezesseis. Basta agrupar \hfill os\\
 dígitos binários de quatro em quatro (a partir da \hfill di-\\
-reita) e substituí-los pelo respectivo dígito hexadec{\uline i}\\
+reita) e substituí-los pelo respectivo dígito hexadec\uline i\\
 mal, conforme a tabela apresentada mais atrás (item 2.\\
-c).}\\[0.5em]
-\an{Exemplo:}\\[-0.5em]
+c).\\[0.5em]
+Exemplo:\\[-0.5em]
 \par
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{(1011110101)} \ \ \, \an{para base 16}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \, 2\\[-0.5em]
-\phantom \ \ \ \, \an{zeros}\\[-0.5em]
-\phantom \ \ \ \, \an{adicionados}\\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \uline{0\hskip 0.05em 0\hskip 0.05em 1\hskip 0.05em 0}\, \uline{1\hskip 0.05em 1\hskip 0.05em 1\hskip 0.05em 1}\, \uline{0\hskip 0.05em 1\hskip 0.05em 0\hskip 0.05em 1}\\[-0.5em]
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1011110101) \ para base 16\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\[-0.5em]
+\phantom \ \ \ zeros\\[-0.5em]
+\phantom \ \ \ adicionados\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \uline{0010} \uline{1111} \uline{0101}\\[-0.5em]
 \par
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \an{(2F5)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, \an{16}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (2F5)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16
 
 \begin{picture}(0,0)
-\put(96,76){\line(1,0){22.5}}
-\put(96,62){\line(0,1){28}}
-\put(89,62){\line(1,0){7}}
-\put(89,90){\line(1,0){7}}
-\put(111.5,76){\vector(0,-1){10}}
-\put(118.5,76){\vector(0,-1){10}}
-\put(122,53){\vector(1,-1){17}}
-\put(157,53){\vector(-1,-2){9}}
-\put(192,53){\vector(-2,-1){35}}
+\put(87,76){\line(1,0){21}}
+\put(87,62){\line(0,1){28}}
+\put(80,62){\line(1,0){7}}
+\put(80,90){\line(1,0){7}}
+\put(101.5,76){\vector(0,-1){10}}
+\put(108,76){\vector(0,-1){10}}
+\put(111,53){\vector(2,-3){12}}
+\put(142,53){\vector(-1,-2){9}}
+\put(173,53){\vector(-3,-2){28}}
 \end{picture}\\[-2em]
 
-\item \an{Da base dezesseis para a base dois. Basta substituir c{\uline a}\\
-da dígito hexadecimal pelo seu código de quatro \hfill bits.}\\[0.5em]
-\an{Exemplo:}
+\item Da base dezesseis para a base dois. Basta substituir c\uline a\\
+da dígito hexadecimal pelo seu código de quatro \hfill bits.\\[0.5em]
+Exemplo:
 
 \newpage
 
-\ \ \ \ \ \ \ \ \ \ \ \an{(2F5)} \ \ \, \an{para base 2}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \an{16}\\
+\ \ \ \ \ \ \ \ \ (2F5) \ \ para base 2\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\\
 \\
 \\[-0.5em]
-\phantom \ \ \ \ \, \an{(0010 1111 0101)}\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\
+\phantom \ \ \ \ (0010 1111 0101)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\\
 
 \begin{picture}(0,0)
-\put(68,90){\vector(-1,-2){18}}
-\put(78,90){\vector(0,-1){36}}
-\put(88,90){\vector(1,-2){18}}
+\put(62,90){\vector(-1,-2){18}}
+\put(71,90){\vector(0,-1){36}}
+\put(80,90){\vector(2,-3){24}}
 \end{picture}\\[-5em]
 
-\phantom \ \ \ \ \ \ \, \, \d{o}\\[-1.2em]
-\an{0bs.: 1 ) Para a base oito, como é fácil perceber,o m{\uline é}}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{todo é inteiramente análogo, dividindo-se \hfill o}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{número binário em grupos de três bits.}\\[1.2em]
-\phantom \ \ \ \ \ \, \, \d{o}\\[-1.2em]
-\phantom \ \ \ \ \ \, \, \an{2 ) Pode-se agora notar porque são tão usadas as}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{bases oito e dezesseis em computação: \hfill elas}\\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, \, 3\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{permitem dividir por três (pois 8 = 2 )e por}\\[-0.5em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\\[-1em]
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{quatro (pois 16 = 2 ), respectivamente, \hfill o}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{comprimento em algarismos do número \hfill escrito}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{na base dois, que costuma ser inconveniente-}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{mente longo.}\\[1.2em]
-\phantom \ \ \ \ \ \, \, \d{o}\\[-1.2em]
-\phantom \ \ \ \ \ \, \, \an{3 ) Estã-se dando mais ênfase à base hexadecimal}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{porque no Patinho Feio os números têm ou oi-}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{to ou doze bits de comprimento, podendo \hfill en-}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{tão, ser representados com dois ou três dí-}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{gitos hexadecimais, enquanto que, por \hfill exem-}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{plo, para transformar um número de oito bits}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{(também chamado ``byte'') em um número octal ,}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{tem-se que adicionar um zero à frente do nú-}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{mero, para dividí-lo em três grupos de \hfill três}\\
-\phantom \ \ \ \ \ \ \ \ \ \ \ \ \an{bits cada.}\\
+\phantom \ \ \ \ \ \ \ \ \d{o}\\[-1.2em]
+0bs.: 1 ) Para a base oito, como é fácil perceber,o m\uline é\\
+\phantom \ \ \ \ \ \ \ \ \ \ todo é inteiramente análogo, dividindo-se \hfill o\\
+\phantom \ \ \ \ \ \ \ \ \ \ número binário em grupos de três bits.\\[1.2em]
+\phantom \ \ \ \ \ \ \ \d{o}\\[-1.2em]
+\phantom \ \ \ \ \ \ 2 ) Pode-se agora notar porque são tão usadas as\\
+\phantom \ \ \ \ \ \ \ \ \ \ bases oito e dezesseis em computação: \hfill elas\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ permitem dividir por três (pois 8 = 2 )e por\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ quatro (pois 16 = 2 ), respectivamente, \hfill o\\
+\phantom \ \ \ \ \ \ \ \ \ \ comprimento em algarismos do número \hfill escrito\\
+\phantom \ \ \ \ \ \ \ \ \ \ na base dois, que costuma ser inconveniente-\\
+\phantom \ \ \ \ \ \ \ \ \ \ mente longo.\\[1.2em]
+\phantom \ \ \ \ \ \ \ \d{o}\\[-1.2em]
+\phantom \ \ \ \ \ \ 3 ) Estã-se dando mais ênfase à base hexadecimal\\
+\phantom \ \ \ \ \ \ \ \ \ \ porque no Patinho Feio os números têm ou oi-\\
+\phantom \ \ \ \ \ \ \ \ \ \ to ou doze bits de comprimento, podendo \hfill en-\\
+\phantom \ \ \ \ \ \ \ \ \ \ tão, ser representados com dois ou três \hfill dí-\\
+\phantom \ \ \ \ \ \ \ \ \ \ gitos hexadecimais, enquanto que, por \hfill exem-\\
+\phantom \ \ \ \ \ \ \ \ \ \ plo, para transformar um número de oito bits\\
+\phantom \ \ \ \ \ \ \ \ \ \ (também chamado ``byte'') em um número octal ,\\
+\phantom \ \ \ \ \ \ \ \ \ \ tem-se que adicionar um zero à frente do nú-\\
+\phantom \ \ \ \ \ \ \ \ \ \ mero, para dividí-lo em três grupos de \hfill três\\
+\phantom \ \ \ \ \ \ \ \ \ \ bits cada.\\
 \end{enumerate}
 \end{enumerate}
 
 \phantomsection
-\subsection*{\an{4. } \uline{S\hskip 0.05em o\hskip 0.05em m\hskip 0.05em a \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em \hskip 0.05em n\hskip 0.05em ú\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em b\hskip 0.05em i\hskip 0.05em n\hskip 0.05em á\hskip 0.05em r\hskip 0.05em i\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em p\hskip 0.05em o\hskip 0.05em s\hskip 0.05em i\hskip 0.05em t\hskip 0.05em i\hskip 0.05em v\hskip 0.05em o\hskip 0.05em s}}
-\addcontentsline{toc}{subsection}{\hskip 5.68em S\hskip 0.05em o\hskip 0.05em m\hskip 0.05em a \hskip 0.05em \hskip 0.05em d\hskip 0.05em e \hskip 0.05em \hskip 0.05em \hskip 0.05em n\hskip 0.05em ú\hskip 0.05em m\hskip 0.05em e\hskip 0.05em r\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em b\hskip 0.05em i\hskip 0.05em n\hskip 0.05em á\hskip 0.05em r\hskip 0.05em i\hskip 0.05em o\hskip 0.05em s \hskip 0.05em \hskip 0.05em p\hskip 0.05em o\hskip 0.05em s\hskip 0.05em i\hskip 0.05em t\hskip 0.05em i\hskip 0.05em v\hskip 0.05em o\hskip 0.05em s}
+\subsection*{4. \uline{Soma de números binários positivos}}
+\addcontentsline{toc}{subsection}{\hskip 5em Soma de números binários positivos}
 
-\an{Realiza-se de forma inteiramente análoga à soma \ so-\\
+Realiza-se de forma inteiramente análoga à soma \ so-\\
 mum, de números decimais. Para ver isso, examine-se detalhada-\\
-mente uma soma decimal, por exemplo, de 1672 com 729.}
+mente uma soma decimal, por exemplo, de 1672 com 729.
 
 \newpage
 

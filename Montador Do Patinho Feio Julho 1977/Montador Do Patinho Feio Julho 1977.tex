@@ -279,7 +279,7 @@ decimais na base dois).
 \phantomsection
 \subsection*{3. \uline{Conversão de números entre as bases dois, dez e \ \ dezes-}\\
 \phantom \ \ \ \uline{seis}}
-\addcontentsline{toc}{subsection}{\hskip 5em Conversão entre as bases dois, dez \ e\\ dezes seis}
+\addcontentsline{toc}{subsection}{\hskip 5em Conversão entre as bases dois, dez \ e\\ dezesseis}
 
 Conforme já se deve ter percebido, surge frequente -\\
 mente a necessidade de converter números escritos em uma \ base\\
@@ -623,5 +623,77 @@ Começa-se a partir da direita, realizando as seguin-\par
 tes operações:
 
 \newpage
+
+\ \ \ \ \ \ \ \ \ \ \ \ 0 + 1 \ = \ 1 \ e \ vai-zero\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 + 1 + 1 \ = \ 0 \ e \ vai-um\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 + 0 + 0 \ = \ 1 \ e \ vai-zero\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 + 1 + 0 \ = \ 1 \ e \ vai-zero\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 + 1 + 1 \ = \ 0 \ e \ vai-um\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 + 1 \ \ \ \ \ = \ 0 \ e \ vai-um\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 + 0 \ \ \ \ \ = \ 1 \ e \ vai-zero\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 + 1 \ \ \ \ \ = \ 1 \ e \ vai-zero\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ \ \ \ \ \ \ \ = \ 0\\
+\\
+\phantom \ \ \ \ \ \ coluna dos \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bits do segundo número\\[-0.5em]
+\phantom \ \ \ \ \ \ vai-um ou\\[-0.5em]
+\phantom \ \ \ \ \ \ vai-zero \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bits do primeiro número
+
+\begin{picture}(0,0)
+\put(102,43){\line(1,0){33}}
+\put(102,43){\vector(0,1){95}}
+
+\put(77,21){\line(1,0){58}}
+\put(77,21){\vector(0,1){64}}
+
+\put(52,31){\line(-1,0){16}}
+\put(52,31){\vector(0,1){37}}
+\end{picture}\\[-2em]
+
+\phantom \ \ \d{o}\\[-1.2em]
+\phantom \ \ \ \ \ \ \ \ \ \ 2 ) Somar \ 11101 com 110.\\
+\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ 1 \ \ 1 \ \ 0 \ \ 0\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 1\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ 1 \ \ 0\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ 0 \ \ 0 \ \ 0 \ \ 1 \ \ 1
+
+\begin{picture}(0,0)
+\put(33,75){\vector(0,-1){38}}
+
+\curve(33,75, 41.5,79, 50,75)
+\curve(53,75, 64,80, 75,75)
+\curve(78,75, 89,80, 100,75)
+\curve(103,75, 114,80, 125,75)
+\curve(128,75, 139,80, 150,75)
+
+\put(53,75){\vector(-3,-2){0}}
+\put(78,75){\vector(-3,-2){0}}
+\put(103,75){\vector(-3,-2){0}}
+\put(128,75){\vector(-3,-2){0}}
+
+\put(30,34){\line(1,0){125}}
+\end{picture}\\[1em]
+
+\phantomsection
+\subsection*{5. \uline{Representação de números negativos}}
+\addcontentsline{toc}{subsection}{\hskip 5em Representação de números negativos}
+
+Obs.: Nos itens seguintes assume-se sempre que um n\uline ú\par
+\ \ \ \ \ \ mero tem oito bits de comprimento, quando \hfill for\par
+\ \ \ \ \ \ binário.\\
+\par
+Até agora, só foram tratados os números positivos \hfill .\\
+Contudo, é óbvia a necessidade de se manipular números \hfill negat\uline i\\
+vos, de modo que é preciso uma representação adequada para \hfill os\\
+mesmos. Especialmente, é necessária essa representação para n\uline ú\\
+meros binários, de modo que o computador possa reconhecer \hfill os\\
+números que sejam negativos como tais.
+
+\newpage
+
+Existem três modos de representar números \hfill negativos\\
+em notação binária, chamados de: sinal e amplitude, complemen-\\
+to de um e complemento de dois.\\
 
 \end{document}

@@ -16,6 +16,7 @@
 \titleformat{\subsection}{\ttfamily}{\thesection}{0em}{}
 
 \setlength\parindent{5.27em}
+\setlength{\parskip}{0em}
 \renewcommand{\baselinestretch}{1.2}
 
 \usepackage{enumitem}
@@ -26,6 +27,7 @@
 \renewcommand\headrulewidth{0pt}
 
 \usepackage{epic}
+\usepackage{curves}
 
 \frenchspacing
 
@@ -583,5 +585,43 @@ gundo as seguintes regras:\\
 Exemplo:\\
 \phantom \ \ \ \ \ \ \ \ \ \ \ \d{o}\\[-1.2em]
 \phantom \ \ \ \ \ \ \ \ \ \ 1 ) Seja somar \ 10111010 com 10011. Tem-se:\\
+\\
+\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ 0 \ \ 1 \ \ 1 \ \ 0 \ \ 0 \ \ 1 \ \ 0\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ 0 \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 1 \ \ 0\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ 0 \ \ 0 \ \ 1 \ \ 1\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 1 \ \ 1 \ \ 0 \ \ 0 \ \ 1 \ \ 1 \ \ 0 \ \ 1
+
+\begin{picture}(0,0)
+\dashline{4}(33,75)(33,38)
+\put(33,38){\vector(0,-1){0}}
+
+\curve(33,75, 38,77.5, 43,75)
+\curve(46,75, 57,80, 68,75)
+\curve(71,75, 82,80, 93,75)
+\curve(96,75, 107,80, 118,75)
+\curve(121,75, 132,80, 143,75)
+\curve(146,75, 157,80, 168,75)
+\curve(171,75, 182,80, 193,75)
+\curve(196,75, 207,80, 218,75)
+
+\put(46,75){\vector(-3,-2){0}}
+\put(71,75){\vector(-3,-2){0}}
+\put(96,75){\vector(-3,-2){0}}
+\put(121,75){\vector(-3,-2){0}}
+\put(146,75){\vector(-3,-2){0}}
+\put(171,75){\vector(-3,-2){0}}
+\put(196,75){\vector(-3,-2){0}}
+
+\put(30,34){\line(1,0){193}}
+\end{picture}\\
+
+\par
+Começa-se a partir da direita, realizando as seguin-\par
+tes operações:
+
+\newpage
 
 \end{document}

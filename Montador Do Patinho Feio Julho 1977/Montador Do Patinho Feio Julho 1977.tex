@@ -694,6 +694,61 @@ números que sejam negativos como tais.
 
 Existem três modos de representar números \hfill negativos\\
 em notação binária, chamados de: sinal e amplitude, complemen-\\
-to de um e complemento de dois.\\
+to de um e complemento de dois.
+
+\begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1em]
+\item Representação de sinal e amplitude.\\
+Usualmente, quando se quer denotar um número como \hfill negativo\\
+(em qualquer base), coloca-se à sua frente um sinal de menos\\
+(-), e quando positivo,às vezes, o sinal de mais (+). Mas,c\uline o\\
+mo um computador não reconhece os sinais + e -, mas \hfill apenas\\
+zeros e uns, vê-se que é necessário reservar um bit do núm\uline e\\
+ro (geralmente o primeiro)para indicar o seu sinal \hfill (usa-se\\
+\uline{zero} para indicar um número positivo e \uline{um} para indicar \hfill um\\
+negativo). Supondo um número de oito bits, tem-se, por exe\uline m\\
+plo:\\[0.5em]
+\phantom \ \ \ \ (+6) \ \ \ \ \ \ \ 0000 0110\\[-1em]
+\phantom \ \ \ \ \ \ \ \ 10\\[0.5em]
+\phantom \ \ \ \ (-6) \ \ \ \ \ \ \ 1000 0100\\[-1em]
+\phantom \ \ \ \ \ \ \ \ 10\\
+\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ sinal \ amplitude
+
+\begin{picture}(0,0)
+\dashline{4}(104.5,102)(104.5,45)
+\dashline{4}(104.5,45)(117,45)
+\dashline{4}(117,45)(117,18)
+\end{picture}\\[-1.5em]
+
+Desta forma pode-se representar os números inteiros de -127\\
+a +127. Note-se que existem duas representações \ do \hfill número\\
+zero, a saber: 0000 0000 \ \ e \ \ 1000 0000.\\[-0.5em]
+\item Representação em complemento de um.\\
+Nesta representação, para indicar um número negativo troca-\\
+se os seus zeros por uns e vice-versa. Como sempre, o \hfill pri-\\
+meiro bit indicará o sinal do número. Exemplo:\\
+\\
+\phantom \ \ \ \ (+6) \ \ \ \ \ \ \ 0000 0110\\[-1em]
+\phantom \ \ \ \ \ \ \ \ 10\\[0.5em]
+\phantom \ \ \ \ (-6) \ \ \ \ \ \ \ 1111 1001\\[-1em]
+\phantom \ \ \ \ \ \ \ \ 10\\
+\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ sinal
+
+\begin{picture}(0,0)
+\dashline{4}(101.5,88)(101.5,33)
+\end{picture}
+
+\newpage
+
+Deste modo, analogamente ao anterior, pode-se representar os\\
+números de -127 a +127 e o zero continua com duas represen-\\
+tações, a saber: \ 0000 0000 \ \ e \ \ 1111 1111.\\[-1em]
+\item Representação \ em complemento de dois.\\
+Para se obter a representação em complemento de dois, soma-\\
+se um (em binário) à representação em complemento de um, r\uline e\\
+tendo-se apenas os oito bits mais à direita. Exemplo:\\
+
+\end{enumerate}
 
 \end{document}

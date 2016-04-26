@@ -747,8 +747,97 @@ tações, a saber: \ 0000 0000 \ \ e \ \ 1111 1111.\\[-1em]
 \item Representação \ em complemento de dois.\\
 Para se obter a representação em complemento de dois, soma-\\
 se um (em binário) à representação em complemento de um, r\uline e\\
-tendo-se apenas os oito bits mais à direita. Exemplo:\\
+tendo-se apenas os oito bits mais à direita. Exemplo:\\[1em]
+(+6) \ = 0000 0110 \ \ \ \ \ ida \ \ \ \ \ \ \ 1111 1001\\[-1em]
+\phantom \ \ \ \ 10 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ complemento\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ de um\\[-1em]
+\phantom \ \ \ \ \ \ sinal\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1111 1010 \ = (-6) \ \ em co\uline m\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ + \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ 0000 0101 \ \ \ \ \ volta\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ plemento de\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sinal\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dois.
 
+\begin{picture}(0,0)
+\put(111,100){\line(1,0){24}}
+\put(167,100){\vector(1,0){37}}
+\put(52,69){\vector(0,1){24}}
+\put(56,69){\line(1,0){49}}
+\put(209,69){\line(1,0){57}}
+\put(136,47){\vector(-1,0){24}}
+\put(177,47){\line(3,1){29}}
+\put(218,36){\vector(-1,3){5}}
+\end{picture}\\[-2em]
+
+A representação em complemento de dois tem as seguintes pr\uline o\\
+priedades:
+
+\begin{enumerate}[label=\arabic*a.), align=left, leftmargin=2.5em, labelsep=0em, itemsep=1em, topsep=0.5em]
+\item O primeiro bit do número indica o seu sinal: positivo se\\
+zero e negativo se um.
+\item São representáveis os números de -128, cuja representa-\\
+ção é \ 1000 0000; a +127, cuja representação é 0111 1111.\\
+Desta forma, o número -128 não tem complemento de dois.\\
+De fato, tem-se:\\[0.5em]
+\phantom \ \ \ -128 \ \ \ 1000 0000 \ \ \ 0111 1111\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1000 0000 \ \ \ +128?
+
+\begin{picture}(0,0)
+\put(47,57){\vector(1,0){16}}
+\put(127,57){\vector(1,0){16}}
+\put(147,35){\line(1,0){57}}
+\put(208,24){\vector(1,0){16}}
+\end{picture}\\[-2em]
+
+que está errado, pois é a representação de -128, não de\\
++128.
+\item O número zero tem apenas uma representação: 0000 0000.\\
+De fato, tem-se:\\
+\phantom \ \ \ \ \ \ \ 0000 0000 \ \ \ \ 1111 1111\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\\[0.5em]
+\phantom \ \ \ \ \ \ \ desprezado \ \ 10000 0000 \ \ \ \ \ 0000 0000
+
+\begin{picture}(0,0)
+\put(104,57){\vector(1,0){22}}
+\put(128,35){\line(1,0){57}}
+
+\dashline{4}(40,32)(129,32)(129,16)(40,16)(40,32)
+
+\put(108,23){\vector(1,0){13}}
+\put(194,23){\vector(1,0){22}}
+\end{picture}
+\end{enumerate}
+
+\newpage
+
+\phantomsection
+\subsection*{6. \uline{Aritmética no Patinho Feio}}
+\addcontentsline{toc}{subsection}{\hskip 5em Aritmética no Patinho Feio}
+\end{enumerate}
+\noindent \\[-3.5em]
+\par
+Já foi visto como somar números binários positivos e\\
+como representar números negativos em oito bits. Deste \ modo ,\\
+pode-se passar à soma (e subtração) de números de oito bits \ ,\\
+que é o que o Patinho Feio consegue fazer diretamente \ através\\
+de seus circuitos eletrônicos. Ver-se-á também, como operar com\\
+números de mais de oito bits e como reconhecer quando o resul-\\
+tado de uma soma não pode ser representado em oito bits ( isto\\
+é, o número é menor que -128 ou maior que +127).\\
+
+\begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1.5em]
+\item Vai-um:\\
+\\[-0.5em]
+Denomina-se \uline{vai-um} de uma soma entre dois numeros de\hfill oito\\
+bits ao vai-um na última soma realizada (bit mais signific\uline a\\
+tivo), ou seja, ao que seria o nono bit da soma (se \ fossem\\
+considerados números de nove bits). Exemplo:\\
 \end{enumerate}
 
 \end{document}

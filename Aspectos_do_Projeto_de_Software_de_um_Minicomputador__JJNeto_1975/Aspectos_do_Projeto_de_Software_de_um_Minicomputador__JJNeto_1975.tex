@@ -138,7 +138,7 @@
 \par
 \an{Além disto, é descrito aqui o funcionamento dos programas implementados, especialmente com a finalidade de documentar as linhas de raciocínio e a filosofia de projeto e de implementação adotadas para facilitar futuras alterações de tais programas.}\\
 
-asubsection{Generalidades (ref. 11, 14)}
+\subsection{Generalidades (ref. 11, 14)}
 
 \par
 \an{Nos próximos Capítulos estão desenvolvidos, dentro das linhas apresentadas em 1.1, os seguintes módulos do ``software'':
@@ -223,27 +223,31 @@ asubsection{Generalidades (ref. 11, 14)}
 
 \an{c) deficiência do conjunto de instruções no que se refere a:}\\
 
-\an{   * manipulação de dados com mais de uma palavra (p/ex, dados em precisão dupla).}\\
-\an{   * comparação de dados}\\
-\an{   * extração e inserção de campos dentro de uma palavra (inclusive mascaramentos)}\\
-\an{   * operações aritméticas}\\
+\par\an{* manipulação de dados com mais de uma palavra (p/ex, dados em precisão dupla).}\\
+\par\an{* comparação de dados}\\
+\par\an{* extração e inserção de campos dentro de uma palavra (inclusive mascaramentos)}\\
+\par\an{* operações aritméticas}\\
 
 \par
 \an{Analisando-se os fatores a) e b), levando-se em conta observações realizadas nos programas aqui descritos, chegou-se às seguintes conclusões:}\\
 
-\an{   * O tempo de processamento é desprezível em relação ao de entrada e saída. Isto permite concluir que mesmo se o programa for algumas vezes mais lento, o tempo total de execução será praticamente o mesmo.}\\
-\an{   * Rotinas otimizadas em relação ao tempo de processamento ocupariam, em certos casos, até cerca de 40\% a mais de memória em relação a rotinas equivalentes otimizadas em relação ao número de palavras ocupadas pela mesma na memória. Levando-se em conta o fator a), percebe-se que, quando a dimensão do programa for comparável à dimensão da memória disponível, pode-se chegar até a uma condição de inviabilidade de implementação do mesmo se se insistir em utilizar rotinas otimizadas em velocidade. Deve-se observar que tais rotinas sejam, em média, poucas vezes mais rápidas, o que já foi dito ser praticamente irrelevante no caso.}\\
-\an{   * Muitas vezes, na tentativa de se reduzir o espaço ocupado na memória para executar uma certa tarefa, pode ser encontrada uma organização eficiente dos dados que permita a utilização de rotinas rápicas com baixo gasto de memória. Para isso, deve ser tirado o máximo proveito de características particulares da arquitetura da máquina.}\\
+\par\an{* O tempo de processamento é desprezível em relação ao de entrada e saída. Isto permite concluir que mesmo se o programa for algumas vezes mais lento, o tempo total de execução será praticamente o mesmo.}\\
+\par\an{* Rotinas otimizadas em relação ao tempo de processamento ocupariam, em certos casos, até cerca de 40\% a mais de memória em relação a rotinas equivalentes otimizadas em relação ao número de palavras ocupadas pela mesma na memória. Levando-se em conta o fator a), percebe-se que, quando a dimensão do programa for comparável à dimensão da memória disponível, pode-se chegar até a uma condição de inviabilidade de implementação do mesmo se se insistir em utilizar rotinas otimizadas em velocidade. Deve-se observar que tais rotinas sejam, em média, poucas vezes mais rápidas, o que já foi dito ser praticamente irrelevante no caso.}\\
+\par\an{* Muitas vezes, na tentativa de se reduzir o espaço ocupado na memória para executar uma certa tarefa, pode ser encontrada uma organização eficiente dos dados que permita a utilização de rotinas rápicas com baixo gasto de memória. Para isso, deve ser tirado o máximo proveito de características particulares da arquitetura da máquina.}\\
 
 \par
 \an{- Deve-se levar sempre em conta que este trabalho é dirigido para um computador pequeno e restrito. Assim sendo, algumas das argumentações aqui apresentadas podem não ser válidas para máquinas maiores, e algumas considerações, decisivas neste contexto, podem tornar-se totalmente irrelevantes se no lugar do Patinho Feio for colocado um computador de porte maior.}
 
+\newpage
+
 \chapter{Capítulo 2.  O MONTADOR}
+
+\newpage
 
 \section{O MONTADOR}
 
 \par
-\an{Neste capítulo é descrito ...}\\
+\an{Neste capítulo é descrito o programa montador desenvolvido para o Patinho Feio, e cuja finalidade é a de permitir que se programa em uma linguagem simbólica próxima de linguagem de máquina deste minicomputador. Parte-se de uma discussão sobre problemas gerais de programação em linguagem de baixo nível, estudando-se a seguir as características desejáveis para o programa montador, ao lado dos problemas enfrentados na implementação das mesmas num computador do porte do Patinho Feio. A seguir, descreve-se alguns detalhes importantes de projeto e de implementação, finalizando com a descrição de alguns recursos de controle do programa e da lógica do montador implementado.}\\
 
 \subsection{O conjunto de instruções e a linguagem do montador}
 \subsubsection{O conjunto de instruções:}
@@ -275,7 +279,41 @@ asubsection{Generalidades (ref. 11, 14)}
 \an{Dado um computador com seu conjunto de instruções, a única maneira de fazê-lo funcionar, se não se dispuser de nenhum outro recurso auxiliar como, por exemplo, um montador em outro computador (``Cross-Assembler''), será programá-lo em linguagem de máquina, isto é, construir uma sequência lógica de zeros e uns, tais que, carregados convenientemente na memória do computador, e a seguir executados, perfaça a tarefa prevista.}\\
 
 \par
-\an{[...]}\\
+\an{Quando se procede desta maneira, o trabalho de escrever um programa, carregá-lo na memória e em seguida executá-lo é árdua, pois requer muitos cuidados para que o problema que se está atacando seja resolvido corretamente. Assim, dado um problema para ser resolvido em um computador no qual só se dispõe de linguagem de máquina e de um painel, deve-se primeiramente estabelecer um diagrama de blocos da solução do problema, e, em seguida, traduzí-lo para a linguagem de máquina do computador. Como esta tarefa é muito desagradável e trabalhosa para ser efetuada diretamente, convém que o programa não seja imediatamente codificado em linguagem de máquina a partir do diagrama de blocos, mas que se escreva tal programa em uma linguagem intermediária mais acessível, onde cada instrução, que na linguagem de máquina é representada por uma sequência de zeros e uns (que em nada lembram a função que ela deverá executar no programa), será representada por um símbolo, formado de um ou mais caracteres, que de alguma maneira informe ao programador o papel de tal instrução no programa.}\\
+
+\par
+\an{Na linguagem simbólica do Patinho Feio, uma instrução qualquer terá no caso mais geral o seguinte atributos (fig.2.1.2.1):}\\
+
+\an{TODO: Table}\\
+
+\par
+\an{Exemplo de instruções em linguagem simbólica do montador}\\
+
+\an{A - um endereço, que poderá ser simbólico (optativo);}\\
+\an{B - um mnemônico, que indica qual instrução a ser executada;}\\
+\an{C - um operando, que completará a função representada pelo mnemônico;}\\
+\an{D - um comentário, para efeito de documentação do programa;}\\
+
+\par
+\an{Por exemplo, um pequeno programa, escrito numa destas linguagens, poderia ter o seguinte aspecto:}\\
+
+\par\an{1. carregue a variável X no acumulador (inicialmente X = 16);}\\
+\par\an{2. some 80 ao acumulador;}\\
+\par\an{3. guarde o resultado em X;}\\
+\par\an{4. pare;}\\
+\par\an{5. desvie incondicionalmente para 1.}\\
+
+\par\an{Recodificando na linguagem simbólica do Patinho Feio, o programa acima poderá tomar o seguinte aspecto:}\\
+
+\par\an{UM   CAR   X   CARREGA X NO ACUMULADOR}\\
+\par\an{     SOMI  80  SOMA 80 AO ACUMULADOR}\\
+\par\an{     ARM   X   ARMAZENA O RESULTADO EM X}\\
+\par\an{     PARE      PARA}\\
+\par\an{     PLA   UM  DESVIA INCONDICIONALMENTE PARA UM}\\
+\par\an{X    DEFC  16  VALOR INICIAL DE X = 16}\\
+
+\par
+\an{Consultando uma tabela de correspondência entre as instruções simbólicas e os respectivos códigos de máquina, e atribuindo arbitrariamente o endereço 100(16) à primeira instrução do programa, poder-se-á recodificar o programa, agora em linguagem de máquina (os códigos abaixo estão em notação hexadecimal):}\\
 
 \subsection{A conveniência de um montador}
 

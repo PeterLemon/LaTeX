@@ -839,4 +839,356 @@ tivo), ou seja, ao que seria o nono bit da soma (se \ fossem\\
 considerados números de nove bits). Exemplo:\\
 \end{enumerate}
 
+
+\section{Apendice G: Exemplo de Programa Absoluto:}
+
+\quote{
+MEM  E00
+LER  E01
+LEY  E7C
+ARM  E34
+SAI  E72
+LIR  E23
+LEX  E25
+GUA  E31
+PRE  E4F
+VRC  E49
+CAI  E4D
+ENA  E5F
+WAT  E65
+WFF  E76
+IGR  E7E
+ACC  E84
+LOP  E86
+DIS  EC5
+ACH  EB5
+BRO  EB5
+ARA  EB8
+
+
+/00 SI
+
+▊PASSO2
+
+   1  @BLTC
+   2  E00                ORG     /E00
+   3  *
+   4  * HEXAM - PROGRAMA QUE CARREGA A MEMORIA
+   5  *         A PARTIR DE DADOS FORNECIDOS
+   6  *         EM HEXADECIMAL PELA CONSOLE
+   7  *
+   8  ********************************************************************
+   9  *
+  10  *   HEXAM - INSTRUCOES DE UTILIZACAO:
+  11  *
+  12  * 1. ENDERECAR HEXAR
+  13  * 2. DAR PARTIDA
+  14  * 3. O CANAL B VAI FICAR ESPERANDO ENDERECAMENTO.
+  15  * 4. PARA ENDERECAR A QUALQUER MOMENTO, BATER ARROBA (@).
+  16  * 5. O COMPUTADOR RESPONDE C/ RETURN, 2 LINEFEEDS.
+  17  * 6. ENTRAR C/ ENDERECO EM HEXA, COM 3 DIGITOS
+  18  * 7. SE ERRAR, BASTA VOLTAR P/ 4 OU BATER UM BRANCO.
+  19  *    NESTE CASO, O PROGRAMA IGNORA A ENTRADA ANTERIOR
+  20  *    E AGUARDA NOVO ENDERECO.
+  21  * 8. UMA VEZ ENDERECADO, OS DADOS QUE FOREM FORNECIDOS
+  22  *    SERAO GUARDADOS EM SEQUENCIA A PARTIR DO ENDERECO
+  23  *    ESPECIFICADO.
+  24  * 9. OS DADOS DEVERAO VIR SEPARADOS POR UM UNICO BRANCO.
+  25  *10. O ULTIMO DADO DA LINHA NAO DEVE SER SEGUIDO DE BRANCO,
+  26  *    SENDO QUE NESTE CASO UM LINEFEED, RETURN OU VICE
+  27  *    VERSA O SUBSTITUIRA'.
+  28  *11. UM BRANCO OU RETURN DEPOIS DO DADO E' UMA ORDEM P/
+  29  *    QUE O DADO SEJA ARMAZENADO.
+  30  *12. DEPOIS DE CADA BRANCO OU RETURN O BUFFER E' ZERADO,
+  31  *    E PORTANTO SE FOREM DADOS 2 BRANCOS EM SEQUENCIA
+  32  *    SERA' GUARDADO UM ZERO NO LUGAR DO SEGUNDO BRANCO.
+  33  *13. EM CASO DE ERRO NOS DADOS, SE O CARACTER FORNECIDO
+  34  *    FOR HEXADECIMAL,BASTA BATER DE NOVO EM SEGUIDA, SEM
+  35  *    BRANCOS, O DADO CORRETO. SO' SAO GUARDADOS NA MEMORIA
+  36  *    OS DOIS ULTIMOS DIGITOS.
+  37  *14. SE O CARATER NAO FOR HEXADECIMAL, O COMPUTADOR RESPONDE
+  38  *    COM UMA SETA (_) E PARA O PROESSAMENTO.
+  39  *15. NESTE CASO, DANDO PARTIDA, O PROGRAMA VOLTA A SER
+  40  *    EXECUTADO COMO NO CASO 14.
+  41  *16. ANTES DE DAR ENDERECAMENTO, E' PRECISO NAO ESQUECER
+  42  *    DE GUARDAR O DADO ANTERIOR. SE NAO FOR DADO UM BRANCO
+  43  *    OU RETURN, O DADO NAO SERA' ARMAZENADO.
+  44  *
+  45  ********************************************************************
+  46  *
+  47  E00 9A     HEXAM   INIB    *       INIBE INTERRUPCAO
+  48  *
+  49  * SECAO DE LEITURA DE ENDERECO
+  50  *
+  51  E01 FE 7C  LEENDER PUG     LECONV  LE PRIMEIRO CAR. DO END.
+  52  E03 AE 01          PLAN    LEENDER SE BCO. OU RETURN, VOLTA
+  53  E05 D2 20          XOR     /20     NAO| MONTA "ARM"
+  54  E07 2E 34          ARM     ARM     GUARDA P/EXECUTAR
+  55  E09 FE 7C          PUG     LECONV  LE SEG. CARATER
+  56  E0B AE 01          PLAN    LEENDER SE BCO, VOLTA A LER ENDERECO
+  57  E0D D1 4F          DE      4       AJEITA P/ COMPOR
+  58  E0F 2E 35          ARM     ARM-1   GUARDA
+  59  E11 FE 7C          PUG     LECONV  LE TERCEIRO CARATER
+  60  E13 AE 01          PLAN    LEENDER SE BCO, VOLTA A LER END.
+  61  E15 6E 35          SOM     ARM+1   SE NAO COMPOE COM SEGUNDO DIG.
+  62  E17 2E 35          ARM     ARM+1   GUARDA P/ EXECUTAR
+  63  E19 DA 0D          CARI    /0D     SAI RETURN
+  64  E1B FE 72          PUG     SAI     NA TTY
+  65  E1D DA 0A          CARI    /0A     SAI LINEFEED
+  66  E1F FE 72          PUG     SAI     NA TTY
+  67  E21 FE 72          PUG     SAI     IDEM
+  68  *
+  69  * LEITURA DE UMA PALAVRA
+  70  *
+  71  E23 80     LIMPA   LIMPO   *       ZERA
+  72  E24 99             TRE     *       EXTENSAO
+  73  E25 FE 7C  LEPROX  PUG     LECONV  LE UM CARATER
+  74  E27 AE 31          PLAN    GUARDA  SE BCO OU LINEFEED, STORE.
+  75  E29 99             TRE     *       SE NAO, TRAZ EXTENSAO
+  76  E2A 01 4F          DE      *       AJEITA PARA COMPOR
+  77  E2C 60 01          SOM     /001    COMPOE
+  78  E2E 99             TRE     *       C/ DIGITO LIDO
+  79  E2F 0E 25          PLA     LEPROX  CONTINUA LENDO ATE' ACHAR BCO/RET
+  80  *
+  81  * ARMAZENAMENTO NA MEMORIA
+  82  *
+  83  E31 FE 4F  GUARDA  PUG     PROTEGE TESTA SE ENDERECO INVADE
+  84  E33 99             TRE     *       HEXAM. SE NAO,
+  85  E34 20 00  ARM     ARM     *-*     GUARDA EXTENSAO NO ENDERECO CONV.
+  86  E36 4E 35          CAR     ARM+1   INCREMENTA
+  87  E38 85             INC     *       SEGUNDA PALAVRA
+  88  E39 2E 35          ARM     ARM+1   DO ENDERECO.
+  89  E3B 96             SV      1       SE NAO DEU CARRY,
+  90  E3C 0E 23          PLA     LIMPA   VAI LER A PROXIMA PALAVRA
+  91  E3E 4E 34          CAR     ARM     SE DEU,
+  92  E40 85             INC     *       INCREMENTA PRIMEIRA PALAVRA
+  93  E41 2E 34          ARM     ARM     GUARDA
+  94  E43 D1 0F          DD      4       TESTA SE DEU CARRY
+  95  E45 D8 FE          SOMI    -/02    ALEM DO BIT 11
+  96  E47 BE 23          PLAZ    LIMPA   NAO: VAI LER PROXIMA PAL.
+  97  E49 86     UNEG    UNEG    *       SIM: PARA EM LOOP
+  98  E4A 9D             PARE    *       COM /FF
+  99  E4B 0E 49          PLA     UNEG    NO ACUMULADOR
+ 100  *
+ 101  *
+ 102  * PROTECAO DO PROGRAMA PARA QUE NAO SEJA DESTRUIDO PELOS DADOS
+ 103  *                      OU POR ENDERECAMENTO INVALIDO.
+ 104  *
+ 105  *
+ 106  E4D DA 00  CARI    CARI    /00     RESTAURA ACUMULADOR
+ 107  *
+ 108  E4F 00 00  PROTEGE PLA     0       RETORNA
+ 109  E51 2E 4E          ARM     CARI+1  SALVA ACUMULADOR
+ 110  E53 4E 34          CAR     ARM     SEPARA 4 BITS
+ 111  E55 D1 4F          DE      4       MAIS SIGNIFICATIVOS
+ 112  E57 D1 6F          GE      4       DO ENDERECO
+ 113  E59 D8 F2          SOMI    -/0E    TESTA SE ENDERECO >= /E00
+ 114  E5B AE 4D          PLAN    CARI    NAO: VAI RETORNAR
+ 115  E5D 0E 49          PLA     UNEG    SIM: VAI PARAR EM LOOP
+ 116  *
+ 117  * ENTRA: DRIVER DE ENTRADA DE DADOS, SEM BIT DE PARIDADE
+ 118  *
+ 119  E5F 00 00  ENTRA   PLA     0
+ 120  E61 CB 11          FNC     /81     CLF
+ 121  E63 CB 16          FNC     /86     STC
+ 122  E65 CB 21  WAIT    SAL     /B1     ESPERA
+ 123  E67 0E 65          PLA     WAIT    FLAG
+ 124  E69 CB 40          ENTR    /B0     ENTRA DADO COMPLEMENTADO
+ 125  E6B 82             CMP1    *       DESCOMPLEMENTA
+ 126  E6C D1 41          DE      1       LIMPA PARIDADE
+ 127  E6E D1 21          GD      1       DO DADO
+ 128  E70 0E 5F          PLA     ENTRA   RETORNA
+ 129  *
+ 130  * SAI - DRIVER DE SAIDA
+ 131  *
+ 132  E72 00 00  SAI     PLA     0
+ 133  E74 CB 80          SAI     /B0     SAI DADO
+ 134  E76 CB 21  WFF     SAL     /B1     ESPERA
+ 135  E78 0E 76          PLA     WFF     FLAG
+ 136  E7A 0E 72          PLA     SAI     RETORNA
+ 137  *
+ 138  * LECONV = ROTINA DE "CONVERSAO" HEXBIN
+ 139  *
+ 140  E7C 00 00  LECONV  PLA     0
+ 141  E7E DA 0F  IGNOR   CARI    /0F     FAZ INDICE
+ 142  E80 9E             TRI     *       _/0F(NUMERO DE DIGITOS)
+ 143  E81 FE 5F          PUG     ENTRA   OBTEM DADO
+ 144  E83 83             CMP2    *       TROCA SINAL
+ 145  E84 2E C4          ARM     ACC     SALVA DADO COMPLEMENTADO
+ 146  E86 4E C4  LOOP    CAR     ACC     CARREGA DADO COMPLEMENTADO
+ 147  E88 BE 7E          PLAZ    IGNOR   SE FFRM, IGNORA-O
+ 148  E8A 7E C5          SOMX    DIGITOS TESTA SE E' DIGITO
+ 149  E8C BE 82          PLAZ    ACH     SE FOR, => ACH
+ 150  E8E E0 00          S?S     0       SE NAO, APONTAR PROXIMO
+ 151  E90 0E 86          P??     LOOP    E VAI TESTAR NOVAMENTE
+ 152  E92 4E C4          CAR     ACC     SE NAO DIGITO, RECUPERA DADO
+ 153  E94 D8 20          SOMI    @       TESTA SE E' BRANCO
+ 154  E96 BE B5          PLAZ    BRANCO  SIM: => BRANCO
+ 155  E98 4E C4          CAR     ACC     NAO=> CARREGA DADO
+ 156  E9A D8 0D          SOMI    /0D     TESTA SE E' RETURN
+ 157  E9C BE B5          PLAZ    BRANCO  SIM=> BRANCO
+ 158  E9E 4E C4          CAI     ACC     NAO=> TESTA SE
+ 159  EA0 DB 0A          SOMI    /0A     E' LINEFEED
+ 160  EA2 BE 7E          PLAZ    IGNOR   SIM=> IGNORA
+ 161  EA4 4E C4          CAR     ACC     NAO=> TESTA SE
+ 162  EA6 D8 40          SOMI    @@      ARROBA
+ 163  EA8 BE B8          PLAZ    ARROBA  SIM=> ARROBA
+ 164  EAA DA 3F          CARI    @_      NAO=> INVALIDO!
+ 165  EAC FE 72          PUG     SAI     IMPRIME "_" NA CONSOLE
+ 166  EAE 80             LIMPO   *       ZERA ACUMULADOR
+ 167  EAF 9D             PARE    *       PARA
+ 168  EB0 0E 7E          PLA     IGNOR   E IGNORA O CARATER
+ 169  EB2 9E     ACH     TRI     *       (INDICE=DIGITO CONVERTIDO)
+ 170  EB3 0E 7C          PLA     LECONV  JOGA NO ACC E VOLTA
+ 171  EB5 86     BRANCO  UNEG    *       RETORNA C/ -1
+ 172  EB6 0E 7C          PLA     LECONV  SE FOR BRANCO OU RETURN
+ 173  *
+ 174  EB8 DA 0D  ARROBA  CARI    /0D     SAI
+ 175  EBA FE 72          PUG     SAI     RETURN
+ 176  EBC DA 0A          CARI    /0A     SAI
+ 177  EBE FE 72          PUG     SAI     DOIS
+ 178  EC0 FE 72          PUG     SAI     LINEFEEDS
+ 179  EC2 0E 01          PLA     LEENDER VOLTA A LER ENDERECO.
+ 180  *
+ 181  * BUFFERS E CONSTANTES
+ 182  *
+ 183  *
+ 184  EC4  00    ACC     DEFC    0       P/ SALVAR ACUMULADOR
+ 185  EC5  30    DIGITOS DEFC    @0
+ 186  EC6  31            DEFC    @1
+ 187  EC7  32            DEFC    @2
+ 188  EC8  33            DEFC    @3
+ 189  EC9  34            DEFC    @4
+ 190  ECA  35            DEFC    @5
+ 191  ECB  36            DEFC    @6
+ 192  ECC  37            DEFC    @7
+ 193  ECD  38            DEFC    @8
+ 194  ECE  39            DEFC    @9
+ 195  ECF  41            DEFC    @A
+ 196  ED0  42            DEFC    @B
+ 197  ED1  43            DEFC    @C
+ 198  ED2  44            DEFC    @D
+ 199  ED3  45            DEFC    @E
+ 200  ED4  46            DEFC    @F
+▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊▊ 201  000                FIM      0
+}
+
+\subsecion{Apêndice H: Exemplos de Progamas Relocáveis}
+
+\subsubsection{COSEN}
+\quote{
+CON  000  ENT
+SUB  ***  EXT
+ARF  ***  EXT
+CAF  ***  EXT
+SEN  ***  EXT
+MAT  00E  ABS
+PIS  012
+ACF  00A  ABS
+OFW  012  ABS
+
+
+
+/00 SI
+
+PASSO2
+
+
+   1               @BLT
+   2  000                  SUBR    COSEN
+   3               * ROTINA QUE CALCULA O COSENO NO PATINHO
+   4               * PELA FORMULA COS(X)= SEN(PI/2 - X)
+   5               *
+   6  000                  EXT     COSEN
+   7  000                  EXT     SUB
+   8  000                  EXT     ARMACF
+   9  000                  EXT     CARACF
+  10  000                  EXT     SEN
+  11  000 00 00    COSEN   PLA     0
+  12  002 F0 00 X          PUG     ARMACF
+  13  004 01               DEFC    1
+  14  005 00 0E            DEFE    MANT
+  15  007 F0 00 X          PUG     CARACF
+  16  009 01               DEFC    1
+  17  00A 00 12 R          DEFE    PISDOIS
+  18  00C F0 00 X          PUG     SUB
+  19  00E F0 00 X          PUG     SEN
+  20  010 00 00 R          PLA     COSEN
+  21  00A          ACF     EQU     /00A
+  22  00E          MANT    EQU     /00E
+  23  012          OFLOW   EQU     /012
+  24  012 64       PISDOIS DEFC    /64
+  25  013 87               DEFC    /87
+  26  014 D0               DEFC    /D0
+  27  015 01               DEFC    /01
+  28  000
+}
+
+\subsubsection{DIV}
+\quote{
+DIY  000  ENT
+SAA  ***  EXT
+NOM  ***  EXT
+NAM  ***  EXT
+TAB  ***  EXT
+ARF  ***  EXT
+SGL  ***  EXT
+COM  ***  EXT
+SOI  ***  EXT
+CAF  ***  EXT
+SHL  ***  EXT
+TAC  ***  EXT
+SHR  ***  EXT
+PON  ***  EXT
+RET  ***  EXT
+OFW  012  ABS
+ZEO  017  ABS
+FOO  01A  ABS
+ACF  00A  ABS
+MAT  00E  ABS
+DFT  01E  ABS
+GUI  016
+GOG  078
+SOS  05A
+MOE  030
+YES  045
+GOL  06E
+
+
+/00 SI
+
+PASSO2
+   1               @BLT 
+   2  000                  SUBR    DIV
+   3               *
+   4               *  DIV  -  ROTINA DE DIVISAO EM PONTO FLUTUANTE
+   5               *                   ACF = ACF/MANT
+   6               *
+   7  000                  EXT     DIV
+   8  000                  EXT     SALVA
+   9  000                  EXT     NORM
+  10  000                  EXT     NADABEM
+  11  000                  EXT     TAB
+  12  000                  EXT     ARMACF
+  13  000                  EXT     SGNAL
+  14  000                  EXT     COMPLEM
+  15  000                  EXT     SOMATRI
+  16  000                  EXT     CARACF
+  17  000                  EXT     SHIFTL
+  18  000                  EXT     TAC
+  19  000                  EXT     SHIFTR
+  20  000                  EXT     POESIN
+  21  000                  EXT     REST
+  22  012          OFLOW   EQU     /012
+  23  017          ZERO    EQU     /017
+  24  01A          F       EQU     /01A
+  25  00A          ACF     EQU     /00A
+  26  00E          MANT    EQU     /00E
+  27  01E          DFLOAT  EQU     /01E
+  28               *
+  29  000 00 00    DIV     PLA     0
+  30  002 F0 00 X          PUG     SALVA   SALVA ACC,EXT,INDICE,T,V
+  31  TODO: Finish transcribing this...
+}
+
 \end{document}

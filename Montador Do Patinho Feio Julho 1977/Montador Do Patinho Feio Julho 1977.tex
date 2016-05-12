@@ -832,7 +832,7 @@ que é o que o Patinho Feio consegue fazer diretamente \ através\\
 de seus circuitos eletrônicos. Ver-se-á também, como operar com\\
 números de mais de oito bits e como reconhecer quando o resul-\\
 tado de uma soma não pode ser representado em oito bits ( isto\\
-é, o número é menor que -128 ou maior que +127).\\
+é, o número é menor que -128 ou maior que +127).
 
 \begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1.5em]
 \item Vai-um:\\
@@ -841,7 +841,192 @@ Denomina-se \uline{vai-um} de uma soma entre dois numeros de\hfill oito\\
 bits ao vai-um na última soma realizada (bit mais signific\uline a\\
 tivo), ou seja, ao que seria o nono bit da soma (se \ fossem\\
 considerados números de nove bits). Exemplo:\\
+\\
+\phantom \ \ \ \ \ \ \ \ 1 \ \ 1 \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 0 \ \ 0\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ 0 \ \ 1 \ \ 0 \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 1 \ \ 0\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-0.75em]
+\phantom \ \ \ \ \ \ \ \ 0 \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 1 \ \ 1 \ \ 0 \ \ 0\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ 1 \ \ 1 \ \ 0 \ \ 1 \ \ 0 \ \ 0 \ \ 1 \ \ 1 \ \ 0\\
+\\
+\phantom \ \ \ \ \ \ vai-um
+
+\begin{picture}(0,0)
+\put(48,72){\line(1,0){206}}
+\dashline{4}(66,45)(66,142)
+
+\put(52.5,34){\vector(0,1){19}}
+
+\put(52.5,118){\vector(0,-1){8}}
+\put(56,120){\line(3,-1){17}}
+\curve(52.5,118, 53.5,120, 56,120)
+
+\put(77.5,118){\vector(0,-1){8}}
+\put(81,120){\line(3,-1){17}}
+\curve(77.5,118, 78.5,120, 81,120)
+
+\put(102,118){\vector(0,-1){8}}
+\put(105.5,120){\line(3,-1){17}}
+\curve(102,118, 103,120, 105.5,120)
+
+\put(127,118){\vector(0,-1){8}}
+\put(130.5,120){\line(3,-1){17}}
+\curve(127,118, 128,120, 130.5,120)
+
+\put(151.5,118){\vector(0,-1){8}}
+\put(155,120){\line(3,-1){17}}
+\curve(151.5,118, 152.5,120, 155,120)
+
+\put(176.5,118){\vector(0,-1){8}}
+\put(180,120){\line(3,-1){17}}
+\curve(176.5,118, 177.5,120, 180,120)
+
+\put(201,118){\vector(0,-1){8}}
+\put(204.5,120){\line(3,-1){17}}
+\curve(201,118, 202,120, 204.5,120)
+
+\put(225.5,118){\vector(0,-1){8}}
+\put(229,120){\line(3,-1){17}}
+\curve(225.5,118, 226.5,120, 229,120)
+\end{picture}\\[-2em]
+
+O vai-um funciona efetivamente como nono bit da soma, permiti\uline n\\
+do o tratamento de números de qualquer comprimento. Exemplo:\\
+seja somar os seguintes números:\\
+\\
+\phantom \ \ \ \ \ \ \ \ a = \ 0101 1101 1010\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ + \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ b = \ 0110 1001 0110\\[0.5em]
+\phantom \ \ \ \ \ \ \ a+b= \ 1100 0111 0000
+
+\begin{picture}(0,0)
+\put(48,38){\line(1,0){120}}
+\end{picture}\\[-2em]
+
+Dividindo \uline a e \uline b em duas partes de oito bits cada uma, vem:
+
+\newpage
+
+\ \ \ \ \ \ a \ \ \ \ 0000 0101 \ \ \ \ \ \ \ 1101 1010\\[0.5em]
+\phantom \ \ \ \ \ \ b \ \ \ \ 0000 0110 \ \ \ \ \ \ \ 1001 0110\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ 0000 1011 \ \ \ \ \ 1 0111 0000\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ vai-um\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ 0000 1100\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ segunda parte\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ de a+b\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ primeira parte\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ de a+b
+
+\begin{picture}(0,0)
+\put(74,116){\line(1,0){56}}
+\put(178,116){\line(1,0){56}}
+\put(74,76){\line(1,0){56}}
+
+\put(164,102){\vector(-2,-1){31}}
+
+\put(170,87){\line(1,0){7}}
+\put(170,87){\vector(0,1){10}}
+\end{picture}\\[-2em]
+
+de modo que, com o uso do \uline{vai-um}, a soma foi realizada cor-\\
+retamente. Note-se que as segundas partes de \uline a e de \uline b \hfill não\\
+são interpretadas como números negativos de oito bits (ape-\\
+sar de começarem com \uline{um}), uma vez que é necessário somá-las\\
+normalmente (como sé fossem números positivos de oito bits,\\
+não precedidos de sinal) e obter o vai-um correspondente.\\[-1em]
+
+\item Soma e subtração de números no Patinho Feio:\\[0.5em]
+Demonstra-se o seguinte: sejam dois números \uline a e \uline b \hfill escritos\\
+em notação binária de \uline n bits, com números negativos em not\uline a\\
+ção de complemento de dois. Para calcular a-b, basta \hfill somar\\
+\uline a com o complemento de dois de \uline b, retendo os \uline n bits \hfill menos\\
+significativos (desprezando o vai-um). Se a resposta for ne-\\
+gativa, estará também em complemento de dois.\\
+Exemplos:\\
+\phantom \ \d{o}\\[-1.2em]
+1 ) \ 5-6 = -1 \ \ (+5) \ = 0000 0101 \ (+6) \ = 0000 0110\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (-6) \ = 1111 1010\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0000 0101\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vai-um=0 \ \ \ 1111 1111 =(-1)\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10
+
+\begin{picture}(0,0)
+\put(265,36.5){\line(1,0){56}}
+
+\put(175,40){\line(0,1){21}}
+\put(175,40){\vector(1,0){83}}
+\end{picture}\\[-2em]
+
+\ \d{o}\\[-1.2em]
+2 ) \ 5+6 = 11 \ \ \ \ \ 0000 0101 \ = \ 5\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0000 0110 \ = \ 6\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
+\phantom \ \ \ \ \ \ \ \ vai-um=0 \ \ 0000 1011 \ = 11\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10
+
+\begin{picture}(0,0)
+\put(116,42){\line(1,0){56}}
+\end{picture}
+
+\newpage
+
+\ \d{o}\\[-1.2em]
+3 ) \ -5 - 6 = -11 \ \ \ \ \ 1111 1011 \ = \ -5\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1111 1010 \ = \ -6\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ vai-um=1 \ \ 1111 0101 \ = -11\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10
+
+\begin{picture}(0,0)
+\put(142,42){\line(1,0){56}}
+\end{picture}\\
+
+\ \d{o}\\[-1.2em]
+4 ) \ -5 + 5 = 0 \ \ \ \ \ \ \ 1111 1011 \ = \ -5\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0000 0101 \ = \ +5\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ vai-um=1 \ \ 0000 0000 \ = \ 0
+
+\begin{picture}(0,0)
+\put(142,37){\line(1,0){56}}
+\end{picture}\\[-1.5em]
+
+Desta forma, consegue-se realizar qualquer soma e subtração,\\
+no Patinho Feio, de números de oito bits representados \hfill na\\
+notação complemento de dois, utilizando-se apenas a soma \hfill e\\
+a complementação de dois.\\
+\\[-0.5em]
+Obs.: Convém repetir que nada impede que se considere, \hfill se\\
+\phantom \ \ \ \ \ \ assim for conveniente, a sequência 1111 1010 como \hfill um\\
+\phantom \ \ \ \ \ \ número de oito bits desprovido de sinal (positivo) que\\
+\phantom \ \ \ \ \ \ valeria então (250) \ ; \ analogamente 1111 1011 \hfill vale-\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ ria (251) \ ; somando-se estes dois números, \hfill obtém-se\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ (501) \ , que em binário é 1 1111 0101; este é \hfill exata-\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ mente o resultado obtido na soma, desde que se consi-\\
+\phantom \ \ \ \ \ \ dere o \uline{vai-um} como nono bit da mesma.\\[-0.5em]
+
+\item Transbordo:\\[0.5em]
+Como os números foram limitados a oito bits de comprimento,\\
+dos quais o primeiro é o bit de sinal, nota-se que \hfill existi-\\
+rão valores de \uline a e \uline b tais que, \uline{a+b} ou \uline{a-b} seja muito grande\\
+ou muito pequeno para ser representado em complemento \hfill de\\
+dois em oito bits. Contudo, é sempre possível fazer a \hfill soma\\
+tal como no item anterior, embora ela resulte errada. Neste\\
+caso diz-se que houve \uline{transbordo} (do inglês ``overflow'').
+
+\newpage
+
 \end{enumerate}
+
+
 
 
 

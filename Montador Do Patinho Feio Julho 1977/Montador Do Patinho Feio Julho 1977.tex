@@ -1024,6 +1024,120 @@ caso diz-se que houve \uline{transbordo} (do inglês ``overflow'').
 
 \newpage
 
+Exemplo:\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (60) \ \ + (70) \ \ = (130) \ \ (o maior núme-\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10 \ \ \ \ \ \ 10 \ \ \ \ \ \ \ 10\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ro representável é +127)\\
+\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0011 1100\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0100 0110\\[0.5em]
+\phantom \ \ \ \ vai-um=0 \ \ 1000 0010 = (-126) \ \ o que está obviamente\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errado
+
+\begin{picture}(0,0)
+\put(92,48){\line(1,0){56}}
+\end{picture}\\[-1.5em]
+
+Conclui-se, portanto, que é necessário ao computador \hfill dete-\\
+tar estes casos para evitar erros no processamento. Isto se\\
+faz comparando os dois últimos vai-uns ao realizar a \hfill soma:\\
+pode-se provar que, se eles diferirem entre si, houve tran\uline s\\
+bordo. Exemplo: tomando o exemplo anterior, e detalhando t\uline o\\
+dos os vai-uns, tem-se:\\
+\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ 1 \ \ 1 \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 0\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ vai-um \ 0 \ \ 0 \ \ 1 \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 0 \ = 60\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ 1 \ \ 0 \ \ 0 \ \ 0 \ \ 1 \ \ 1 \ \ 0 \ = 70\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ 0 \ \ 0 \ \ 0 \ \ 0 \ \ 0 \ \ 1 \ \ 0 \ = -126\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
+\\[-0.5em]
+\phantom \ \ \ \ valores diferentes;indica\\[-0.5em]
+\phantom \ \ \ \ que houve transbordo\\[-0.5em]
+\phantom \ \ \ \ (resultado errado)
+
+\begin{picture}(0,0)
+\put(87,159){\line(1,0){40}}
+\put(127,159){\line(0,-1){19}}
+\put(127,140){\line(-1,0){40}}
+\put(87,140){\line(0,1){19}}
+
+\curve(83,134, 94,139, 105,134)
+\curve(108,134, 119,139, 130,134)
+\curve(133,134, 144,139, 155,134)
+\curve(158,134, 169,139, 180,134)
+\curve(183,134, 194,139, 205,134)
+\curve(208,134, 219,139, 230,134)
+\curve(233,134, 244,139, 255,134)
+\curve(258,134, 269,139, 280,134)
+
+\put(83,134){\vector(-3,-2){0}}
+\put(108,134){\vector(-3,-2){0}}
+\put(133,134){\vector(-3,-2){0}}
+\put(158,134){\vector(-3,-2){0}}
+\put(183,134){\vector(-3,-2){0}}
+\put(208,134){\vector(-3,-2){0}}
+\put(233,134){\vector(-3,-2){0}}
+\put(258,134){\vector(-3,-2){0}}
+
+\put(104,93){\line(1,0){181}}
+
+\put(20,36){\line(-1,0){30}}
+\put(-10,36){\line(0,1){113}}
+\put(-10,149){\vector(1,0){97}}
+\end{picture}\\[-2.5em]
+
+Tome-se agora o seguinte exemplo: \ 42 - 27 = 15\\
+\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 0 \ \ 0 \ \ 0 \ \ 0\\[0.5em]
+\phantom \ \ \ \ \ \ \ \ \ vai-um \ 0 \ \ 0 \ \ 1 \ \ 0 \ \ 1 \ \ 0 \ \ 1 \ \ 0 \ = 42\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\\[-0.5em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1 \ \ 1 \ \ 1 \ \ 0 \ \ 0 \ \ 1 \ \ 0 \ \ 1 \ =-27\\[-1em]
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\\
+\phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0 \ \ 0 \ \ 0 \ \ 0 \ \ 1 \ \ 1 \ \ 1 \ \ 1\\
+\\
+\phantom \ \ \ \ \ valores iguais; indica\\[-0.5em]
+\phantom \ \ \ \ \ que o resultado está\\[-0.5em]
+\phantom \ \ \ \ \ correcto
+
+\begin{picture}(0,0)
+\put(87,159){\line(1,0){40}}
+\put(127,159){\line(0,-1){19}}
+\put(127,140){\line(-1,0){40}}
+\put(87,140){\line(0,1){19}}
+
+\curve(83,134, 94,139, 105,134)
+\curve(108,134, 119,139, 130,134)
+\curve(133,134, 144,139, 155,134)
+\curve(158,134, 169,139, 180,134)
+\curve(183,134, 194,139, 205,134)
+\curve(208,134, 219,139, 230,134)
+\curve(233,134, 244,139, 255,134)
+\curve(258,134, 269,139, 280,134)
+
+\put(83,134){\vector(-3,-2){0}}
+\put(108,134){\vector(-3,-2){0}}
+\put(133,134){\vector(-3,-2){0}}
+\put(158,134){\vector(-3,-2){0}}
+\put(183,134){\vector(-3,-2){0}}
+\put(208,134){\vector(-3,-2){0}}
+\put(233,134){\vector(-3,-2){0}}
+\put(258,134){\vector(-3,-2){0}}
+
+\put(104,93){\line(1,0){181}}
+
+\put(25,36){\line(-1,0){35}}
+\put(-10,36){\line(0,1){113}}
+\put(-10,149){\vector(1,0){97}}
+\end{picture}\\[-2.5em]
+
+\newpage
+
 \end{enumerate}
 
 

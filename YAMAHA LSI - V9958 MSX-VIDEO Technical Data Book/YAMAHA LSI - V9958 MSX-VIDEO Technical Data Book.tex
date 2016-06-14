@@ -39,6 +39,8 @@
 \fancyhf{}
 \renewcommand\headrulewidth{0pt}
 
+\usepackage{arydshln}
+
 \usepackage{rotating}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.markings,positioning,calc}
@@ -487,7 +489,7 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \cline{2-9}
 \end{tabular}\\[0.5em]
 
-\hskip -0.5em HO8ーHO0 \ \ Used to set the scroll volume of still pictures in the horizontal\par
+\hskip -0.5em HO8－HO0 \ \ Used to set the scroll volume of still pictures in the horizontal\par
 \ \ \ \ \ \ \ \ \ \ direction one dot at a time.\par
 \ \ \ \ \ \ \ \ \ \ \ (In G5 and G6 modes, scrolling is in 2-dot units.)\par
 \ \ \ \ SP2 \ 0：Sets the horizontal screen size to 1 page. (Initial value)\par
@@ -523,7 +525,72 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \ \ \ \ \ \ The screen is shifted \uline{to the left as }specified in 8-dot units\par
 \ \ \ \ \ \ (in G5 and G6 modes, the screen is shifted in 16-dot units).\\
 \par
-・When SP2＝0
+・When SP2＝0\par
 
+\vspace{0.5em}
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 1em \begin{tabular}{rr|c|c|cc|c|c|l}
+\multicolumn{9}{l}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Display screen}\\
+\cline{3-8}
+\multicolumn{2}{r|}{HO7－3 \ \ \ } & \multicolumn{6}{|l|}{8 dots} &\\[-0.7em]
+\multicolumn{9}{c}{}\\[-0.8em]
+\cline{3-8}
+\multicolumn{2}{r|}{0 \ \ \ \ \ } & \,0\, & \,1\, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & 30 & 31 & 1 line\\
+\cline{3-8}
+\multicolumn{9}{c}{}\\[-0.8em]
+\cline{3-8}
+\multicolumn{2}{r|}{1 \ \ \ \ \ } & \,1\, & \,2\, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & 31 & \,0\, &\\
+\cline{3-8}
+\multicolumn{1}{r;{1pt/3pt}}{\ \ \, } & \multicolumn{3}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{4}{c}{}\\
+\multicolumn{1}{r;{1pt/3pt}}{} & \multicolumn{3}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{4}{c}{}\\
+\multicolumn{1}{r;{1pt/3pt}}{} & \multicolumn{3}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{4}{c}{}\\
+\cline{3-8}
+\multicolumn{2}{r|}{31 \ \ \ \ \ } & 31 & \,0\, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & 29 & 30 &\\
+\cline{3-8}
+\end{tabular}\\[0.5em]
+
+\ \ \ \ \ \ \ \ \ \ \ \ Note) HO8 is ignored\par
+
+\vspace{1em}
+
+・When SP2＝1\par
+
+\vspace{-0.5em}
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 1em \begin{tabular}{rr|c|c|c|c|c|c|c|c|l}
+\multicolumn{11}{l}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Display screen}\\
+\cline{3-6}
+\multicolumn{2}{r|}{HO8－3 \ \ \ } & \multicolumn{4}{|l|}{8 dots} & \multicolumn{5}{c}{}\\[-0.7em]
+\multicolumn{11}{c}{}\\[-0.8em]
+\cline{3-10}
+\multicolumn{2}{r|}{0 \ \ \ \ \ } & \,0\, & \,1\, & \ \ \ \ \ \ \ \ \ \ \, & 31 & 32 & \ \ \ \ \ \ \ \ \ \ \, & 62 & 63 & 1 line\\
+\cline{3-10}
+\multicolumn{11}{c}{}\\[-0.8em]
+\cline{3-10}
+\multicolumn{2}{r|}{1 \ \ \ \ \ } & \,1\, & \,2\, & \ \ \ \ \ \ \ \ \ \ \, & 32 & 33 & \ \ \ \ \ \ \ \ \ \ \, & 63 & \,0\, &\\
+\cline{3-10}
+\multicolumn{1}{r;{1pt/3pt}}{\ \ \, } & \multicolumn{4}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{5}{c}{}\\
+\multicolumn{1}{r;{1pt/3pt}}{} & \multicolumn{4}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{5}{c}{}\\
+\multicolumn{1}{r;{1pt/3pt}}{} & \multicolumn{4}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{5}{c}{}\\
+\cline{3-10}
+\multicolumn{2}{r|}{31 \ \ \ \ \ } & 31 & 32 & \ \ \ \ \ \ \ \ \ \ \, & 62 & 63 & \ \ \ \ \ \ \ \ \ \ \, & 29 & 30 &\\
+\cline{3-10}
+\multicolumn{11}{c}{}\\[-0.8em]
+\cline{3-10}
+\multicolumn{2}{r|}{32 \ \ \ \ \ } & 32 & 33 & \ \ \ \ \ \ \ \ \ \ \, & 63 & \,0\, & \ \ \ \ \ \ \ \ \ \ \, & 30 & 31 &\\
+\cline{3-10}
+\multicolumn{1}{r;{1pt/3pt}}{\ \ \, } & \multicolumn{4}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{5}{c}{}\\
+\multicolumn{1}{r;{1pt/3pt}}{} & \multicolumn{4}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{5}{c}{}\\
+\multicolumn{1}{r;{1pt/3pt}}{} & \multicolumn{4}{c}{} & \multicolumn{1}{c;{1pt/3pt}}{} & \multicolumn{5}{c}{}\\
+\cline{3-10}
+\multicolumn{2}{r|}{63 \ \ \ \ \ } & 63 & \,0\, & \ \ \ \ \ \ \ \ \ \ \, & 30 & 31 & \ \ \ \ \ \ \ \ \ \ \, & 61 & 62 &\\
+\cline{3-10}
+\end{tabular}
+
+\newpage
 
 \end{document}

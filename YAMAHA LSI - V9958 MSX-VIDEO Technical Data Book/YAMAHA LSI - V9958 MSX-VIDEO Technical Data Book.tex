@@ -8,13 +8,22 @@
 
 \graphicspath{{images/}}
 
-%\usepackage[normalem]{ulem}
-%\renewcommand{\ULthickness}{0.08em}
-
 \usepackage[compact]{titlesec}
 \titlespacing{\section}{0em}{*0}{1em}
-\titlespacing{\subsection}{*0}{*0}{*0}
+\titlespacing{\subsection}{0em}{*0}{1em}
+\titlespacing{\subsubsection}{0em}{*0}{1em}
 \titleformat{\section}{\normalfont}{\thesection}{1em}{}
+
+\usepackage{tocloft}
+\renewcommand\cftsecdotsep{\cftdotsep}
+\renewcommand\cfttoctitlefont{\normalfont}
+\renewcommand\cftdot{…}
+\renewcommand\cftdotsep{0}
+\setlength\cftbeforesecskip{0em}
+\setlength\cftaftertoctitleskip{1.5em}
+\renewcommand{\cftsecafterpnum}{\hspace*{3em}}
+\renewcommand{\cftsubsecafterpnum}{\hspace*{3em}}
+\renewcommand{\cftsubsubsecafterpnum}{\hspace*{3em}}
 
 \setlength\parindent{2.5em}
 \setlength\parskip{0em}
@@ -24,8 +33,6 @@
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand\headrulewidth{0pt}
-
-%\usepackage{arydshln}
 
 \usepackage{rotating}
 \usepackage{tikz}
@@ -95,18 +102,15 @@ remained the same as V9938 but note that some, even the same, may be included\pa
 here due to the conveniance of editing. For specifications of V9938, refer to\par
 \hskip -0.5em “V9938 MSX-VIDEO Technical Data Book".\\
 \par
-\hskip 21.5em December 1988 YAMAHA Corporation\par
-\hskip 26.5em Semiconductor Division
+\hskip 22em December 1988 YAMAHA Corporation\par
+\hskip 27em Semiconductor Division
 
 \newpage
 
 \setcounter{page}{0}
 
-\renewcommand\contentsname{\hskip 9em ＴＡＢＬＥ　ＯＦ　ＣＯＮＴＥＮＴＳ}
-\addtocontents{toc}{\hskip 40.5em Page}
-\makeatletter
-\renewcommand*{\@dotsep}{-2}
-\makeatother
+\renewcommand\contentsname{\hskip 6em ＴＡＢＬＥ　ＯＦ　ＣＯＮＴＥＮＴＳ}
+\addtocontents{toc}{\hskip 40em Page\par}
 \tableofcontents
 
 \newpage
@@ -116,7 +120,7 @@ here due to the conveniance of editing. For specifications of V9938, refer to\pa
 
 \phantomsection
 \section*{\boxed{1}　　ＧＥＮＥＲＡＬ　ＤＥＳＣＲＩＰＴＩＯＮ}
-\addcontentsline{toc}{subsection}{\hskip 7em [1] \ GENERAL DESCRIPTION}
+\addcontentsline{toc}{section}{\hskip 5.5em [1] \ GENERAL DESCRIPTION}
 
 \noindent This LSI is a video display Processor(VDP) which is applicable to new\\
 media. It uses an N-channel silicon gate MOS and has a linear RGB output.\\
@@ -124,7 +128,7 @@ It is software compatible with TMS9918A and V9938.\\
 
 \phantomsection
 \section*{\boxed{2}　　ＦＥＡＴＵＲＥＳ}
-\addcontentsline{toc}{subsection}{\hskip 7em [2] \ FEATURES}
+\addcontentsline{toc}{section}{\hskip 5.5em [2] \ FEATURES}
 
 \renewcommand{\labelitemi}{・}
 \begin{itemize}[leftmargin=1em, labelsep=0em, itemsep=-0.32em]
@@ -159,7 +163,7 @@ display.
 
 \phantomsection
 \section*{\boxed{3}　　ＩＮＴＥＲＮＡＬ　ＳＴＲＵＣＴＵＲＥ　ＢＬＯＣＫ　ＤＩＡＧＲＡＭ}
-\addcontentsline{toc}{subsection}{\hskip 7em [3] \ INTERNAL STRUCTURE BLOCK DIAGRAM}
+\addcontentsline{toc}{section}{\hskip 5.5em [3] \ INTERNAL STRUCTURE BLOCK DIAGRAM}
 
 \vspace{0.5em}
 \hskip 3.2em \begin{sideways}
@@ -298,7 +302,7 @@ display.
 
 \phantomsection
 \section*{\boxed{4}　　ＰＩＮ　ＬＡＹＯＵＴ　ＡＮＤ　ＦＵＮＣＴＩＯＮＳ}
-\addcontentsline{toc}{subsection}{\hskip 7em [4] \ PIN LAYOUT AND FUNCTIONS}
+\addcontentsline{toc}{section}{\hskip 5.5em [4] \ PIN LAYOUT AND FUNCTIONS}
 
 \vspace{1.5em}
 
@@ -415,11 +419,11 @@ V\scriptsize{BB} & 33 & I & Baseboard voltage.\\
 
 \phantomsection
 \section*{\boxed{5}　　ＲＥＧＩＳＴＥＲ　ＤＥＳＣＲＩＰＴＩＯＮ}
-\addcontentsline{toc}{subsection}{\hskip 7em [5] \ REGISTER DESCRIPTION}
+\addcontentsline{toc}{section}{\hskip 5.5em [5] \ REGISTER DESCRIPTION}
 
 \phantomsection
 \section*{5-1 \, Added Registers}
-\addcontentsline{toc}{subsubsection}{\hskip 6.25em 5-1 Added Registers}
+\addcontentsline{toc}{subsection}{\hskip 5.7em 5-1 Added Registers}
 
 \vspace{-1em}
 Shown below are the registers newly added to the existing V9938 registers.
@@ -459,6 +463,6 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 
 \phantomsection
 \section*{5-1-1 \, Horizontal Scroll Function.}
-\addcontentsline{toc}{subsubsubsection}{\hskip 6.25em 5-1-1 Horizontal Scroll Function.}
+\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-1 Horizontal Scroll Function.}
 
 \end{document}

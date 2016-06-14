@@ -8,6 +8,9 @@
 
 \graphicspath{{images/}}
 
+\usepackage[normalem]{ulem}
+\renewcommand{\ULthickness}{0.08em}
+
 \usepackage[compact]{titlesec}
 \titlespacing{\section}{0em}{*0}{1em}
 \titlespacing{\subsection}{0em}{*0}{0em}
@@ -500,7 +503,27 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \ \ \ \ \ \ \ \ \ \ \ \ \ There is no need to mask if the value in \#27 is“0".\par
 \ \ \ \ \ \ \ \ \ \ \ \ \ (In G5 and G6 modes, the number of masked dots is 16.)\par
 
+\newpage
 
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 5.5em \begin{tabular}{|l|}
+\hline
+\ \ During scrolling, once the dots disappear to the left of the\\
+\ \ screen or once the dots 1 to 7 appear on the screen, their data \ \\
+\ \ are not controlled by V9958 and there is no guarantee on what\\
+\ \ will be displayed.\\
+\ \ To ensure proper display on the screen, therefore, masking is\\
+\ \ necessary.\\
+\hline
+\end{tabular}\\[1em]
+
+◎ Screen display for HO8-HO3\par
+\ \ \ \ \ \ The screen is shifted \uline{to the left as }specified in 8-dot units\par
+\ \ \ \ \ \ (in G5 and G6 modes, the screen is shifted in 16-dot units).\\
+\par
+・When SP2＝0
 
 
 \end{document}

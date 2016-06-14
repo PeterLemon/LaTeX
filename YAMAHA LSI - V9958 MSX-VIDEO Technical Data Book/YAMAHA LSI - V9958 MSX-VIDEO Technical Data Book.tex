@@ -10,9 +10,11 @@
 
 \usepackage[compact]{titlesec}
 \titlespacing{\section}{0em}{*0}{1em}
-\titlespacing{\subsection}{0em}{*0}{1em}
-\titlespacing{\subsubsection}{0em}{*0}{1em}
+\titlespacing{\subsection}{0em}{*0}{0em}
+\titlespacing{\subsubsection}{0em}{*0}{0em}
 \titleformat{\section}{\normalfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont}{\thesection}{1em}{}
+\titleformat{\subsubsection}{\normalfont}{\thesection}{1em}{}
 
 \usepackage[titles]{tocloft}
 \renewcommand\cftsecdotsep{\cftdotsep}
@@ -422,13 +424,12 @@ V\scriptsize{BB} & 33 & I & Baseboard voltage.\\
 \addcontentsline{toc}{section}{\hskip 5.5em [5] \ REGISTER DESCRIPTION}
 
 \phantomsection
-\section*{5-1 \, Added Registers}
+\subsection*{5-1 \, Added Registers}
 \addcontentsline{toc}{subsection}{\hskip 5.7em 5-1 Added Registers}
 
-\vspace{-1em}
-Shown below are the registers newly added to the existing V9938 registers.
+Shown below are the registers newly added to the existing V9938 registers.\par
 
-\vspace{0.5em}
+\vspace{0.2em}
 \setlength{\arrayrulewidth}{0.1em}
 \setlength{\tabcolsep}{0.5em}
 \renewcommand{\arraystretch}{1}
@@ -437,17 +438,16 @@ Shown below are the registers newly added to the existing V9938 registers.
 \cline{2-9}
 ♯25 & & CMD \ & VDS \ & YAE \ & YJK \ & WTE \ & MSK \ & SP2 \ \\
 \cline{2-9}
-\multicolumn{9}{c}{}\\[-0.5em]
+\multicolumn{9}{c}{}\\[-0.8em]
 \cline{2-9}
-♯26 & & & H08 \ & H07 \ & H06 \ & H05 \ & H04 \ & H03 \ \\
+♯26 & & & HO8 \ & HO7 \ & HO6 \ & HO5 \ & HO4 \ & HO3 \ \\
 \cline{2-9}
-\multicolumn{9}{c}{}\\[-0.5em]
+\multicolumn{9}{c}{}\\[-0.8em]
 \cline{2-9}
-♯27 & & & & & & H02 \ & H01 \ & H00 \ \\
+♯27 & & & & & & HO2 \ & HO1 \ & HO0 \ \\
 \cline{2-9}
-\end{tabular}
+\end{tabular}\\[0.5em]
 
-\vspace{1em}
 The above three registers are cleared to“0" by the RESET signal and if\par
 used in that state, will function compatibly with V9938.\\[-3.5em]
 
@@ -462,7 +462,45 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \] 
 
 \phantomsection
-\section*{5-1-1 \, Horizontal Scroll Function.}
-\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-1 Horizontal Scroll Function.}
+\subsubsection*{\ \ 5-1-1 \, Horizontal Scroll Function.}
+\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-1 Horizontal Scroll Function}
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip -0.5em \begin{tabular}{c|c|c|c|c|c|c|c|c|l}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{\ \ b7 \ \ } & \multicolumn{1}{c}{\ \ b6 \ \ } & \multicolumn{1}{c}{\ \ b5 \ \ } & \multicolumn{1}{c}{\ \ b4 \ \ } & \multicolumn{1}{c}{\ \ b3 \ \ } & \multicolumn{1}{c}{\ \ b2 \ \ } & \multicolumn{1}{c}{\ \ b1 \ \ } & \multicolumn{1}{c}{\ \ b0 \ \ } & \multicolumn{1}{c}{}\\
+\cline{2-9}
+♯25 & & & & & & & MSK \ & SP2 \ &\\
+\cline{2-9}
+\multicolumn{10}{c}{}\\[-0.8em]
+\cline{2-9}
+♯26 & & & HO8 \ & HO7 \ & HO6 \ & HO5 \ & HO4 \ & HO3 \ & by character\\
+\cline{2-9}
+\multicolumn{10}{c}{}\\[-2.5em]
+\multicolumn{9}{c}{} & \multicolumn{1}{l}{units}\\[0.1em]
+\cline{2-9}
+♯27 & & & & & & HO2 \ & HO1 \ & HO0 \ & by dot units\\
+\cline{2-9}
+\end{tabular}\\[0.5em]
+
+HO8-HO0 \ \ Used to set the scroll volume of still pictures in the horizontal\par
+\ \ \ \ \ \ \ \ \ \ direction one dot at a time.\par
+\ \ \ \ \ \ \ \ \ \ \ (In G5 and G6 modes, scrolling is in 2-dot units.)\par
+\ \ \ \ SP2 \ 0：Sets the horizontal screen size to 1 page. (Initial value)\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ Scrolling is done within one page and the non-displayed left\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ side of the page is displayed on the right hand side of the\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ screen.\par
+\ \ \ \ \ \ \ \ \ 1：Sets the horizontal screen size to two pages.\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ Scrolling is done within 2 pages and if the first page is\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ displayed first, then the second page will appear at the\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ scroll operation.\par
+\ \ \ \ MSK \ 0：The left 8 dots are not masked. \ (Initial value)\par
+\ \ \ \ \ \ \ \ \ 1：The left 8 dots are masked and the border color is output.\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ There is no need to mask if the value in \#27 is“0".\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ (In G5 and G6 modes, the number of masked dots is 16.)\par
+
+
+
 
 \end{document}

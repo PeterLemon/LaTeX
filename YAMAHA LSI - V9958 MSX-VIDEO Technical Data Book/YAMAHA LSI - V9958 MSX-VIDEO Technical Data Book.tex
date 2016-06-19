@@ -468,7 +468,7 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 
 \phantomsection
 \subsubsection*{\ \ 5-1-1 \, Horizontal Scroll Function.}
-\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-1 Horizontal Scroll Function}
+\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-1 \ Horizontal Scroll Function}
 
 \setlength{\arrayrulewidth}{0.1em}
 \setlength{\tabcolsep}{0.5em}
@@ -650,7 +650,7 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 
 \phantomsection
 \subsubsection*{\ \ 5-1-2 \, Wait Function (to speed up the writing time of data from CPU to VRAM)}
-\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-2 Wait Function}
+\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-2 \ Wait Function}
 
 \vspace{1.5em}
 \setlength{\arrayrulewidth}{0.1em}
@@ -671,5 +671,56 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \ \ \ \ \ \ \ \ \ \ \ \ \ completed.
 
 \newpage
+
+\ \ \ \ \ \ \ \ \ \ \ \ However, WAIT function is not provided for incomplete access\par
+\ \ \ \ \ \ \ \ \ \ \ \ to the register and the color palette or for the data ready\par
+\ \ \ \ \ \ \ \ \ \ \ \ status of commands.\\[-0.5em]
+
+\phantomsection
+\subsubsection*{\ \ \,5-1-3 \ \,Command Function}
+\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-3 \ Command Function}
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip -0.5em \begin{tabular}{c|c|c|c|c|c|c|c|c|l}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{\ \ b7 \ \ } & \multicolumn{1}{c}{\ \ b6 \ \ } & \multicolumn{1}{c}{\ \ b5 \ \ } & \multicolumn{1}{c}{\ \ b4 \ \ } & \multicolumn{1}{c}{\ \ b3 \ \ } & \multicolumn{1}{c}{\ \ b2 \ \ } & \multicolumn{1}{c}{\ \ b1 \ \ } & \multicolumn{1}{c}{\ \ b0 \ \ } & \multicolumn{1}{c}{}\\
+\cline{2-9}
+♯25 & & CMD \ & & & & & & &\\
+\cline{2-9}
+\end{tabular}\\[0.5em]
+
+\ \ \ \ CMD \ 0：The command function is not expanded.\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ The command function can be used only in G4 to G7 modes as with\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ the conventional type. (Initial value)\par
+\ \ \ \ \ \ \ \ \ 1：Enables the command function in all display modes.\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ In G4 to G7 modes, it works in the same way as with the conventional\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ type and as G7 mode in any other mode. Therefore, it is necessary\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ to set the parameters by using x-y coordinates of G7 mode.\\[-0.5em]
+
+\phantomsection
+\subsubsection*{\ \ \,5-1-4 \ \,YJK-Type Data Display Function}
+\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-4 \ YJK-Type Data Display Function}
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip -0.5em \begin{tabular}{c|c|c|c|c|c|c|c|c|l}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{\ \ b7 \ \ } & \multicolumn{1}{c}{\ \ b6 \ \ } & \multicolumn{1}{c}{\ \ b5 \ \ } & \multicolumn{1}{c}{\ \ b4 \ \ } & \multicolumn{1}{c}{\ \ b3 \ \ } & \multicolumn{1}{c}{\ \ b2 \ \ } & \multicolumn{1}{c}{\ \ b1 \ \ } & \multicolumn{1}{c}{\ \ b0 \ \ } & \multicolumn{1}{c}{}\\
+\cline{2-9}
+♯25 & & & & YAE \ & YJK \ & & & &\\
+\cline{2-9}
+\end{tabular}\\[1em]
+
+\ \ \ \ YJK \ 0：Handles the data on VRAM as RGB type data.(Initial value)\par
+\ \ \ \ \ \ \ \ \ \ \ \ (Example : G7 mode = 3,3 and 2 bits each)\par
+\ \ \ \ \ \ \ \ \ \ \ \ Displayed colors of the sprite are the same as the conventional\par
+\ \ \ \ \ \ \ \ \ \ \ \ type.\par
+\ \ \ \ \ \ \ \ \ 1：Handles the data on VRAM as YJK type data, converts them to RGB\par
+\ \ \ \ \ \ \ \ \ \ \ \ signals (5 bits each) and outputs them through RGB terminals\par
+\ \ \ \ \ \ \ \ \ \ \ \ as analog signals.\par
+\ \ \ \ \ \ \ \ \ \ \ \ The color palette is used to display colors of the sprite in\par
+\ \ \ \ \ \ \ \ \ \ \ \ G7 mode.\par
+\ \ \ \ YAE \ 0：Without attributes\par
 
 \end{document}

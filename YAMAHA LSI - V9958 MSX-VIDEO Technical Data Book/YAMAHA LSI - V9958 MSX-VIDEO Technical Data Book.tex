@@ -522,7 +522,7 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \end{tabular}\\[1em]
 
 ◎ Screen display for HO8-HO3\par
-\ \ \ \ \ \ The screen is shifted \uline{to the left as }specified in 8-dot units\par
+\ \ \ \ \ \ The screen is shifted \uline{to the left} as specified in 8-dot units\par
 \ \ \ \ \ \ (in G5 and G6 modes, the screen is shifted in 16-dot units).\\
 \par
 ・When SP2＝0\par
@@ -590,6 +590,85 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \multicolumn{2}{r|}{63 \ \ \ \ \ } & 63 & \,0\, & \ \ \ \ \ \ \ \ \ \ \, & 30 & 31 & \ \ \ \ \ \ \ \ \ \ \, & 61 & 62 &\\
 \cline{3-10}
 \end{tabular}
+
+\newpage
+
+\hskip -1em Note) When SP2 ＝\,1\,\,, bit 5 (A15) of the pattern name table base address\par
+\ \ \ \ register (R\#2) should be set to“1".\par
+\ \ \ \ The base address of each table will be as follows.\\
+\par
+\ \ \ \ Pattern name table(PNT) \,\,:\,\,0\,\, to 31(when A15 is set to“0")\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 32 to 63(when A15 is set to“1")\par
+\ \ \ \ Pattern generator table (PGT) \,\,:\,The base address remains unchanged\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ even when scroll value is changed.\par
+\ \ \ \ Color table (CT)\,\,:\,The base address remains unchanged even when \ scroll\par
+\ \ \ \ value is changed.\\[-0.5em]
+\par
+◎ Screen display for HO2-HO0\par
+\ \ \ \ \ \ The screen is shifted \uline{to the right} as specified in 1-dot unit\par
+\ \ \ \ \ \ (in G5 and G6 modes, the screen is shifted in 2-dot units).\\
+\par
+\ (Example) ① \ When scrolling to the left one dot at a time\par
+
+\vspace{0.5em}
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 5.5em \begin{tabular}{rcccccccccccc}
+& RESET & \multicolumn{3}{c}{Initial} & & & & & & &\,\,&\\
+♯26 \, \, & 0 & &\,\,\,1\,\,\,&\,\,& \,\,\,1\,\,\, & \ \ \ \ \ \ \ \ \ \ & \,\,\,1\,\,\, &\,\,& \multicolumn{2}{c}{\,\,\,2\,\,\,} & \multicolumn{2}{l}{(Count up)}\\
+\cdashline{7-7}[1pt/3pt]
+\cdashline{11-12}[1pt/3pt]
+♯27 \, \, & 0 & &\,\,\,7\,\,\,&\,\,& \,\,\,6\,\,\, & \ \ \ \ \ \ \ \ \ \ & \,\,\,0\,\,\, &\,\,& \multicolumn{2}{c}{\,\,\,7\,\,\,} & \multicolumn{2}{l}{(Count down)}\\
+\cline{4-4}
+\cline{6-6}
+\cline{8-8}
+\cline{10-11}
+& \multicolumn{12}{l}{\ \ \ \ \ 1 dot to \ 2 dots to \ \ \ \ 8 dots to 9 dots to}\\[-0.8em]
+& \multicolumn{12}{l}{\ \ \ \ \ the left \ the left \ \ \ \ \ the left \ the left}\\
+\end{tabular}\\[1em]
+
+\ \ \ \ \ \ \ \ \ \ \ \ ② \ When scrolling to the right one dot at a time\par
+
+\vspace{0.5em}
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 5.5em \begin{tabular}{rcccccccccccc}
+& RESET & \multicolumn{3}{c}{Initial} & & & & & & &\,\,&\\
+♯26 \, \, & 0 & &\,\,\,0\,\,\,&\,\,& \,\,\,0\,\,\, & \ \ \ \ \ \ \ \ \ \ & 31 &\,\,& \multicolumn{2}{c}{31} & \multicolumn{2}{l}{(Count up)}\\
+\cdashline{7-7}[1pt/3pt]
+\cdashline{11-12}[1pt/3pt]
+♯27 \, \, & 0 & &\,\,\,1\,\,\,&\,\,& \,\,\,2\,\,\, & \ \ \ \ \ \ \ \ \ \ & \,\,\,0\,\,\, &\,\,& \multicolumn{2}{c}{\,\,\,1\,\,\,} & \multicolumn{2}{l}{(Count down)}\\
+\cline{4-4}
+\cline{6-6}
+\cline{8-8}
+\cline{10-11}
+& \multicolumn{12}{l}{\ \ \ \ \ 1 dot to \ 2 dots to \ \ \ \ 8 dots to 9 dots to}\\[-0.8em]
+& \multicolumn{12}{l}{\ \ \ \ \ the right the right \ \ \ \ the right the right}\\
+\end{tabular}\\[0.5em]
+
+\phantomsection
+\subsubsection*{\ \ 5-1-2 \, Wait Function (to speed up the writing time of data from CPU to VRAM)}
+\addcontentsline{toc}{subsubsection}{\hskip 4.15em 5-1-2 Wait Function}
+
+\vspace{1.5em}
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip -0.5em \begin{tabular}{c|c|c|c|c|c|c|c|c|l}
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{\ \ b7 \ \ } & \multicolumn{1}{c}{\ \ b6 \ \ } & \multicolumn{1}{c}{\ \ b5 \ \ } & \multicolumn{1}{c}{\ \ b4 \ \ } & \multicolumn{1}{c}{\ \ b3 \ \ } & \multicolumn{1}{c}{\ \ b2 \ \ } & \multicolumn{1}{c}{\ \ b1 \ \ } & \multicolumn{1}{c}{\ \ b0 \ \ } & \multicolumn{1}{c}{}\\
+\cline{2-9}
+♯25 & & & & & & WTE \ & & &\\
+\cline{2-9}
+\end{tabular}\\[0.5em]
+
+\ \ \ \ WTE \ 0：Disables the WAIT function.(Initial value)\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ Works in the same way as V9938.\par
+\ \ \ \ \ \ \ \ \ 1：Enables the WAIT \ function.\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ When the CPU accesses the VRAM, accesses to all ports on V9958\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ is held in the WAIT state until sccess to the VRAM of V9958 is\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ completed.
 
 \newpage
 

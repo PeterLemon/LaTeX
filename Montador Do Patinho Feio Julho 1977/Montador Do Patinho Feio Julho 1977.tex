@@ -14,6 +14,32 @@
 \titlespacing{\subsection}{2em}{0em}{1.5em}
 \titleformat{\section}{\ttfamily}{\thesection}{0em}{}
 \titleformat{\subsection}{\ttfamily}{\thesection}{0em}{}
+\titleformat{\subsubsection}{\ttfamily}{\thesection}{0em}{}
+
+\usepackage[titles]{tocloft}
+\renewcommand\cfttoctitlefont{\ttfamily}
+\renewcommand\cftsecfont{\ttfamily}
+\renewcommand\cftsubsecfont{\ttfamily}
+\renewcommand\cftsubsubsecfont{\ttfamily}
+\renewcommand\cftdot{}
+\setlength\cftbeforesecskip{0.5em}
+\setlength\cftbeforesubsecskip{0em}
+\setlength\cftaftertoctitleskip{1.5em}
+\setlength\cftsecindent{0em}
+\setlength\cftsubsecindent{6.85em}
+\setlength\cftsubsubsecindent{13.7em}
+
+\renewcommand{\cftpnumalign}{l}
+%\let\origcftsecpagefont\cftsecpagefont
+%\renewcommand{\cftsecpagefont}{\thesection .\origcftsecpagefont}
+%\let\origcftsubsecpagefont\cftsubsecpagefont
+%\renewcommand{\cftsubsecpagefont}{\thesection .\origcftsubsecpagefont}
+%\let\origcftsubsubsecpagefont\cftsubsubsecpagefont
+%\renewcommand{\cftsubsubsecpagefont}{\thesection .\origcftsubsubsecpagefont}
+
+\renewcommand{\cftsecafterpnum}{\hspace*{3em}}
+\renewcommand{\cftsubsecafterpnum}{\hspace*{1.5em}}
+\renewcommand{\cftsubsubsecafterpnum}{\hspace*{0em}}
 
 \setlength\parindent{5.27em}
 \setlength{\parskip}{0em}
@@ -74,7 +100,8 @@
 
 \renewcommand\contentsname{\ttfamily \hskip 13em \uline{INDICE}\\
 \\
-\uline{Assunto} \hskip 22.5em \uline{Página}}
+\uline{Assunto} \hskip 22.5em \uline{Página}\\[-0.5em]}
+
 \tableofcontents
 
 \newpage
@@ -167,7 +194,7 @@ programação.
 
 \phantomsection
 \subsection*{1. \uline{Bases de Numeração}}
-\addcontentsline{toc}{subsection}{\hskip 5em Bases de Numeração}
+\addcontentsline{toc}{subsection}{Bases de Numeração}
 
 Utiliza-se, na vida diária, a base decimal de numer\uline a\\
 ção para representar os números. Isto significa duas coisas:
@@ -226,7 +253,7 @@ balham sempre, em última análise, com a base dois.\\
 
 \phantomsection
 \subsection*{2. \uline{Bases mais empregadas em computação}}
-\addcontentsline{toc}{subsection}{\hskip 5em Bases mais empregadas em computação}
+\addcontentsline{toc}{subsection}{Bases mais empregadas em computação}
 
 Além da base dez, que é de uso geral, empregam-se co-\\
 mumente as seguintes bases:
@@ -283,7 +310,7 @@ decimais na base dois).
 \phantomsection
 \subsection*{3. \uline{Conversão de números entre as bases dois, dez e \ \ dezes-}\\
 \phantom \ \ \ \uline{seis}}
-\addcontentsline{toc}{subsection}{\hskip 5em Conversão entre as bases dois, dez \ e\\ dezesseis}
+\addcontentsline{toc}{subsection}{Conversão entre as bases dois, dez \ e\\ dezesseis}
 
 Conforme já se deve ter percebido, surge frequente -\\
 mente a necessidade de converter números escritos em uma \ base\\
@@ -522,7 +549,7 @@ Exemplo:
 
 \phantomsection
 \subsection*{4. \uline{Soma de números binários positivos}}
-\addcontentsline{toc}{subsection}{\hskip 5em Soma de números binários positivos}
+\addcontentsline{toc}{subsection}{Soma de números binários positivos}
 
 Realiza-se de forma inteiramente análoga à soma \ so-\\
 mum, de números decimais. Para ver isso, examine-se detalhada-\\
@@ -681,7 +708,7 @@ tes operações:
 
 \phantomsection
 \subsection*{5. \uline{Representação de números negativos}}
-\addcontentsline{toc}{subsection}{\hskip 5em Representação de números negativos}
+\addcontentsline{toc}{subsection}{Representação de números negativos}
 
 Obs.: Nos itens seguintes assume-se sempre que um n\uline ú\par
 \ \ \ \ \ \ mero tem oito bits de comprimento, quando \hfill for\par
@@ -823,7 +850,7 @@ De fato, tem-se:\\
 
 \phantomsection
 \subsection*{6. \uline{Aritmética no Patinho Feio}}
-\addcontentsline{toc}{subsection}{\hskip 5em Aritmética no Patinho Feio}
+\addcontentsline{toc}{subsection}{Aritmética no Patinho Feio}
 
 Já foi visto como somar números binários positivos e\\
 como representar números negativos em oito bits. Deste \ modo ,\\
@@ -1138,7 +1165,43 @@ Tome-se agora o seguinte exemplo: \ 42 - 27 = 15\\
 
 \newpage
 
+Pode-se, portanto, realizar qualquer soma e subtração de n\uline ú\\
+meros de oito bits no Patinho Feio, obtendo-se não apenas o\\
+resultado em oito bits na mesma notação de complemento \hfill de\\
+dois usada nos operandos, como também um \uline{vai-um} para \hfill fun-\\
+cionar como eventual nono bit da soma e uma \uline{indicaçao\hfill de}\\
+\uline{transbordo} que mostra se o resultado obtido está ou\hfill não\\
+correto.\\
 \end{enumerate}
+
+\vspace{-1em}
+
+\phantomsection
+\subsection*{7. \uline{Blocos e diagramas lógicos}}
+\addcontentsline{toc}{subsection}{Blocos e Diagramas Lógicos}
+
+\vspace{1em}
+
+Como serão apresentados mais adiante diagramas lógi-\\
+cos e funções lógicas executadas pelo Patinho Feio,tem-se aba\uline i\\
+xo, um pequeno resumo:\\[-0.5em]
+
+\begin{enumerate}[label=\alph*), align=left, leftmargin=1.5em, labelsep=-0.5em, itemsep=1em, topsep=1em]
+\item Uma \uline{variável} lógica é uma variável que pode assumir dois v\uline a\\
+lores, geralmente chamados de 0(zero) e 1(um),ou F(falso) e\\
+V(verdadeiro),ou OFF(desligado) e ON(ligado).
+\item Uma \uline{função} lógica associa a cada conjunto de valores de suas\\
+variáveis um dos dois valores citados (valor lógico).
+\end{enumerate}
+
+Algumas funções são muito utilizadas e têm inclusive\\
+representação gráfica como um bloco lógico:\\
+
+
+
+
+
+
 
 
 

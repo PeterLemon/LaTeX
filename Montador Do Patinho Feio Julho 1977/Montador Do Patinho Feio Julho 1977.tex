@@ -59,6 +59,8 @@
 
 \usepackage{pifont}
 
+\usepackage{circuitikz}
+
 \frenchspacing
 
 \begin{document}
@@ -1196,14 +1198,126 @@ variáveis um dos dois valores citados (valor lógico).
 
 Algumas funções são muito utilizadas e têm inclusive\\
 representação gráfica como um bloco lógico:\\
+\\
+\phantom \ \ \ \ \d{o}\\[-1.2em]
+\phantom \ \ \ 1 ) Função NOT (negação) \ \ \ \ bloco:\\[-1em]
 
+\vspace{-2em}
+\hskip 15.2em \begin{circuitikz}[scale=1, transform shape] \draw
+(0,0) node[not port] (not) {}
+(-1.5,0) to (not.in)
+(not.out) to (1.7,0)
 
+(-1,0.65) node{x}
+(1.1,0.65) node{NOT x};
+\end{circuitikz}\\[-2.2em]
 
+\hskip 2em \uline{Tabela para a função NOT}\\[-0.5em]
 
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 3em \begin{tabular}{r|l}
+&\\[-1em]
+\ x \ \ & \ x$^1$\, = NOT x\\[-0.2em]
+\hline
+&\\[-0.8em]
+0 \ \ & \ 1\\
+1 \ \ & \ 0\\[0.4em]
+\end{tabular}
 
+\newpage
 
+\hskip -3em \d{o}\\[-1.2em]
+\phantom \ \ \ 2 ) Função AND (e) \ \ \ \ \ bloco:\\[-1em]
 
+\vspace{-2em}
+\hskip 13.7em \begin{circuitikz}[scale=1, transform shape] \draw
+(0,0) node[and port] (and) {}
+(and.in 1) node[anchor=east] {x}
+(and.in 2) node[anchor=east] {y}
+(and.out) node[anchor=west] {x AND y};
+\end{circuitikz}\\[-0.5em]
 
+\hskip 7.5em \uline{Tabela}\\[-0.5em]
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 2em \begin{tabular}{r|l}
+&\\[-1em]
+x \ y \ \ & \ x . y = x AND y\\
+\hline
+&\\[-0.8em]
+0 \ 0 \ \ & \ \ \ 0\\
+0 \ 1 \ \ & \ \ \ 0\\
+1 \ 0 \ \ & \ \ \ 0\\
+1 \ 1 \ \ & \ \ \ 1\\[0.4em]
+\end{tabular}\\
+
+\hskip -1.5em x\,.\,y \,só é \uline{um} quando x \uline e y forem ambos \uline{um}.\\[1em]
+
+\hskip -3em \d{o}\\[-1.2em]
+\phantom \ \ \ 3 ) Função OR (ou) \ \ \ \ \ bloco:\\[-1em]
+
+\vspace{-2em}
+\hskip 13.7em \begin{circuitikz}[scale=1, transform shape] \draw
+(0,0) node[or port] (or) {}
+(or.in 1) node[anchor=east] {x}
+(or.in 2) node[anchor=east] {y}
+(or.out) node[anchor=west] {x OR y};
+\end{circuitikz}\\[-1em]
+
+\hskip 7.5em \uline{Tabela}\\[-0.5em]
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 2em \begin{tabular}{r|l}
+&\\[-1em]
+x \ y \ \ & \ x + y = x OR y\\
+\hline
+&\\[-0.8em]
+0 \ 0 \ \ & \ \ \ 0\\
+0 \ 1 \ \ & \ \ \ 1\\
+1 \ 0 \ \ & \ \ \ 1\\
+1 \ 1 \ \ & \ \ \ 1\\[0.4em]
+\end{tabular}\\
+
+\hskip -1.5em x\,+\,y \,vale \uline{um} quando pelo menos uma das variáveis valer\par
+\hskip -1.5em \uline{um}.\\[1em]
+
+\hskip -3em \d{o}\\[-1.2em]
+\phantom \ \ \ 4 ) Função NAND \ \ \ \ \ \ bloco:\\
+\phantom \ \ \ \ \ \ \ É um AND,seguido de um NOT.\\[-4.5em]
+
+\hskip 12.5em \begin{circuitikz}[scale=1, transform shape] \draw
+(0,0) node[nand port] (nand) {}
+(nand.in 1) node[anchor=east] {x}
+(nand.in 2) node[anchor=east] {y}
+(nand.out) node[anchor=west] {x NAND y};
+\end{circuitikz}\\[-1em]
+
+\hskip 7.5em \uline{Tabela}\\[-0.5em]
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 2em \begin{tabular}{r|l}
+&\\[-1em]
+x \ y \ \ & \ (x.y)$^1$\, = x NAND y\\
+\hline
+&\\[-0.8em]
+0 \ 0 \ \ & \ \ \ 1\\
+0 \ 1 \ \ & \ \ \ 1\\
+1 \ 0 \ \ & \ \ \ 1\\
+1 \ 1 \ \ & \ \ \ 0\\[0.4em]
+\end{tabular}\\
+
+\newpage
+
+\hskip -1.5em (x.y)$^1$\, vale um quando as duas variáveis não forem \hfill si-\par
+\hskip -1.5em multaneamente \uline{um}.\\
 
 
 

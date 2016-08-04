@@ -1319,6 +1319,71 @@ x \ y \ \ & \ (x.y)$^1$\, = x NAND y\\
 \hskip -1.5em (x.y)$^1$\, vale um quando as duas variáveis não forem \hfill si-\par
 \hskip -1.5em multaneamente \uline{um}.\\
 
+\hskip -3em \d{o}\\[-1.2em]
+\phantom \ \ \ 5 ) Função NOR \ \ \ \ \ bloco:\\
+\phantom \ \ \ \ \ \ \ É um OR,seguido de um NOT.\\[-4.5em]
+
+\hskip 11.5em \begin{circuitikz}[scale=1, transform shape] \draw
+(0,0) node[nor port] (nor) {}
+(nor.in 1) node[anchor=east] {x}
+(nor.in 2) node[anchor=east] {y}
+(nor.out) node[anchor=west] {x NOR y};
+\end{circuitikz}\\
+
+\hskip 7em \uline{Tabela}\\[-0.5em]
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 1em \begin{tabular}{r|l}
+&\\[-1em]
+x \ y \ & \ (x+y)$^1$\, = x NOR y\\
+\hline
+&\\[-0.8em]
+0 \ 0 \ & \ \ \ 1\\
+0 \ 1 \ & \ \ \ 0\\
+1 \ 0 \ & \ \ \ 0\\
+1 \ 1 \ & \ \ \ 0\\[0.4em]
+\end{tabular}\\
+
+\hskip -1.5em (x+y)$^1$\, só vale \uline{um} se x e y forem ambos \uline{zero}.\\[1em]
+
+\hskip -3em \d{o}\\[-1.2em]
+\phantom \ \ \ 6 ) Função XOR (ou exclusivo) \ \ \ \ bloco:\\[-3em]
+
+\hskip 16.5em \begin{circuitikz}[scale=1, transform shape] \draw
+(0,0) node[xor port] (xor) {}
+(xor.in 1) node[anchor=east] {x}
+(xor.in 2) node[anchor=east] {y}
+(xor.out) node[anchor=west] {x XOR y};
+\end{circuitikz}\\[-0.5em]
+
+\hskip 7em \uline{Tabela}\\[-0.5em]
+
+\setlength{\arrayrulewidth}{0.1em}
+\setlength{\tabcolsep}{0.5em}
+\renewcommand{\arraystretch}{1}
+\hskip 1em \begin{tabular}{r|l}
+&\\[-1em]
+x \ y \ \ & \ x\,\,\textcircled{+}\,\,y = x XOR y\\
+\hline
+&\\[-0.8em]
+0 \ 0 \ \ & \ \ \ 0\\
+0 \ 1 \ \ & \ \ \ 1\\
+1 \ 0 \ \ & \ \ \ 1\\
+1 \ 1 \ \ & \ \ \ 0\\[0.4em]
+\end{tabular}\\
+
+\hskip -1.5em x\,\,\textcircled{+}\,\,y vale \uline{um} quando x tiver um valor diferente de y.\\[2em]
+
+\hskip -5.5em c) Diagramas lógicos:\\
+
+\noindent \ \ Um diagrama lógico é um conjunto de blocos lógicos interli-\\
+\phantom \ \ gados de forma a constituir uma função lógica.\\
+
+\newpage
+
+\noindent Exemplo:
 
 
 

@@ -13,13 +13,16 @@ Special thanks to Krzysztof Kowalczyk, for making the Sumatra PDF reader.<br />
 A free high quality & fully featured portable PDF viewer:<br />
 http://www.sumatrapdfreader.org/<br />
 <br />
-Howto Compile:<br />
+Howto Compile On Windows (MiKTeX):<br />
 All the code compiles into a single document (DOCUMENTNAME.pdf) file.<br />
 1. Using MiKTeX: Run TeXworks<br />
 2. File/Open DOCUMENTNAME.tex (Make sure you have copied "/images" directory & Fonts)<br />
 3. Change the box next to the "Play Button" from "pdfLaTeX+MakeIndex+BibTeX" to "XeLaTeX+MakeIndex+BibTeX"<br />
 4. Press the "Play Button" to compile the PDF document.<br />
 (You will be prompted to automatically download & install libs if MiKTeX is fresh, just let it install what it needs to compile)<br />
+<br />
+Howto Compile On Linux (TeX Live):<br />
+Use this command: xelatex source.tex<br />
 <br />
 Howto Run:<br />
 MiKTeX has an in-built PDF viewer that displays compiled results, but you can view the PDF files using any viewer.<br />

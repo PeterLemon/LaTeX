@@ -22,7 +22,7 @@ All the code compiles into a single document (DOCUMENTNAME.pdf) file.<br />
 (You will be prompted to automatically download & install libs if MiKTeX is fresh, just let it install what it needs to compile)<br />
 <br />
 Howto Compile On Linux (TeX Live):<br />
-Use this command: xelatex source.tex<br />
+Use this command: xelatex DOCUMENTNAME.tex<br />
 <br />
 Howto Run:<br />
 MiKTeX has an in-built PDF viewer that displays compiled results, but you can view the PDF files using any viewer.<br />

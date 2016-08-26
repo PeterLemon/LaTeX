@@ -14,27 +14,29 @@
 
 \Large
 \noindent \\
-Blur Ino\medskip
+Density Ino\medskip
 \par
 \normalsize
-Blurs the image.\\
-\par
-We use a Gaussian distribution, for the blur method.\par
-Therefore, there is no directional result in the image.\\
-\par
-Alpha channel will be processed.\\
+Adjusts the concentration of a semi-transparent image.\par
+It was created in order to emphasize the streamlined touch effect for lines.\par
+The Alpha channel requires semi-transparent values.\\
 \\
 --- \ Inputs \ ---\\
 Source\par
 Connect the image to process.\\
-\\
 Reference\par
 Connect the reference image to put the strength of the effect into each Pixel.\\
 \\
 --- \ Settings \ ---\\
-Radius\par
-Specifies the radius of the blur.\par
-The unit is mm.\\
+Density\par
+Specifies the concentration.\par
+Concentration for the semi-transparent Pixel of the image will change.\par
+Specify a value greater than or equal to 0. The maximum is 10.\par
+When using a value greater than 1, the image will be darker.\par
+It does not change at an equal concentration when above 1.\par
+When using a value greater than 0 and smaller than 1, the image will be thinner.\par
+When using a concentration value of 0 the image will disappear.\par
+The default value is 1.\\
 \\
 Reference\par
 Choose how Reference image values put the strength of the effect into each Pixel.\par

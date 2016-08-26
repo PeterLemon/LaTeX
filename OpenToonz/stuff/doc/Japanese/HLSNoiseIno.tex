@@ -1,0 +1,143 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper, total={180mm, 272mm}]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{ipaexm.ttf}
+
+\setlength\parindent{4.2em}
+\setlength\parskip{0em}
+\renewcommand{\baselinestretch}{1.247}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\Large
+\noindent \\
+HLS Noise Ino\medskip
+\par
+\normalsize
+色相、明度、彩度、Alpha にドットノイズを加えます。\par
+セル画調の絵にノイズを加え、背景の絵に馴染ませることを目的と\par
+して開発しました。\\
+\par
+Alpha チャンネルによってノイズの強さが決まります。よって、滑\par
+らかなエッジは滑らかなままです。\par
+Alpha チャンネル自身のノイズの強さも、自身の値を見ます。\\
+\par
+結果をチェックするときは、サブカメラを使わないでください。\par
+サブカメラは入力画像の範囲が違うため、ノイズパターンが変わっ\par
+てしまいます。\\
+\\
+--- \ 入力 \ ---\\
+Source\par
+処理をする画像を接続します。\\
+Reference\par
+Pixel 毎に効果の強弱をつけるための参照画像を接続します。\\
+\\
+--- \ 設定 \ ---\\
+Hue\par
+色相(hue)についてノイズの強さを指定します。\par
+Pixel 値(8 or 16bits)をゼロから1の値として指定します。\par
+最小は0、最大は1です。\par
+0のときは色相(hue)に対するノイズがかかりません。\par
+初期値は0.025です。\\
+\\
+Lightness\par
+明度(lightness)についてノイズの強さを指定します。\par
+Pixel 値(8 or 16bits)をゼロから1の値として指定します。\par
+最小は0、最大は1です。\par
+0のときは明度(lightness)に対するノイズがかかりません。\par
+初期値は0.035です。\\
+\\
+Saturation\par
+彩度(saturation)についてノイズの強さを指定します。\par
+Pixel 値(8 or 16bits)をゼロから1の値として指定します。\par
+最小は0、最大は1です。\par
+0のときは彩度(saturation)に対するノイズがかかりません。\par
+初期値は0.0です。
+
+\newpage
+
+\thispagestyle{empty}
+
+\ \vspace{-0.2em}
+\par
+\noindent Alpha\par
+Alpha チャンネルについてノイズの強さを指定します。\par
+Pixel 値(8 or 16bits)をゼロから1の値として指定します。\par
+最小は0、最大は1です。\par
+0のときは Alpha チャンネルに対するノイズがかかりません。\par
+初期値は0.0です。\\
+\\
+Seed\par
+画像のノイズパターンを決定するための値です。\par
+ゼロ以上の整数値を指定します。\par
+この値が同じであれば、パターンを再現します。\par
+違う値でノイズを加えれば違うパターンになります。\par
+初期値は1です。\\
+\\
+NBlur\par
+ノイズ成分をぼかして、ドット感を減らします。\par
+最小は0、最大は1です。\par
+ドットに隣接するピクセルだけで計算しているので、非\par
+常に軽いボカシの感じになります。\par
+ゼロだとボカシはかからず、1.0で隣接するピクセルとの\par
+平均をとります。\par
+初期値は1です。\\
+\\
+Limits\par
+明度(Lightness), 彩度(Saturation), 不透明度(Alpha)の、\par
+端値(0 or 1付近)に対する効果調整をします。\par
+ゼロや1付近でノイズをかけると、ゼロ以下あるいは1以上の値が\par
+現われますが、表現できないので、それぞれゼロあるいは1に切り\par
+詰められます。その切り詰めを補填する効果です。\par
+--> "端値における Noise 効果調整 \ \ 図1 \ \ 比較"参照\par
+--> "端値における Noise 効果調整 \ \ 図2 \ \ 説明"参照\\
+\par
+\noindent \ \ \, Effective\par
+この効果(Limits)の強さを決めます。\par
+ゼロならなにも効果はありません。ゼロより大きい値で効果が表\par
+われます。1が最強です。\par
+初期値はゼロです。\\
+\par
+\noindent \ \ \, Center\par
+効果の中心です。\par
+ノイズ範囲のずれ幅、あるいは、ノイズ幅の減少の効果は、ゼロ\par
+あるいは1の端値の部分で最も強く、中心では効果がありません。
+
+\newpage
+
+\thispagestyle{empty}
+
+\ \vspace{-0.2em}
+\par
+この効果のない中心値の位置をきめます。\par
+ゼロから1の間で指定します。\par
+ゼロだと、値がゼロの Pixel には効果がでなくなります。\par
+1だと、値が1の Pixel には効果がでなくなります。\par
+初期値は0.5が中心です。\\
+\par
+\noindent \ \ \, Type\par
+効果のタイプを撰択します。\par
+"Keep Noise"を選ぶと、(全体的に)ノイズ範囲をずらしノイズ幅\par
+を維持、画像全体のコントラストは縮小します。\par
+"Keep Contrast"を選ぶと、端のみでノイズ幅を減らしコントラス\par
+トを維持します。\par
+初期値は"Keep Noise"です。\\
+\\
+Premultiply\par
+ON なら、RGB に対して Premultiply 済の\par
+（Alpha チャンネルの値があらかじめ RGB チャンネルに乗算されている)\par
+画像として処理します。\par
+そのとき、Alpha にも処理を加えてしまうと、正しい画像にならない場合があります。\par
+初期値は ON です。\\
+\\
+Reference\par
+Pixel 毎に効果の強弱をつけるための参照画像の値の取り方を選択します。\par
+入力の"Reference"に画像を接続し、\par
+Red/Green/Blue/Alpha/Luminance/Nothing から選びます。\par
+この効果をつけたくないときは Nothing を選ぶか、接続を切ります。\par
+初期値は Red です。
+
+\end{document}

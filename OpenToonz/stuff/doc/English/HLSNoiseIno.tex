@@ -1,0 +1,143 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper, total={180mm, 272mm}]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{ipaexm.ttf}
+
+\setlength\parindent{4.2em}
+\setlength\parskip{0em}
+\renewcommand{\baselinestretch}{1.247}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\Large
+\noindent \\
+HLS Noise Ino\medskip
+\par
+\normalsize
+Add pixel noise to the Hue, Lightness, Saturation, Alpha.\par
+The addition of noise adjustment to the cell picture, has been developed\par
+for the purpose of adapting the picture of the background.\\
+\par
+The Alpha channel will determine the strength of the noise. Therefore,\par
+smooth edges will remain smooth.\par
+The strength of the Alpha channel itself will also affect noise, check the value.\\
+\par
+When you check the results, please do not use the sub-camera.\par
+This is because in the sub-camera the range of the input image is different,\par
+the noise pattern will change.\\
+\\
+--- \ Inputs \ ---\\
+Source\par
+Connect the image to process.\\
+Reference\par
+Connect the reference image to put the strength of the effect into each Pixel.\\
+\\
+--- \ Settings \ ---\\
+Hue\par
+Specify the strength of the noise for the color (Hue).\par
+Pixel value (8 or 16bits) specified as a value from 1 to 0.\par
+Minimum value is 0, maximum value is 1.\par
+It does not apply the noise to the color (Hue) when the value is 0.\par
+The default value is 0.025.\\
+\\
+Lightness\par
+Specify the strength of the noise for the brightness (Lightness).\par
+Pixel value (8 or 16bits) specified as a value from 1 to 0.\par
+Minimum value is 0, maximum value is 1.\par
+It does not apply the noise to the brightness (Lightness) when the value is 0.\par
+The default value is 0.035.\\
+\\
+Saturation\par
+Specify the strength of the noise for the chroma (Saturation).\par
+Pixel value (8 or 16bits) specified as a value from 1 to 0.\par
+Minimum value is 0, maximum value is 1.\par
+It does not apply the noise for the chroma (Saturation) when the value is 0.\par
+The default value is 0.0.
+
+\newpage
+
+\thispagestyle{empty}
+
+\ \vspace{-0.2em}
+\par
+\noindent Alpha\par
+Specify the strength of the noise for the Alpha channel.\par
+Pixel value (8 or 16bits) specified as a value from 1 to 0.\par
+Minimum value is 0, maximum value is 1.\par
+It does not apply the noise to the Alpha channel when the value is 0.\par
+The default value is 0.0.\\
+\\
+Seed\par
+The value of the order to determine the random noise pattern of the image.\par
+Specify an integer value greater than or equal to 0.\par
+If this value is the same, it will reproduce the same pattern.\par
+It will be a different pattern If you add the noise with a different value.\par
+The default value is 1.\\
+\\
+NBlur\par
+It blurs the noise component, reduces the dot  impression.\par
+Minimum value is 0, maximum value is 1.\par
+Because it is calculated only in pixels adjacent to the dot,\par
+it will feel like a very light blur.\par
+When the blur value is not 0, it will take the average of the pixels adjacent\par
+to each other up to a value of 1.0.\par
+The default value is 1.\\
+\\
+Limits\par
+The brightness (Lightness), chroma (Saturation), opacity (Alpha),\par
+adjustment to effect the end value (in the vicinity of 0 to 1).\par
+Applying the noise at 0 or near 1, will appear below 1 or more than the value of 0,\par
+so it can not be expressed, because the values are each truncated to 0 or 1.\par
+It is effective to compensate for the truncation.\par
+--> "End value of Noise effect adjustment \ \ Figure 1 \ \ comparison" reference\par
+--> "End value of Noise effect adjustment \ \ Figure 2 \ \ description" reference\\
+\par
+\noindent \ \ \, Effective\par
+Determines the strength of this effect (Limits).\par
+It has no effect if the value is 0. Effect a table using a value greater than 0\par
+A value of 1 will have the strongest effect.\par
+The default value is 0.\\
+\par
+\noindent \ \ \, Center\par
+Determines the center of the effect.\par
+Noise range deviation, the effect of the reduction of the noise width, most strongly\par
+at the portion of 0 to 1 of the end value, will have no effect in the center.
+
+\newpage
+
+\thispagestyle{empty}
+
+\ \vspace{-0.2em}
+\par
+Position the center value without this effect.\par
+The value must be between 0 and 1.\par
+If the value is 0, it will have no effect on a Pixel with a value of 0.\par
+If the value is 1, it will have no effect on a Pixel with a value of 1.\par
+The default Center value is 0.5.\\
+\par
+\noindent \ \ \, Type\par
+Select from the options of the Type of the effect.\par
+If you select "Keep Noise", it maintains the (overall) noise width shifting of the\par
+noise range, the contrast of the entire image will shrink.\par
+If you select "Keep Contrast", it maintains the contrast to reduce the noise width\par
+only at the end.\par
+The default setting is "Keep Noise".\\
+\\
+Premultiplied\par
+If ON, RGB is already set to Premultiply\par
+(The value of Alpha channel is multiplied in advance RGB channels)\par
+and processes as an image.\par
+At that time, and added to the Alpha processing, you may not get the correct image.\par
+The default setting is ON.\\
+\\
+Reference\par
+Choose how Reference image values put the strength of the effect into each Pixel.\par
+An image is connected to the "Reference" of the input,\par
+Choose from Red/Green/Blue/Alpha/Luminance/Nothing.\par
+Choose Nothing when you do not want this effect, it will turn off the connection.\par
+The default value is Red.
+
+\end{document}

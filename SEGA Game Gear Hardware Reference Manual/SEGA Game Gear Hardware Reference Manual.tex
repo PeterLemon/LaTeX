@@ -6,15 +6,13 @@
 \usepackage{fontspec}
 \setmainfont{epmarugo.ttf}
 
-\graphicspath{{images/}}
-
 \usepackage[normalem]{ulem}
 \renewcommand{\ULthickness}{0.08em}
 
 \usepackage[compact]{titlesec}
 \titlespacing{\section}{0em}{*0}{0em}
 \titlespacing{\subsection}{0em}{*0}{*0}
-\titleformat{\section}{\normalfont\LARGE}{\thesection}{1em}{}
+\titleformat{\section}{\normalfont\huge}{\thesection}{1em}{}
 
 \setlength\parindent{2.5em}
 
@@ -29,6 +27,8 @@
 \usetikzlibrary{calc}
 
 \frenchspacing
+
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -52,7 +52,7 @@ SEGA Game Gear Console
 
 \fancyfoot[L]{Sega Game Gear Hardware Reference Manual (Rev1) Page \thepage}
 
-\renewcommand\contentsname{Table of Contents}
+\renewcommand\contentsname{\uline{Table of Contents}}
 \makeatletter
 \renewcommand*{\@dotsep}{-2}
 \makeatother
@@ -61,7 +61,7 @@ SEGA Game Gear Console
 \newpage
 
 \phantomsection
-\section*{\uline{Precautions for Hardware}}
+\section*{\scalebox{0.5}[1.0]{\uline{Precautions for Hardware}}}
 \addcontentsline{toc}{section}{1. Precautions for Hardware}
 
 \vspace{1.5em}
@@ -110,13 +110,13 @@ Example:\par
 \noindent 4. \ \ Interrupt\par
 An interrupt is synchronized with the video timing (at the completion of the effective area\\
 or at an arbitrary vertical position).\par
-This interrupt uses the Z80 mode 1 interrupt, hence "IM 1" is executed at the beginning of the\\
-program. \ A return from an interrupt routine is "RET".
+This interrupt uses the Z80 mode 1 interrupt, hence``IM 1''is executed at the beginning of the\\
+program. \ A return from an interrupt routine is``RET''\hskip -0.5em.
 
 \newpage
 
 \phantomsection
-\section*{\uline{System control port}}
+\section*{\scalebox{0.5}[1.0]{\uline{System control port}}}
 \addcontentsline{toc}{section}{2. System control port}
 
 \noindent ☆ Indicates the state after a power-on reset.\\
@@ -204,8 +204,8 @@ NINT & DPC6 & DPC5 & DPC4 & DPC3 & DPC2 & DPC1 & DPC0\\
 0: When PC6 is input, an NMI is generated at the fall of PC6.\\
 \phantom \ \ ☆ 1: The above operation is disabled.\\
 \par
-\ ※Be sure to set the status of this port to "1". \ When using this value, first, set the status\\
-to "1" after the first NMI is generated, then subsequently set it to "0".\\
+\ ※Be sure to set the status of this port to``1''\hskip -0.5em. \ When using this value, first, set the status\\
+to``1''after the first NMI is generated, then subsequently set it to``0''\hskip -0.5em.\\
 If you fail to do this, the next NMI will not be generated.\\
 
 \phantomsection
@@ -394,7 +394,7 @@ STROBE signal input (active Low)\\
 BUSY signal input (active High)\\
 ○ \ \ CLR\par
 \ Loader clear button input (active Low)\par
-When this button is pressed, LD7 to LD0 all become "0", the ACK signal becomes High, and the\\
+When this button is pressed, LD7 to LD0 all become``0''\hskip -0.5em, the ACK signal becomes High, and the\\
 BUSY signal becomes Low.
 
 \newpage
@@ -455,14 +455,14 @@ THE & ＊ & ＊ & ＊ & TRE & TLE & RIE & LEE & \ \ I/O port DDH\\
 \phantom \ \ \ TR1-1P TRIGGER right button \ \ TRE-EXT TRIGGER right button\\
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THE-EXT (Same as PC6 input)\\
 \\
-One bit is read to port as "1" when either there is nothing connected to the terminal or the\\
-corresponding switch is not pressed, and is read as "0" when the switch is pressed.
+One bit is read to port as``1''when either there is nothing connected to the terminal or the\\
+corresponding switch is not pressed, and is read as``0''when the switch is pressed.
 
 \newpage
 
 \phantomsection
-\section*{\uline{Material\\
-Using the ROM bank switching and backup RAM}}
+\section*{\scalebox{0.5}[1.0]{\uline{Material}}\\
+\scalebox{0.5}[1.0]{\uline{Using the ROM bank switching and backup RAM}}}
 
 \addcontentsline{toc}{section}{3. Material: Using the ROM bank switching and backup RAM}
 
@@ -648,7 +648,7 @@ Example:\par
 \newpage
 
 \phantomsection
-\section*{\uline{Material MAPPING}}
+\section*{\scalebox{0.5}[1.0]{\uline{Material MAPPING}}}
 \addcontentsline{toc}{section}{4. Material: MAPPING}
 
 \phantomsection
@@ -661,7 +661,8 @@ Example:\par
 \setlength{\tabcolsep}{0.5em}
 \noindent
 \hskip -0.5em \begin{tabular}{r|l|r|l|}
-\multicolumn{1}{c}{００００} & \multicolumn{1}{c}{} & \multicolumn{1}{r}{００} & \multicolumn{1}{c}{}\\[-1.2em]
+\multicolumn{1}{c}{００００} & \multicolumn{1}{c}{} & \multicolumn{1}{r}{００} & \multicolumn{1}{c}{}\\[-3.6em]
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{r}{} & \multicolumn{1}{c}{}\\
 \cline{2-2}
 \cline{4-4}
 & Cartridge \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ & 00,01,02,03,04,05 and 06\\[-1.2em]
@@ -670,11 +671,11 @@ Example:\par
 ４０００ & & ４０ &\\[-1.2em]
 \cdashline{2-2}[3pt/3pt]
 \cdashline{4-4}[3pt/3pt]
-& Cartridge & & 7E -- Read\\[-1.2em]
+& Cartridge & & 7E -{-} Read\\[-1.2em]
 & & & \ \ \ \ \ \ : V counter\\[-1.2em]
-& & & 7F -- Read\\[-1.2em]
+& & & 7F -{-} Read\\[-1.2em]
 & & & \ \ \ \ \ \ : H counter\\[-1.2em]
-& & & 7F -- Write\\[-1.2em]
+& & & 7F -{-} Write\\[-1.2em]
 & & & \ \ \ \ \ \ : PSG\\[-1.2em]
 & Area 1 & &\\[-1.2em]
 ８０００ & & ８０ &\\[-1.2em]
@@ -702,7 +703,7 @@ Never access data using an image address.
 \newpage
 
 \phantomsection
-\section*{\uline{Supplementary description for manual}}
+\section*{\scalebox{0.5}[1.0]{\uline{Supplementary description for manual}}}
 \addcontentsline{toc}{section}{5. Supplementary description for manual}
 
 \phantomsection
@@ -714,12 +715,12 @@ Never access data using an image address.
 \addcontentsline{toc}{subsubsection}{③ I/O port 02H (Read/Write) NMI}
 
 \noindent \ ③ I/O port 02H (Read/Write)\par
-{*} Normally, be sure to make the status of this port "1". \ When using this value, first,\\
-set the status to "1" after the first NMI is generated, then subsequently set it to "0".\\
+{*} Normally, be sure to make the status of this port``1''\hskip -0.5em. \ When using this value, first,\\
+set the status to``1''after the first NMI is generated, then subsequently set it to``0''\hskip -0.5em.\\
 If you fail to do this, the next NMI will not be generated.\\
 \\
 \uline{Addition:}\par
-An NMI is enabled after the execution of one command from when the port is set to "0".\\
+An NMI is enabled after the execution of one command from when the port is set to``0''\hskip -0.5em.\\
 This is to prevent the NMI from becoming active once again in the NMI routine.\\
 Normally, therefore, perform the following processing.\\
 \par
@@ -751,11 +752,11 @@ Mode setting for serial communications\\
 \\
 \uline{Addition:}\par
 When using this function (serial communications NMI), set NINT of I/O port 02H to the disable\\
-state ("1"). \ An NMI will be generated at the fall of the pulse at the NMI terminal.\\
+state (\hskip -0.5em``1''\hskip -0.5em). \ An NMI will be generated at the fall of the pulse at the NMI terminal.\\
 If, however, a serial communications NMI is generated, the NMI terminal will go LOW, preventing the\\
 next NMI from becoming active. \ The NMI terminal is made HIGH as a result of reading the data of I/O\\
 port 04H, so read the data each time an NMI is generated. \ If it is conceivable that the NMI\\
-terminal may already be LOW at the start of the communications, perform a "dummy" read operation\\
+terminal may already be LOW at the start of the communications, perform a``dummy''read operation\\
 once.\\
 
 \phantomsection
@@ -838,11 +839,11 @@ a momentary change in PC6.\\
 
 \noindent \ ③ Serial communications\par
 Serial communications can be performed in one of two single directions, from PC4 (output from\\
-one's own side) -> PC5 (input to opposite side), or from PC5 (input to one's own side) <- PC4\\
+one'\hskip -0.5ems own side) -> PC5 (input to opposite side), or from PC5 (input to one'\hskip -0.5ems own side) <- PC4\\
 (output from opposite side). \ Serial and parallel conversion and interrupt (NMI) generation\\
 (when data is received) accompanying the receiving or sending of data take place automatically when\\
 the hardware is connected to these terminals. \ To perform serial communications, set TON and RON of\\
-I/O port 05H to "1". \ By doing this, PC4 will automatically become the output, and PC5 the input.\\
+I/O port 05H to``1''\hskip -0.5em. \ By doing this, PC4 will automatically become the output, and PC5 the input.\\
 These settings will take priority over the PC4 and PC5 input/output settings. \ Bits other than those\\
 of PC4 and PC5 will become the settings of I/O port 02H. \ (Like (2), never make both terminals the\\
 output.) \ When performing serial communications only, be sure to set NINT of I/O port 02H to prevent\\
@@ -872,9 +873,11 @@ generate these NMI are shown below.\\
 \cline{8-8}
 \ \ \ ＰＣ６ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ & & SET \ \ \ & \ \ \ \ \ & \ \ \ \ \ & \ \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ & \ \ \ \ \ \\[-1.2em]
 \cline{2-2}
-& & & & & & & Z80\\[-1.2em]
+& & & & & & & Z80\\[-3.6em]
+& & & & & & &\\
 \cline{4-4}
-\ \ \ ＮＩＮＴ & & RESET & \multicolumn{1}{c|}{} & & & &\\[-1.2em]
+\ \ \ ＮＩＮＴ & & RESET & \multicolumn{1}{c|}{} & & & &\\[-3.6em]
+& & & \multicolumn{1}{c|}{} & & & &\\
 \cline{2-2}
 \cline{6-6}
 & & & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{OR and} & &\\[-1.2em]
@@ -882,7 +885,8 @@ generate these NMI are shown below.\\
 \cline{5-5}
 & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{inverted} & & NMI\\[-1.2em]
 \cline{7-7}
-& \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{output} & &\\[-1.2em]
+& \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{output} & &\\[-3.6em]
+& \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{} & &\\
 \cline{3-3}
 \cline{5-5}
 Receiving of serial data & & SET & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{l|}{} & &\\[-1.2em]
@@ -912,7 +916,7 @@ it is necessary to reset the set flip-flop so that the next NMI can be generated
 \newpage
 
 \phantomsection
-\section*{\uline{VDP Manual}}
+\section*{\scalebox{0.5}[1.0]{\uline{VDP Manual}}}
 \addcontentsline{toc}{section}{6. VDP Manual}
 
 \vspace{1em}
@@ -1006,7 +1010,7 @@ the LCD) if timing is within this area, the game program will be subjected to va
 \addcontentsline{toc}{subsection}{(3) Image display}
 
 \noindent (3) \ Image display\par
-Note: In the following description, there are bits that are fixed at "0" or "1", and should\\
+Note: In the following description, there are bits that are fixed at``0''or``1''\hskip -0.5em, and should\\
 remain in this default position.\\
 
 \phantomsection
@@ -1051,8 +1055,8 @@ VDP delay.
 \hskip 18.5em Meaningless\\
 \\
 ○ \ \ \ Interrupt flag (F)\par
-This flag is "1" when the effective area is completed. \ If, at this time, the IE bit of the VDP\\
-\phantom \ register \#1 is set to "1", the interrupt line from the VDP to the CPU will become Low, causing an\\
+This flag is``1''when the effective area is completed. \ If, at this time, the IE bit of the VDP\\
+\phantom \ register \#1 is set to``1''\hskip -0.5em, the interrupt line from the VDP to the CPU will become Low, causing an\\
 interrupt to be applied (generally called a V interrupt). \ If the program leaves the interrupt\\
 routine in this state, the interrupt will be applied again immediately (an interrupt of Z80 will not\\
 occur at the edge of plus, hence the status register will be read at the beginning of the interrupt\\
@@ -1069,15 +1073,15 @@ Example:\par
 \par
 {*} This flag is not set in the case of an interrupt (normally called an H interrupt) at an\\
 arbitrary vertical position, hence by checking this flag it is possible to identify two kinds of\\
-interrupts. \ A Z80 interrupt uses mode 1, hence "IM 1" is implemented.\\
+interrupts. \ A Z80 interrupt uses mode 1, hence``IM 1''is implemented.\\
 \\
 ○ \ \ \ 9th sprite (9S)\par
 If the 9th and higher sprites exist on the same horizontal line (in the effective area), and\\
-the interrupt flag (F) is "0", the 9S bit will be set to "1". \ (within the effective area)\\
+the interrupt flag (F) is``0''\hskip -0.5em, the 9S bit will be set to``1''\hskip -0.5em. \ (within the effective area)\\
 \\
 ○ \ \ \ Collision flag (C)\par
-This flag is set to "1" if dots of color codes other than 0, of two or more sprites collide\\
-(coincide). --In the effective area\\
+This flag is set to``1''if dots of color codes other than 0, of two or more sprites collide\\
+(coincide). -{-}In the effective area\\
 \par
 ※ The above flags are reset by a power-on reset and a status register read-out, and are\\
 renewed each frame. \ Once a flag is set, it will not be reset again apart from a power-on reset,\\
@@ -1115,7 +1119,7 @@ Second byte: Register Selection & １ & ０ & ０ & ０ & Ｒ３ & Ｒ２ & Ｒ�
 To set data in a VDP register, the data is inputted in the first byte. \ The second byte is used\\
 to indicate the register where the data is to be transferred.\par
 The bottom four bits (R3 to R0) of the second byte designate the data transfer destination\\
-registers (\#0 to \#10). \ b7 must be "1" and b6 to b4 must be "0".\\
+registers (\#0 to \#10). \ b7 must be``1''and b6 to b4 must be``0''\hskip -0.5em.\\
 Never attempt to access registers that do not exist (\#11 to \#15).\\
 \par
 Example: When setting E0H in register \#1\par
@@ -1147,7 +1151,7 @@ byte written after the program leaves the interrupt routine will be received as 
 
 \noindent d. \ \ Reading from VRAM\par
 The CPU reads data from the VRAM via the VDP. \ The addresses are auto-incremented.\\
-(See sub-section "Writing to VRAM".)
+(See sub-section``Writing to VRAM''\hskip -0.5em.)
 
 \vspace{0.5em}
 \setlength{\arrayrulewidth}{0.1em}
@@ -1171,7 +1175,7 @@ Necessary number of repetitions \ \ \ \ \ \ \ & & & & & & & &\\
 
 \vspace{2em}
 The bottom eight bits of the VRAM address are set up by the first byte.\par
-The top six bits are set up by the second byte. \ Be sure to set b7 and b6 to "0".\par
+The top six bits are set up by the second byte. \ Be sure to set b7 and b6 to``0''\hskip -0.5em.\par
 The data is read by the third byte.\par
 Once the address register has been set up, the data will be incremented automatically each time\\
 the third byte data is transferred.\\
@@ -1184,7 +1188,7 @@ Insert the same wait for reading the subsequent third bytes. \ This applies only
 the VDP displays a picture (effective area). \ In the following two cases, there is no need for any\\
 wait whatever. \ (This is the same as for a write operation to the VRAM.)\\
 \par
-○ When the blank bits of the VDP register \#1 are set to "0" and the screen is turned OFF.\\
+○ When the blank bits of the VDP register \#1 are set to``0''and the screen is turned OFF.\\
 \par
 ○ During the interval of 4.3 m from when an interrupt occurs upon completion of the effective\\
 area until the commencement of the next effective area.\\
@@ -1306,7 +1310,7 @@ Write 0FH \& 00H (bright red) and F0H \& 00H (bright green) from color RAM addre
 
 \newpage
 
-\noindent the screen will flicker. \ This cannot be avoided even by setting the BLANK bit to "0" to turn the\\
+\noindent the screen will flicker. \ This cannot be avoided even by setting the BLANK bit to``0''to turn the\\
 screen OFF. \ For this reason, write data to the color RAM during V blanking.\\
 
 \phantomsection
@@ -1318,7 +1322,7 @@ screen OFF. \ For this reason, write data to the color RAM during V blanking.\\
 \addcontentsline{toc}{subsubsection}{a. Register \#0, register \#1 (VDP control)}
 
 \noindent \ a. \ \ Register \#0, register \#1\par
-(These two registers are reset to "0" at power switch-on.)\\
+(These two registers are reset to``0''at power switch-on.)\\
 \\
 Register \#0
 
@@ -1548,7 +1552,7 @@ D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0 & \multicolumn{10}{l}{}\\
 \addcontentsline{toc}{subsubsection}{g. Register \#7 (backdrop color)}
 
 \noindent g. \ \ Register \#7\\
-\phantom \ \ \ (This register is set to "0" at power switch-on.) They are used to set the backdrop color.
+\phantom \ \ \ (This register is set to``0''at power switch-on.) They are used to set the backdrop color.
 
 \vspace{-0.7em}
 \setlength{\arrayrulewidth}{0.1em}
@@ -1572,7 +1576,7 @@ constitute the backdrop color.
 \addcontentsline{toc}{subsubsection}{h. Register \#8 (horizontal scroll)}
 
 \noindent h. \ \ Register \#8\par
-(This register is set to "0" at power switch-on.)\par
+(This register is set to``0''at power switch-on.)\par
 It is used to set the horizontal scroll.)
 
 \vspace{-0.7em}
@@ -1591,8 +1595,8 @@ Each time a value of 1 is set in this register, the scroll screen moves one dot 
 in the horizontal direction. \ The number of dots in the horizontal direction in the virtual area is\\
 256. \ Consequently, if a value of -1 (FFH) is set, the screen will move one dot to the left in the\\
 horizontal direction. \ This register is effective only for the scroll screen. \ It has no effect on\\
-sprites. \ The value written to this register is latched at the timing of the H counter F4H (see "\\
-(5) H counter, V counter"), then becomes active. \ Consequently, horizontal scrolling can be\\
+sprites. \ The value written to this register is latched at the timing of the H counter F4H (see``\\
+(5) H counter, V counter''\hskip -0.5em), then becomes active. \ Consequently, horizontal scrolling can be\\
 performed one line at a time by using an interrupt at an arbitrary vertical position to re-write the\\
 data.\\
 
@@ -1600,7 +1604,7 @@ data.\\
 \addcontentsline{toc}{subsubsection}{i. Register \#9 (vertical scroll)}
 
 \noindent i. \ \ Register \#9\par
-(This register is set to "0" at power switch-on.)\par
+(This register is set to``0''at power switch-on.)\par
 It is used to set the vertical scroll.)
 
 \vspace{-0.7em}
@@ -1626,7 +1630,7 @@ vertical scroll from being changed while display timing.\\
 \addcontentsline{toc}{subsubsection}{j. Register \#10 (interrupt)}
 
 \noindent j. \ \ Register \#10\par
-(This register is set to "1" at power switch-on.)\par
+(This register is set to``1''at power switch-on.)\par
 It is used to control an interrupt at an arbitrary vertical position.
 
 \vspace{-0.7em}
@@ -1652,7 +1656,7 @@ When 00H is set in the register, an interrupt is generated at every line, and wh
 in the register, an interrupt is generated at every second line.\\
 \par
 As an example, consider a method of horizontal scrolling as shown in the figure below.\\
-\phantom \ 1) \ After completion of the effective area, set "1" in IE1 of register \#0, and set 0BH in register\\
+\phantom \ 1) \ After completion of the effective area, set``1''in IE1 of register \#0, and set 0BH in register\\
 \#10. \ These values continue to be loaded in the down counter until line 511 appears.\\
 \\
 \phantom \ 2) \ An interrupt is generated after line 10 has been scanned. \ 0BH will be loaded in the down\\
@@ -1682,7 +1686,7 @@ register \#10.\\
 counter, then an interrupt is applied at each line. \ 09H is set in register \#8.\\
 \\
 \phantom \ 8) \ \ \ \ \ \ \ An interrupt is applied after line 119, and horizontal scroll 09H becomes effective.\\
-The horizontal scroll up to now is 07H. \ 0BH is set in register \#8. \ Subsequently, "0" is set in IE1\\
+The horizontal scroll up to now is 07H. \ 0BH is set in register \#8. \ Subsequently,``0''is set in IE1\\
 and the interrupt is disabled.\\
 \\
 ※ \ \ \ The value of register \#8 (horizontal scroll) becomes effective after H counter F4H (delayed by\\
@@ -1694,7 +1698,8 @@ arbitrary vertical position.
 \setlength{\tabcolsep}{0.5em}
 \renewcommand{\arraystretch}{2}
 \hskip 9em \begin{tabular}{|l|l}
-\multicolumn{1}{l}{} & \multicolumn{1}{l}{\ \ Line 24 horizontal scroll: 03H}\\[-1.2em]
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{\ \ Line 24 horizontal scroll: 03H}\\[-3.6em]
+\multicolumn{1}{l}{} & \multicolumn{1}{l}{}\\
 \cline{1-1}
 & \ \ Line 25 horizontal scroll: 05H\\[-1.2em]
 \cline{1-1}
@@ -1741,7 +1746,8 @@ Example: Setting the register\par
 \setlength{\tabcolsep}{0.5em}
 \renewcommand{\arraystretch}{2}
 \hskip 1em \begin{tabular}{r|l|l}
-\multicolumn{1}{r}{００００} & \multicolumn{1}{l}{} &\\[-1.2em]
+\multicolumn{1}{r}{００００} & \multicolumn{1}{l}{} &\\[-3.6em]
+\multicolumn{1}{r}{} & \multicolumn{1}{l}{} &\\
 \cline{2-2}
 & Pattern generator table \ & \ \ \ \ \ The pattern generator table is\\[-1.2em]
 & ( to 37FFH ) & the area for defining the characters\\[-1.2em]
@@ -1759,7 +1765,7 @@ Example: Setting the register\par
 & & hence the characters from character 0,\\[-1.2em]
 & & character 1, etc., are located at intervals\\[-1.2em]
 ２０００ & & of 20H from address 2000H. \ The part of the\\[-1.2em]
-\cdashline{2-2}[3pt/3pt]\\[-2.4em]
+\cdashline{2-2}[3pt/3pt]
 & Sprite generator table & VRAM after 2000H is shared, hence character 0\\[-1.2em]
 & ( to 37FFH ) & of the sprite is the same as character 256\\[-1.2em]
 & & on the scroll screen. \ Normally, the scroll\\[-1.2em]
@@ -1777,11 +1783,9 @@ Example: Setting the register\par
 & Two bytes per cell & 32 (horizontal) x 28 (vertical) x 2 = 1792 bytes.\\[-1.2em]
 ３Ｆ００ & &\\[-1.2em]
 \cline{2-2}
-& Sprite attribute table & This is the sprite control area.\\
+& Sprite attribute table & This is the sprite control area.\\[-1.2em]
+３ＦＦＦ & &\\[-1.2em]
 \cline{2-2}
-&\\[-3.6em]
-３ＦＦＦ & \multicolumn{1}{l}{} &\\[-2.4em]
-&\\[-1.2em]
 \end{tabular}
 
 \newpage
@@ -1807,7 +1811,8 @@ Example: Setting the register\par
 \multicolumn{2}{r|}{↑} & \multicolumn{3}{l|}{\ \ 0(1st byte,2nd byte) ....................................................... \ 31}\\[-1.2em]
 & & \multicolumn{3}{l|}{\ 32 .......................................................................... \ 63}\\[-1.2em]
 & & \multicolumn{3}{l|}{\ 64 \ 65 \ 66 \ 67 \ 68 \ 69 ................................... 90 \ 91 \ 92 \ 93 \ 94 \ 95}\\[-1.2em]
-& & \multicolumn{3}{l|}{\ \ . \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .}\\[-1.2em]
+& & \multicolumn{3}{l|}{\ \ . \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .}\\[-3.6em]
+& & \multicolumn{3}{l|}{}\\
 \cline{4-4}
 & & \ \ . Virtual area \ \ \ \ \ \ \ \ & 102 ...................... 121 & \ (When scrolling \ \ \ \ \ \ .\\[-1.2em]
 & & \ \ . 32 rows x 28 lines & 134 ...................... 153 & \ \ is not taking place) .\\[-1.2em]
@@ -1963,20 +1968,26 @@ to correspond to four planes.)
 & & & \ \ \ \ \ \ \ \ \ \ \ & & \ \ \ & & \ \ \ & \multicolumn{2}{|r|}{0th byte \ \ \ }\\
 \cline{7-10}
 & & & & & & \multicolumn{3}{|r|}{1st byte \ \ } & \multicolumn{1}{c;{3pt/3pt}}{}\\[-1.2em]
-& & & & & & \multicolumn{3}{|r|}{} & \multicolumn{1}{l;{3pt/3pt}}{ Group 0}\\[-1.2em]
+& & & & & & \multicolumn{3}{|r|}{} & \multicolumn{1}{l;{3pt/3pt}}{ Group 0}\\[-3.6em]
+& & & & & & \multicolumn{3}{|r|}{} & \multicolumn{1}{l;{3pt/3pt}}{}\\
 \cline{5-9}
 & & & & \multicolumn{3}{|c|}{2nd byte} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{1}{l;{3pt/3pt}}{ \ \ (C0)}\\[-1.2em]
-& & & & \multicolumn{3}{|c|}{} & \multicolumn{2}{l;{3pt/3pt}}{ Group 1} & \multicolumn{1}{c;{3pt/3pt}}{}\\[-1.2em]
+& & & & \multicolumn{3}{|c|}{} & \multicolumn{2}{l;{3pt/3pt}}{ Group 1} & \multicolumn{1}{c;{3pt/3pt}}{}\\[-3.6em]
+& & & & \multicolumn{3}{|c|}{} & \multicolumn{2}{l;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{}\\
 \cline{2-2}
 \cline{4-7}
-\multicolumn{2}{r}{↑} & & \multicolumn{2}{|c|}{3rd byte} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{2}{l;{3pt/3pt}}{ \ \ (C1)} & \multicolumn{1}{c;{3pt/3pt}}{}\\[-1.2em]
+\multicolumn{2}{r}{↑} & & \multicolumn{2}{|c|}{3rd byte} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{2}{l;{3pt/3pt}}{ \ \ (C1)} & \multicolumn{1}{c;{3pt/3pt}}{}\\[-3.6em]
+\multicolumn{2}{r}{} & & \multicolumn{2}{|c|}{} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{2}{l;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{}\\
 \cline{10-10}
-& & & \multicolumn{2}{|c|}{} & \multicolumn{2}{l;{3pt/3pt}}{Group 2} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{1}{c|}{28th byte \ }\\[-1.2em]
+& & & \multicolumn{2}{|c|}{} & \multicolumn{2}{l;{3pt/3pt}}{Group 2} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{1}{c|}{28th byte \ }\\[-3.6em]
+& & & \multicolumn{2}{|c|}{} & \multicolumn{2}{l;{3pt/3pt}}{} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{1}{c|}{}\\
 \cline{4-5}
-\multicolumn{2}{r}{8 \ } & & \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{2}{l;{3pt/3pt}}{ \ (C2)} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{1}{c|}{}\\[-1.2em]
+\multicolumn{2}{r}{8 \ } & & \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{2}{l;{3pt/3pt}}{ \ (C2)} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{1}{c|}{}\\[-3.6em]
+\multicolumn{2}{r}{} & & \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{2}{l;{3pt/3pt}}{} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{1}{c|}{}\\
 \cline{8-10}
 \multicolumn{3}{r}{dots} & \multicolumn{2}{;{3pt/3pt}r;{3pt/3pt}}{Group 3 \ \ \ } & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{2}{c|}{29th byte \ } &\\[-1.2em]
-& & & \multicolumn{2}{;{3pt/3pt}r;{3pt/3pt}}{(C3) \ \ \ \ } & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{2}{c|}{} & \\[-1.2em]
+& & & \multicolumn{2}{;{3pt/3pt}r;{3pt/3pt}}{(C3) \ \ \ \ } & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{2}{c|}{} & \\[-3.6em]
+& & & \multicolumn{2}{;{3pt/3pt}r;{3pt/3pt}}{} & & \multicolumn{1}{l;{3pt/3pt}}{} & \multicolumn{2}{c|}{} & \\
 \cline{6-9}
 & & & \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{2}{c|}{30th byte \ } & & &\\
 \cline{4-7}
@@ -1984,7 +1995,8 @@ to correspond to four planes.)
 \cline{2-2}
 \cline{4-5}
 & & & & & & & & &\\[-2.5em]
-& & & \multicolumn{2}{c}{← \ \ \ 8 dots \ \ \ →} & & & & &\\[-1.5em]
+& & & \multicolumn{2}{c}{← \ \ \ 8 dots \ \ \ →} & & & & &\\[-3.9em]
+& & & \multicolumn{2}{c}{} & & & & &\\
 & & & \multicolumn{2}{|c|}{} & & & & &\\[-2em]
 \end{tabular}
 
@@ -2000,7 +2012,8 @@ to correspond to four planes.)
 \setlength{\tabcolsep}{0.5em}
 \renewcommand{\arraystretch}{2}
 \hskip 5em \begin{tabular}{rrrrrr|r|}
-ADDRESS & ＋０ & ＋１ & ＋２ & ＋３ & \multicolumn{2}{c}{}\\[-1.2em]
+ADDRESS & ＋０ & ＋１ & ＋２ & ＋３ & \multicolumn{2}{c}{}\\[-3.6em]
+& & & & & \multicolumn{2}{c}{}\\
 \cline{7-7}
 ００００ & ＡＡ & ＣＣ & Ｆ０ & Ｆ０ & \ \ \ \ \ \ \ \ \ 0 & ＦＥＤＣ３２１０\\[-1.2em]
 ０００４ & ０１ & ０２ & ０４ & ０８ & 1 & ００００８４２１\\[-1.2em]
@@ -2052,8 +2065,8 @@ Address \ & C3 C2 C1 C0 & Component & & Address \ & C3 C2 C1 C0 & Component\\
 \cline{1-3}
 \cline{5-7}
 \multicolumn{1}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{}\\
-\multicolumn{1}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{}\\
 \multicolumn{1}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{}\\[-1.2em]
+\multicolumn{1}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{}\\
 \cline{1-3}
 \cline{5-7}
 １ＥＨ & & Red \& Green & & ３ＥＨ & & Red \& Green\\[-1.2em]
@@ -2101,15 +2114,18 @@ displayed, set E0H in the corresponding vertical position.\par
 \setlength{\tabcolsep}{0.5em}
 \renewcommand{\arraystretch}{2}
 \hskip 1em \begin{tabular}{rccl}
-３Ｆ００ & \multicolumn{3}{c}{}\\[-1.2em]
+３Ｆ００ & \multicolumn{3}{c}{}\\[-3.6em]
+& \multicolumn{3}{c}{}\\
 \cline{2-3}
 & \multicolumn{2}{|l|}{ Vertical posi \ \ } & (Sprite 0)\\
 \cline{2-3}
 & \multicolumn{2}{|l|}{ Vertical posi} & (Sprite 1)\\
 \cline{2-3}
-& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-1.2em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-3.6em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\
 & \multicolumn{1}{;{3pt/3pt}c;{3pt/3pt}}{ \ \ \ \ \ \ } & \multicolumn{1}{c;{3pt/3pt}}{} &\\
-& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-1.2em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-3.6em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\
 \cline{2-3}
 & \multicolumn{2}{|l|}{ Vertical posi} & (Sprite 62)\\
 \cline{2-3}
@@ -2127,9 +2143,11 @@ displayed, set E0H in the corresponding vertical position.\par
 \cline{2-3}
 & \multicolumn{2}{|l|}{ Character No.} & (Sprite 1)\\
 \cline{2-3}
-& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-1.2em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-3.6em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\
 & \multicolumn{1}{;{3pt/3pt}c;{3pt/3pt}}{} & \multicolumn{1}{c;{3pt/3pt}}{} &\\
-& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-1.2em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\[-3.6em]
+& \multicolumn{2}{;{3pt/3pt}c;{3pt/3pt}}{} &\\
 \cline{2-3}
 & \multicolumn{2}{|l|}{Horizontal posi} & (Sprite 63)\\
 \cline{2-3}
@@ -2171,7 +2189,8 @@ transparent, even if color data is set in it.
 \renewcommand{\arraystretch}{2}
 \hskip -0.5em \begin{tabular}{rcccl}
 \multicolumn{5}{l}{ \ \ \ \ \ \ \ \ \ \ \ ３０Ｈ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ＣＦＨ \ \ \ \ \ The coordinate system of a sprite is}\\[-1.2em]
-１７Ｈ & \multicolumn{3}{c}{} & as shown in the figure at left.\\[-1.2em]
+１７Ｈ & \multicolumn{3}{c}{} & as shown in the figure at left.\\[-3.6em]
+& \multicolumn{3}{c}{} &\\
 \cline{2-4}
 & \multicolumn{3}{|l|}{ LCD display area} & It is displayed so that the dot at the top\\[-1.2em]
 Vertical \ \ \ & \multicolumn{3}{|l|}{ \ \ \ \ \ \ \ (scroll screen) \ \ \ } & left of the sprite is located at the top\\[-1.2em]
@@ -2179,9 +2198,11 @@ position \ \ & \multicolumn{3}{|l|}{} & (horizontal position, vertical position)
 & \multicolumn{3}{|l|}{(horizontal position,} & This also applies for a size of 8 x 16 dots.\\[-1.2em]
 & \multicolumn{3}{|l|}{ \ \ \ \ \ vertical position)} & \ \ \ \ \ When the horizontal position\\[-1.2em]
 & \multicolumn{3}{|l|}{ \ \ \ \ \ \ \ ↓} & is outside the range 30H to CFH, the sprite\\[-1.2em]
-& \multicolumn{3}{|l|}{} & exists in the effective area.\\[-1.2em]
+& \multicolumn{3}{|l|}{} & exists in the effective area.\\[-3.6em]
+& \multicolumn{3}{|l|}{} &\\
 \cline{3-3}
-& \multicolumn{1}{|l|}{ \ \ \ \ \ \ \ \ } & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & Also, in the case of the vertical position,\\[-1.2em]
+& \multicolumn{1}{|l|}{ \ \ \ \ \ \ \ \ } & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & Also, in the case of the vertical position,\\[-3.6em]
+& \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} &\\
 \cdashline{3-3}[2pt/2pt]
 & \multicolumn{1}{|l;{2pt/2pt}}{} & \multicolumn{1}{c;{2pt/2pt}}{} & \multicolumn{1}{l|}{} & the sprite exists in the effective area so\\[-1.2em]
 \cdashline{3-3}[2pt/2pt]
@@ -2196,7 +2217,7 @@ position \ \ & \multicolumn{3}{|l|}{} & (horizontal position, vertical position)
 \addcontentsline{toc}{subsubsection}{e. SIZE bit}
 
 \noindent e. \ \ SIZE bit\par
-\ If "1" is set in the SIZE bit, an 8 x 16 dot (vertical length) sprite will be displayed.\\
+\ If``1''is set in the SIZE bit, an 8 x 16 dot (vertical length) sprite will be displayed.\\
 In this case, the top seven bits of the character No. set in the sprite attribute table will be\\
 effective. \ If the number of character No. is b7b6b5b4b3b2b10 (or b7b6b5b4b3b2b11; b0 is ineffective),\\
 the character b7b6b5b4b3b2b10 will be displayed in the position of A, and the character of\\
@@ -2207,7 +2228,8 @@ b7b6b5b4b3b2b11 in the position of B.
 \setlength{\tabcolsep}{0.5em}
 \renewcommand{\arraystretch}{2}
 \hskip 1em \begin{tabular}{rc|c|}
-\multicolumn{1}{c}{ \ \ \ \ \ \ } & \multicolumn{1}{c}{} & \multicolumn{1}{c}{← 8dots → \ }\\[-1.2em]
+\multicolumn{1}{c}{ \ \ \ \ \ \ } & \multicolumn{1}{c}{} & \multicolumn{1}{c}{← 8dots → \ }\\[-3.6em]
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\\
 & &\\[-1.2em]
 \cline{2-3}
 \multicolumn{2}{r|}{↑} &\\
@@ -2265,7 +2287,8 @@ This judgment of priority display is made for each line.
 \cline{21-21}
 \cdashline{22-27}[2.5pt/2.5pt]
 \multicolumn{4}{c|}{} & & & & \multicolumn{7}{c|}{} & & \multicolumn{3}{c|}{} & & & 12 & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{\ ↑}\\[-1.2em]
-\multicolumn{4}{c|}{} & & & & \multicolumn{7}{c|}{} & & \multicolumn{3}{c|}{} & & & & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{\ 1}\\[-1.2em]
+\multicolumn{4}{c|}{} & & & & \multicolumn{7}{c|}{} & & \multicolumn{3}{c|}{} & & & & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{\ 1}\\[-3.6em]
+\multicolumn{4}{c|}{} & & & & \multicolumn{7}{c|}{} & & \multicolumn{3}{c|}{} & & & & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{}\\
 \cdashline{2-2}[2.5pt/2.5pt]
 \cline{3-3}
 \cdashline{4-10}[2.5pt/2.5pt]
@@ -2274,21 +2297,24 @@ This judgment of priority display is made for each line.
 \cline{13-13}
 \cdashline{14-26}[2.5pt/2.5pt]
 \multicolumn{2}{c|}{} & 11 & & & & & \multicolumn{3}{c|}{} & ８ & & ０ & & & \multicolumn{3}{c|}{} & & & & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{\ R}\\[-1.2em]
-\multicolumn{2}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{\ a}\\[-1.2em]
+\multicolumn{2}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{\ a}\\[-3.6em]
+\multicolumn{2}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & \multicolumn{3}{c|}{} & & & \multicolumn{2}{l}{}\\
 \cdashline{2-6}[2.5pt/2.5pt]
 \cline{7-7}
 \cdashline{8-22}[2.5pt/2.5pt]
 \cline{23-23}
 \cdashline{24-26}[2.5pt/2.5pt]
 & & & & & \multicolumn{5}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & \ \ \ & ５ & \ \ \ \ \ & & & \multicolumn{2}{l}{\ s}\\[-1.2em]
-& & & & & \multicolumn{5}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & \ \ \ & & & & & \multicolumn{2}{l}{\ t}\\[-1.2em]
+& & & & & \multicolumn{5}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & \ \ \ & & & & & \multicolumn{2}{l}{\ t}\\[-3.6em]
+& & & & & \multicolumn{5}{c|}{} & & & & & & \multicolumn{3}{c|}{} & & & & \ \ \ & & & & & \multicolumn{2}{l}{}\\
 \cdashline{2-8}[2.5pt/2.5pt]
 \cline{9-9}
 \cdashline{10-16}[2.5pt/2.5pt]
 \cline{17-17}
 \cdashline{18-26}[2.5pt/2.5pt]
 & & & & & \multicolumn{3}{c|}{} & ９ & & & & & & & \ \ \ \ \ & ７ & & & & & & & & & & \multicolumn{2}{l}{\ e}\\[-1.2em]
-& & & & & \multicolumn{3}{c|}{} & & & & & & & & & & & & & & & & & & & \multicolumn{2}{l}{\ r}\\[-1.2em]
+& & & & & \multicolumn{3}{c|}{} & & & & & & & & & & & & & & & & & & & \multicolumn{2}{l}{\ r}\\[-3.6em]
+& & & & & \multicolumn{3}{c|}{} & & & & & & & & & & & & & & & & & & & \multicolumn{2}{l}{}\\
 \cdashline{2-6}[2.5pt/2.5pt]
 \cline{7-7}
 \cdashline{8-26}[2.5pt/2.5pt]
@@ -2377,7 +2403,8 @@ One line is equivalent to one count.\\
 \setlength{\tabcolsep}{0em}
 \renewcommand{\arraystretch}{2}
 \hskip 4em \begin{tabular}{r|rlcc}
-\multicolumn{1}{r}{D8H \ } & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ \ \ \ \ \ & \ \ &\\[-1.2em]
+\multicolumn{1}{r}{D8H \ } & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ \ \ \ \ \ & \ \ &\\[-3.6em]
+\multicolumn{1}{r}{} & & & &\\
 \cline{2-4}
 & & &\\[-1.2em]
 FFH \ & \multicolumn{4}{l}{ Counter no. jumps from FFH to 00H}\\[-1.2em]
@@ -2385,7 +2412,8 @@ FFH \ & \multicolumn{4}{l}{ Counter no. jumps from FFH to 00H}\\[-1.2em]
 \cdashline{2-2}[2.5pt/2.5pt]
 \cline{3-4}
 & & & &\\[-1.2em]
-& 18H \ & & &\\[-1.2em]
+& 18H \ & & &\\[-3.6em]
+& & & &\\
 \cline{3-3}
 & & \multicolumn{3}{|l}{ \ LCD}\\[-1.2em]
 & & \multicolumn{3}{|l}{ \ display area}\\
@@ -2409,12 +2437,12 @@ case of the H counter). \ The FFH line is line 511 described before.\\
 \newpage
 
 \phantomsection
-\section*{\uline{PSG Manual}}
+\section*{\scalebox{0.5}[1.0]{\uline{PSG Manual}}}
 \addcontentsline{toc}{section}{7. PSG Manual}
 
 The PSG (Programmable Sound Generator) contains three tone generators and one noise generator.\\
 \phantom \ Each of the tone and noise generators can be distrubuted left and right, enabling a pseudo stereo\\
-effect to be generated. \ (See "System Control Port".)\par
+effect to be generated. \ (See``System Control Port''\hskip -0.5em.)\par
 Control of the PSG itself, which is described below, is performed by means of the write\\
 operation to I/O area 7FH.\\
 The basic clock is 3.579545 MHz. \ The data to be sent from the CPU is immediately latched in the\\
@@ -2475,7 +2503,8 @@ D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0 & \ \ \ \ \ \ \ \ \ & D7 & D6 & D5 & D4 & 
 \cline{1-8}
 \cline{10-17}
 \multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{} & \multicolumn{4}{c|}{} & & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{6}{c|}{}\\[-1em]
-\multicolumn{1}{|c|}{＊} & \multicolumn{3}{c|}{REG. ADDR.} & \multicolumn{4}{c|}{n \ } & & \multicolumn{1}{c|}{＊} & \multicolumn{1}{c|}{} & \multicolumn{6}{c|}{n \ \ \ \ \ }\\[-0.2em]
+\multicolumn{1}{|c|}{＊} & \multicolumn{3}{c|}{REG. ADDR.} & \multicolumn{4}{c|}{n \ } & & \multicolumn{1}{c|}{＊} & \multicolumn{1}{c|}{} & \multicolumn{6}{c|}{n \ \ \ \ \ }\\[-1.4em]
+\multicolumn{1}{|c|}{} & \multicolumn{3}{c|}{} & \multicolumn{4}{c|}{} & & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{6}{c|}{}\\
 \cline{1-8}
 \cline{10-17}
 & & & & & & & & & & & & & & & & \\[-1em]
@@ -2614,7 +2643,7 @@ R2 & R1 & R0 & Control register allocation \ & １st\\[-0.2em]
 
 \noindent \ (3) \ Example of frequency setting\par
 Consider an example in which the basic clock frequency is 3.579545 MHz and the desired\\
-frequency of 440 Hz is output from TONE 1. (corresponding to "A" on the musical scale)\\
+frequency of 440 Hz is output from TONE 1. (corresponding to``A''on the musical scale)\\
 
 \phantomsection
 \addcontentsline{toc}{subsubsection}{a. Calculation of frequency division ratio n}
@@ -2631,10 +2660,10 @@ f = N/(32 x n)\par
 \ ≒ 440.397 (Hz)\\
 \par
 Here, the pitch error △C is obtained according to the following equation.\par
-△C =\{(f' - f)/f\}/(\hskip -0.2em $\sqrt[1 \, 2 \, 0 \, 0 \ ]{ \ 2}$-1)\par
+△C =\{(f'- f)/f\}/(\hskip -0.2em $\sqrt[1 \, 2 \, 0 \, 0 \ ]{ \ 2}$-1)\par
 \ \ \ ≒\{(440.397-440)/440\}/(\hskip -0.2em $\sqrt[1 \, 2 \, 0 \, 0 \ ]{ \ 2}$-1)\par
 \ \ \ ≒(0.397/440)/0.000578 ≒ 1.56\par
-f: True frequency \ f': Actual frequency \ \hskip -0.2em $\sqrt[1 \, 2 \, 0 \, 0 \ ]{ \ 2}$\\
+f: True frequency \ f'\hskip -0.5em: Actual frequency \ \hskip -0.2em $\sqrt[1 \, 2 \, 0 \, 0 \ ]{ \ 2}$\\
 
 \phantomsection
 \addcontentsline{toc}{subsubsection}{b. Data sent to PSG}
@@ -2658,7 +2687,8 @@ n = 254\par
 １ & R2 & R1 & R0 & F3 & F2 & F1 & F0 & & ０ & × & F9 & F8 & F7 & F6 & F5 & F4\\
 \cline{1-8}
 \cline{10-17}
-\multicolumn{17}{c}{}\\[-1.2em]
+\multicolumn{17}{c}{}\\[-3.6em]
+\multicolumn{17}{c}{}\\
 \cline{1-8}
 \cline{10-17}
 D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0 & & D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0\\
@@ -2691,11 +2721,13 @@ to be set in 16 steps from 0 dB to OFF according to a 4-bit attenuation value.\\
 D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0 & \ \ \ \ \ \ \ & R2 & R1 & R0 & Control register allocation \ & HEX \ \\
 \cline{1-8}
 \cline{10-14}
-\multicolumn{8}{c}{} & & ０ & ０ & １ & Tone 1 attenuation & ９×\\[-1.2em]
+\multicolumn{8}{c}{} & & ０ & ０ & １ & Tone 1 attenuation & ９×\\[-3.6em]
+\multicolumn{8}{c}{} & & & & & &\\
 \cline{1-8}
 ＊ & \multicolumn{3}{c|}{REG. ADDR.} & \multicolumn{4}{l|}{ATT. DATA} & & & & & &\\[-1.2em]
 \cline{10-14}
-& \multicolumn{3}{c|}{} & \multicolumn{4}{l|}{} & & ０ & １ & １ & Tone 2 attenuation & Ｂ×\\[-1.2em]
+& \multicolumn{3}{c|}{} & \multicolumn{4}{l|}{} & & ０ & １ & １ & Tone 2 attenuation & Ｂ×\\[-3.6em]
+& \multicolumn{3}{c|}{} & \multicolumn{4}{l|}{} & & & & & &\\
 \cline{1-8}
 １ & R2 & R1 & R0 & A3 & A2 & A1 & A0 & & & & & &\\[-1.2em]
 \cline{10-14}
@@ -2776,7 +2808,8 @@ shift clock with EX-OR feedback, resulting in the generation of white noise.\\
 \cline{1-8}
 D7 & D6 & D5 & D4 & D3 & D2 & \ \ D1 & \ \ D0 & \multicolumn{3}{c}{}\\
 \cline{1-8}
-\multicolumn{11}{c}{}\\[-1.2em]
+\multicolumn{11}{c}{}\\[-3.6em]
+\multicolumn{11}{c}{}\\
 \cline{1-8}
 ＊& \multicolumn{3}{c|}{REG. ADDR.} & & & \multicolumn{2}{l|}{SHIFT} & \multicolumn{3}{c}{}\\
 \cline{1-8}
@@ -2829,10 +2862,12 @@ FB & \multicolumn{4}{l|}{Noise} & & NF1 & NF0 & Shift clock \ \ \ \ \ \ \ \ & �
 \cdashline{8-8}[2.5pt/2.5pt]
 \cline{9-9}
 \cline{11-11}
-\multicolumn{3}{c}{} & \multicolumn{2}{c}{1 clock \ } & \multicolumn{6}{c}{}\\[-1.2em]
-\multicolumn{3}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{6}{c}{}\\[-2.4em]
+\multicolumn{3}{c}{} & \multicolumn{2}{c}{1 clock \ } & \multicolumn{6}{c}{}\\[-3.6em]
+\multicolumn{3}{c}{} & \multicolumn{2}{c}{} & \multicolumn{6}{c}{}\\
+\multicolumn{3}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{4}{c|}{} & \multicolumn{2}{c}{}\\[-2.4em]
 \multicolumn{3}{c|}{} & \multicolumn{2}{l|}{← \ \ pulse \ →} & \multicolumn{4}{l|}{← \ \ \ 15 clock pulses \ \ \ \ \ \ →} & \multicolumn{2}{c}{}\\[-1.2em]
-\multicolumn{11}{c}{}\\[-1.2em]
+\multicolumn{11}{c}{}\\[-3.6em]
+\multicolumn{11}{c}{}\\
 \cline{4-5}
 \cline{10-11}
 Noise & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{4}{c|}{} & \multicolumn{2}{c}{}\\
@@ -2863,10 +2898,12 @@ Tone 3 \ \ \ \ \ \ \ \ \ & \ \ & \ \ \ \ \ \ \ & \ \ \ \ \ \ \ & \ \ \ \ \ \ \ &
 \cdashline{8-8}[2.5pt/2.5pt]
 \cline{9-9}
 \cline{11-11}
-\multicolumn{3}{c}{} & \multicolumn{2}{c}{1 clock \ } & \multicolumn{6}{c}{}\\[-1.2em]
-\multicolumn{3}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{6}{c}{}\\[-2.4em]
+\multicolumn{3}{c}{} & \multicolumn{2}{c}{1 clock \ } & \multicolumn{6}{c}{}\\[-3.6em]
+\multicolumn{3}{c}{} & \multicolumn{2}{c}{} & \multicolumn{6}{c}{}\\
+\multicolumn{3}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{4}{c|}{} & \multicolumn{2}{c}{}\\[-2.4em]
 \multicolumn{3}{c|}{} & \multicolumn{2}{l|}{← \ pulse \ \ →} & \multicolumn{4}{l|}{← \ \ \ 15 clock pulses \ \ \ \ \ \ →} & \multicolumn{2}{c}{}\\[-1.2em]
-\multicolumn{11}{c}{}\\[-1.2em]
+\multicolumn{11}{c}{}\\[-3.6em]
+\multicolumn{11}{c}{}\\
 \cline{4-5}
 \cline{10-11}
 Noise & \multicolumn{2}{c|}{} & \multicolumn{2}{c|}{} & \multicolumn{4}{c|}{} & \multicolumn{2}{c}{}\\
@@ -2923,7 +2960,8 @@ Spectrum when NF0 = 0 NF1 = 1 n=1\\
 \cline{1-8}
 D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0\\
 \cline{1-8}
-\multicolumn{8}{c}{}\\[-1.2em]
+\multicolumn{8}{c}{}\\[-3.6em]
+\multicolumn{8}{c}{}\\
 \cline{1-8}
 ＊& \multicolumn{3}{c|}{REG. ADDR.} & \multicolumn{4}{l|}{ATT. DATA}\\
 \cline{1-8}
@@ -2932,7 +2970,7 @@ D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0\\
 \end{tabular}
 
 \vspace{2em}
-\noindent {*} The attenuation control is the same as for "Tone".
+\noindent {*} The attenuation control is the same as for``Tone''\hskip -0.5em.
 
 \newpage
 
@@ -3034,7 +3072,8 @@ parts (basic clock: 3.579545 MHz)
 \hskip 2em \begin{tabular}{|r|r|c|c|r|r|}
 \cline{1-6}
 Musical \ \ \ & Frequency \ \ \ & \multicolumn{2}{c|}{\ \ \ \ \ \ ＨＥＸ \ \ \ \ \ \ } & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\[-1.2em]
-interval \ & division \ \ & \multicolumn{2}{c|}{} & PSG output \ \ \ \ \ & Actual frequency \ \ \\[-1.2em]
+interval \ & division \ \ & \multicolumn{2}{c|}{} & PSG output \ \ \ \ \ & Actual frequency \ \ \\[-3.6em]
+& & \multicolumn{2}{c|}{} & &\\
 \cline{3-4}
 & ratio \ \ \ \ \ & \ \ １st \ \ & ２nd & [Hz] \ \ \ \ \ \ \ \ & [Hz] \ \ \ \ \ \ \ \ \\
 \cline{1-6}
@@ -3204,7 +3243,8 @@ section. \ (Basic clock: 3.579545 MHz)
 \hskip 2em \begin{tabular}{|r|r|c|c|r|r|}
 \cline{1-6}
 Musical \ \ \ & Frequency \ \ \ & \multicolumn{2}{c|}{\ \ ＨＥＸ (TONE3) \ \ } & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\[-1.2em]
-interval \ & division \ \ \ \  & \multicolumn{2}{c|}{} & PSG output \ \ \ \ \ & Actual frequency \ \ \\[-1.2em]
+interval \ & division \ \ \ \  & \multicolumn{2}{c|}{} & PSG output \ \ \ \ \ & Actual frequency \ \ \\[-3.6em]
+& & \multicolumn{2}{c|}{} & &\\
 \cline{3-4}
 & ratio \ \ \ \ \ \ \ & \ \ １st \ \ & ２nd & [Hz] \ \ \ \ \ \ \ \ & [Hz] \ \ \ \ \ \ \ \ \\
 \cline{1-6}

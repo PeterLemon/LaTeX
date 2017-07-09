@@ -6,8 +6,6 @@
 \usepackage{fontspec}
 \setmainfont{epkyouka.ttf}
 
-\graphicspath{{images/}}
-
 \usepackage[normalem]{ulem}
 \renewcommand{\ULthickness}{0.08em}
 
@@ -70,6 +68,8 @@
 
 \frenchspacing
 
+\graphicspath{{images/}}
+
 \begin{document}
 
 \begin{picture}(0,0)
@@ -110,7 +110,7 @@ This booklet describes those specifications which have been added, modified or\p
 deleted on the basis of specifications of V9938. The ones not found here have\par
 remained the same as V9938 but note that some, even the same, may be included\par
 here due to the conveniance of editing. For specifications of V9938, refer to\par
-\hskip -0.5em “V9938 MSX-VIDEO Technical Data Book".\\
+\hskip -0.5em “V9938 MSX-VIDEO Technical Data Book"\hskip -0.5em.\\
 \par
 \hskip 22em December 1988 YAMAHA Corporation\par
 \hskip 27em Semiconductor Division
@@ -323,7 +323,8 @@ display.
 \noindent \begin{tabular}{|c|c|c|l|}
 \hline
 \ Pin Name \ & Pin No. & \ \ I/O \ \ & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Function \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\
-\hline \\[-2.8em]
+\hline
+& & &\\[-2.8em]
 CD0 LSB & 40 & I/O & CPU data bus\\[-1.04em]
 CD1 & 39 & I/O & \ \ \ \ \ "\\[-1.04em]
 CD2 & 38 & I/O & \ \ \ \ \ "\\[-1.04em]
@@ -381,7 +382,8 @@ BLEO & 7 & O & Indicates No. 1 field/No. 2 field blanking with 3-value output.\\
 \noindent \begin{tabular}{|c|c|c|l|}
 \hline
 \ Pin Name \ & Pin No. & \ \ I/O \ \ & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Function \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\
-\hline \\[-2.8em]
+\hline
+& & &\\[-2.8em]
 $\overline{\mbox{HSYNC}}$ & 5 & O & High: Timing other than HSYNC or color burst timing.\\[-1.04em]
 & & & Low : HSYNC or timing other than color burst.\\[-1.04em]
 $\overline{\mbox{CSYNC}}$ & 6 & O & Composite SYNC output.\\[-1.04em]
@@ -446,17 +448,19 @@ Shown below are the registers newly added to the existing V9938 registers.\par
 \cline{2-9}
 ♯25 & & CMD \ & VDS \ & YAE \ & YJK \ & WTE \ & MSK \ & SP2 \ \\
 \cline{2-9}
-\multicolumn{9}{c}{}\\[-0.8em]
+\multicolumn{9}{c}{}\\[-2.4em]
+\multicolumn{9}{c}{}\\
 \cline{2-9}
 ♯26 & & & HO8 \ & HO7 \ & HO6 \ & HO5 \ & HO4 \ & HO3 \ \\
 \cline{2-9}
-\multicolumn{9}{c}{}\\[-0.8em]
+\multicolumn{9}{c}{}\\[-2.4em]
+\multicolumn{9}{c}{}\\
 \cline{2-9}
 ♯27 & & & & & & HO2 \ & HO1 \ & HO0 \ \\
 \cline{2-9}
 \end{tabular}\\[0.5em]
 
-The above three registers are cleared to“0" by the RESET signal and if\par
+The above three registers are cleared to“0"by the RESET signal and if\par
 used in that state, will function compatibly with V9938.\\[-3.5em]
 
 \[
@@ -466,7 +470,7 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 ♯26 \ b6, b7\\
 ♯27 \ b3～b7 \ \\
 \end{tabular}
-\right \} {\mbox{Make sure to set“0" for these empty bit positions.}}
+\right \} {\mbox{Make sure to set“0"for these empty bit positions.}}
 \] 
 
 \phantomsection
@@ -481,7 +485,8 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \cline{2-9}
 ♯25 & & & & & & & MSK \ & SP2 \ &\\
 \cline{2-9}
-\multicolumn{10}{c}{}\\[-0.8em]
+\multicolumn{10}{c}{}\\[-2.4em]
+\multicolumn{10}{c}{}\\
 \cline{2-9}
 ♯26 & & & HO8 \ & HO7 \ & HO6 \ & HO5 \ & HO4 \ & HO3 \ & by character\\
 \cline{2-9}
@@ -538,11 +543,13 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \multicolumn{9}{l}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Display screen}\\
 \cline{3-8}
 \multicolumn{2}{r|}{HO7－3 \ \ \ } & \multicolumn{6}{|l|}{8 dots} &\\[-0.7em]
-\multicolumn{9}{c}{}\\[-0.8em]
+\multicolumn{9}{c}{}\\[-2.4em]
+\multicolumn{9}{c}{}\\
 \cline{3-8}
 \multicolumn{2}{r|}{0 \ \ \ \ \ } & \,0\, & \,1\, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & 30 & 31 & 1 line\\
 \cline{3-8}
-\multicolumn{9}{c}{}\\[-0.8em]
+\multicolumn{9}{c}{}\\[-2.4em]
+\multicolumn{9}{c}{}\\
 \cline{3-8}
 \multicolumn{2}{r|}{1 \ \ \ \ \ } & \,1\, & \,2\, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \, & 31 & \,0\, &\\
 \cline{3-8}
@@ -568,11 +575,13 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \multicolumn{11}{l}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Display screen}\\
 \cline{3-6}
 \multicolumn{2}{r|}{HO8－3 \ \ \ } & \multicolumn{4}{|l|}{8 dots} & \multicolumn{5}{c}{}\\[-0.7em]
-\multicolumn{11}{c}{}\\[-0.8em]
+\multicolumn{11}{c}{}\\[-2.4em]
+\multicolumn{11}{c}{}\\
 \cline{3-10}
 \multicolumn{2}{r|}{0 \ \ \ \ \ } & \,0\, & \,1\, & \ \ \ \ \ \ \ \ \ \ \, & 31 & 32 & \ \ \ \ \ \ \ \ \ \ \, & 62 & 63 & 1 line\\
 \cline{3-10}
-\multicolumn{11}{c}{}\\[-0.8em]
+\multicolumn{11}{c}{}\\[-2.4em]
+\multicolumn{11}{c}{}\\
 \cline{3-10}
 \multicolumn{2}{r|}{1 \ \ \ \ \ } & \,1\, & \,2\, & \ \ \ \ \ \ \ \ \ \ \, & 32 & 33 & \ \ \ \ \ \ \ \ \ \ \, & 63 & \,0\, &\\
 \cline{3-10}
@@ -582,7 +591,8 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \cline{3-10}
 \multicolumn{2}{r|}{31 \ \ \ \ \ } & 31 & 32 & \ \ \ \ \ \ \ \ \ \ \, & 62 & 63 & \ \ \ \ \ \ \ \ \ \ \, & 29 & 30 &\\
 \cline{3-10}
-\multicolumn{11}{c}{}\\[-0.8em]
+\multicolumn{11}{c}{}\\[-2.4em]
+\multicolumn{11}{c}{}\\
 \cline{3-10}
 \multicolumn{2}{r|}{32 \ \ \ \ \ } & 32 & 33 & \ \ \ \ \ \ \ \ \ \ \, & 63 & \,0\, & \ \ \ \ \ \ \ \ \ \ \, & 30 & 31 &\\
 \cline{3-10}
@@ -597,11 +607,11 @@ used in that state, will function compatibly with V9938.\\[-3.5em]
 \newpage
 
 \hskip -1em Note) When SP2 ＝\,1\,\,, bit 5 (A15) of the pattern name table base address\par
-\ \ \ \ register (R\#2) should be set to“1".\par
+\ \ \ \ register (R\#2) should be set to“1"\hskip -0.5em.\par
 \ \ \ \ The base address of each table will be as follows.\\
 \par
-\ \ \ \ Pattern name table(PNT) \,\,:\,\,0\,\, to 31(when A15 is set to“0")\par
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 32 to 63(when A15 is set to“1")\par
+\ \ \ \ Pattern name table(PNT) \,\,:\,\,0\,\, to 31(when A15 is set to“0"\hskip -0.5em)\par
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 32 to 63(when A15 is set to“1"\hskip -0.5em)\par
 \ \ \ \ Pattern generator table (PGT) \,\,:\,The base address remains unchanged\par
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ even when scroll value is changed.\par
 \ \ \ \ Color table (CT)\,\,:\,The base address remains unchanged even when \ scroll\par

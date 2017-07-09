@@ -110,8 +110,8 @@ Example:\par
 \noindent 4. \ \ Interrupt\par
 An interrupt is synchronized with the video timing (at the completion of the effective area\\
 or at an arbitrary vertical position).\par
-This interrupt uses the Z80 mode 1 interrupt, hence``IM 1''is executed at the beginning of the\\
-program. \ A return from an interrupt routine is``RET''\hskip -0.5em.
+This interrupt uses the Z80 mode 1 interrupt, hence“IM 1"is executed at the beginning of the\\
+program. \ A return from an interrupt routine is“RET"\hskip -0.5em.
 
 \newpage
 
@@ -204,8 +204,8 @@ NINT & DPC6 & DPC5 & DPC4 & DPC3 & DPC2 & DPC1 & DPC0\\
 0: When PC6 is input, an NMI is generated at the fall of PC6.\\
 \phantom \ \ ☆ 1: The above operation is disabled.\\
 \par
-\ ※Be sure to set the status of this port to``1''\hskip -0.5em. \ When using this value, first, set the status\\
-to``1''after the first NMI is generated, then subsequently set it to``0''\hskip -0.5em.\\
+\ ※Be sure to set the status of this port to“1"\hskip -0.5em. \ When using this value, first, set the status\\
+to“1"after the first NMI is generated, then subsequently set it to“0"\hskip -0.5em.\\
 If you fail to do this, the next NMI will not be generated.\\
 
 \phantomsection
@@ -394,7 +394,7 @@ STROBE signal input (active Low)\\
 BUSY signal input (active High)\\
 ○ \ \ CLR\par
 \ Loader clear button input (active Low)\par
-When this button is pressed, LD7 to LD0 all become``0''\hskip -0.5em, the ACK signal becomes High, and the\\
+When this button is pressed, LD7 to LD0 all become“0"\hskip -0.5em, the ACK signal becomes High, and the\\
 BUSY signal becomes Low.
 
 \newpage
@@ -455,8 +455,8 @@ THE & ＊ & ＊ & ＊ & TRE & TLE & RIE & LEE & \ \ I/O port DDH\\
 \phantom \ \ \ TR1-1P TRIGGER right button \ \ TRE-EXT TRIGGER right button\\
 \phantom \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THE-EXT (Same as PC6 input)\\
 \\
-One bit is read to port as``1''when either there is nothing connected to the terminal or the\\
-corresponding switch is not pressed, and is read as``0''when the switch is pressed.
+One bit is read to port as“1"when either there is nothing connected to the terminal or the\\
+corresponding switch is not pressed, and is read as“0"when the switch is pressed.
 
 \newpage
 
@@ -715,12 +715,12 @@ Never access data using an image address.
 \addcontentsline{toc}{subsubsection}{③ I/O port 02H (Read/Write) NMI}
 
 \noindent \ ③ I/O port 02H (Read/Write)\par
-{*} Normally, be sure to make the status of this port``1''\hskip -0.5em. \ When using this value, first,\\
-set the status to``1''after the first NMI is generated, then subsequently set it to``0''\hskip -0.5em.\\
+{*} Normally, be sure to make the status of this port“1"\hskip -0.5em. \ When using this value, first,\\
+set the status to“1"after the first NMI is generated, then subsequently set it to“0"\hskip -0.5em.\\
 If you fail to do this, the next NMI will not be generated.\\
 \\
 \uline{Addition:}\par
-An NMI is enabled after the execution of one command from when the port is set to``0''\hskip -0.5em.\\
+An NMI is enabled after the execution of one command from when the port is set to“0"\hskip -0.5em.\\
 This is to prevent the NMI from becoming active once again in the NMI routine.\\
 Normally, therefore, perform the following processing.\\
 \par
@@ -752,11 +752,11 @@ Mode setting for serial communications\\
 \\
 \uline{Addition:}\par
 When using this function (serial communications NMI), set NINT of I/O port 02H to the disable\\
-state (\hskip -0.5em``1''\hskip -0.5em). \ An NMI will be generated at the fall of the pulse at the NMI terminal.\\
+state (\hskip -0.5em“1"\hskip -0.5em). \ An NMI will be generated at the fall of the pulse at the NMI terminal.\\
 If, however, a serial communications NMI is generated, the NMI terminal will go LOW, preventing the\\
 next NMI from becoming active. \ The NMI terminal is made HIGH as a result of reading the data of I/O\\
 port 04H, so read the data each time an NMI is generated. \ If it is conceivable that the NMI\\
-terminal may already be LOW at the start of the communications, perform a``dummy''read operation\\
+terminal may already be LOW at the start of the communications, perform a“dummy"read operation\\
 once.\\
 
 \phantomsection
@@ -843,7 +843,7 @@ one'\hskip -0.5ems own side) -> PC5 (input to opposite side), or from PC5 (input
 (output from opposite side). \ Serial and parallel conversion and interrupt (NMI) generation\\
 (when data is received) accompanying the receiving or sending of data take place automatically when\\
 the hardware is connected to these terminals. \ To perform serial communications, set TON and RON of\\
-I/O port 05H to``1''\hskip -0.5em. \ By doing this, PC4 will automatically become the output, and PC5 the input.\\
+I/O port 05H to“1"\hskip -0.5em. \ By doing this, PC4 will automatically become the output, and PC5 the input.\\
 These settings will take priority over the PC4 and PC5 input/output settings. \ Bits other than those\\
 of PC4 and PC5 will become the settings of I/O port 02H. \ (Like (2), never make both terminals the\\
 output.) \ When performing serial communications only, be sure to set NINT of I/O port 02H to prevent\\
@@ -1010,7 +1010,7 @@ the LCD) if timing is within this area, the game program will be subjected to va
 \addcontentsline{toc}{subsection}{(3) Image display}
 
 \noindent (3) \ Image display\par
-Note: In the following description, there are bits that are fixed at``0''or``1''\hskip -0.5em, and should\\
+Note: In the following description, there are bits that are fixed at“0"or“1"\hskip -0.5em, and should\\
 remain in this default position.\\
 
 \phantomsection
@@ -1055,8 +1055,8 @@ VDP delay.
 \hskip 18.5em Meaningless\\
 \\
 ○ \ \ \ Interrupt flag (F)\par
-This flag is``1''when the effective area is completed. \ If, at this time, the IE bit of the VDP\\
-\phantom \ register \#1 is set to``1''\hskip -0.5em, the interrupt line from the VDP to the CPU will become Low, causing an\\
+This flag is“1"when the effective area is completed. \ If, at this time, the IE bit of the VDP\\
+\phantom \ register \#1 is set to“1"\hskip -0.5em, the interrupt line from the VDP to the CPU will become Low, causing an\\
 interrupt to be applied (generally called a V interrupt). \ If the program leaves the interrupt\\
 routine in this state, the interrupt will be applied again immediately (an interrupt of Z80 will not\\
 occur at the edge of plus, hence the status register will be read at the beginning of the interrupt\\
@@ -1073,14 +1073,14 @@ Example:\par
 \par
 {*} This flag is not set in the case of an interrupt (normally called an H interrupt) at an\\
 arbitrary vertical position, hence by checking this flag it is possible to identify two kinds of\\
-interrupts. \ A Z80 interrupt uses mode 1, hence``IM 1''is implemented.\\
+interrupts. \ A Z80 interrupt uses mode 1, hence“IM 1"is implemented.\\
 \\
 ○ \ \ \ 9th sprite (9S)\par
 If the 9th and higher sprites exist on the same horizontal line (in the effective area), and\\
-the interrupt flag (F) is``0''\hskip -0.5em, the 9S bit will be set to``1''\hskip -0.5em. \ (within the effective area)\\
+the interrupt flag (F) is“0"\hskip -0.5em, the 9S bit will be set to“1"\hskip -0.5em. \ (within the effective area)\\
 \\
 ○ \ \ \ Collision flag (C)\par
-This flag is set to``1''if dots of color codes other than 0, of two or more sprites collide\\
+This flag is set to“1"if dots of color codes other than 0, of two or more sprites collide\\
 (coincide). -{-}In the effective area\\
 \par
 ※ The above flags are reset by a power-on reset and a status register read-out, and are\\
@@ -1119,7 +1119,7 @@ Second byte: Register Selection & １ & ０ & ０ & ０ & Ｒ３ & Ｒ２ & Ｒ�
 To set data in a VDP register, the data is inputted in the first byte. \ The second byte is used\\
 to indicate the register where the data is to be transferred.\par
 The bottom four bits (R3 to R0) of the second byte designate the data transfer destination\\
-registers (\#0 to \#10). \ b7 must be``1''and b6 to b4 must be``0''\hskip -0.5em.\\
+registers (\#0 to \#10). \ b7 must be“1"and b6 to b4 must be“0"\hskip -0.5em.\\
 Never attempt to access registers that do not exist (\#11 to \#15).\\
 \par
 Example: When setting E0H in register \#1\par
@@ -1151,7 +1151,7 @@ byte written after the program leaves the interrupt routine will be received as 
 
 \noindent d. \ \ Reading from VRAM\par
 The CPU reads data from the VRAM via the VDP. \ The addresses are auto-incremented.\\
-(See sub-section``Writing to VRAM''\hskip -0.5em.)
+(See sub-section“Writing to VRAM"\hskip -0.5em.)
 
 \vspace{0.5em}
 \setlength{\arrayrulewidth}{0.1em}
@@ -1175,7 +1175,7 @@ Necessary number of repetitions \ \ \ \ \ \ \ & & & & & & & &\\
 
 \vspace{2em}
 The bottom eight bits of the VRAM address are set up by the first byte.\par
-The top six bits are set up by the second byte. \ Be sure to set b7 and b6 to``0''\hskip -0.5em.\par
+The top six bits are set up by the second byte. \ Be sure to set b7 and b6 to“0"\hskip -0.5em.\par
 The data is read by the third byte.\par
 Once the address register has been set up, the data will be incremented automatically each time\\
 the third byte data is transferred.\\
@@ -1188,7 +1188,7 @@ Insert the same wait for reading the subsequent third bytes. \ This applies only
 the VDP displays a picture (effective area). \ In the following two cases, there is no need for any\\
 wait whatever. \ (This is the same as for a write operation to the VRAM.)\\
 \par
-○ When the blank bits of the VDP register \#1 are set to``0''and the screen is turned OFF.\\
+○ When the blank bits of the VDP register \#1 are set to“0"and the screen is turned OFF.\\
 \par
 ○ During the interval of 4.3 m from when an interrupt occurs upon completion of the effective\\
 area until the commencement of the next effective area.\\
@@ -1310,7 +1310,7 @@ Write 0FH \& 00H (bright red) and F0H \& 00H (bright green) from color RAM addre
 
 \newpage
 
-\noindent the screen will flicker. \ This cannot be avoided even by setting the BLANK bit to``0''to turn the\\
+\noindent the screen will flicker. \ This cannot be avoided even by setting the BLANK bit to“0"to turn the\\
 screen OFF. \ For this reason, write data to the color RAM during V blanking.\\
 
 \phantomsection
@@ -1322,7 +1322,7 @@ screen OFF. \ For this reason, write data to the color RAM during V blanking.\\
 \addcontentsline{toc}{subsubsection}{a. Register \#0, register \#1 (VDP control)}
 
 \noindent \ a. \ \ Register \#0, register \#1\par
-(These two registers are reset to``0''at power switch-on.)\\
+(These two registers are reset to“0"at power switch-on.)\\
 \\
 Register \#0
 
@@ -1552,7 +1552,7 @@ D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0 & \multicolumn{10}{l}{}\\
 \addcontentsline{toc}{subsubsection}{g. Register \#7 (backdrop color)}
 
 \noindent g. \ \ Register \#7\\
-\phantom \ \ \ (This register is set to``0''at power switch-on.) They are used to set the backdrop color.
+\phantom \ \ \ (This register is set to“0"at power switch-on.) They are used to set the backdrop color.
 
 \vspace{-0.7em}
 \setlength{\arrayrulewidth}{0.1em}
@@ -1576,7 +1576,7 @@ constitute the backdrop color.
 \addcontentsline{toc}{subsubsection}{h. Register \#8 (horizontal scroll)}
 
 \noindent h. \ \ Register \#8\par
-(This register is set to``0''at power switch-on.)\par
+(This register is set to“0"at power switch-on.)\par
 It is used to set the horizontal scroll.)
 
 \vspace{-0.7em}
@@ -1595,8 +1595,8 @@ Each time a value of 1 is set in this register, the scroll screen moves one dot 
 in the horizontal direction. \ The number of dots in the horizontal direction in the virtual area is\\
 256. \ Consequently, if a value of -1 (FFH) is set, the screen will move one dot to the left in the\\
 horizontal direction. \ This register is effective only for the scroll screen. \ It has no effect on\\
-sprites. \ The value written to this register is latched at the timing of the H counter F4H (see``\\
-(5) H counter, V counter''\hskip -0.5em), then becomes active. \ Consequently, horizontal scrolling can be\\
+sprites. \ The value written to this register is latched at the timing of the H counter F4H (see“\\
+(5) H counter, V counter"\hskip -0.5em), then becomes active. \ Consequently, horizontal scrolling can be\\
 performed one line at a time by using an interrupt at an arbitrary vertical position to re-write the\\
 data.\\
 
@@ -1604,7 +1604,7 @@ data.\\
 \addcontentsline{toc}{subsubsection}{i. Register \#9 (vertical scroll)}
 
 \noindent i. \ \ Register \#9\par
-(This register is set to``0''at power switch-on.)\par
+(This register is set to“0"at power switch-on.)\par
 It is used to set the vertical scroll.)
 
 \vspace{-0.7em}
@@ -1630,7 +1630,7 @@ vertical scroll from being changed while display timing.\\
 \addcontentsline{toc}{subsubsection}{j. Register \#10 (interrupt)}
 
 \noindent j. \ \ Register \#10\par
-(This register is set to``1''at power switch-on.)\par
+(This register is set to“1"at power switch-on.)\par
 It is used to control an interrupt at an arbitrary vertical position.
 
 \vspace{-0.7em}
@@ -1656,7 +1656,7 @@ When 00H is set in the register, an interrupt is generated at every line, and wh
 in the register, an interrupt is generated at every second line.\\
 \par
 As an example, consider a method of horizontal scrolling as shown in the figure below.\\
-\phantom \ 1) \ After completion of the effective area, set``1''in IE1 of register \#0, and set 0BH in register\\
+\phantom \ 1) \ After completion of the effective area, set“1"in IE1 of register \#0, and set 0BH in register\\
 \#10. \ These values continue to be loaded in the down counter until line 511 appears.\\
 \\
 \phantom \ 2) \ An interrupt is generated after line 10 has been scanned. \ 0BH will be loaded in the down\\
@@ -1686,7 +1686,7 @@ register \#10.\\
 counter, then an interrupt is applied at each line. \ 09H is set in register \#8.\\
 \\
 \phantom \ 8) \ \ \ \ \ \ \ An interrupt is applied after line 119, and horizontal scroll 09H becomes effective.\\
-The horizontal scroll up to now is 07H. \ 0BH is set in register \#8. \ Subsequently,``0''is set in IE1\\
+The horizontal scroll up to now is 07H. \ 0BH is set in register \#8. \ Subsequently,“0"is set in IE1\\
 and the interrupt is disabled.\\
 \\
 ※ \ \ \ The value of register \#8 (horizontal scroll) becomes effective after H counter F4H (delayed by\\
@@ -2217,7 +2217,7 @@ position \ \ & \multicolumn{3}{|l|}{} & (horizontal position, vertical position)
 \addcontentsline{toc}{subsubsection}{e. SIZE bit}
 
 \noindent e. \ \ SIZE bit\par
-\ If``1''is set in the SIZE bit, an 8 x 16 dot (vertical length) sprite will be displayed.\\
+\ If“1"is set in the SIZE bit, an 8 x 16 dot (vertical length) sprite will be displayed.\\
 In this case, the top seven bits of the character No. set in the sprite attribute table will be\\
 effective. \ If the number of character No. is b7b6b5b4b3b2b10 (or b7b6b5b4b3b2b11; b0 is ineffective),\\
 the character b7b6b5b4b3b2b10 will be displayed in the position of A, and the character of\\
@@ -2442,7 +2442,7 @@ case of the H counter). \ The FFH line is line 511 described before.\\
 
 The PSG (Programmable Sound Generator) contains three tone generators and one noise generator.\\
 \phantom \ Each of the tone and noise generators can be distrubuted left and right, enabling a pseudo stereo\\
-effect to be generated. \ (See``System Control Port''\hskip -0.5em.)\par
+effect to be generated. \ (See“System Control Port"\hskip -0.5em.)\par
 Control of the PSG itself, which is described below, is performed by means of the write\\
 operation to I/O area 7FH.\\
 The basic clock is 3.579545 MHz. \ The data to be sent from the CPU is immediately latched in the\\
@@ -2643,7 +2643,7 @@ R2 & R1 & R0 & Control register allocation \ & １st\\[-0.2em]
 
 \noindent \ (3) \ Example of frequency setting\par
 Consider an example in which the basic clock frequency is 3.579545 MHz and the desired\\
-frequency of 440 Hz is output from TONE 1. (corresponding to``A''on the musical scale)\\
+frequency of 440 Hz is output from TONE 1. (corresponding to“A"on the musical scale)\\
 
 \phantomsection
 \addcontentsline{toc}{subsubsection}{a. Calculation of frequency division ratio n}
@@ -2970,7 +2970,7 @@ D7 & D6 & D5 & D4 & D3 & D2 & D1 & D0\\
 \end{tabular}
 
 \vspace{2em}
-\noindent {*} The attenuation control is the same as for``Tone''\hskip -0.5em.
+\noindent {*} The attenuation control is the same as for“Tone"\hskip -0.5em.
 
 \newpage
 

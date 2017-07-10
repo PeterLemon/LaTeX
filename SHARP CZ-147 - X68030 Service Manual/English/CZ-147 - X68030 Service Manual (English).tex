@@ -1,14 +1,12 @@
-﻿\documentclass[twoside,a4paper,12pt]{article}
+\documentclass[twoside,a4paper,12pt]{article}
 
 \usepackage{fontspec}
-\setmainfont[BoldFont={fonts/epmgobld.ttf}, ItalicFont={fonts/epminbld.ttf}, UprightFont={fonts/epkgobld.ttf}]{epmarugo.ttf}
+\setmainfont[Path = fonts/, Extension = .ttf, BoldFont = epmgobld, ItalicFont = epminbld, UprightFont = epkgobld]{epmarugo}
 
 \usepackage{color}
 \definecolor{fontblack}{RGB}{0, 0, 0}
 \definecolor{fontpurple}{RGB}{186, 91, 121}
 \definecolor{fontwhite}{RGB}{255, 255, 255}
-
-\graphicspath{{images/}}
 
 \usepackage[a4paper, total={210mm, 265mm}]{geometry}
 
@@ -44,6 +42,19 @@
 
 \usepackage[normalem]{ulem}
 \renewcommand{\ULthickness}{0.5mm}
+
+\usepackage{rotating}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.markings,positioning,calc}
+
+\tikzstyle{vecArrow} = [thick, decoration={markings,mark=at position 1 with {\arrow[thin]{open triangle 90}}},
+   double distance=1.4pt, shorten >= 4pt,
+   preaction = {decorate},
+   postaction = {draw,line width=1.4pt, white,shorten >= 3pt}]
+\tikzstyle{vecLine} = [thick,double distance=1.4pt,shorten >= 0.5pt]
+\tikzstyle{innerWhite} = [semithick, white,line width=1.7pt, shorten >= 3pt]
+
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -120,7 +131,7 @@
 \color{fontpurple}
 \put(0.8,1){\footnotesize\textbf{●Rapid, Prosperity Of The Shop To Build A Reliable Service}}
 \put(0.8,0.4){\footnotesize\textbf{●Warranty Connecting The Shops \& Customers}}
-\put(2.55,-0.2){\footnotesize\textbf{Is The Bond Of Trust……Let's Always Issue}}
+\put(2.55,-0.2){\footnotesize\textbf{Is The Bond Of Trust……Let'\hskip -0.5ems Always Issue}}
 \put(13.5,0.4){\includegraphics{SharpCorporation}}
 \put(13.5,0.1){\scriptsize\textbf{Electronics Division \& Product Reliability}}
 \end{picture}
@@ -158,7 +169,7 @@ Note) \ MC68EC030 has an accessible address space of 4GBytes, address bus is 32-
 
 \ \ \ \ \ \ address the first 16MBytes. However, given the future expansion, software manner is
 
-\ \ \ \ \ \ to set an address of the upper 8 bits of a register to "00", please use as "00xxxxxx".
+\ \ \ \ \ \ to set an address of the upper 8 bits of a register to "\hskip -0.5em00"\hskip -0.5em, please use as "\hskip -0.5em00xxxxxx"\hskip -0.5em.
 
 \begin{itemize}[leftmargin=30mm, itemsep=-1mm, topsep=1mm]
 \item
@@ -170,7 +181,7 @@ Memory-mapped I/O system. (Main memory 4MBytes as standard)
 \item
 DMAC is HD63450(12.5MHz), MFP adopted is MC68901.
 \item
-Uses a large number of custom IC's.
+Uses a large number of custom IC'\hskip -0.5ems.
 \end{itemize}
 
 2)Text VRAM, using the bitmap method to display graphics in VRAM.
@@ -220,7 +231,7 @@ Can display up to 128 simultaneous sprites on a single screen.
 
 12)Magneto-optical disks, SCSI interface built-in corresponding to next-gen media such as CDROM,
 
-\ \ \ also equipped with various analog I/F's such as RGB, RS-232C, printer, joystick, \& mouse.
+\ \ \ also equipped with various analog I/F'\hskip -0.5ems such as RGB, RS-232C, printer, joystick, \& mouse.
 
 13)Adopts an ergonomic keyboard with an extendable spiral lead.
 

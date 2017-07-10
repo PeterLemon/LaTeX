@@ -1,14 +1,12 @@
-﻿\documentclass[twoside,a4paper,12pt]{article}
+\documentclass[twoside,a4paper,12pt]{article}
 
 \usepackage{fontspec}
-\setmainfont[BoldFont={fonts/epmgobld.ttf}, ItalicFont={fonts/epminbld.ttf}, UprightFont={fonts/epkgobld.ttf}]{epmarugo.ttf}
+\setmainfont[Path = fonts/, Extension = .ttf, BoldFont = epmgobld, ItalicFont = epminbld, UprightFont = epkgobld]{epmarugo}
 
 \usepackage{color}
 \definecolor{fontblack}{RGB}{0, 0, 0}
 \definecolor{fontpurple}{RGB}{186, 91, 121}
 \definecolor{fontwhite}{RGB}{255, 255, 255}
-
-\graphicspath{{images/}}
 
 \usepackage[a4paper, total={210mm, 265mm}]{geometry}
 
@@ -55,6 +53,8 @@
    postaction = {draw,line width=1.4pt, white,shorten >= 3pt}]
 \tikzstyle{vecLine} = [thick,double distance=1.4pt,shorten >= 0.5pt]
 \tikzstyle{innerWhite} = [semithick, white,line width=1.7pt, shorten >= 3pt]
+
+\graphicspath{{images/}}
 
 \begin{document}
 

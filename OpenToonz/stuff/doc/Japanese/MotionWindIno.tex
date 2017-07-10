@@ -4,15 +4,16 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\graphicspath{{images/}}
-
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
 \usepackage{epic}
 \usepackage{eepic}
 \usepackage{xcolor}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -29,13 +30,13 @@ Motion Wind Ino\medskip
 ピクセルの RGB 値から明るいピーク部分をきっかけにして、\par
 色で流れるような効果を加えます。\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 Direction\par
 流線の方向を指定します。\par
 方向は上(Up)下(Down)左(Left)右(Right)方向のみです。\par
@@ -72,9 +73,9 @@ Length Max\par
 \par
 同じ値にすると、ランダムさはなくなり全体が同じ長さとなります。\par
 初期値は Min(最小値)が0、Max(最大値)が18となります。\par
---> "Motion Wind 図1 \ \ Length Wind"参照\par
---> "Motion Wind 図4 \ \ Force is 1 and Density is 1"参照\par
---> "Motion Wind 図7 \ \ Length Wind and Force is 10"参照\\
+-{-}> \textquotedbl Motion Wind 図1 \ \ Length Wind\textquotedbl 参照\par
+-{-}> \textquotedbl Motion Wind 図4 \ \ Force is 1 and Density is 1\textquotedbl 参照\par
+-{-}> \textquotedbl Motion Wind 図7 \ \ Length Wind and Force is 10\textquotedbl 参照\\
 \\
 Length Bias\par
 長さのランダムパターンの片寄りを変えます。\par
@@ -83,7 +84,7 @@ Length Bias\par
 1.0から10.0の間の値では、長いのが増えます。\par
 となります。\par
 初期値は1です。\par
---> "Motion Wind 図1 \ \ Length Wind"参照\\
+-{-}> \textquotedbl Motion Wind 図1 \ \ Length Wind\textquotedbl 参照\\
 \\
 Length Seed\par
 長さのランダムパターンを変えます。\par
@@ -104,9 +105,9 @@ Force Max\par
 違う値を与えると、その値の間で勢いがランダムに変化します。\par
 同じ値にすると、ランダムさはなくなり全体が同じ勢いとなります。\par
 初期値はどちらも1です。\par
---> "Motion Wind 図2 \ \ Force Wind"参照\par
---> "Motion Wind 図5 \ \ Force is 0.1"参照\par
---> "Motion Wind 図7 \ \ Length Wind and Force is 10"参照\\
+-{-}> \textquotedbl Motion Wind 図2 \ \ Force Wind\textquotedbl 参照\par
+-{-}> \textquotedbl Motion Wind 図5 \ \ Force is 0.1\textquotedbl 参照\par
+-{-}> \textquotedbl Motion Wind 図7 \ \ Length Wind and Force is 10\textquotedbl 参照\\
 \\
 Force Bias\par
 勢いのランダムパターンの片寄りを変えます。\par
@@ -122,11 +123,11 @@ Force Bias\par
 1.0から10.0の間の値では、強いのが増えます。\par
 となります。\par
 初期値は1です。\par
---> "Motion Wind 図2 Force Wind"参照\\
+-{-}> \textquotedbl Motion Wind 図2 Force Wind\textquotedbl 参照\\
 \\
 Force Seed\par
 勢いのランダムパターンを変えます。\par
-以下"Length Seed"と同様です。\\
+以下\textquotedbl Length Seed\textquotedbl と同様です。\\
 \\
 Density Min\\
 Density Max\par
@@ -138,8 +139,8 @@ Density Max\par
 違う値を与えると、その値の間で濃度がランダムに変化します。\par
 同じ値にすると、ランダムさはなくなり全体が同じ濃度となります。\par
 初期値はどちらも1です。\par
---> "Motion Wind 図3 \ \ Density Wind"参照\par
---> "Motion Wind 図6 \ \ Density is 0.2"参照\\
+-{-}> \textquotedbl Motion Wind 図3 \ \ Density Wind\textquotedbl 参照\par
+-{-}> \textquotedbl Motion Wind 図6 \ \ Density is 0.2\textquotedbl 参照\\
 \\
 Density Bias\par
 濃度のランダムパターンの片寄りを変えます。\par
@@ -147,16 +148,16 @@ Density Bias\par
 1.0を指定すると均等なランダムさとなり、\par
 1.0から10.0の間の値では、濃いのが増えます。\par
 初期値は1です。\par
---> "Motion Wind 図3 \ \ Density Wind"参照\\
+-{-}> \textquotedbl Motion Wind 図3 \ \ Density Wind\textquotedbl 参照\\
 \\
 Density Seed\par
 濃度のランダムパターンを変えます。\par
-以下"Length Seed"と同様です。\\
+以下\textquotedbl Length Seed\textquotedbl と同様です。\\
 \\
 流線でなく、均等な流れ効果にするには\par
-\ \ "Length Min" と "Length Max"、\par
-\ \,\, "Force Min" と \ \, "Force Max"、\par
-"Density Min" と "Density Max"、\par
+\ \ \textquotedbl Length Min\textquotedbl \ と \textquotedbl Length Max\textquotedbl 、\par
+\ \,\, \textquotedbl Force Min\textquotedbl \ と \ \, \textquotedbl Force Max\textquotedbl 、\par
+\textquotedbl Density Min\textquotedbl \ と \textquotedbl Density Max\textquotedbl 、\par
 に同じ値を与えると流線でなく絵が流れます。\\
 \\
 ランダムのパターンを同期するには\par
@@ -180,7 +181,7 @@ Density Seed\par
 レーム毎にランダムパターンが変化します。\par
 パターンを固定したい場合は背景画全体に処理をかけなければな\par
 りません。\\
-------\\
+-{-}-{-}-{-}\\
 Length Ref\par
 OFF でなにも参照しません。\par
 ON のときは、画像を参照して、長短をつけます。\par
@@ -219,7 +220,7 @@ ON のときは、画像を参照して、濃淡をつけます。\par
 \par
 \noindent Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像の値の取り方を選択します。\par
-入力の"Reference"に画像を接続し、\par
+入力の\textquotedbl Reference\textquotedbl に画像を接続し、\par
 Red/Green/Blue/Alpha/Luminance/Nothing から選びます。\par
 この効果をつけたくないときは Nothing を選ぶか、接続を切ります。\par
 初期値は Red です。

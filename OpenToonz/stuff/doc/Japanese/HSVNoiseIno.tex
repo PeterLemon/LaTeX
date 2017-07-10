@@ -4,14 +4,15 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\graphicspath{{images/}}
-
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
 \usepackage{eepic}
 \usepackage{xcolor}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -34,13 +35,13 @@ Alpha チャンネル自身のノイズの強さも、自身の値を見ます�
 サブカメラは入力画像の範囲が違うため、ノイズパターンが変わっ\par
 てしまいます。\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 Hue\par
 色相(hue)についてノイズの強さを指定します。\par
 Pixel 値(8 or 16bits)をゼロから1の値として指定します。\par
@@ -97,8 +98,8 @@ Limits\par
 ゼロや1付近でノイズをかけると、ゼロ以下あるいは1以上の値が\par
 現われますが、表現できないので、それぞれゼロあるいは1に切り\par
 詰められます。その切り詰めを補填する効果です。\par
---> "端値における Noise 効果調整 図1 比較"参照\par
---> "端値における Noise 効果調整 図2 説明"参照\\
+-{-}> \textquotedbl 端値における Noise 効果調整 図1 比較\textquotedbl 参照\par
+-{-}> \textquotedbl 端値における Noise 効果調整 図2 説明\textquotedbl 参照\\
 \par
 \noindent \ \ \, Effective\par
 この効果(Limits)の強さを決めます。\par
@@ -125,11 +126,11 @@ Limits\par
 \par
 \noindent \ \ \, Type\par
 効果のタイプを撰択します。\par
-"Keep Noise"を選ぶと、(全体的に)ノイズ範囲をずらしノイズ幅\par
+\textquotedbl Keep Noise\textquotedbl を選ぶと、(全体的に)ノイズ範囲をずらしノイズ幅\par
 を維持、画像全体のコントラストは縮小します。\par
-"Keep Contrast"を選ぶと、端のみでノイズ幅を減らしコントラス\par
+\textquotedbl Keep Contrast\textquotedbl を選ぶと、端のみでノイズ幅を減らしコントラス\par
 トを維持します。\par
-初期値は"Keep Noise"です。\\
+初期値は\textquotedbl Keep Noise\textquotedbl です。\\
 \\
 Premultiply\par
 ON なら、RGB に対して Premultiply 済の\par
@@ -140,7 +141,7 @@ ON なら、RGB に対して Premultiply 済の\par
 \\
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像の値の取り方を選択します。\par
-入力の"Reference"に画像を接続し、\par
+入力の\textquotedbl Reference\textquotedbl に画像を接続し、\par
 Red/Green/Blue/Alpha/Luminance/Nothing から選びます。\par
 この効果をつけたくないときは Nothing を選ぶか、接続を切ります。\par
 初期値は Red です。

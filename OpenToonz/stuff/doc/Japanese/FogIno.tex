@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -27,17 +27,17 @@ Fog Ino\medskip
 各 pixel において、周りのより明るい pixelから、光るさの影響を受けます。\par
 近くの pixel からはより強く、遠くの pixelからは弱い影響になります。\\
 \par
-初めに、"Alpha Rendering"が ONなら Alpha チャンネルを処理し、\par
+初めに、\textquotedbl Alpha Rendering\textquotedbl が ONなら Alpha チャンネルを処理し、\par
 次に、Alphaチャンネルがゼロでないピクセルの RGBを処理します。\\
 \par
-"Alpha Rendering"が OFFなら Alphaチャンネルを処理せず、\par
+\textquotedbl Alpha Rendering\textquotedbl が OFFなら Alphaチャンネルを処理せず、\par
 RGB画像の変化に Mask しないので、マスクエッジにジャギーが出ます。\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 Radius\par
 光を散らす範囲を、円半径で指定します。\par
 単位はミリメートルです。\par
@@ -77,7 +77,7 @@ Threshold Max\par
 この値を含めてそれ以上の明るさの Pixel が光を放ちます。\\
 \par
 より明るい Pixel から明るさの影響を受けますが、それに加え、\par
-値("Threshold Min")以上の輝度の Pixel であったときに、\par
+値(\textquotedbl Threshold Min\textquotedbl )以上の輝度の Pixel であったときに、\par
 明るさの影響を受けます。\par
 輝度は、Pixel 値の RGBから求めた(HLS の)L値です。\\
 \par
@@ -85,12 +85,12 @@ Threshold Max\par
 \par
 両方とも1.01とすると Fogはかかりません。\\
 \par
-"Threshold Max"が"Threshold Min"より大きい場合、\par
+\textquotedbl Threshold Max\textquotedbl が\textquotedbl Threshold Min\textquotedbl より大きい場合、\par
 Min から Max の間をリニア補間して fogの変化をなめらかに行ないます。\\
 \par
-"Threshold Max"をゼロとしておく(Min より小さければよい)ことで、\par
-"Threshold Min"以上の明るさからいきなり光を放ちます。\par
-"Threshold Min"もゼロにすれば全体に Fogがかかります。\\
+\textquotedbl Threshold Max\textquotedbl をゼロとしておく(Min より小さければよい)ことで、\par
+\textquotedbl Threshold Min\textquotedbl 以上の明るさからいきなり光を放ちます。\par
+\textquotedbl Threshold Min\textquotedbl もゼロにすれば全体に Fogがかかります。\\
 \par
 初期値はどちらも0です。\\
 \\

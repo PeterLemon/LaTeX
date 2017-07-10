@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -28,27 +28,27 @@ Also does automatic level correction such as to brighten the image for a dark ma
 Based on the brightest value and the darkest value of the input image,\par
 it spreads the brightness range of the darkest value (Out Min) and the\par
 brightest value (Out Max) as a numerical value.\par
---> "Level Auto Figure 1 Calculation View" reference\\
+-{-}> \textquotedbl Level Auto Figure 1 Calculation View\textquotedbl \ reference\\
 \par
 Since it expands the range of each RGBA channel, it does not take into account\par
-the RGBA's balance. Therefore please note that it may change colors, in a colored\par
+the RGBA\textquotesingle s balance. Therefore please note that it may change colors, in a colored\par
 image.\\
 \par
 When you check the results, please do not use the sub-camera.\par
 Since the sub-camera in the range of the input image is different, it changes the\par
 darkest and brightest values of the input image, it can not be accurately processed.\\
 \\
---- \ Inputs \ ---\\
+-{-}- \ Inputs \ -{-}-\\
 Source\par
 Connect the image to process.\\
 \\
---- \ Settings \ ---\\
+-{-}- \ Settings \ -{-}-\\
 In Min Shift\\
 In Max Shift\par
 Minimum and maximum values of the input image Pixel is automatically calculated,\par
  and adjusted by adding to its value.\par
 For example, if there is only one placed bright Pixel, when you want to ignore it,\par
-spread the range by specifying a negative "In Max Shift" value.\par
+spread the range by specifying a negative \textquotedbl In Max Shift\textquotedbl \ value.\par
 Pixel value (8 or 16bits) is specified as a value of 0 to 1.\par
 Minimum value is -1, maximum value is 1.\par
 \noindent \hskip 7em Min \ \ \ \ \, 0\par
@@ -78,7 +78,7 @@ The defaults are\par
 for the values.\\
 \\
 Gamma\par
-Used for the gamma correction between "Out Min" and "Out Max".\par
+Used for the gamma correction between \textquotedbl Out Min\textquotedbl \ and \textquotedbl Out Max\textquotedbl .\par
 A Value between 0.1 and 1.0, will make the image become darker.\par
 It does not compensate when you specify a value of 1.0.\par
 A value between 1.0 and 10.0, will make the image become brighter.\par

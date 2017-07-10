@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -19,7 +19,7 @@ Warp HV Ino\medskip
 \normalsize
 参照画を元に絵をゆがませます。\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 Hori\par
@@ -27,14 +27,14 @@ Hori\par
 Vert\par
 縦方向にゆがませるための参照画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 H MaxLen\par
 水平方向に絵を歪ませます。\par
 歪みの最大値を指定します。\par
 単位は mm で、0から100の値を与えます。\par
 初期値は0で変化しないので何か値をいれてください。\\
 \par
-"Hori"参照画像の赤値から各ピクセルの歪みが決まります。\par
+\textquotedbl Hori\textquotedbl 参照画像の赤値から各ピクセルの歪みが決まります。\par
 8bits 画像の場合\par
 \noindent \hskip 7em 1なら-MaxLen(mm)\par
 \noindent \hskip 7em 128なら歪みなし\par
@@ -47,8 +47,8 @@ H MaxLen\par
 \\
 V MaxLen\par
 垂直方向に絵をゆがませます。\par
-"Vert"参照画像の赤値から各ピクセルの歪みが決まります。\par
-他は"H MaxLen"と同様です。\\
+\textquotedbl Vert\textquotedbl 参照画像の赤値から各ピクセルの歪みが決まります。\par
+他は\textquotedbl H MaxLen\textquotedbl と同様です。\\
 \\
 Alpha Rendering\par
 OFFのとき Alphaチャンネルにはなにもしません。\par

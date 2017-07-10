@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -25,21 +25,21 @@ In addition, the change is smooth.\\
 First, it processes the Alpha channel, if specified.\par
 Then, it handles the Pixel RGB if the Alpha channel is not zero.\\
 \\
---- \ Inputs \ ---\\
+-{-}- \ Inputs \ -{-}-\\
 Source\par
 Connect the image to process.\\
 Reference\par
 Connect the reference image to put the strength of the inflate effect for each Pixel.\\
 \\
---- \ Settings \ ---\\
+-{-}- \ Settings \ -{-}-\\
 Max Min Select\par
 Specify how to handle the selection.\par
-"Max" -> Inflate the bright parts of the image\par
-"Min" -> Inflate the dark parts of the image\par
-Using "Min", ink lines of the cell image outline, the transmission region of the outside\par
+\textquotedbl Max\textquotedbl \ -> Inflate the bright parts of the image\par
+\textquotedbl Min\textquotedbl \ -> Inflate the dark parts of the image\par
+Using \textquotedbl Min\textquotedbl , ink lines of the cell image outline, the transmission region of the outside\par
 will be painted zero, ink line bulge of the transparent area will continue to disappear.\par
 Also it increases the transmission region Alpha as well.\par
-The default setting is "Max".\\
+The default setting is \textquotedbl Max\textquotedbl .\\
 \\
 Radius\par
 The inflate size, specified in the circle radius.\par
@@ -66,8 +66,8 @@ The default value is 2.
 \\
 \par
 \noindent Degree\par
-"Polygon Number" value of 3 or more, specify the slope of the inflate polygon.\par
-"Polygon Number" value of 2 or less will have no effect.\par
+\textquotedbl Polygon Number\textquotedbl \ value of 3 or more, specify the slope of the inflate polygon.\par
+\textquotedbl Polygon Number\textquotedbl \ value of 2 or less will have no effect.\par
 Specify in Degree units more than 0.\par
 It will rotate in a clockwise direction.\par
 The default value is 0.\\
@@ -79,7 +79,7 @@ The default setting is ON.\\
 \\
 Reference\par
 Choose how Reference image values put the strength of the effect into each Pixel.\par
-An image is connected to the "Reference" of the input,\par
+An image is connected to the \textquotedbl Reference\textquotedbl \ of the input,\par
 Choose from Red/Green/Blue/Alpha/Luminance/Nothing.\par
 Choose Nothing when you do not want this effect, it will turn off the connection.\par
 The default setting is Red.

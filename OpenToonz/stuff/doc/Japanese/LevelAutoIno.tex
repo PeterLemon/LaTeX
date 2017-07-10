@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -28,7 +28,7 @@ Level Auto Ino\medskip
 入力画像の最も暗い値と最も明るい値を元にして、数値として最\par
 も暗い値(Out Min)と最も明るい値(Out Max)に明るさのレンジを\par
 広げます。\par
---> "Level Auto 図1 計算図"参照\\
+-{-}> \textquotedbl Level Auto 図1 計算図\textquotedbl 参照\\
 \par
 RGBA チャンネル各々にレンジを広げるので、RGBA のバランスはと\par
 りません。そのため色の付いた画像は色が変わることがあります\par
@@ -38,17 +38,17 @@ RGBA チャンネル各々にレンジを広げるので、RGBA のバランス�
 サブカメラは入力画像の範囲が違うため、入力画像の最暗値と最\par
 明値が変わり、正確な処理ができません。\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 In Min Shift\\
 In Max Shift\par
 入力画像 Pixel の最小値と最大値は、自動的に計算しますが、その\par
 値に加算して調整します。\par
 例えば一ヶ所だけ明るい Pixel があってそれを無視したいとき、\par
-"In Max Shift"にマイナスを指定することでレンジをひろげます。\par
+\textquotedbl In Max Shift\textquotedbl にマイナスを指定することでレンジをひろげます。\par
 Pixel 値(8 or 16bits)をゼロから1の値として指定します。\par
 最小は-1、最大は1です。\par
 \noindent \hskip 7em Min \ \ \ \ \, 0\par
@@ -78,7 +78,7 @@ Out Min
 です。\\
 \\
 Gamma\par
-"Out Min"と"Out Max"の間で gamma 補正します。\par
+\textquotedbl Out Min\textquotedbl と\textquotedbl Out Max\textquotedbl の間で gamma 補正します。\par
 0.1から1.0の間だと、画像が暗くなります。\par
 1.0を指定すると補正しません。\par
 1.0から10.0の間では、明るくなります。\par

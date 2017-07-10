@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -19,13 +19,13 @@ Median Ino\medskip
 \normalsize
 Reduce noise, and erode majority of middle colors, rounds the contour of the picture\\
 \\
---- \ Inputs \ ---\\
+-{-}- \ Inputs \ -{-}-\\
 Source\par
 Connect the image to process.\\
 Reference\par
 Connect the reference image to put the strength of the effect into each Pixel.\\
 \\
---- \ Settings \ ---\\
+-{-}- \ Settings \ -{-}-\\
 Radius\par
 Specify the range to be eroded by a circle radius.\par
 The unit is mm.\\
@@ -39,23 +39,23 @@ The default value is 0.35mm.\\
 Channel\par
 Specify the color channel to apply the median.\\
 \par
-"Red"\par
-"Green"\par
-"Blue"\par
-"Alpha"\par
+\textquotedbl Red\textquotedbl\par
+\textquotedbl Green\textquotedbl\par
+\textquotedbl Blue\textquotedbl\par
+\textquotedbl Alpha\textquotedbl\par
 If you choose, to process over the specified color channel,\par
 it will store the results in the RGBA channel.\par
 In a black-and-white image, using this method, of single-channel processing,\par
 the speed of processing will be faster.\\
 \par
-"All"\par
+\textquotedbl All\textquotedbl\par
 Using this, will multiply the processing to each RGBA channel.\\
 \par
-The default setting is "All".\\
+The default setting is \textquotedbl All\textquotedbl .\\
 \\
 Reference\par
 Choose how Reference image values put the strength of the effect into each Pixel.\par
-An image is connected to the "Reference" of the input,\par
+An image is connected to the \textquotedbl Reference\textquotedbl \ of the input,\par
 Choose from Red/Green/Blue/Alpha/Luminance/Nothing.
 
 \newpage

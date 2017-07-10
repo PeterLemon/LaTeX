@@ -4,14 +4,15 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\graphicspath{{images/}}
-
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
 \usepackage{eepic}
 \usepackage{xcolor}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -34,13 +35,13 @@ When you check the results, please do not use the sub-camera.\par
 This is because in the sub-camera the range of the input image is different,\par
 the noise pattern will change.\\
 \\
---- \ Inputs \ ---\\
+-{-}- \ Inputs \ -{-}-\\
 Source\par
 Connect the image to process.\\
 Reference\par
 Connect the reference image to put the strength of the effect into each Pixel.\\
 \\
---- \ Settings \ ---\\
+-{-}- \ Settings \ -{-}-\\
 Hue\par
 Specify the strength of the noise for the color (Hue).\par
 Pixel value (8 or 16bits) specified as a value from 1 to 0.\par
@@ -97,8 +98,8 @@ adjustment to effect the end value (in the vicinity of 0 to 1).\par
 Applying the noise at 0 or near 1, will appear below 1 or more than the value of 0,\par
 so it can not be expressed, because the values are each truncated to 0 or 1.\par
 It is effective to compensate for the truncation.\par
---> "End value of Noise effect adjustment \ \ Figure 1 \ \ comparison" reference\par
---> "End value of Noise effect adjustment \ \ Figure 2 \ \ description" reference\\
+-{-}> \textquotedbl End value of Noise effect adjustment \ \ Figure 1 \ \ comparison\textquotedbl \ reference\par
+-{-}> \textquotedbl End value of Noise effect adjustment \ \ Figure 2 \ \ description\textquotedbl \ reference\\
 \par
 \noindent \ \ \, Effective\par
 Determines the strength of this effect (Limits).\par
@@ -125,11 +126,11 @@ The default Center value is 0.5.\\
 \par
 \noindent \ \ \, Type\par
 Select from the options of the Type of the effect.\par
-If you select "Keep Noise", it maintains the (overall) noise width shifting of the\par
+If you select \textquotedbl Keep Noise\textquotedbl , it maintains the (overall) noise width shifting of the\par
 noise range, the contrast of the entire image will shrink.\par
-If you select "Keep Contrast", it maintains the contrast to reduce the noise width\par
+If you select \textquotedbl Keep Contrast\textquotedbl , it maintains the contrast to reduce the noise width\par
 only at the end.\par
-The default setting is "Keep Noise".\\
+The default setting is \textquotedbl Keep Noise\textquotedbl .\\
 \\
 Premultiplied\par
 When ON, RGB is already set to Premultiply\par
@@ -140,7 +141,7 @@ The default setting is ON.\\
 \\
 Reference\par
 Choose how Reference image values put the strength of the effect into each Pixel.\par
-An image is connected to the "Reference" of the input,\par
+An image is connected to the \textquotedbl Reference\textquotedbl \ of the input,\par
 Choose from Red/Green/Blue/Alpha/Luminance/Nothing.\par
 Choose Nothing when you do not want this effect, it will turn off the connection.\par
 The default setting is Red.

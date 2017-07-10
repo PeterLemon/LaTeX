@@ -4,15 +4,16 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\graphicspath{{images/}}
-
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
 \usepackage{epic}
 \usepackage{eepic}
 \usepackage{xcolor}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -29,13 +30,13 @@ For animation, it uses a fine arts drawing method to represent the reference to 
 In the wake of the bright peak portion from the RGB value of the pixel,\par
 you can add effects, such as flowing in color.\\
 \\
---- \ Inputs \ ---\\
+-{-}- \ Inputs \ -{-}-\\
 Source\par
 Connect the image to process.\\
 Reference\par
 Connect the reference image to put the strength of the effect into each Pixel.\\
 \\
---- \ Settings \ ---\\
+-{-}- \ Settings \ -{-}-\\
 Direction\par
 Specify the direction of the flow line.\par
 The only directions are above (Up) under (Down) left (Left) right (Right).\par
@@ -72,9 +73,9 @@ If you give a different values, the length between the values will change random
 \par
 With the same values, it will no longer use randomness and will be the same length.\par
 The default values for Min (minimum value) is 0, and Max (maximum value) is 18.\par
---> "Motion Wind Figure 1 \ \ Length Wind" reference\par
---> "Motion Wind Figure 4 \ \ Force is 1 and Density is 1" reference\par
---> "Motion Wind Figure 7 \ \ Length Wind and Force is 10" reference\\
+-{-}> \textquotedbl Motion Wind Figure 1 \ \ Length Wind\textquotedbl \ reference\par
+-{-}> \textquotedbl Motion Wind Figure 4 \ \ Force is 1 and Density is 1\textquotedbl \ reference\par
+-{-}> \textquotedbl Motion Wind Figure 7 \ \ Length Wind and Force is 10\textquotedbl \ reference\\
 \\
 Length Bias\par
 This changes the offset of the random pattern for the length.\par
@@ -83,7 +84,7 @@ If you specify a value of 1.0 it will make the randomness become uniform,\par
 Using a value between 1.0 and 10.0, increases the length to be longer.\par
 Specify how you would like it to look.\par
 The default value is 1.\par
---> "Motion Wind Figure 1 \ \ Length Wind" reference\\
+-{-}> \textquotedbl Motion Wind Figure 1 \ \ Length Wind\textquotedbl \ reference\\
 \\
 Length Seed\par
 This changes the random pattern for the length.\par
@@ -104,9 +105,9 @@ specify how you would like it to look.\par
 If you give different values, momentum between the values will change randomly.\par
 With the same values, it will no longer be random and will use the same momentum.\par
 The default value is 1 for both.\par
---> "Motion Wind Figure 2 \ \ Force Wind" reference\par
---> "Motion Wind Figure 5 \ \ Force is 0.1" reference\par
---> "Motion Wind Figure 7 \ \ Length Wind and Force is 10" reference\\
+-{-}> \textquotedbl Motion Wind Figure 2 \ \ Force Wind\textquotedbl \ reference\par
+-{-}> \textquotedbl Motion Wind Figure 5 \ \ Force is 0.1\textquotedbl \ reference\par
+-{-}> \textquotedbl Motion Wind Figure 7 \ \ Length Wind and Force is 10\textquotedbl \ reference\\
 \\
 Force Bias\par
 This changes the offset of the random pattern for the momentum.\par
@@ -122,11 +123,11 @@ if you specify a value of 1.0 it will make the randomness become uniform,
 using a value between 1.0 and 10.0, will make it become more strong.\par
 Specify how you would like it to look.\par
 The default value is 1.\par
---> "Motion Wind Figure 2 Force Wind" reference\\
+-{-}> \textquotedbl Motion Wind Figure 2 Force Wind\textquotedbl \ reference\\
 \\
 Force Seed\par
 This changes the random pattern for the momentum.\par
-The options are similar to "Length Seed".\\
+The options are similar to \textquotedbl Length Seed\textquotedbl .\\
 \\
 Density Min\\
 Density Max\par
@@ -138,8 +139,8 @@ using a value greater than 1.0, will make it become darker. The maximum is 100.\
 If you give different values, concentration between the values will change randomly.\par
 With the same values, it is no longer random and will use the same concentration.\par
 The default value is 1 for both.\par
---> "Motion Wind Figure 3 \ \ Density Wind" reference\par
---> "Motion Wind Figure 6 \ \ Density is 0.2" reference\\
+-{-}> \textquotedbl Motion Wind Figure 3 \ \ Density Wind\textquotedbl \ reference\par
+-{-}> \textquotedbl Motion Wind Figure 6 \ \ Density is 0.2\textquotedbl \ reference\\
 \\
 Density Bias\par
 This changes the offset of the random pattern for the concentration.\par
@@ -147,16 +148,16 @@ Using a value between 0.1 and 1.0, the concentration is increased,\par
 if you specify a value of 1.0 it will make the randomness become uniform,\par
 using a value of between 1.0 and 10.0, will make it become more dark.\par
 The default value is 1.\par
---> "Motion Wind Figure 3 \ \ Density Wind" reference\\
+-{-}> \textquotedbl Motion Wind Figure 3 \ \ Density Wind\textquotedbl \ reference\\
 \\
 Density Seed\par
 This changes the random pattern of the concentration.\par
-The options are similar to "Length Seed".\\
+The options are similar to \textquotedbl Length Seed\textquotedbl .\\
 \\
 Rather than streamline, to use a uniform flow effect\par
-\ \ "Length Min" and "Length Max"、\par
-\ \,\, "Force Min" and \ \, "Force Max"、\par
-"Density Min" and "Density Max"、\par
+\ \ \textquotedbl Length Min\textquotedbl \ and \textquotedbl Length Max\textquotedbl 、\par
+\ \,\, \textquotedbl Force Min\textquotedbl \ and \ \, \textquotedbl Force Max\textquotedbl 、\par
+\textquotedbl Density Min\textquotedbl \ and \textquotedbl Density Max\textquotedbl 、\par
 and give the same values to each for the picture rather than streamline for the flow.\\
 \\
 To synchronize a random pattern\par
@@ -180,7 +181,7 @@ When on the background image, using camera movement, a random pattern\par
 for each frame in accordance with the change of the picture will occur.\par
 If you want to fix the pattern it must be multiplied by the processing\par
 in the entire background image.\\
-------\\
+-{-}-{-}-{-}\\
 Length Ref\par
 When OFF it will not be referred to.\par
 When ON, this refers to the image, and will give it a length.\par
@@ -219,7 +220,7 @@ The default setting is OFF.
 \par
 \noindent Reference\par
 Choose how Reference image values put the strength of the effect into each Pixel.\par
-An image is connected to the "Reference" of the input,\par
+An image is connected to the \textquotedbl Reference\textquotedbl \ of the input,\par
 Choose from Red/Green/Blue/Alpha/Luminance/Nothing.\par
 Choose Nothing when you do not want this effect, it will turn off the connection.\par
 The default setting is Red.

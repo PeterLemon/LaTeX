@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -32,7 +32,7 @@ HSV Add Ino\medskip
 Alpha チャンネルによって効果の強さが決まります。よって、\par
 Alpha によるマスクエッジが滑らかであればその状態を保持します。\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 Noise\par
@@ -40,11 +40,11 @@ Pixel 毎に HSV 値によってノイズを加えるための画像を接続し
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 From RGBA\par
 参照画像(Noise)のどの channel を使用するかを指定します。\par
-"Red" "Green" "Blue" "Alpha"のどれかを選びます。\par
-初期値は"Red"です。\\
+\textquotedbl Red\textquotedbl \ \textquotedbl Green\textquotedbl \ \textquotedbl Blue\textquotedbl \ \textquotedbl Alpha\textquotedbl のどれかを選びます。\par
+初期値は\textquotedbl Red\textquotedbl です。\\
 \\
 Offset\par
 参照画像(Noise)の Pixel 値に対する offset 値です。\par
@@ -71,17 +71,17 @@ offset 値を中心としてスケールがかります。
 Saturation\par
 彩度(Saturation)変化の強さを指定します。\par
 初期値は0.0です。\par
-他は"Hue"と同様です。\\
+他は\textquotedbl Hue\textquotedbl と同様です。\\
 \\
 Value\par
 明度(brightness Value)変化の強さを指定します。\par
 初期値は0.25です。\par
-他は"Hue"と同様です。\\
+他は\textquotedbl Hue\textquotedbl と同様です。\\
 \\
 Alpha\par
 不透明度(Alpha)変化の強さを指定します。\par
 初期値は0.0です。\par
-他は"Hue"と同様です。\\
+他は\textquotedbl Hue\textquotedbl と同様です。\\
 \\
 Premultiply\par
 ON なら、RGB に対して Premultiply 済の\par
@@ -92,7 +92,7 @@ ON なら、RGB に対して Premultiply 済の\par
 \\
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像の値の取り方を選択します。\par
-入力の"Reference"に画像を接続し、\par
+入力の\textquotedbl Reference\textquotedbl に画像を接続し、\par
 Red/Green/Blue/Alpha/Luminance/Nothing から選びます。\par
 この効果をつけたくないときは Nothing を選ぶか、接続を切ります。\par
 初期値は Red です。

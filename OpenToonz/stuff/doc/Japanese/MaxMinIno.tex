@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -25,21 +25,21 @@ Max Min Ino\medskip
 初めに、指定あれば Alphaチャンネルに対して処理します。\par
 次に、Alphaチャンネルがゼロでない Pixel の RGBを処理します。\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 Reference\par
 Pixel 毎に膨らむ効果の強弱をつけるための参照画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 Max Min Select\par
 処理方法を撰択します。\par
-"Max" -> 明るい部分を膨らませる\par
-"Min" -> 暗い部分を膨らませる\par
-"Min"の場合、セル画像の輪郭の墨線は、その外側の透過領域がゼ\par
+\textquotedbl Max\textquotedbl \ -> 明るい部分を膨らませる\par
+\textquotedbl Min\textquotedbl \ -> 暗い部分を膨らませる\par
+\textquotedbl Min\textquotedbl の場合、セル画像の輪郭の墨線は、その外側の透過領域がゼ\par
 ロで塗られているため、透過領域が膨らみ墨線が消えていきます。\par
 同様に Alphaも透過領域が増します。\par
-初期設定は"Max"です。\\
+初期設定は\textquotedbl Max\textquotedbl です。\\
 \\
 Radius\par
 膨らむ大きさを、円半径で指定します。\par
@@ -66,8 +66,8 @@ Polygon Number\par
 \\
 \par
 \noindent Degree\par
-"Polygon Number"が3以上の時の、多角形膨らみの傾きを指定します。\par
-"Polygon Number"が2のときは意味ありません。\par
+\textquotedbl Polygon Number\textquotedbl が3以上の時の、多角形膨らみの傾きを指定します。\par
+\textquotedbl Polygon Number\textquotedbl が2のときは意味ありません。\par
 ゼロ以上の Degree単位で指定します。\par
 時計回りに回転します。\par
 初期値は0です。\\
@@ -79,7 +79,7 @@ OFFのときは RGBにのみ処理します。Alphaチャンネルのない BG �
 \\
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像の値の取り方を選択します。\par
-入力の"Reference"に画像を接続し、\par
+入力の\textquotedbl Reference\textquotedbl に画像を接続し、\par
 Red/Green/Blue/Alpha/Luminance/Nothingから選びます。\par
 この効果をつけたくないときは Nothingを選ぶか、接続を切ります。\par
 初期値は Red です。

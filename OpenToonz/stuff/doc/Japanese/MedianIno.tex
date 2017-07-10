@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -19,13 +19,13 @@ Median Ino\medskip
 \normalsize
 ノイズを低減し、多数派あるいは中間の色で侵食し、絵の輪郭を丸めます\\
 \\
---- \ 入力 \ ---\\
+-{-}- \ 入力 \ -{-}-\\
 Source\par
 処理をする画像を接続します。\\
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像を接続します。\\
 \\
---- \ 設定 \ ---\\
+-{-}- \ 設定 \ -{-}-\\
 Radius\par
 侵食する範囲を円の半径で指定します。\par
 単位は mm です。\\
@@ -39,23 +39,23 @@ Radius\par
 Channel\par
 medianをかける色チャンネルを指定します。\\
 \par
-"Red"\par
-"Green"\par
-"Blue"\par
-"Alpha"\par
+\textquotedbl Red\textquotedbl\par
+\textquotedbl Green\textquotedbl\par
+\textquotedbl Blue\textquotedbl\par
+\textquotedbl Alpha\textquotedbl\par
 を選ぶと、指定の色チャンネルに処理をかけて、\par
 その結果を RGBAチャンネルに保存します。\par
 白黒画像では、このように単チャンネル処理をすることで、\par
 処理スピードがはやくなります。\\
 \par
-"All"\par
+\textquotedbl All\textquotedbl\par
 では、RGBA各チャンネルに処理をかけます。\\
 \par
-初期値は"All"です。\\
+初期値は\textquotedbl All\textquotedbl です。\\
 \\
 Reference\par
 Pixel 毎に効果の強弱をつけるための参照画像の値の取り方を選択します。\par
-入力の"Reference"に画像を接続し、\par
+入力の\textquotedbl Reference\textquotedbl に画像を接続し、\par
 Red/Green/Blue/Alpha/Luminance/Nothingから選びます。
 
 \newpage

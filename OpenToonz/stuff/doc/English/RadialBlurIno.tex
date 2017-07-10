@@ -4,11 +4,12 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\graphicspath{{images/}}
-
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \begin{document}
 
@@ -27,18 +28,18 @@ Then, it handles the RGB pixels if the Alpha channel is not zero.\par
 If you do not want to process to the Alpha channel, it will mask the changes in the\par
 RGB image using the Alpha values. Therefore, smooth edges will remain smooth.\\
 \\
---- \ Inputs \ ---\\
+-{-}- \ Inputs \ -{-}-\\
 Source\par
 Connect the image to process.\\
 Reference\par
 Connect the reference image to put the strength of the effect into each Pixel.\\
 \\
---- \ Settings \ ---\\
+-{-}- \ Settings \ -{-}-\\
 Center\par
 Specify the center position of the radius.\par
 Origin is the center of the image to be processed. Not the gaze point of the camera.\par
 The unit is millimeters.\par
-The default value is the center of origin position at "0.0 0.0".\\
+The default value is the center of origin position at \textquotedbl 0.0 0.0\textquotedbl .\\
 \\
 Radius\par
 Specify the range that does not get blurred from the center.\par
@@ -96,7 +97,7 @@ Shrink=3\par
 \\
 Reference\par
 Choose how Reference image values put the strength of the effect into each Pixel.\par
-An image is connected to the "Reference" of the input,\par
+An image is connected to the \textquotedbl Reference\textquotedbl \ of the input,\par
 Choose from Red/Green/Blue/Alpha/Luminance/Nothing.\par
 Choose Nothing when you do not want this effect, it will turn off the connection.\par
 The default setting is Red.

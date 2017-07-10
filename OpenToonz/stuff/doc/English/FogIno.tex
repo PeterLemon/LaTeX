@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{ipaexm.ttf}
 
-\setlength\parindent{4.2em}
+\setlength\parindent{3.5em}
 \setlength\parskip{0em}
 \renewcommand{\baselinestretch}{1.247}
 
@@ -27,17 +27,17 @@ can be aimed at by the effect, but it does not have to simulate the light.\\
 Each pixel, is affected by the shining of a more bright surrounding pixel.\par
 More strongly from nearby pixels, it will have a weaker impact from distant pixels.\\
 \par
-First, "Alpha Rendering" processing starts if the Alpha channel is ON,\par
+First, \textquotedbl Alpha Rendering\textquotedbl \ processing starts if the Alpha channel is ON,\par
 next, it handles the RGB pixels when the Alpha channel is not zero.\\
 \par
-"Alpha Rendering" is not handled when the Alpha channel is OFF,\par
+\textquotedbl Alpha Rendering\textquotedbl \ is not handled when the Alpha channel is OFF,\par
 it does not Mask changes in the RGB image, so you will get jaggies on the mask edge.\\
 \\
---- \ Inputs \ ---\\
+-{-}- \ Inputs \ -{-}-\\
 Source\par
 Connect the image to process.\\
 \\
---- \ Settings \ ---\\
+-{-}- \ Settings \ -{-}-\\
 Radius\par
 The extent of which to scatter the light, specified by a circle radius.\par
 The unit is millimeters.\par
@@ -77,7 +77,7 @@ Threshold Max\par
 Specify these values to get more brightness from the emitted Pixel light.\\
 \par
 Affected by the brightness from a more bright Pixel, but in addition to that,\par
-using the Pixel value ("Threshold Min") can get even more brightness,\par
+using the Pixel value (\textquotedbl Threshold Min\textquotedbl ) can get even more brightness,\par
 to affect the current overall brightness.\par
 Brightness, is determined from the RGB Pixel value (of HLS) from the L value.\\
 \par
@@ -85,12 +85,12 @@ The following range greater than or equal to 0.0 to 1.01 can be specified as val
 \par
 If both values are 1.01 Fog will not be applied.\\
 \par
-If "Threshold Max" is greater than "Threshold Min",\par
+If \textquotedbl Threshold Max\textquotedbl \ is greater than \textquotedbl Threshold Min\textquotedbl ,\par
 it carries out smooth changes in fog by linear interpolation between Min and Max.\\
 \par
-Reversing "Threshold Max" (which may be less than Min) but kept above 0,\par
-will suddenly emit light from pixels with "Threshold Min" or more of brightness.\par
-"Threshold Min" also produces full Fog if set to 0.\\
+Reversing \textquotedbl Threshold Max\textquotedbl \ (which may be less than Min) but kept above 0,\par
+will suddenly emit light from pixels with \textquotedbl Threshold Min\textquotedbl \ or more of brightness.\par
+\textquotedbl Threshold Min\textquotedbl \ also produces full Fog if set to 0.\\
 \par
 The default value is 0 for both.\\
 \\

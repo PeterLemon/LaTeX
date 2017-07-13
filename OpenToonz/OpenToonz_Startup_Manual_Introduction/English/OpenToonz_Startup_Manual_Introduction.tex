@@ -4,9 +4,7 @@
 \usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=krom]{hyperref}
 
 \usepackage{fontspec}
-\setmainfont[BoldFont={fonts/epkgobld.ttf}]{epkaisho.ttf}
-
-\graphicspath{{images/}}
+\setmainfont[Path = fonts/, Extension = .ttf, BoldFont = ipagp]{ipamp}
 
 \usepackage[normalem]{ulem}
 \renewcommand{\ULthickness}{0.08em}
@@ -31,29 +29,32 @@
 \definecolor{fontyellow}{RGB}{255, 255, 128}
 \definecolor{arrowblue}{RGB}{0, 146, 255}
 
+\graphicspath{{images/}}
+
 \begin{document}
 
 \fancyfoot[R]{\thepage}
 
-\begin{flushright}
+\small
+\noindent\vspace{-2.2em}\begin{flushright}
 2016/3/26 Revision
 \end{flushright}
 
-\vspace{17.5em}
+\vspace{62mm}
 
 \LARGE
-\textbf{\hskip 5em \,OpenToonz}\par
-\textbf{\hskip 5em \,Startup Manual}\par
-\textbf{\hskip 5em \,Introduction}
+\textbf{\hskip 30mm OpenToonz}\par
+\textbf{\hskip 30mm Startup Manual}\par
+\textbf{\hskip 30mm Introduction}
 
-\noindent \begin{picture}(0,0)
-\put(0,24){\includegraphics[width=5em]{OpenToonzLogo}}
+\noindent\begin{picture}(0,0)
+\put(1,25){\includegraphics[width=30mm]{OpenToonzLogo}}
 \end{picture}
 
 \newpage
 
 \phantomsection
-\section*{\uline{\hskip -3em \hskip 3em □ Installation Procedure \hskip 8em}}
+\section*{\uline{\hskip -3em \hskip 3em □ Installation Procedure \hskip 2.65em}}
 \addcontentsline{toc}{section}{□ Installation Procedure}
 
 \large
@@ -65,7 +66,7 @@
 \put(257,-90){\includegraphics[width=12.5em]{InstallationProcedure1B}}
 \end{picture}\\[5.5em]
 
-\noindent ② Read the Terms \& Conditions, if you want to proceed, press the "Agree" button.
+\noindent ② Read the Terms \& Conditions, if you want to proceed, press the “Agree" button.
 
 \noindent \begin{picture}(0,0)
 \put(72,-90){\includegraphics[width=11.5em]{InstallationProcedure2A}}
@@ -89,7 +90,7 @@ will be added automatically.
 \large
 
 \noindent \begin{picture}(0,0)
-\put(329,-20){\includegraphics[width=11.5em]{InstallationProcedure4}}
+\put(325,-20){\includegraphics[width=11.5em]{InstallationProcedure4}}
 \end{picture}\\[-0.5em]
 
 \noindent ⑤ Once the files have been copied, the installation is complete.
@@ -108,7 +109,7 @@ will be added automatically.
 \newpage
 
 \phantomsection
-\section*{\uline{\hskip -3em \hskip 3em □ Stuff Folder Information\hskip 7.5em}}
+\section*{\uline{\hskip -3em \hskip 3em □ Stuff Folder Information\hskip 2.0em}}
 \addcontentsline{toc}{section}{□ Stuff Folder Information}
 
 \normalsize
@@ -128,24 +129,30 @@ These folders can be moved in the following way even after installation.\\[0.4em
 \large
 \noindent ● To change the path of the Stuff folder, etc. (Windows) \normalsize \colorbox{fontpink}{\color{black}Advanced Level}\\
 ※ With administrator privileges do the following.\\
-① Press the Windows key + R, type "regedit" in the "Run" dialog, \& then run it.\\
+① Press the Windows key + R, type “regedit" in the “Run" dialog, \& then run it.\\
 ② The Registry Editor will now open.\\
-③ In HKEY\_LOCAL\_MACHINE$\backslash$SOFTWARE$\backslash$OpenToonz$\backslash$OpenToonz$\backslash$1.0, the path to each folder is stored,\\
-rewrite the one you want to change using the following key:\par
-\ \ \ \ \ "TOONZROOT" \ \ \ \ \ : Stuff folder\par
-\ \ \ \ \ "TOONZPROJECTS" \ : projects\par
-\ \ \ \ \ "TOONZCACHEROOT" : cache\par
-\ \ \ \ \ "TOONZCONFIG" \ \ \ : config\par
-\ \ \ \ \ "TOONZPROFILES" \ : profiles\par
-\ \ \ \ \ "TOONZFXPRESETS"  : fxs\par
-\ \ \ \ \ "TOONZLIBRARY" \ \ : library\par
-\ \ \ \ \ "TOONZSTUDIOPALETTE" : studiopalette\\[0.4em]
+③ In HKEY\_LOCAL\_MACHINE$\backslash$SOFTWARE$\backslash$OpenToonz$\backslash$OpenToonz$\backslash$1.0, the path to each folder is\\
+stored, rewrite the one you want to change using the following key:\\[-1.0em]
+
+\setlength{\tabcolsep}{0em}
+\renewcommand{\arraystretch}{1}
+\noindent\hskip 3.5em \begin{tabular}{p{11.5em}l}
+“TOONZROOT" & : Stuff folder\\
+“TOONZPROJECTS" & : projects\\
+“TOONZCACHEROOT" & : cache\\
+“TOONZCONFIG" & : config\\
+“TOONZPROFILES" & : profiles\\
+“TOONZFXPRESETS" & : fxs\\
+“TOONZLIBRARY" & : library\\
+\multicolumn{2}{l}{“TOONZSTUDIOPALETTE": studiopalette}\\
+\end{tabular}\\[1.0em]
+
 \par
 \large
 \noindent ● To change the path of the Stuff folder, etc. (OS X) \normalsize \colorbox{fontpink}{\color{black}Advanced Level}\\
 In the case of OS X, the Stuff folder has been saved to /Applications/OpenToonz/OpenToonz\_1.0\_stuff/\\
 as the default location after the installation.\\
-① From the context menu of the OpenToonz 1.0.app, select "Show Package Contents".\\
+① From the context menu of the OpenToonz 1.0.app, select “Show Package Contents".\\
 ② Open SystemVar.ini from Contents/Resources in a text editor.\\
 ③ As in the above case of Windows, edit the value corresponding to each folder, \& then Save.\\[0.4em]
 \par
@@ -159,7 +166,7 @@ as the default location after the installation.\\
 \newpage
 
 \phantomsection
-\section*{\uline{\hskip -3em \hskip 3em □ OpenToonz Data Handling\hskip 8em}}
+\section*{\uline{\hskip -3em \hskip 3em □ OpenToonz Data Handling\hskip 0.8em}}
 \addcontentsline{toc}{section}{□ OpenToonz Data Handling}
 
 \normalsize
@@ -172,26 +179,26 @@ as the default location after the installation.\\
 \put(78,-17){\small Sequence Images}
 \put(161,-20){\scriptsize Digital Animation}
 \put(237,-20){\small Project File (XML): All Work}
-\put(252,-30){\small ・Path of the Working Folder}
-\put(252,-40){\small ・Default Values for Settings}
+\put(252,-30){\small ・ Path of the Working Folder}
+\put(252,-40){\small ・ Default Values for Settings}
 \put(90,-39){\scriptsize Trace}
 \put(93,-59){\small Each Cell (Raster)}
 \put(77,-75){\small Level File (TLV)}
-\put(91,-87){\small ・Raster Image Data}
+\put(91,-87){\small ・ Raster Image Data}
 \put(77,-107){\small Palette File (TPL)}
-\put(91,-119){\small ・Palette Data}
+\put(91,-119){\small ・ Palette Data}
 \put(205,-81){\footnotesize Each Cell (Vector)}
 \put(205,-97){\footnotesize Vector Level File}
 \put(205,-107){\footnotesize (PLI)}
-\put(205,-117){\footnotesize ・Image + Palette Data}
+\put(205,-117){\footnotesize ・ Image + Palette Data}
 \put(310,-104){\small General\,Image File}
 \put(310,-116){\small (Background,\,etc.)}
 \put(151,-150){\scriptsize Place In Time Sheet}
 \put(113,-169){\small Scene File (TNZ): Each Cut}
-\put(127,-180){\footnotesize ・Path to All of the Material}
-\put(247,-180){\footnotesize ・Effects Data}
-\put(127,-191){\footnotesize ・Geometric Transform Data}
-\put(247,-191){\footnotesize ・Output Settings}
+\put(127,-180){\footnotesize ・ Path to All of the Material}
+\put(247,-180){\footnotesize ・ Effects Data}
+\put(127,-191){\footnotesize ・ Geometric Transform Data}
+\put(247,-191){\footnotesize ・ Output Settings}
 \put(172,-208){\scriptsize Rendering}
 \put(188,-224){\small Output\,(Pic/Vid)}
 \end{picture}\\[-0.5em]
@@ -206,7 +213,7 @@ as the default location after the installation.\\
 \node at (1.8em,-8em) {\textcolor{white}{Colors}};
 \draw[fill=fontgreen,fontgreen]  (2.6em,-12.5em) --  (3.6em,-13.5em) --  (2.6em,-14.5em) -- (0em,-14.5em) -- (0em,-12.5em) -- cycle;
 \node at (1.6em,-13.5em) {\textcolor{white}{Shoot}};
-\end{tikzpicture}\\[3em]
+\end{tikzpicture}\\[3.5em]
 
 \noindent ① Toonz Raster Level File\\
 \normalsize
@@ -240,28 +247,28 @@ combine the data of each Cell \& the background material, to complete Scene file
 \newpage
 
 \phantomsection
-\section*{\uline{\hskip -3em \hskip 3em □ OpenToonz Interface\hskip 10em}}
+\section*{\uline{\hskip -3em \hskip 3em □ OpenToonz Interface\hskip 3.42em}}
 \addcontentsline{toc}{section}{□ OpenToonz Interface}
 
 \normalsize
-\noindent OpenToonz interface contains a variety of "panels" that have been prepared for each function.\\
+\noindent OpenToonz interface contains a variety of “panels" that have been prepared for each function.\\
 Users can use a combination of these panels freely in the workspace (Room).
 
 \large
 \noindent \begin{picture}(0,0)
 \put(4,-137){\includegraphics[width=13.8em]{OpenToonzInterfaceXsheet}}
-\put(40,-148){\small Xsheet (Time Sheet)}
+\put(43,-148){\small Xsheet (Time Sheet)}
 \put(190,-137){\includegraphics[width=14.15em]{OpenToonzInterfaceComboViewer}}
 \put(210,-148){\small Combo Viewer (Main Viewer)}
 \put(380,-119.5){\includegraphics[width=6.7em]{OpenToonzInterfaceStyleEditor}}
-\put(393,-128){\small Style Editor}
-\put(380,-138){\small (ColorWheel,HSV,RGB)}
+\put(395,-128){\small Style Editor}
+\put(371,-138){\small (ColorWheel,HSV,RGB)}
 \put(4,-292){\includegraphics[width=13.8em]{OpenToonzInterfaceSchematic}}
-\put(26,-303){\small Schematic (Nodes Editor)}
+\put(32,-303){\small Schematic (Nodes Editor)}
 \put(184,-248){\includegraphics[width=17.2em]{OpenToonzInterfacePalette}}
-\put(240,-259){\small Palette (Colors)}
+\put(253,-259){\small Palette (Colors)}
 \put(403.6,-335){\includegraphics[width=4.7em]{OpenToonzInterfaceLevelStrip}}
-\put(255,-290){\small Level Strip (Thumbnail View) →}
+\put(258,-290){\small Level Strip (Thumbnail View) →}
 \end{picture}\\[25.9em]
 
 \normalsize
@@ -278,20 +285,20 @@ A Thumbnail of each Cell Frame that is being edited are displayed in a row.\\
 How Scene Effects are applied, tree structure of parent-child relationship geometric transforms.\\
 ● Palette\\
 Displays the contents of the Palette file.\\
-"Flipbook" panel is used for playing a sequence of images \& movies, \& "Color Model" panel is for\\
-Color Picking on the Color Swatch Display when refining work, there are a variety of panels.\\
+The “Flipbook" panel is used for playing a sequence of images \& movies, \& “Color Model" panel is\\
+for Color Picking on the Color Swatch Display when refining work, there are a variety of panels.\\
 They can either be docked in each Room of the Main Window, or you can use them as a Floating\\
 Window.
 
 \newpage
 
 \phantomsection
-\section*{\uline{\hskip -3em \hskip 3em □ Column \& Level\hskip 12.5em}}
+\section*{\uline{\hskip -3em \hskip 3em □ Column \& Level\hskip 5.86em}}
 \addcontentsline{toc}{section}{□ Column \& Level}
 
 \normalsize
 \noindent Various materials (Cells, such as background material) can be arranged on the Xsheet (Time Sheet),\\
-which are collectively known in OpenToonz as "Level". Level is stored in the Column on the Xsheet.\\
+which are collectively known in OpenToonz as “Level". Level is stored in the Column on the Xsheet.\\
 In each of the Cell (Frame) of the Column, no more than 1 Level / Video Number can be entered.\\
  As Column is a data structure unit of OpenToonz, it has an important meaning.\\
 \large
@@ -311,7 +318,7 @@ In each of the Cell (Frame) of the Column, no more than 1 Level / Video Number c
 \put(360,-35){\includegraphics[width=12.1em]{ColumnLevelColumn}}
 \end{picture}\\[-15em]
 
-\noindent \hskip 34.2em \begin{tikzpicture}
+\noindent \hskip 33.8em \begin{tikzpicture}
 \draw[->,line width=3pt,red] (0em,-0.8em) to (0em,-2.6em);
 \draw[->,line width=3pt,red] (3em,-0.8em) to (3em,-2.6em);
 \draw[->,line width=3pt,red] (5.9em,-16.1em) to (5.9em,-14.3em);
@@ -410,14 +417,14 @@ Left-click on the left side of the Xsheet, Line Number \& the Area (= Scene Fram
 \end{tikzpicture}\\[-2.2em]
 
 \small
-\ Level Editing Mode (Left) \& Scene Editing Mode (Right). Left-click area to Switch Modes (Red Arrows).
+\hskip 1.0em Level Editing Mode (Left) \& Scene Editing Mode (Right). Left-click area to Switch Modes (Red Arrows).
 
 \newpage
 
 \newpage
 
 \phantomsection
-\section*{\uline{\hskip -3em \hskip 3em □ Room (Workspace)\hskip 11.5em}}
+\section*{\uline{\hskip -3em \hskip 3em □ Room (Workspace)\hskip 4.43em}}
 \addcontentsline{toc}{section}{□ Room (Workspace)}
 
 \normalsize
@@ -430,37 +437,37 @@ can be freely changed by the user, profile data is stored for each user, which l
 \large
 \noindent \begin{picture}(0,0)
 \put(4,-83){\includegraphics[width=39em]{RoomWorkSpaceTab}}
-\put(285,-66){\normalsize Room Tab}
+\put(280,-66){\normalsize Room Tab}
 \end{picture}\\[6.4em]
 
 \noindent ● To Start a Minimal Required Room \normalsize \colorbox{fontyellow}{\color{black}Intermediate Level}\\
 If you want to work with shared users for each step of the animation, a good idea is to provide\\
 a shortcut to start with the minimal Room necessary, to start-up faster.\\
-Example: If you want to start with only a minimal open Room with "InknPaint" \& "Browser"\\
+Example: If you want to start with only a minimal open Room with “InknPaint" \& “Browser"\\
 ① [\$TOONZPROFILES]/layouts/OpenToonz.[User Name] You work in the [User Name] folder.\par
 \ (By default, OpenToonz Stuff/profiles/layouts/OpenToonz.[User Name])\\
 ② Copy the layouts.txt, \& change it to an appropriate name. (Example: shiage\_layout.txt)\\
 ③ Open shiage\_layout.txt in e.g. WordPad, \& line up the Room config file names, as shown below,\\
-leave only the corresponding Room lines ("InknPaint" is room3.ini, "Browser" is room6.ini),\\
+leave only the corresponding Room lines (“InknPaint" is room3.ini, “Browser" is room6.ini),\\
 deleting any other lines, \& save it.\\[-1em]
 \par
-\ \ \ \ \ \ \ \ room1.ini \ \ \ \ \ \ \ \ \ \ \ \ room3.ini\par
-\ \ \ \ \ \ \ \ room2.ini \ \ \ \ \ \ \ \ \ \ \ \ room6.ini\par
-\ \ \ \ \ \ \ \ room3.ini\par
-\ \ \ \ \ \ \ \ room4.ini\par
-\ \ \ \ \ \ \ \ room5.ini\par
-\ \ \ \ \ \ \ \ room6.ini
+\noindent\hskip 5.0em room1.ini \hskip 6.2em room3.ini\par
+\noindent\hskip 5.0em room2.ini \hskip 6.2em room6.ini\par
+\noindent\hskip 5.0em room3.ini\par
+\noindent\hskip 5.0em room4.ini\par
+\noindent\hskip 5.0em room5.ini\par
+\noindent\hskip 5.0em room6.ini
 
 \large
 \noindent \begin{picture}(0,0)
 \linethickness{0.1em}
-\put(42,119){\line(1,0){67}}
+\put(41.5,119){\line(1,0){68}}
 \put(109,119){\line(0,-1){105}}
-\put(109,14){\line(-1,0){67}}
+\put(109.5,14){\line(-1,0){68}}
 \put(42,119){\line(0,-1){105}}
-\put(153,119){\line(1,0){67}}
-\put(221,119){\line(0,-1){105}}
-\put(221,14){\line(-1,0){67}}
+\put(152.5,119){\line(1,0){68}}
+\put(220,119){\line(0,-1){105}}
+\put(220.5,14){\line(-1,0){68}}
 \put(153,119){\line(0,-1){105}}
 \put(228,40){\includegraphics[width=17em]{RoomWorkSpaceSpeechBubble}}
 \put(251,61){\small Leave only the required Room file names}
@@ -473,8 +480,8 @@ deleting any other lines, \& save it.\\[-1em]
 \normalsize
 \noindent ④ Create a shortcut to the OpenToonz executable file\\
 ⑤ Right-click the shortcut, \& open the properties\\
-⑥ Add the end of the string, written in the "link",\par
-\ \ -layout shiage\_layout.txt\par
+⑥ Add the end of the string, written in the “link",\par
+\hskip 1.0em -layout shiage\_layout.txt\par
 \& then click OK.\\
 ⑦ When you start-up OpenToonz using this shortcut,\par
 only the specified Room will be created.
@@ -488,12 +495,12 @@ only the specified Room will be created.
 \newpage
 
 \phantomsection
-\section*{\uline{\hskip -3em \hskip 3em □ Project Data Management\hskip 8em}}
+\section*{\uline{\hskip -3em \hskip 3em □ Project Data Management\hskip 1.12em}}
 \addcontentsline{toc}{section}{□ Project Data Management}
 
 \normalsize
 \noindent In OpenToonz, the path \& default values of the Project Settings, such as Scene Settings, any work\\
-which is newly created within the Project, is referred to as a "project", you can save into the\\
+which is newly created within the Project, is referred to as a “project", you can save into the\\
 Working Folder of each Project (Project Folder) to store your material.\\
 \\
 \large
@@ -501,12 +508,12 @@ Working Folder of each Project (Project Folder) to store your material.\\
 \normalsize
 When starting OpenToonz for the first time, the Current Project is called\\
 sandbox, it is the default Project. Looking at the FileBrowser panel on\\
-the Folder Tree, the Circle Node on the Left side of "sandbox" is turned\\
+the Folder Tree, the Circle Node on the Left side of “sandbox" is turned\\
 Red. This is a sign that the Current sandbox Project has been Selected.
 
 \large
 \noindent \begin{picture}(0,0)
-\put(365,-35){\includegraphics[width=13.2em]{ProjectDataManagementSandboxProject}}
+\put(360,-35){\includegraphics[width=13.2em]{ProjectDataManagementSandboxProject}}
 \end{picture}\\
 
 \noindent ● To Create a Project\\
@@ -534,10 +541,10 @@ input boxes, specify the path to each of the Project Folders.\\
 \noindent \begin{picture}(0,0)
 \put(-2,20){\includegraphics[width=18.2em]{ProjectDataManagementCreateProject}}
 \linethickness{0.1em}
-\put(223,170){\line(1,0){9}}
-\put(232,161){\line(1,0){9}}
+\put(223,170){\line(1,0){9.6}}
+\put(232,161){\line(1,0){9.6}}
 \put(232,170){\line(0,-1){92}}
-\put(223,78){\line(1,0){9}}
+\put(223,78){\line(1,0){9.6}}
 \end{picture}\\[-2.5em]
 
 \normalsize
@@ -555,7 +562,7 @@ will be marked Red, \& will switch the current project.
 
 \large
 \noindent \begin{picture}(0,0)
-\put(365,-25){\includegraphics[width=13.2em]{ProjectDataManagementSwitchProject}}
+\put(360,-25){\includegraphics[width=13.2em]{ProjectDataManagementSwitchProject}}
 \end{picture}\\
 
 \newpage
@@ -573,12 +580,12 @@ In the Browser Room, run Files > Save Default Settings.\\
 ● To Work Without Creating a Project\\
 \normalsize
 Project based Data Management, can shorten the workload, such as with the stored material inside\\
-the file path "+drawings", it is possible to simplify the data management, also there is a big\\
+the file path “+drawings", it is possible to simplify the data management, also there is a big\\
 advantage to having default project values set for a common scene.\\
 On the other hand, in case of use such as when performing finished outsourced work, such as\\
 dealing with small amounts of data from a variety of scenes, the advantage of summarized data for\\
 each piece is small, it would be inconvenient to create a project for each one. In such a case,\\
-without creating a project, please work by using the Default Project "sandbox". The User Project\\
+without creating a project, please work by using the Default Project “sandbox". The User Project\\
 Folder of the project that was created \& any Scene Files stored outside of the sub-folders, are\\
 recognized as belonging to the sandbox Project, the user can also proceed without using a project.\\
 

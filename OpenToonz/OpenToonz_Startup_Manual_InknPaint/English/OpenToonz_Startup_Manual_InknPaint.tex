@@ -4,9 +4,7 @@
 \usepackage[colorlinks,linkcolor=blue,bookmarks,bookmarksopen,pdfauthor=krom]{hyperref}
 
 \usepackage{fontspec}
-\setmainfont[BoldFont={fonts/epkgobld.ttf}]{epkaisho.ttf}
-
-\graphicspath{{images/}}
+\setmainfont[Path = fonts/, Extension = .ttf, BoldFont = ipagp]{ipamp}
 
 \usepackage[normalem]{ulem}
 \renewcommand{\ULthickness}{0.08em}
@@ -26,79 +24,103 @@
 \fancyhf{}
 \renewcommand\headrulewidth{0pt}
 
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
 \begin{document}
 
 \fancyfoot[R]{\thepage}
 
-\begin{flushright}
+\small
+\noindent\vspace{-2.2em}\begin{flushright}
 2016/3/26 Revision
 \end{flushright}
 
-\vspace{17.5em}
+\vspace{62mm}
 
 \LARGE
-\textbf{\hskip 5em \,OpenToonz}\par
-\textbf{\hskip 5em Startup Manual}\par
-\textbf{\hskip 5em InknPaint}
+\textbf{\hskip 30mm OpenToonz}\par
+\textbf{\hskip 30mm Startup Manual}\par
+\Large
+\textbf{\hskip 30mm InknPaint}
 
 \noindent\begin{picture}(0,0)
-\put(0,24){\includegraphics[width=5em]{OpenToonzLogo}}
+\put(1,14){\includegraphics[width=30mm]{OpenToonzLogo}}
 \end{picture}
 
 \newpage
 
-\huge
-\noindent \textbf{Contents}\\[-0.5em]
+\Huge
+\noindent \textbf{Contents}\\[-0.7em]
 \par
-\large
-\noindent \textbf{\uline{\hskip -6em \hskip 6em Introduction\hskip 12em}}\\
-\small
-■ OpenToonz Main File Formats \ \ \ \ \ \ \ \ \ \ \ \ p.3\\
-■ OpenToonz Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.3\\
-□ Room Information \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.3\\
-□ Panel Customization \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.3\\
-□ File Browser Interface \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.4\\[0.5em]
+\Large
+\noindent \textbf{\uline{\hskip -6em \hskip 6em Introduction\hskip 9.1em}}\\[0.4em]
+\footnotesize
+\setlength{\tabcolsep}{0em}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{22.2em}l}
+\small ■ \footnotesize OpenToonz Main File Formats & p.3\\
+\small ■ \footnotesize OpenToonz Interface & p.3\\
+\small □ \footnotesize Room Information & p.3\\
+\small □ \footnotesize Panel Customization & p.3\\
+\small □ \footnotesize File Browser Interface & p.4\\
+\end{tabular}\\[1.9em]
+
 \par
-\large
-\noindent \textbf{\uline{\hskip -6em \hskip 6em Scanning\hskip 14em}}\\
-\small
-□ GTS Scanning Tool \ ※ Please refer to the "GTS Manual"\\[1.5em]
+\Large
+\noindent \textbf{\uline{\hskip -6em \hskip 6em Scanning\hskip 10.6em}}\\[0.4em]
+\footnotesize
+\small □ \footnotesize GTS Scanning Tool \ \ \small ※ \footnotesize Please refer to the “GTS Manual".\\[1.9em]
 \par
-\large
-\noindent \textbf{\uline{\hskip -6em \hskip 6em Trace (Cleanup)\hskip 10.5em}}\\
-\small
-□ tlv File Creation \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.4\\
-□ Without Antialiasing, Creating a tlv File With No Changes To Size \ \ p.8\\[2em]
+\Large
+\noindent \textbf{\uline{\hskip -6em \hskip 6em Trace \large (Cleanup)\hskip 9.8em}}\\[0.4em]
+\footnotesize
+\setlength{\tabcolsep}{0em}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{22.2em}l}
+\small □ \footnotesize tlv File Creation & p.4\\
+\multicolumn{2}{l}{\small □ \footnotesize Without Antialiasing, Creating a tlv File With No Changes To Size \ \ \ \ \ p.8}\\
+\end{tabular}\\[3.6em]
+
 \par
-\large
-\noindent \textbf{\uline{\hskip -6em \hskip 6em Finishing (InknPaint)\hskip 7.5em}}\\
-\small
-□ Level File Loading \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.9 \ \ \ \ \ \ \ □ Canceling an Operation \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.15\\
-□ Level File Saving \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.9 \ \ \ \ \ \ \ □ Displaying Sequential Frame Numbers \ \ \ \ p.16\\
-□ Level File Creation \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.9 \ \ \ \ \ \ \ □ Duplication \& Deletion of the Frame \ \ \ \ p.16\\
-□ Palette File Saving \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.9 \ \ \ \ \ \ \ □ Switching Image on the Display Menu \ \ \ \ p.16\\
-□ Scene File Loading \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.10 \ \ \ \ \ \ □ Displaying Various Kinds of Window \ \ \ \ \ p.17\\
-□ Scene File Saving \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.10 \ \ \ \ \ \ □ Palette Style Editing \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.17\\
-□ Scene File Creation \& Closing a Scene File \ \ p.10 \ □ Studio Palette Information \ \ \ \ \ \ \ \ \ \ \ \ \ p.18\\
-□ OpenToonz Exiting \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.10 \ \ \ \ \ \ □ Studio Palette Folder Creation \& Deletion,\\
-□ Cell Synthesis \& Cutting of Cells \ \ \ \ \ \ p.11 \ \ \ \ \ \ \ \ \ to Create a New Palette. \ \ \ \ \ \ \ \ \ \ \ \ \ \, p.18\\
-□ Extracting Color from the Picture \ \ \ \ \ \ p.13 \ \ \ \ \ \ □ Viewing the Image \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.20\\
-□ Connecting Broken Lines Automatically \ \ p.13 \ \ \ \ \ \ □ Time Sheet Editing \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.21\\
-□ Line Modification \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.13 \ \ \ \ \ \ □ Viewing the Color Swatch Used in Painting \ \ p.21\\
-□ Filling an Area \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.13 \ \ \ \ \ \ □ Browsing the Files \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.22\\
-□ Drawing with a Brush \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.13 \ \ \ \ \ \ □ tlv Frame Viewing \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.22\\
-□ Entering Text Characters \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.14 \ \ \ \ \ \ □ Previewing Image Sequences in a Video \ \ p.23\\
-□ Turning Off the Line-Painted Area \ \ \ \ \ \ p.14 \ \ \ \ \ \ □ Environment Settings \& Keyboard Shortcuts \ \ p.23\\
-□ Image Copy/Paste Selected Range, \& Movement \ p.14 \ □ Various Display Menus \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.23\\
-□ Vector Image Editing \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.15 \ \ \ \ \ \ □ Window Layout Customization \ \ \ \ \ \ \ \ \ \ \ \ p.23\\
-□ Image Display Tools \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.15 \ \ \ \ \ \ □ tlv File Conversion to Other File Formats \ \ p.24\\[1em]
+\Large
+\noindent \textbf{\uline{\hskip -6em \hskip 6em Finishing \large (InknPaint)\hskip 7.5em}}\\[0.4em]
+\footnotesize
+\setlength{\tabcolsep}{0em}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{22.2em}p{8.0em}p{22.2em}l}
+\small □ \footnotesize Level File Loading & p.9 & \small □ \footnotesize Canceling an Operation & p.15\\
+\small □ \footnotesize Level File Saving & p.9 & \small □ \footnotesize Displaying Sequential Frame Numbers & p.16\\
+\small □ \footnotesize Level File Creation & p.9 & \small □ \footnotesize Duplication \& Deletion of the Frame & p.16\\
+\small □ \footnotesize Palette File Saving & p.9 & \small □ \footnotesize Switching Image on the Display Menu & p.16\\
+\small □ \footnotesize Scene File Loading & p.10 & \small □ \footnotesize Displaying Various Kinds of Window & p.17\\
+\small □ \footnotesize Scene File Saving & p.10 & \small □ \footnotesize Palette Style Editing & p.17\\
+\small □ \footnotesize Scene File Creation \& Closing a Scene File & p.10 & \small □ \footnotesize Studio Palette Information & p.18\\
+\small □ \footnotesize OpenToonz Exiting & p.10 & \small □ \footnotesize Studio Palette Folder Creation \& Deletion, &\\
+\small □ \footnotesize Cell Synthesis \& Cutting of Cells & p.11 & \hskip 1.5em to Create a New Palette. & p.18\\
+\small □ \footnotesize Extracting Color from the Picture & p.13 & \small □ \footnotesize Viewing the Image & p.20\\
+\small □ \footnotesize Connecting Broken Lines Automatically & p.13 & \small □ \footnotesize Time Sheet Editing & p.21\\
+\small □ \footnotesize Line Modification & p.13 & \small □ \footnotesize Viewing the Color Swatch Used in Painting & p.21\\
+\small □ \footnotesize Filling an Area & p.13 & \small □ \footnotesize Browsing the Files & p.22\\
+\small □ \footnotesize Drawing with a Brush & p.13 & \small □ \footnotesize tlv Frame Viewing & p.22\\
+\small □ \footnotesize Entering Text Characters & p.14 & \small □ \footnotesize Previewing Image Sequences in a Video & p.23\\
+\small □ \footnotesize Turning Off the Line-Painted Area & p.14 & \multicolumn{2}{l}{\small □ \footnotesize Environment Settings \& Keyboard Shortcuts \ \ \ \ \ \ p.14}\\
+\multicolumn{2}{l}{\small □ \footnotesize Image Copy/Paste Selected Range, \& Movement \ \ \ p.14} & \small □ \footnotesize Various Display Menus & p.23\\
+\small □ \footnotesize Vector Image Editing & p.15 & \small □ \footnotesize Window Layout Customization & p.23\\
+\small □ \footnotesize Image Display Tools & p.15 & \small □ \footnotesize tlv File Conversion to Other File Formats & p.24\\
+\end{tabular}\\[1.9em]
+
 \par
-\large
-\noindent \textbf{\uline{\hskip -6em \hskip 6em Color Specification (PltEdit)\hskip 4em}}\\
-\small
-□ Sheet Creation to Perform Color Designation \ p.25\\
-□ Displaying a Specific Frame \ \ \ \ \ \ \ \ \ \ \ \ p.25\\
-□ Previewing in a Transparent Display \ \ \ \ p.26
+\Large
+\noindent \textbf{\uline{\hskip -6em \hskip 6em Color Specification \large (PltEdit)\hskip 3.3em}}\\[0.4em]
+\footnotesize
+\setlength{\tabcolsep}{0em}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{22.2em}l}
+\multicolumn{2}{l}{\small □ \footnotesize Sheet Creation to Perform Color Designation \ \ \ \ \ \ \ \ \ p.25}\\
+\small □ \footnotesize Displaying a Specific Frame & \footnotesize p.25\\
+\small □ \footnotesize Previewing in a Transparent Display & \footnotesize p.26\\
+\end{tabular}
 
 \fancyfoot[R]{\thepage
 \begin{picture}(0,0)
@@ -139,7 +161,7 @@ used to place \& display panels for each software function.\\[-3.8em]
 \addcontentsline{toc}{subsection}{□ Room Information}
 
 \footnotesize
-\hskip 34em Room shows the menus \& layout specific to each job\par
+\hskip 34em Room shows menus \& layouts specific to each job\par
 \hskip 34em by switching a tab (Top Right Corner of the Screen).\\
 \par
 \hskip 34em [Cleanup]: tif Image Conversion to tlv Image File\par
@@ -154,10 +176,10 @@ used to place \& display panels for each software function.\\[-3.8em]
 \put(-10,-190){\includegraphics[width=28em]{OpenToonzInterfaceRoomPanels}}
 \linethickness{0.1em}
 \color{red}
-\put(270,136){\line(1,0){122}}
-\put(270,136){\line(-1,-5){26}}
-\put(136,-222){\line(-1,0){142}}
-\put(136,-222){\line(1,2){43}}
+\put(273,136){\line(1,0){122}}
+\put(273,136){\line(-1,-5){26}}
+\put(139,-222){\line(-1,0){142}}
+\put(139,-222){\line(1,2){43}}
 \end{picture}\\[15em]
 
 \phantomsection
@@ -194,7 +216,7 @@ A tree structure is displayed on the left side of the folder, with the contents 
 \small
 \noindent In the Cleanup process, use the scanned tif format file that you created using the GTS* scanning tool,\\
 to create a paint file (Toonz Raster Level File: tlv).\\
-※ Please refer to the "GTS Manual" for information about scanning using GTS.\\
+※ Please refer to the “GTS Manual" for information about scanning using GTS.\\
 Switch to the Cleanup Room when doing this work.\\
 tlv image size, position to be cut, density of lines, \& output destination settings, can be performed.\\
 
@@ -264,7 +286,7 @@ recognize the lines as shades of Grey, if you want to recognize them as colored 
 \footnotesize
 \noindent Antialias Setting\\
 \ [Standard]: It adds Antialiasing using the resampling process when changing the scale.\par
-\ \ \ \ \ \ For output DPI, is recommended to perform this process on images shortened to less than 90\% of the original size.\\
+\hskip 4.3em For output DPI, is recommended to perform this process on images shortened to less than 90\% of the original size.\\
 \ [None]: It does not perform Antialiasing.\\
 \ [Morphological]: Uses smoothing by analyzing the edges of the image. There is no need to reduce the image size.\\
 \ [Brightness]: The thickness of the line will be changed. The lower the value, the thicker the line will become.\\
@@ -284,7 +306,7 @@ You can see the spots that will be removed by enabling the Opacity Check.\\
 (Only available when Morphological Antialiasing is selected)\\
 \\
 \small
-If using Color line drawing, adjust the parameters, to detect how each color in the image is divided.\\
+If using Color line drawing, adjust the parameters, to detect how each color in the image is divided.
 \footnotesize
 ・Cleanup processing automatically sets the color assigned to the lines.\\
 Colors to be used for recognition, colors are either assigned in post-recognition or by selecting Edit from the box at\\
@@ -301,10 +323,10 @@ the bottom of the Style Editor, you can change each color. ①  Inside the Color
 \put(60,-254){②}
 \linethickness{0.1em}
 \color{red}
-\put(213,-172){\line(1,0){29}}
-\put(213,-192){\line(1,0){29}}
-\put(34.5,-242){\line(0,1){13}}
-\put(56,-242){\line(-1,1){13}}
+\put(216,-172){\line(1,0){29}}
+\put(216,-192){\line(1,0){29}}
+\put(37.5,-242){\line(0,1){13}}
+\put(59,-242){\line(-1,1){13}}
 \end{picture}\\[25.4em]
 
 \footnotesize
@@ -366,10 +388,10 @@ The state of the calculation is confirmed by the [Status].\\
 \hskip 28em ① The selected frame number is shown above the progress bar.\par
 \hskip 28em ② Cleanup View ON/OFF\par
 \hskip 28em ③ [Cleanup]: Only Cleanup 1 frame.\par
-\hskip 28em \ \ [Skip]: Skip 1 frame in the Cleanup. (To move to the next\par
+\hskip 28em \ \ \ [Skip]: Skip 1 frame in the Cleanup. (To move to the next\par
 \hskip 28em frame, skipped frame is not executed.)\par
-\hskip 28em \ \ [Cleanup All]: All the frames will Cleanup.\par
-\hskip 28em \ \ [Cancel]: Cancel the Cleanup.
+\hskip 28em \ \ \ [Cleanup All]: All the frames will Cleanup.\par
+\hskip 28em \ \ \ [Cancel]: Cancel the Cleanup.
 
 \large
 \noindent\begin{picture}(0,0)
@@ -428,7 +450,7 @@ such as tif \& tga. Right-click on the file you want to convert in the file brow
 ⑥ When checked, it deletes the attached [.(Dot)] on the front of the frame number of the file name of tlv\\
 before conversion. This function is used if you want to convert from a tlv file to tga \& other file formats.\\
 ※ The function is enabled, only if the file format after the conversion is not selected to be a tlv.\\
-Refer to "tlv File Conversion to Other File Formats" (p.24) for more information.\\
+Refer to “tlv File Conversion to Other File Formats" (p.24) for more information.\\
 ⑦ If you want to convert from sequence image file of a \uline{Line Drawing} with no Antialiasing to a tlv select\\
 \ [\uline{Unpainted} tlv from non AA source]. With no Antialiasing, if you want to convert from an \uline{Already Painted}\\
 image sequence file to tlv select [\uline{Painted} tlv from non AA source]. When converting painted image files to\\
@@ -565,13 +587,13 @@ If you have not saved any data, you will be prompted to select whether to close 
 \noindent In OpenToonz, by treating the Xsheet panel as a synthetic strip, you can carry out the synthesis of cells.\\
 \ Run [Files/Apply Match Lines] to synthesize a line of 2 tlv Level files.\par
 \normalsize
-\noindent \hskip -0.5em 【Step 1】\\
+\noindent 【Step 1】\\
 \footnotesize
 In the Xsheet on the right side of the current tlv (Synthesis Parent. Match Line tlv), place the Match Line of the tlv\\
 (Synthesis Child. Match Line tlv). Arrange together as best possible each cells frame number on the Xsheet to paste.\\
 (※ The image below is the arrangement of the sheet in the case where you want to paste a line from F1 to G8～13)\par
 \normalsize
-\noindent \hskip -0.5em 【Step 2】\\[-0.5em]
+\noindent 【Step 2】\\[-0.5em]
 \par
 \footnotesize
 \noindent \hskip 27.5em ㋐ Current tlv (Synthesis Parent. Match Line tlv)\par
@@ -615,7 +637,7 @@ In the Xsheet on the right side of the current tlv (Synthesis Parent. Match Line
 \end{picture}\\[15.5em]
 
 \normalsize
-\noindent \hskip -0.5em 【Step 3】\\
+\noindent 【Step 3】\\
 \footnotesize
 The following window is displayed. Using Match Lines, setup how much the line bleeds into the Ink, \& run to paste.\\
 \small
@@ -632,8 +654,9 @@ to create a temporary style rather than the style you want to actually use.
 
 \footnotesize
 \setlength{\arrayrulewidth}{0.1em}
-\setlength{\tabcolsep}{0.5em}
-\noindent \hskip 11em \begin{tabular}{|l|}
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{0.3em}
+\noindent \hskip 11em \begin{tabular}{|p{17.0em}|}
 \hline
 \small{L-Up R-Down・Keep Halftone}\\
 \small{Line Prevalence [0]}\\
@@ -644,7 +667,7 @@ to create a temporary style rather than the style you want to actually use.
 \hline
 \end{tabular}\\[-10.8em]
 
-\noindent \hskip 41.5em \begin{tabular}{|l|}
+\noindent \hskip 41.7em \begin{tabular}{|p{19.0em}|}
 \hline
 \small{L-Down R-Up・Keep Halftone}\\
 \small{Line Prevalence [100]}\\
@@ -655,7 +678,7 @@ to create a temporary style rather than the style you want to actually use.
 \hline
 \end{tabular}\\[0.5em]
 
-\noindent \hskip 11em \begin{tabular}{|l|}
+\noindent \hskip 11em \begin{tabular}{|p{17.0em}|}
 \hline
 \small{L-Up R-Down・Fill Gaps}\\
 \small{Line Prevalence [30]}\\
@@ -666,7 +689,7 @@ to create a temporary style rather than the style you want to actually use.
 \hline
 \end{tabular}\\[-10.8em]
 
-\noindent \hskip 41.5em \begin{tabular}{|l|}
+\noindent \hskip 41.7em \begin{tabular}{|p{19.0em}|}
 \hline
 \small{L-Down R-Up・Fill Gaps}\\
 \small{Line Prevalence [70]}\\
@@ -695,14 +718,14 @@ The 4 selection windows displayed above make it easier to understand the values 
 Each of the values can be viewed on each window, upper-left [0], upper-right [100], lower-left [30], \& lower-right [70].\\[0.7em]
 \par
 \normalsize
-\noindent \hskip -0.5em 【Step 4】\\
+\noindent 【Step 4】\\
 \footnotesize
 When Cutting lines, you can create a new style for the lines. The color of lines, is the re-paint style you have created.\\
 In the case of synthetic paste \& re-fill of the line style is the color that you want to actually use in the line area.\\
 ※ If you do not want to include the Fill color of Cut lines, set the Matte value of the Cut lines style to 0.\\[0.7em]
 \par
 \normalsize
-\noindent \hskip -0.5em 【Step 5】\\
+\noindent 【Step 5】\\
 \small
 \ [Files/Delete Match Lines] menu, can be used to erase the line style of the currently selected tlv.\\
 \footnotesize
@@ -726,7 +749,7 @@ Example) To only erase frames 1, 3, 6 → 1,3,6
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Style Picker Tool… Used to pick data, extracts color \& style number by clicking on tlv area.
+\noindent\hskip 1.3em Style Picker Tool… Used to pick data, extracts color \& style number by clicking on tlv area.
 \par
 \footnotesize
 \noindent By clicking where you want to on the tlv display, palette \& styles are then linked. You can extract from Areas \& Lines\\
@@ -738,7 +761,7 @@ individually. A Shortcut key for the tool can also be assigned separately.\\[-0.
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, RGB Picker Tool… Has the ability to extract any colors displayed in the Viewer (RGB Values).\par
+\noindent\hskip 1.3em RGB Picker Tool… Has the ability to extract any colors displayed in the Viewer (RGB Values).\par
 \footnotesize
 \noindent A Non-Normal selection, calculates the average RGB value in the range enclosed. Colors are reflected in the Style Editor.\\
 When Passive Pick is checked, it will display in the toolbar the RGB value of the position of the cursor in real time.\\[-0.3em]
@@ -753,7 +776,7 @@ When Passive Pick is checked, it will display in the toolbar the RGB value of th
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Tape Tool… If there are breaks in the line drawing, it can automatically connect the lines.\par
+\noindent\hskip 1.3em Tape Tool… If there are breaks in the line drawing, it can automatically connect the lines.\par
 \footnotesize
 \noindent When you run it on a line portion that is interrupted to some extent, it connects the lines with a width of 1 pixel.\\
 Switch the Type depending on the type of picture, you can use it to decide the numerical value.\\
@@ -776,7 +799,7 @@ Reference value of a picture with anti-aliasing is 25.\\[-0.3em]
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Finger Tool… Use to Trace over the top of a line drawing, it has a function that can fill a\\
+\noindent\hskip 1.3em Finger Tool… Use to Trace over the top of a line drawing, it has a function that can fill a\\
  hole surrounded by 3 sides.\par
 \footnotesize
 \noindent It uses selected colors, when you click on the line, but can also use colors from portions of the Style Picker Tool.\\
@@ -792,7 +815,7 @@ Reference value of a picture with anti-aliasing is 25.\\[-0.3em]
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Fill Tool… Has the ability to paint the surface of an area on a line drawing.\par
+\noindent\hskip 1.3em Fill Tool… Has the ability to paint the surface of an area on a line drawing.\par
 \footnotesize
 \noindent [Type - Normal]: Paint Areas of closed faces in a line drawing. You can fill a color upto where the Line is uninterrupted.\\
 \ [Type -  Rectangular, Freehand, Polyline]: Only fills the range enclosed, \& paints to a region of the plane, which are\\
@@ -801,7 +824,7 @@ closed Areas in the line drawing. You can also change the color of the Lines in 
 \ [Mode - Lines]: Paint the Lines on a line drawing. You can also assign it as a keyboard shortcut.\\
 \ [Mode - Lines \& Areas]: Paint closed face areas on a line drawing, you can also paint on the Lines a line drawing.\\
 \ [Selective]: Only valid in the case of Areas. You will not be able to paint again to the plane that is already painted.\\
-\ [Onion Skin]: Check "Active Onion Skin", on the right-click menu in the Viewer, the last selected tlv frame is dimmed on\\
+\ [Onion Skin]: Check “Active Onion Skin", on the right-click menu in the Viewer, the last selected tlv frame is dimmed on\\
 top of the currently selected tlv frame, When you Fill Areas using the Onion Skin it extracts to → Fill the color.\\
 \ [Frame Range]: Run the Fill Tool on a plurality of frames. This is useful to plurality paint a simple area.\\[-0.3em]
 
@@ -815,7 +838,7 @@ top of the currently selected tlv frame, When you Fill Areas using the Onion Ski
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Brush Tool… Using this function you can Freely draw a Line with a set brush size.\par
+\noindent\hskip 1.3em Brush Tool… Using this function you can Freely draw a Line with a set brush size.\par
 \footnotesize
 \noindent Paints Lines only within the area of the Brush Tool circle pointer ○.\\
 \ [Selective]: When checked, it will not be able to overwrite any line art that already exists.\\
@@ -832,7 +855,7 @@ Max/Min setting. If not checked it is drawn using the value of the Max brush siz
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Paint Brush Tool… With a brush size, it can paint to the surface of a line drawing area.\par
+\noindent\hskip 1.3em Paint Brush Tool… With a brush size, it can paint to the surface of a line drawing area.\par
 \footnotesize
 \noindent Paints only within the area of the Paint Brush Tool circle pointer ○.\\
 \ [Mode - Areas]: Apply to the surface of an area.\\
@@ -846,7 +869,7 @@ Max/Min setting. If not checked it is drawn using the value of the Max brush siz
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Geometric Tool… Can draw features such as lines \& polygons.\par
+\noindent\hskip 1.3em Geometric Tool… Can draw features such as lines \& polygons.\par
 \footnotesize
 \noindent [Size]: Set the width of the line.\\
 \ [Shape]: Select the type, such as a circle or a polygon.\\
@@ -864,7 +887,7 @@ Max/Min setting. If not checked it is drawn using the value of the Max brush siz
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Type Tool… Has a feature where text characters can be drawn into the tlv.\par
+\noindent\hskip 1.3em Type Tool… Has a feature where text characters can be drawn into the tlv.\par
 \footnotesize
 \noindent [Font]: Select the font type.\\
 \ [Style]: Select the font style.\\
@@ -882,7 +905,7 @@ After you type characters, they are treated as a normal line drawing picture. Ca
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Eraser Tool… This function is used to erase a plane in the region of a line drawing.\par
+\noindent\hskip 1.3em Eraser Tool… This function is used to erase a plane in the region of a line drawing.\par
 \footnotesize
 \noindent [Size]: Set the brush size.\\
 \ [Type - Normal]: Is the brush mode.\\
@@ -904,7 +927,7 @@ After you type characters, they are treated as a normal line drawing picture. Ca
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Edit Tool… Camera selection, move, has the ability to perform editing such as changing ratio.\par
+\noindent\hskip 1.3em Edit Tool… Camera selection, move, has the ability to perform editing such as changing ratio.\par
 \footnotesize
 \noindent When you use the tool, you need to select the frame \& the column on the Xsheet.\\[-0.3em]
 
@@ -918,7 +941,7 @@ After you type characters, they are treated as a normal line drawing picture. Ca
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Selection Tool… On the Viewer window, has the ability to select a specific area of the image.\par
+\noindent\hskip 1.3em Selection Tool… On the Viewer window, has the ability to select a specific area of the image.\par
 \footnotesize
 \noindent Select the option Type, enclose the range you want to select in the Viewer. There can be multiple choices.\\
 Move the image in the selected range by using the arrow keys, you can paste Copy from the Edit menu, Cut, by combining\\
@@ -940,7 +963,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Control Point Editor Tool… Edit control points to change the shape of the vector.\\[-0.3em]
+\noindent\hskip 1.3em Control Point Editor Tool… Edit control points to change the shape of the vector.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -948,7 +971,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Pinch Tool… Click \& drag anywhere in the vector, to change the shape of the vector.\\[-0.3em]
+\noindent\hskip 1.3em Pinch Tool… Click \& drag anywhere in the vector, to change the shape of the vector.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -956,7 +979,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Pump Tool… Changes the thickness of the vector line. Click \& drag the range you want to\\
+\noindent\hskip 1.3em Pump Tool… Changes the thickness of the vector line. Click \& drag the range you want to\\
  change.\\[-0.3em]
 
 \large
@@ -965,7 +988,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Magnet Tool… Makes changes to multiple vector lines. Click \& drag the range you want to\\
+\noindent\hskip 1.3em Magnet Tool… Makes changes to multiple vector lines. Click \& drag the range you want to\\
  change.\\[-0.3em]
 
 \large
@@ -974,7 +997,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Bender Tool… Used to bend the vector line.\\[-0.3em]
+\noindent\hskip 1.3em Bender Tool… Used to bend the vector line.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -982,7 +1005,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Iron Tool… Used to correct any wrinkles in the vector line. Move the cursor over the vector\\
+\noindent\hskip 1.3em Iron Tool… Used to correct any wrinkles in the vector line. Move the cursor over the vector\\
  line you want to modify.\\[-0.3em]
 
 \large
@@ -991,7 +1014,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Cutter Tool… Used to cut at a place you click on the vector line.\\[-0.3em]
+\noindent\hskip 1.3em Cutter Tool… Used to cut at a place you click on the vector line.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -999,7 +1022,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Skeleton Tool… To define a character model with the ability to move as a cutout animation.\\[-0.3em]
+\noindent\hskip 1.3em Skeleton Tool… To define a character model with the ability to move as a cutout animation.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -1007,7 +1030,7 @@ It is also possible todo this between the different frames.\\
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Hook Tool… In the stage gap tick, has the ability to define a reference point at the time\\
+\noindent\hskip 1.3em Hook Tool… In the stage gap tick, has the ability to define a reference point at the time\\
 of connecting 2 things.\\[-0.3em]
 
 \large
@@ -1016,7 +1039,7 @@ of connecting 2 things.\\[-0.3em]
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Tracker Tool… In a series of images, it has the ability to track a particular part.\\[-0.3em]
+\noindent\hskip 1.3em Tracker Tool… In a series of images, it has the ability to track a particular part.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -1024,7 +1047,7 @@ of connecting 2 things.\\[-0.3em]
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Plastic Tool… Creates a mesh to deform a part of an animated Character.\\
+\noindent\hskip 1.3em Plastic Tool… Creates a mesh to deform a part of an animated Character.\\
 \\[-0.3em]
 
 \phantomsection
@@ -1039,7 +1062,7 @@ of connecting 2 things.\\[-0.3em]
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Zoom Tool… Used to scale the image.\\[-0.3em]
+\noindent\hskip 1.3em Zoom Tool… Used to scale the image.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -1047,7 +1070,7 @@ of connecting 2 things.\\[-0.3em]
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Rotate Tool… Used to rotate the image display on the Viewer.\\[-0.3em]
+\noindent\hskip 1.3em Rotate Tool… Used to rotate the image display on the Viewer.\\[-0.3em]
 
 \large
 \noindent\begin{picture}(0,0)
@@ -1055,7 +1078,7 @@ of connecting 2 things.\\[-0.3em]
 \end{picture}\\[-3.2em]
 
 \normalsize
-\noindent \ \,\, Hand Tool… Used to move the image display on the Viewer. Click \& drag to use.\\[-0.3em]
+\noindent\hskip 1.3em Hand Tool… Used to move the image display on the Viewer. Click \& drag to use.\\[-0.3em]
 
 \phantomsection
 \subsection*{\uline{□ Canceling an Operation (Edit/)}}
@@ -1250,23 +1273,23 @@ Inks Only… Displays only the lines.\\[1em]
 \noindent\begin{picture}(0,0)
 \put(3,-115){\includegraphics[width=39em]{PaletteStyleEditingViewOptions}}
 \color{white}
-\put(241,-20){●}
-\put(269,-20){●}
-\put(292,-20){●}
-\put(335,-20){●}
-\put(377,-20){●}
-\put(402,-20){●}
+\put(240,-20){●}
+\put(268,-20){●}
+\put(291,-20){●}
+\put(334,-20){●}
+\put(376,-20){●}
+\put(401,-20){●}
 \put(423.5,-30.5){●}
-\put(455.5,-20){●}
+\put(454.5,-20){●}
 \color{red}
-\put(241,-20){①}
-\put(269,-20){②}
-\put(292,-20){③}
-\put(335,-20){④}
-\put(377,-20){⑤}
-\put(402,-20){⑥}
+\put(240,-20){①}
+\put(268,-20){②}
+\put(291,-20){③}
+\put(334,-20){④}
+\put(376,-20){⑤}
+\put(401,-20){⑥}
 \put(423.5,-30.5){⑦}
-\put(455.5,-20){⑧}
+\put(454.5,-20){⑧}
 \end{picture}\\[8.3em]
 
 \footnotesize
@@ -1292,7 +1315,7 @@ Inks Only… Displays only the lines.\\[1em]
 
 \vspace{1.5em}
 
-\noindent \hskip 17em Toonz Palettes… Specifies the \$TOONZSTUDIOPALETTES folder\par
+\noindent \hskip 17em Toonz Palettes… Specifies the \small\$TOONZSTUDIOPALETTES \normalsize folder\par
 \noindent \hskip 17em (usually studiopalettes inside Stuff folder) shows contents.\par
 \noindent \hskip 17em Project Palettes… +palettes project folder will be displayed.\\
 \par
@@ -1305,8 +1328,8 @@ Inks Only… Displays only the lines.\\[1em]
 \put(7,-69){\includegraphics[width=12.9em]{StudioPaletteProjectPalettes}}
 \linethickness{0.1em}
 \color{red}
-\put(162,100){\line(-5,-1){75}}
-\put(162,67){\line(-1,0){75}}
+\put(165,100){\line(-5,-1){75}}
+\put(165,67){\line(-1,0){75}}
 \end{picture}
 
 \newpage
@@ -1316,7 +1339,7 @@ Inks Only… Displays only the lines.\\[1em]
 \put(15,-177){\includegraphics[width=12.4em]{StudioPaletteNewPalette}}
 \linethickness{0.1em}
 \color{red}
-\put(167,-35){\line(-6,1){66}}
+\put(170,-35){\line(-6,1){66}}
 \end{picture}\\[0.3em]
 
 \footnotesize
@@ -1362,38 +1385,38 @@ from the color that has been registered in the Studio Palette, it will be displa
 \put(3,-280){\includegraphics[width=39em]{ViewingTheImageConsoleMenu}}
 \linethickness{0.1em}
 \color{red}
-\put(343.5,7){\normalsize{①}}
-\put(353.5,7){\normalsize{②}}
-\put(376.5,7){\normalsize{③}}
-\put(390,7){\normalsize{④}}
-\put(3,-251){\normalsize{①}}
-\put(20,-251){\normalsize{②}}
-\put(38,-251){\normalsize{③}}
-\put(55,-251){\normalsize{④}}
-\put(94,-251){\normalsize{⑤}}
-\put(111.5,-251){\normalsize{⑥}}
-\put(128.5,-251){\normalsize{⑦}}
-\put(149,-251){\normalsize{⑧}}
-\put(166,-251){\normalsize{⑨}}
-\put(182.5,-251){\normalsize{⑩}}
-\put(199,-251){\normalsize{⑪}}
-\put(218,-251){\normalsize{⑫}}
-\put(235,-251){\normalsize{⑬}}
-\put(253,-251){\normalsize{⑭}}
-\put(287,-251){\normalsize{⑮}}
-\put(325,-251){\normalsize{⑯}}
-\put(355,-251){\normalsize{⑰}}
-\put(421.5,-251){\normalsize{⑱}}
-\put(272,05){\line(1,0){166}}
-\put(272.5,05){\line(0,-1){39}}
-\put(437.5,05){\line(0,-1){39}}
-\put(272,-34){\line(1,0){166}}
-\put(341,-34){\line(-1,-4){3.7}}
-\put(180,-254){\line(-1,6){4.6}}
-\put(-3.5,-254){\line(1,0){469.5}}
-\put(-3,-254){\line(0,-1){26}}
-\put(465.4,-254){\line(0,-1){26}}
-\put(-3.5,-280){\line(1,0){469.5}}
+\put(346.5,7){\normalsize{①}}
+\put(356.5,7){\normalsize{②}}
+\put(379.5,7){\normalsize{③}}
+\put(393,7){\normalsize{④}}
+\put(4.5,-251){\normalsize{①}}
+\put(22.5,-251){\normalsize{②}}
+\put(40.5,-251){\normalsize{③}}
+\put(57.5,-251){\normalsize{④}}
+\put(96.5,-251){\normalsize{⑤}}
+\put(114.5,-251){\normalsize{⑥}}
+\put(131.5,-251){\normalsize{⑦}}
+\put(152,-251){\normalsize{⑧}}
+\put(169,-251){\normalsize{⑨}}
+\put(185.5,-251){\normalsize{⑩}}
+\put(202,-251){\normalsize{⑪}}
+\put(220,-251){\normalsize{⑫}}
+\put(237,-251){\normalsize{⑬}}
+\put(256,-251){\normalsize{⑭}}
+\put(290,-251){\normalsize{⑮}}
+\put(328,-251){\normalsize{⑯}}
+\put(357,-251){\normalsize{⑰}}
+\put(423.5,-251){\normalsize{⑱}}
+\put(275,05){\line(1,0){166}}
+\put(275.5,05){\line(0,-1){39}}
+\put(440.5,05){\line(0,-1){39}}
+\put(275,-34){\line(1,0){166}}
+\put(344,-34){\line(-1,-4){3.7}}
+\put(183,-254){\line(-1,6){4.6}}
+\put(0,-254){\line(1,0){469}}
+\put(0,-254){\line(0,-1){26}}
+\put(468.4,-254){\line(0,-1){26}}
+\put(0,-280){\line(1,0){469}}
 \end{picture}\\[22.8em]
 
 \footnotesize
@@ -1401,7 +1424,7 @@ from the color that has been registered in the Studio Palette, it will be displa
 ① Show/Hide options\\
 ② Save image that is displayed in a format that you have set in the Output Settings. Only Preview mode is enabled.\\
 ③ Stores one frame of the image displayed on the memory. This feature is used in ④.\\
-④ The frame that is stored with "③", is compared with the display of the frame you are currently previewing.\\
+④ The frame that is stored with “③", is compared with the display of the frame you are currently previewing.\\
 ⑤ Display the background color using RGB set to 255\\
 ⑥ Display the background color using RGB set to 0\\
 ⑦ Display the background color using Matte set to 0\\
@@ -1471,7 +1494,7 @@ from the color that has been registered in the Studio Palette, it will be displa
 
 \large
 \noindent\begin{picture}(0,0)
-\put(283,-5){\includegraphics[width=16.6em]{TimeSheetEditingRightClickMenu}}
+\put(273,-5){\includegraphics[width=16.6em]{TimeSheetEditingRightClickMenu}}
 \end{picture}\\[-1.2em]
 
 \phantomsection
@@ -1505,7 +1528,7 @@ will use tpl data from current work. It will remain to be used. Load color model
 \normalsize
 \noindent File Browser… This window is used to browse the files.\par
 \footnotesize
-\noindent Please see more information about this window, in "File Browser Interface" (p.4).\\
+\noindent Please see more information about this window, in “File Browser Interface" (p.4).\\
 You can not Load files in this window. Creating a directory, \& the display of file information is available.\\
 
 \phantomsection
@@ -1517,13 +1540,13 @@ You can not Load files in this window. Creating a directory, \& the display of f
 \par
 \footnotesize
 \noindent \hskip 21.25em ① Selects a tlv that will Load in the Scene. Files that are displayed with\par
-\noindent \hskip 21.25em "*" are in a state where the changes have not yet been saved.\par
+\noindent \hskip 21.25em “*" are in a state where the changes have not yet been saved.\par
 \noindent \hskip 21.25em ② Frame Number\par
 \noindent \hskip 21.25em ③ Currently selected frame with a red border is displayed on the Viewer.\par
 \noindent \hskip 21.25em You can change the position of the View Range when you drag on the frame.\par
 \noindent \hskip 21.25em In addition the edited image, will be updated in real-time on the display.\\
 \par
-\noindent \hskip 20.75em 【Right-Click Menu】\par
+\noindent \hskip 21.25em 【Right-Click Menu】\par
 \noindent \hskip 21.25em [Select All]: Select all of the frames.\par
 \noindent \hskip 21.25em [Invert Selection]: All the selected frames will be inverted.\par
 \noindent \hskip 21.25em [Cut]: Cuts the selected frame.\par
@@ -1561,7 +1584,7 @@ You can not Load files in this window. Creating a directory, \& the display of f
 \normalsize
 \noindent Toolbar… This window is used to display the various Tools.\par
 \footnotesize
-\noindent Please refer to the "Tools" (p.13～) for information about each function.\\[-0.5em]
+\noindent Please refer to the “Tools" (p.13～) for information about each function.\\[-0.5em]
 \par
 \normalsize
 \noindent Tool Option Bar… This window is used to display the Tool Option Bar.\par
@@ -1671,11 +1694,11 @@ not appear when the tlv file has been selected in the InknPaint Room.\\
 ⑤ Set the background color. This is usually RGB all 255 (White).\\
 ⑥ When checked, if you have the same file in the destination, creates only new files without overwriting existing files.\\
 ⑦ When checked, it removes the [.(Dot)] attached to the front of the frame number of the tlv file name before conversion.\\
-Example) File Name is "A" \ Remove dot before the frame number in the case of "OFF": A.0001.tga, A.0002.tga, A.0003.tga...\\
-Example) File Name is "A\_" Remove dot before the frame number in the case of "ON": A\_0001.tga, A\_0002.tga, A\_0003.tga...\\
+Example) File Name is “A" \ Remove dot before the frame number in the case of “OFF": A.0001.tga, A.0002.tga, A.0003.tga...\\
+Example) File Name is “A\_" Remove dot before the frame number in the case of “ON": A\_0001.tga, A\_0002.tga, A\_0003.tga...\\
 ※ Only if the file format after the conversion is not selected to be a tlv, will this function be enabled.\\
-※ OpenToonz filename form, is between the level name \& the last four digits of the frame number "." (Dot) or\\
- "\_" (Underscore), it can then be recognized as  a series of frames in the Level.\\
+※ OpenToonz filename form, is between the level name \& the last four digits of the frame number “." (Dot) or\\
+“\_" (Underscore), it can then be recognized as  a series of frames in the Level.\\
 \par
 \normalsize
 \noindent 2. When you click the [Convert] button, it will start to Convert the frames.
@@ -1738,7 +1761,7 @@ Run the preview, it is also possible to check the screen state multiplied by the
 \noindent You can arrange only the necessary frame number in the Xsheet, or using the Sub-Xsheet, it is\\
  also possible to preview only the sheet number required.\\
 \par
-\noindent \hskip -0.5em 【How to Create a Sub-Xsheet】\\
+\noindent 【How to Create a Sub-Xsheet】\\
 Select the cell you want to include, \& then select the [Right-Click Menu /Collapse]. The following\\
 alert window is displayed.\par
 \footnotesize
